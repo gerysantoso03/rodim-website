@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  rodim-website-nextjs:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    image: rodim-nextjs-docker:dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      # Add any environment variables needed for development
+      - NODE_ENV=development
