@@ -9,14 +9,23 @@
     "lint": "eslint src --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives --max-warnings 0 ",
     "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prisma:init": "npx prisma init",
+    "prisma:reset": "npx prisma migrate reset",
+    "prisma:generate": "npx prisma generate",
+    "prisma:migrate": "npx prisma migrate dev --name init",
+    "prisma:deploy": "npx prisma migrate deploy",
+    "prisma:seed": "npx tsx prisma/seed.ts"
   },
   "dependencies": {
+    "@prisma/client": "^6.9.0",
     "@radix-ui/react-slot": "^1.2.3",
+    "bcrypt": "^6.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.515.0",
     "next": "15.3.3",
+    "prisma": "^6.9.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.3.1"
