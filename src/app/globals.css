@@ -36,7 +36,7 @@
   --screen-xl: 1440px;
   --color-primary-blue: var(--primary-blue);
   --color-secondary-black: var(--secondary-black);
-  
+
   /* Base Values */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -78,8 +78,8 @@
 :root {
   /* Custom Values */
   --font-sf: 'SF Pro', -apple-system, BlinkMacSystemFont, sans-serif;
-  --primary-blue: #004A96;
-  --secondary-black: #1F1F1F;
+  --primary-blue: #004a96;
+  --secondary-black: #1f1f1f;
 
   /* Shadcn Values */
   --radius: 0.625rem;
@@ -151,17 +151,18 @@
 }
 
 @layer base {
-  *, *::after, *::before {
-    @apply 
-    p-0 
+  *,
+  *::after,
+  *::before {
+    @apply p-0 
     m-0 
     box-border;
   }
 
-  html{
+  html {
     font-size: 10px;
   }
-  
+
   body {
     font-family: var(--font-sf);
     font-size: 1.6rem;
@@ -170,12 +171,11 @@
 }
 
 @layer utilities {
-  .section-wrapper{
-    @apply
-    w-full
+  .section-wrapper {
+    @apply w-full
     max-w-[144rem]
     mx-auto
-    p-[2rem]
+    p-[2rem];
   }
 
   .border-img {
@@ -183,7 +183,11 @@
   }
 
   .bg-gradient-overlay {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%);
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
     background-blend-mode: normal;
   }
 }

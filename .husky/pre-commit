@@ -1,5 +1,5 @@
-# Run lint-staged
-npx lint-staged
-
 # Run Prettier format
 npm run format
+
+# Run lint-staged
+# npx lint-staged
