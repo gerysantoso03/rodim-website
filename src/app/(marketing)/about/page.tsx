@@ -342,7 +342,7 @@ const AboutPage = () => {
           <h1 className="font-bold text-[7.2rem] mb-4">
             Innovation Leadership
           </h1>
-          
+
           {/* Group 1: Two Columns */}
           <div className="grid grid-cols-2 gap-4 mt-8">
             {innovationCardsGroup1.map((card, idx) => (
