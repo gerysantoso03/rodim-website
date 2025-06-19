@@ -29,7 +29,7 @@ const PopupLanguage = () => {
               className="border border-[var(--color-primary-blue)] text-[var(--color-primary-blue)] h-[4.4rem] rounded-full font-[400] text-[1.7rem] cursor-pointer"
               type="button"
             >
-              Indonesia test
+              Indonesia
             </button>
             <button
               className="border border-[var(--color-primary-blue)] text-[var(--color-primary-blue)] h-[4.4rem] rounded-full font-[400] text-[1.7rem] cursor-pointer"
