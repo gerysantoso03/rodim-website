@@ -1,3 +1,4 @@
+import PopupLanguage from '@/shared/components/popup-language/PopupLanguage';
 import React from 'react';
 
 const MarketingLayout = ({
@@ -5,7 +6,12 @@ const MarketingLayout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  return <>{children}</>;
+  return (
+    <main>
+      <PopupLanguage />
+      {children}
+    </main>
+  );
 };
 
 export default MarketingLayout;
