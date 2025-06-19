@@ -21,11 +21,7 @@ const OverlayImage = ({
 }: OverlayImageProps) => {
   return (
     <div
-      className={cn(
-        'w-full h-full relative overflow-hidden',
-        width ? `max-w-[${width}rem]` : '',
-        height ? `max-h-[${height}rem]` : ''
-      )}
+      className={cn('relative overflow-hidden rounded-[1.8rem] border-img', width ? `max-w-[${width}rem]` : 'w-full', height ? `max-h-[${height}rem]` : 'h-screen')}
     >
       <Image src={urlImage} alt={altImage} fill className={imageClassname} />
       <div className="absolute inset-0 bg-no-repeat bg-cover bg-center bg-gradient-overlay">

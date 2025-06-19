@@ -30,10 +30,10 @@
 
 @theme inline {
   /* Custom Values */
-  --screen-sm: 548px;
-  --screen-md: 768px;
-  --screen-lg: 1024px;
-  --screen-xl: 1440px;
+  --breakpoint-sm: 440px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1440px;
   --color-primary-blue: var(--primary-blue);
   --color-secondary-black: var(--secondary-black);
 
@@ -166,6 +166,7 @@
   body {
     font-family: var(--font-sf);
     font-size: 1.6rem;
+    color: #fff;
     @apply bg-black text-white;
   }
 }
