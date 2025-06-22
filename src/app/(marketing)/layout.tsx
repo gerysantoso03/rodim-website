@@ -1,5 +1,5 @@
 import PopupLanguage from '@/shared/components/popup-language/PopupLanguage';
-import React from 'react';
+import React, { Suspense } from 'react';
 
 const MarketingLayout = ({
   children,
@@ -8,7 +8,9 @@ const MarketingLayout = ({
 }>) => {
   return (
     <main>
-      <PopupLanguage />
+      <Suspense fallback={<h1>loading</h1>}>
+        <PopupLanguage />
+      </Suspense>
       {children}
     </main>
   );
