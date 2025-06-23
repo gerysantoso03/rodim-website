@@ -1,4 +1,5 @@
-import { OverlayImage } from '@/shared/components/overlay-image';
+import Banner from '@/shared/components/banner/Banner';
+import { cn } from '@/shared/libs/shadcn/utils';
 import Image from 'next/image';
 import React from 'react';
 
@@ -99,20 +100,39 @@ const AboutPage = () => {
     },
   ];
 
+  const paintProtectionItems = [
+    {
+      title: 'Expert Installation Services',
+      description:
+        'Setiap pemasangan dilakukan dengan ketelitian tinggi oleh para profesional untuk menghasilkan detil yang sempurna.',
+    },
+    {
+      title: 'Durable Protection Film',
+      description:
+        'Lebih dari sekadar perlindungan, RODIM PPF menawarkan ketahanan yang luar biasa dalam jangka panjang dari berbagai tantangan.',
+    },
+    {
+      title: 'Custom Fit Solutions',
+      description:
+        'RODIM PPF dirancang dengan kemudahan dalam proses instalasi mengikuti lekukan kendaraan anda.',
+    },
+  ];
+
   return (
     <main className="about">
       {/* About Banner */}
       <section className="section-wrapper relative" id="aboutBanner1">
-        <OverlayImage
-          urlImage="/image/about/about-banner.jpg"
-          altImage="About Page Banner"
-          imageClassname="object-cover object-[50%_-80px]"
+        <Banner
+          image={''}
+          bannerFor="aboutHeroImage1"
+          classname="object-[100%_0]"
         />
-        <div className="absolute bottom-[8rem] left-[8rem] flex flex-col items-start">
-          <p className="font-normal text-[2.4rem] tracking-[0.023rem]">
+
+        <div className="absolute bottom-[5rem] md:bottom-[8rem] left-[4rem] md:left-[8rem] flex flex-col items-start z-[2]">
+          <p className="font-normal text-[1.6rem] md:text-[2.4rem] tracking-[0.023rem] leading-[2.9rem] md:leading-[100%]">
             Tentang BASF RODIM
           </p>
-          <h1 className="font-bold leading-[10rem] text-[8rem] w-[70%]">
+          <h1 className="font-bold leading-[100%] md:leading-[11rem] tracking-[-0.22rem] text-[4rem] md:text-[10.8rem] w-[60%] md:w-[80%]">
             Protection by World’s Best
           </h1>
         </div>
@@ -121,9 +141,9 @@ const AboutPage = () => {
       {/* About Info 1 */}
       <section
         id="aboutInfo1"
-        className="section-wrapper h-[68rem] flex items-center justify-center"
+        className="section-wrapper md:h-[68rem] flex items-center justify-center"
       >
-        <p className="text-center text-[3.2rem] font-normal leading-[4rem] tracking-[0.02rem] px-[4rem]">
+        <p className="text-center text-[2.4rem] md:text-[3.2rem] font-normal leading-[4rem] tracking-[0.02rem] px-[2rem] md:px-[4rem] py-[6rem] md:py-0">
           RODIM adalah brand dari BASF selama lebih dari 40 tahun, dengan
           komitmen terhadap kualitas dan inovasi serta dukungan teknologi dan
           pengalaman BASF yang lebih dari 150 tahun. Kami hadir untuk
@@ -136,16 +156,13 @@ const AboutPage = () => {
 
       {/* About Banner 2 */}
       <section className="section-wrapper relative" id="aboutBanner2">
-        <OverlayImage
-          urlImage="/image/about/pabrik-basf.jpg"
-          altImage="Pabrik BASF"
-          imageClassname="object-cover object-[50%_-80px]"
-        />
-        <div className="absolute bottom-[6rem] left-[6rem] flex flex-col items-start justify-center w-[80%]">
-          <h1 className="font-bold leading-[8rem] text-[6rem]">
+        <Banner image={''} bannerFor="aboutHeroImage2" />
+
+        <div className="absolute bottom-[5rem] md:bottom-[6rem] left-[4rem] md:left-[6rem] flex flex-col items-start justify-center z-[2]">
+          <h1 className="font-bold mb-4 md:mb-0 leading-[100%] md:leading-[8rem] text-[4rem] md:text-[8rem] tracking-[-0.1rem] md:w-[80%] lg:w-[100%]">
             BASF – The Global Leader in TPU
           </h1>
-          <p className="font-normal tracking-[0.023rem]">
+          <p className="font-normal text-[1.6rem] md:text-[2.1rem] leading-[100%] md:leading-[2.9rem] tracking-[0.023rem] w-[90%] lg:w-[100%] ">
             BASF adalah perusahaan kimia terbesar di dunia yang berasal dari
             Jerman, dengan inovasi dan kemajuan teknologi yang terus berkembang.
             BASF memegang posisi sebagai produsen Thermoplastic Polyurethane
@@ -157,15 +174,15 @@ const AboutPage = () => {
       {/* About Info 2 */}
       <section
         id="aboutInfo2"
-        className="section-wrapper h-[68rem] flex items-center justify-center"
+        className="section-wrapper md:h-[68rem] flex items-center justify-center"
       >
-        <div className="text-center flex flex-col justify-center gap-20 px-[12rem]">
-          <p className="text-[3.2rem] font-normal leading-[4rem] tracking-[0.02rem]">
+        <div className="text-center flex flex-col justify-center gap-20 px-[2rem] md:px-[12rem] py-[6rem] md:py-0">
+          <p className="text-[2.4rem] md:text-[3.2rem] font-normal leading-[4rem] tracking-[0.02rem]">
             Dari butiran TPU hingga produk PPF, BASF menciptakan keunggulan
             kompetitif melalui riset dan inovasi, serta keahlian dalam produksi,
             pemasaran, penjualan dan layanan teknis.
           </p>
-          <p className="text-[3.2rem] font-normal leading-[4rem] tracking-[0.02rem]">
+          <p className="text-[2.4rem] md:text-[3.2rem] font-normal leading-[4rem] tracking-[0.02rem]">
             Dengan fokus pada riset dan pengembangan teknologi material, BASF
             menjadi pemimpin global sebagai produsen terbesar lapisan film TPU
             yang menjadi komponen utama PPF. RODIM® PPF hadir sebagai hasil
@@ -176,94 +193,48 @@ const AboutPage = () => {
 
       {/* Paint Protection Film Otomotif Section */}
       <section id="paintProtectionFilm" className="section-wrapper">
-        <div className="bg-[var(--secondary-black)] rounded-[1.8rem] flex items-stretch gap-[4rem] px-[12rem] py-[18rem]">
+        <div className="bg-[var(--secondary-black)] rounded-[1.8rem] flex flex-col lg:flex-row items-stretch gap-[4rem] px-[2rem] md:px-[12rem] py-[8rem] md:py-[18rem]">
           {/* Paint Protection Image */}
           <div className="flex-1 flex justify-center">
             <Image
               src="/image/about/paint-protection-film.JPG"
               alt="Paint Protection Film"
-              className="border-img rounded-[1.6rem]"
+              className="border-img rounded-[1.6rem] w-full h-[36rem] md:h-[42rem] object-cover object-[50%_0] md:object-[50%_-12rem] lg:w-[46.7rem] lg:h-[58.5rem] lg:object-none lg:object-center"
               width={467}
               height={585}
             />
           </div>
           {/* Paint Protection List */}
           <div className="flex-1 flex flex-col">
-            <h4 className="font-bold text-[4.4rem] mb-12">
+            <h4 className="font-bold text-[4rem] leading-[5.2rem] md:text-[4.4rem] mb-10">
               Paint Protection Film Otomotif
             </h4>
             {/* Paint Protection Items Wrapper */}
-            <div className="flex flex-col justify-center gap-[6rem]">
-              {/* Paint Protection Item */}
-              <div className="flex gap-2">
-                {/* Check Circle Icon */}
-                <div className="flex-[0.2]">
-                  <Image
-                    src="/image/about/check-circle-2.png"
-                    alt="Check Circle"
-                    width={46}
-                    height={46}
-                  />
-                </div>
-                {/* Paint Protection Desc */}
-                <div className="flex flex-col flex-2">
-                  <h4 className="font-bold text-[3.2rem]">
-                    Expert Installation Services
-                  </h4>
-                  <p className="font-normal text-[1.8rem]">
-                    Setiap pemasangan dilakukan dengan ketelitian tinggi oleh
-                    para profesional untuk menghasilkan detil yang sempurna.
-                  </p>
-                </div>
-              </div>
+            <div className="flex flex-col justify-center gap-[5rem]">
+              {paintProtectionItems.map((item, idx) => (
+                <div key={idx} className="flex gap-2">
+                  {/* Check Circle Icon */}
+                  <div className="flex-[0.2]">
+                    <Image
+                      src="/image/about/check-circle-2.png"
+                      alt="Check Circle"
+                      width={46}
+                      height={46}
+                    />
+                  </div>
 
-              {/* Paint Protection Item */}
-              <div className="flex gap-2">
-                {/* Check Circle Icon */}
-                <div className="flex-[0.2]">
-                  <Image
-                    src="/image/about/check-circle-2.png"
-                    alt="Check Circle"
-                    width={46}
-                    height={46}
-                  />
+                  {/* Paint Protection Desc */}
+                  <div className="flex flex-col flex-2 gap-4">
+                    <h4 className="font-bold text-[2.4rem] md:text-[3.2rem] leading-[100%]">
+                      {item.title}
+                    </h4>
+                    <p className="font-normal text-[1.8rem]">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-                {/* Paint Protection Desc */}
-                <div className="flex flex-col flex-2">
-                  <h4 className="font-bold text-[3.2rem]">
-                    Durable Protection Film
-                  </h4>
-                  <p className="font-normal text-[1.8rem]">
-                    Lebih dari sekadar perlindungan, RODIM PPF menawarkan
-                    ketahanan yang luar biasa dalam jangka panjang dari berbagai
-                    tantangan.
-                  </p>
-                </div>
-              </div>
-
-              {/* Paint Protection Item */}
-              <div className="flex gap-2">
-                {/* Check Circle Icon */}
-                <div className="flex-[0.2]">
-                  <Image
-                    src="/image/about/check-circle-2.png"
-                    alt="Check Circle"
-                    width={46}
-                    height={46}
-                  />
-                </div>
-                {/* Paint Protection Desc */}
-                <div className="flex flex-col flex-2">
-                  <h4 className="font-bold text-[3.2rem]">
-                    Custom Fit Solutions
-                  </h4>
-                  <p className="font-normal text-[1.8rem]">
-                    RODIM PPF dirancang dengan kemudahan dalam proses instalasi
-                    mengikuti lekukan kendaraan anda.
-                  </p>
-                </div>
-              </div>
-            </div>{' '}
+              ))}
+            </div>
             {/* End of paint protection wrapper */}
           </div>
         </div>
@@ -272,13 +243,13 @@ const AboutPage = () => {
       {/* About Info 3 */}
       <section
         id="aboutInfo3"
-        className="section-wrapper h-[68rem] flex items-center justify-center"
+        className="section-wrapper md:h-[68rem] flex items-center justify-center"
       >
-        <div className="text-center flex flex-col justify-center gap-10 px-[24rem]">
-          <h1 className="text-[7.2rem] font-bold">
+        <div className="text-center flex flex-col justify-center gap-10 md:px-[16rem] lg:px-[24rem] py-[6rem] md:py-0">
+          <h1 className="text-[4rem] md:text-[7.2rem] leading-[100%] font-bold">
             Refinish Excellence Indonesia
           </h1>
-          <p className="text-[1.8rem] font-normal leading-[2.8rem]">
+          <p className="text-[1.6rem] md:text-[1.8rem] font-normal md:leading-[2.8rem]">
             Sejak tahun 2006, Refinish Excellence Indonesia adalah agen tunggal
             pemegang merek Glasurit di Indonesia. Dengan pengalaman panjang di
             industri ini, kami memiliki keahlian dan inovasi dalam perlindungan
@@ -291,10 +262,12 @@ const AboutPage = () => {
 
       {/* Vertical Integration Section */}
       <section id="verticalIntegration" className="section-wrapper">
-        <div className="bg-[var(--secondary-black)] rounded-[1.8rem] p-[12rem]">
+        <div className="bg-[var(--secondary-black)] rounded-[1.8rem] p-[2rem] md:p-[12rem]">
           {/* Vertical Integration Title */}
-          <h1 className="font-bold text-[7.2rem] mb-4">Vertical Integration</h1>
-          <p className="text-[1.8rem] leading-[2.8rem] font-normal text-left">
+          <h1 className="font-bold text-[4rem] md:text-[7.2rem] mb-4">
+            Vertical Integration
+          </h1>
+          <p className="text-[1.6rem] md:text-[1.8rem] leading-[2.8rem] font-normal text-left">
             Sebagai perusahaan kimia terbesar di dunia, BASF memiliki keunggulan
             mutlak dalam pengembangan PPF. Dari proses produksi TPU hingga
             perlindungan cat, integrasi vertikal yang lengkap memungkinkan BASF
@@ -337,14 +310,14 @@ const AboutPage = () => {
 
       {/* Innovation Leadership Section */}
       <section id="innovationLeadership" className="section-wrapper">
-        <div className="p-[12rem]">
+        <div className="md:p-[12rem]">
           {/* Innovation Leadership Title */}
-          <h1 className="font-bold text-[7.2rem] mb-4">
+          <h1 className="font-bold text-[4rem] md:text-[7.2rem] mb-[4rem]">
             Innovation Leadership
           </h1>
 
           {/* Group 1: Two Columns */}
-          <div className="grid grid-cols-2 gap-4 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {innovationCardsGroup1.map((card, idx) => (
               <div
                 key={idx}
@@ -369,11 +342,17 @@ const AboutPage = () => {
           </div>
 
           {/* Group 2: Auto-fit Columns */}
-          <div className="grid [grid-template-columns:repeat(auto-fit,minmax(30rem,1fr))] gap-4 mt-8">
+          <div className="grid grid-cols-1 md:[grid-template-columns:repeat(auto-fit,minmax(30rem,1fr))] gap-4 mt-8">
             {innovationCardsGroup2.map((card, idx) => (
               <div
                 key={idx}
-                className="flex flex-col rounded-[1.8rem] overflow-hidden"
+                className={cn(
+                  'flex flex-col rounded-[1.8rem] overflow-hidden',
+                  idx === innovationCardsGroup2.length - 1 &&
+                    innovationCardsGroup2.length % 2 !== 0
+                    ? 'md:col-span-2 lg:col-span-1'
+                    : ''
+                )}
               >
                 <div className="flex-1 p-[2.8rem] bg-[var(--secondary-black)]">
                   <p className="font-bold text-[2.2rem]">{card.title}</p>
@@ -386,7 +365,13 @@ const AboutPage = () => {
                     src={card.image}
                     alt={card.alt}
                     fill
-                    className="object-cover"
+                    className={cn(
+                      'object-cover',
+                      idx === innovationCardsGroup2.length - 1 &&
+                        innovationCardsGroup2.length % 2 !== 0
+                        ? 'object-[50%_-5rem] lg:object-[0_0]'
+                        : ''
+                    )}
                   />
                 </div>
               </div>
@@ -394,7 +379,7 @@ const AboutPage = () => {
           </div>
 
           {/* Group 3: Two Columns */}
-          <div className="grid grid-cols-2 gap-4 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
             {innovationCardsGroup3.map((card, idx) => (
               <div
                 key={idx}
@@ -423,15 +408,15 @@ const AboutPage = () => {
       {/* About Info 4 */}
       <section
         id="aboutInfo4"
-        className="section-wrapper h-[60rem] flex items-center justify-center"
+        className="section-wrapper md:h-[60rem] flex items-center justify-center"
       >
-        <div className="text-center flex flex-col justify-center gap-20 px-[12rem]">
-          <h1 className="text-[4.8rem] font-normal leading-[6rem]">
+        <div className="text-center flex flex-col justify-center gap-20 px-[2rem] md:px-[12rem] py-[6rem] md:py-0">
+          <h1 className="text-[3.2rem] md:text-[4.8rem] font-normal md:leading-[6rem]">
             Dengan penelitian dan pengembangan yang unggul dalam teknologi
             material, BASF adalah pemimpin dunia dalam aplikasi lapisan film
             tipis berteknologi tinggi.
           </h1>
-          <h1 className="text-[4.8rem] font-normal leading-[6rem]">
+          <h1 className="text-[3.2rem] md:text-[4.8rem] font-normal md:leading-[6rem]">
             PPF RODIM merupakan hasil keahlian BASF dalam teknologi material dan
             lapisan permukaan.
           </h1>
@@ -443,7 +428,7 @@ const AboutPage = () => {
         id="aboutLogo"
         className="section-wrapper flex items-center justify-center"
       >
-        <div className="grid grid-cols-5 gap-20 p-[12rem]">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-20 md:p-[10rem] lg:p-[12rem]">
           {[
             {
               src: '/image/about/01.png',
@@ -506,7 +491,7 @@ const AboutPage = () => {
                 />
               </div>
               <div className="w-full flex-1 flex items-start justify-center">
-                <p className="text-center font-bold text-[2rem] leading-tight">
+                <p className="text-center font-bold md:text-[1.8rem] lg:text-[2rem] leading-tight">
                   {item.label}
                 </p>
               </div>
