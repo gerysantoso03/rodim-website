@@ -1,7 +1,7 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import LogoRodimBlue from '../../../../public/image/logos/logo-rodim-blue.svg';
+import LogoRodimBlue from '../../../assets/logos/logo-rodim-blue.svg';
 
 const PopupLanguage = () => {
   const searchParams = useSearchParams();
