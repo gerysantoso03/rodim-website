@@ -10,6 +10,7 @@ import IconWhatsapp from '../../../assets/icons/whatsapp.svg';
 import IconTokopedia from '../../../assets/icons/tokopedia.png';
 import IconShopee from '../../../assets/icons/shopee.png';
 import IconBliBli from '../../../assets/icons/bli-bli.png';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -73,11 +74,11 @@ const Footer = () => {
 
               <div className="flex flex-col gap-[8px]">
                 <div className="flex gap-[8px] items-start">
-                  <p>FAQ</p>
+                  <Link href="/faq">FAQ</Link>
                 </div>
 
                 <div className="flex gap-[8px] items-start">
-                  <p>Care Instruction</p>
+                  <Link href="/faq">Care Instruction</Link>
                 </div>
               </div>
             </div>

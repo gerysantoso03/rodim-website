@@ -93,8 +93,8 @@ const Navbar = () => {
           <div className="flex h-full items-center">
             <div className="h-full relative pl-0 px-[12px] flex items-center">
               <Link
-                href="/tentang"
-                className={`h-full flex items-center transition-all duration-300 ease-in-out ${pathname === '/tentang' ? 'font-bold border-b-2 border-white/80' : 'border-b-2 border-transparent'}`}
+                href="/about"
+                className={`h-full flex items-center transition-all duration-300 ease-in-out ${pathname === '/about' ? 'font-bold border-b-2 border-white/80' : 'border-b-2 border-transparent'}`}
               >
                 TENTANG BASF RODIM
               </Link>
@@ -103,8 +103,8 @@ const Navbar = () => {
 
             <div className="h-full relative px-[12px] flex items-center">
               <Link
-                href="/galeri"
-                className={`h-full flex items-center transition-all duration-300 ease-in-out ${pathname === '/galeri' ? 'font-bold border-b-2 border-white/80' : 'border-b-2 border-transparent'}`}
+                href="/gallery"
+                className={`h-full flex items-center transition-all duration-300 ease-in-out ${pathname === '/gallery' ? 'font-bold border-b-2 border-white/80' : 'border-b-2 border-transparent'}`}
               >
                 GALERI
               </Link>
@@ -113,8 +113,8 @@ const Navbar = () => {
 
             <div className="h-full relative px-[12px] pr-0 flex items-center">
               <Link
-                href="/garansi"
-                className={`h-full flex items-center transition-all duration-300 ease-in-out ${pathname === '/garansi' ? 'font-bold border-b-2 border-white/80' : 'border-b-2 border-transparent'}`}
+                href="/warranty"
+                className={`h-full flex items-center transition-all duration-300 ease-in-out ${pathname === '/warranty' ? 'font-bold border-b-2 border-white/80' : 'border-b-2 border-transparent'}`}
               >
                 GARANSI
               </Link>

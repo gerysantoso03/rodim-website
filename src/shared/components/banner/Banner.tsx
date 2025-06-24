@@ -2,6 +2,8 @@ import Image, { StaticImageData } from 'next/image';
 import HeroImage from '../../../assets/images/banners/hero.jpg';
 import AboutHeroImage1 from '../../../assets/images/abouts/about-banner.jpg';
 import AboutHeroImage2 from '../../../assets/images/abouts/pabrik-basf.jpg';
+import WarrantyHeroImage from '../../../assets/images/warranties/basf-panasonic.jpg';
+
 import { cn } from '@/shared/libs/shadcn/utils';
 
 type CardProductProps = {
@@ -26,7 +28,7 @@ const Banner = ({ image, bannerFor, classname }: CardProductProps) => {
         return AboutHeroImage2;
         break;
       case 'warranty':
-        return HeroImage;
+        return WarrantyHeroImage;
         break;
       case 'gallery':
         return HeroImage;
