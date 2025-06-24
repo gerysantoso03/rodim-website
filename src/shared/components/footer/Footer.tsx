@@ -78,7 +78,7 @@ const Footer = () => {
                 </div>
 
                 <div className="flex gap-[8px] items-start">
-                  <Link href="/faq">Care Instruction</Link>
+                  <Link href="/care-instruction">Care Instruction</Link>
                 </div>
               </div>
             </div>

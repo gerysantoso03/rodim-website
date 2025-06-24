@@ -6,9 +6,9 @@ const CareInstructionPage = () => {
   return (
     <main className="faq">
       <section className="section-wrapper">
-        <div className="px-[10rem] py-[6rem]">
+        <div className="md:px-[10rem] md:py-[6rem]">
           {/* Navigation Link */}
-          <Link className="text-[1.4rem] flex items-center gap-2 mt-4" href="/">
+          <Link className="text-[1.8rem] flex items-center gap-2 mt-4" href="/">
             <span>
               {' '}
               <ArrowLeft size={18} />
