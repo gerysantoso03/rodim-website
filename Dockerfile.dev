@@ -1,17 +1,14 @@
 # Use a base Node.js image
-FROM node:18-alpine 
+FROM node:18-alpine AS base
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json to install dependencies
-COPY package*.json ./
-
-# Install dependencies
-RUN npm install
-
-# Copy the rest of your application code
+# Copy all files (before npm install, because volume will replace this anyway)
 COPY . .
+
+# Install deps inside the mounted volume (node_modules stays accessible)
+RUN npm install
 
 # Build the Next.js application for production
 # RUN npm run build
