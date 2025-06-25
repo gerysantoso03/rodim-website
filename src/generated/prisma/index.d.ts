@@ -2815,7 +2815,7 @@ export namespace Prisma {
   export type ProductsGroupByOutputType = {
     id: number
     code: string
-    description: string
+    description: string | null
     image_url: string | null
     thickness: string | null
     gloss: string | null
@@ -2929,7 +2929,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       code: string
-      description: string
+      description: string | null
       image_url: string | null
       thickness: string | null
       gloss: string | null
@@ -4005,7 +4005,7 @@ export namespace Prisma {
   export type CategoriesGroupByOutputType = {
     id: number
     code: string
-    description: string
+    description: string | null
     created_at: Date | null
     created_by: number | null
     updated_at: Date | null
@@ -4094,7 +4094,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       code: string
-      description: string
+      description: string | null
       created_at: Date | null
       created_by: number | null
       updated_at: Date | null
@@ -9874,7 +9874,7 @@ export namespace Prisma {
     NOT?: productsWhereInput | productsWhereInput[]
     id?: IntFilter<"products"> | number
     code?: StringFilter<"products"> | string
-    description?: StringFilter<"products"> | string
+    description?: StringNullableFilter<"products"> | string | null
     image_url?: StringNullableFilter<"products"> | string | null
     thickness?: StringNullableFilter<"products"> | string | null
     gloss?: StringNullableFilter<"products"> | string | null
@@ -9891,7 +9891,7 @@ export namespace Prisma {
   export type productsOrderByWithRelationInput = {
     id?: SortOrder
     code?: SortOrder
-    description?: SortOrder
+    description?: SortOrderInput | SortOrder
     image_url?: SortOrderInput | SortOrder
     thickness?: SortOrderInput | SortOrder
     gloss?: SortOrderInput | SortOrder
@@ -9911,7 +9911,7 @@ export namespace Prisma {
     AND?: productsWhereInput | productsWhereInput[]
     OR?: productsWhereInput[]
     NOT?: productsWhereInput | productsWhereInput[]
-    description?: StringFilter<"products"> | string
+    description?: StringNullableFilter<"products"> | string | null
     image_url?: StringNullableFilter<"products"> | string | null
     thickness?: StringNullableFilter<"products"> | string | null
     gloss?: StringNullableFilter<"products"> | string | null
@@ -9928,7 +9928,7 @@ export namespace Prisma {
   export type productsOrderByWithAggregationInput = {
     id?: SortOrder
     code?: SortOrder
-    description?: SortOrder
+    description?: SortOrderInput | SortOrder
     image_url?: SortOrderInput | SortOrder
     thickness?: SortOrderInput | SortOrder
     gloss?: SortOrderInput | SortOrder
@@ -9952,7 +9952,7 @@ export namespace Prisma {
     NOT?: productsScalarWhereWithAggregatesInput | productsScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"products"> | number
     code?: StringWithAggregatesFilter<"products"> | string
-    description?: StringWithAggregatesFilter<"products"> | string
+    description?: StringNullableWithAggregatesFilter<"products"> | string | null
     image_url?: StringNullableWithAggregatesFilter<"products"> | string | null
     thickness?: StringNullableWithAggregatesFilter<"products"> | string | null
     gloss?: StringNullableWithAggregatesFilter<"products"> | string | null
@@ -9971,7 +9971,7 @@ export namespace Prisma {
     NOT?: categoriesWhereInput | categoriesWhereInput[]
     id?: IntFilter<"categories"> | number
     code?: StringFilter<"categories"> | string
-    description?: StringFilter<"categories"> | string
+    description?: StringNullableFilter<"categories"> | string | null
     created_at?: DateTimeNullableFilter<"categories"> | Date | string | null
     created_by?: IntNullableFilter<"categories"> | number | null
     updated_at?: DateTimeNullableFilter<"categories"> | Date | string | null
@@ -9983,7 +9983,7 @@ export namespace Prisma {
   export type categoriesOrderByWithRelationInput = {
     id?: SortOrder
     code?: SortOrder
-    description?: SortOrder
+    description?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     created_by?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
@@ -9998,7 +9998,7 @@ export namespace Prisma {
     AND?: categoriesWhereInput | categoriesWhereInput[]
     OR?: categoriesWhereInput[]
     NOT?: categoriesWhereInput | categoriesWhereInput[]
-    description?: StringFilter<"categories"> | string
+    description?: StringNullableFilter<"categories"> | string | null
     created_at?: DateTimeNullableFilter<"categories"> | Date | string | null
     created_by?: IntNullableFilter<"categories"> | number | null
     updated_at?: DateTimeNullableFilter<"categories"> | Date | string | null
@@ -10010,7 +10010,7 @@ export namespace Prisma {
   export type categoriesOrderByWithAggregationInput = {
     id?: SortOrder
     code?: SortOrder
-    description?: SortOrder
+    description?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
     created_by?: SortOrderInput | SortOrder
     updated_at?: SortOrderInput | SortOrder
@@ -10029,7 +10029,7 @@ export namespace Prisma {
     NOT?: categoriesScalarWhereWithAggregatesInput | categoriesScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"categories"> | number
     code?: StringWithAggregatesFilter<"categories"> | string
-    description?: StringWithAggregatesFilter<"categories"> | string
+    description?: StringNullableWithAggregatesFilter<"categories"> | string | null
     created_at?: DateTimeNullableWithAggregatesFilter<"categories"> | Date | string | null
     created_by?: IntNullableWithAggregatesFilter<"categories"> | number | null
     updated_at?: DateTimeNullableWithAggregatesFilter<"categories"> | Date | string | null
@@ -10431,7 +10431,7 @@ export namespace Prisma {
 
   export type productsCreateInput = {
     code: string
-    description: string
+    description?: string | null
     image_url?: string | null
     thickness?: string | null
     gloss?: string | null
@@ -10448,7 +10448,7 @@ export namespace Prisma {
   export type productsUncheckedCreateInput = {
     id?: number
     code: string
-    description: string
+    description?: string | null
     image_url?: string | null
     thickness?: string | null
     gloss?: string | null
@@ -10464,7 +10464,7 @@ export namespace Prisma {
 
   export type productsUpdateInput = {
     code?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     thickness?: NullableStringFieldUpdateOperationsInput | string | null
     gloss?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10481,7 +10481,7 @@ export namespace Prisma {
   export type productsUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     thickness?: NullableStringFieldUpdateOperationsInput | string | null
     gloss?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10498,7 +10498,7 @@ export namespace Prisma {
   export type productsCreateManyInput = {
     id?: number
     code: string
-    description: string
+    description?: string | null
     image_url?: string | null
     thickness?: string | null
     gloss?: string | null
@@ -10513,7 +10513,7 @@ export namespace Prisma {
 
   export type productsUpdateManyMutationInput = {
     code?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     thickness?: NullableStringFieldUpdateOperationsInput | string | null
     gloss?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10529,7 +10529,7 @@ export namespace Prisma {
   export type productsUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     thickness?: NullableStringFieldUpdateOperationsInput | string | null
     gloss?: NullableStringFieldUpdateOperationsInput | string | null
@@ -10544,7 +10544,7 @@ export namespace Prisma {
 
   export type categoriesCreateInput = {
     code: string
-    description: string
+    description?: string | null
     created_at?: Date | string | null
     created_by?: number | null
     updated_at?: Date | string | null
@@ -10556,7 +10556,7 @@ export namespace Prisma {
   export type categoriesUncheckedCreateInput = {
     id?: number
     code: string
-    description: string
+    description?: string | null
     created_at?: Date | string | null
     created_by?: number | null
     updated_at?: Date | string | null
@@ -10567,7 +10567,7 @@ export namespace Prisma {
 
   export type categoriesUpdateInput = {
     code?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     created_by?: NullableIntFieldUpdateOperationsInput | number | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -10579,7 +10579,7 @@ export namespace Prisma {
   export type categoriesUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     created_by?: NullableIntFieldUpdateOperationsInput | number | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -10591,7 +10591,7 @@ export namespace Prisma {
   export type categoriesCreateManyInput = {
     id?: number
     code: string
-    description: string
+    description?: string | null
     created_at?: Date | string | null
     created_by?: number | null
     updated_at?: Date | string | null
@@ -10601,7 +10601,7 @@ export namespace Prisma {
 
   export type categoriesUpdateManyMutationInput = {
     code?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     created_by?: NullableIntFieldUpdateOperationsInput | number | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -10612,7 +10612,7 @@ export namespace Prisma {
   export type categoriesUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     created_by?: NullableIntFieldUpdateOperationsInput | number | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -12071,7 +12071,7 @@ export namespace Prisma {
 
   export type productsCreateWithoutProduct_categoriesInput = {
     code: string
-    description: string
+    description?: string | null
     image_url?: string | null
     thickness?: string | null
     gloss?: string | null
@@ -12087,7 +12087,7 @@ export namespace Prisma {
   export type productsUncheckedCreateWithoutProduct_categoriesInput = {
     id?: number
     code: string
-    description: string
+    description?: string | null
     image_url?: string | null
     thickness?: string | null
     gloss?: string | null
@@ -12107,7 +12107,7 @@ export namespace Prisma {
 
   export type categoriesCreateWithoutProduct_categoriesInput = {
     code: string
-    description: string
+    description?: string | null
     created_at?: Date | string | null
     created_by?: number | null
     updated_at?: Date | string | null
@@ -12118,7 +12118,7 @@ export namespace Prisma {
   export type categoriesUncheckedCreateWithoutProduct_categoriesInput = {
     id?: number
     code: string
-    description: string
+    description?: string | null
     created_at?: Date | string | null
     created_by?: number | null
     updated_at?: Date | string | null
@@ -12144,7 +12144,7 @@ export namespace Prisma {
 
   export type productsUpdateWithoutProduct_categoriesInput = {
     code?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     thickness?: NullableStringFieldUpdateOperationsInput | string | null
     gloss?: NullableStringFieldUpdateOperationsInput | string | null
@@ -12160,7 +12160,7 @@ export namespace Prisma {
   export type productsUncheckedUpdateWithoutProduct_categoriesInput = {
     id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     thickness?: NullableStringFieldUpdateOperationsInput | string | null
     gloss?: NullableStringFieldUpdateOperationsInput | string | null
@@ -12186,7 +12186,7 @@ export namespace Prisma {
 
   export type categoriesUpdateWithoutProduct_categoriesInput = {
     code?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     created_by?: NullableIntFieldUpdateOperationsInput | number | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -12197,7 +12197,7 @@ export namespace Prisma {
   export type categoriesUncheckedUpdateWithoutProduct_categoriesInput = {
     id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
-    description?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     created_by?: NullableIntFieldUpdateOperationsInput | number | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null

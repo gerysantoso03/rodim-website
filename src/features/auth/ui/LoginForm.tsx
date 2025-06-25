@@ -6,7 +6,7 @@ import { Button } from '@/shared/components/shadcn/ui/button';
 import { useRouter } from 'next/navigation';
 import { Eye, EyeOff } from 'lucide-react';
 import { useState, useTransition } from 'react';
-import { loginAction } from '../actions/action';
+import { loginAction } from '@/features/auth/actions/action';
 
 const LoginForm = () => {
   const router = useRouter();
@@ -58,7 +58,7 @@ const LoginForm = () => {
           type="email"
           placeholder="enter your email..."
           required
-          className={`text-[14px]/[20px] placeholder:text-[14px]/[20px] focus:text-[14px]/[20px] text-[#09090B] min-h-[40px] max-h-[40px] ${emailError ? 'border-red-500' : ''}`}
+          className={`!text-[14px]/[20px] !placeholder:text-[14px]/[20px] text-[#09090B] min-h-[40px] max-h-[40px] ${emailError ? 'border-red-500' : ''}`}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           onBlur={() => {
@@ -90,7 +90,7 @@ const LoginForm = () => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="enter your password..."
             required
-            className="pr-14 text-[14px]/[20px] placeholder:text-[14px]/[20px] focus:text-[14px]/[20px] text-[#09090B] min-h-[40px] max-h-[40px]"
+            className="pr-14 !text-[14px]/[20px] !placeholder:text-[14px]/[20px] text-[#09090B] min-h-[40px] max-h-[40px]"
           />
           <span
             onClick={() => setShowPassword(!showPassword)}
