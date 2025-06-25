@@ -41,5 +41,11 @@ export async function loginAction(formData: FormData) {
     ...getSessionCookieOptions(),
   });
 
-  redirect('/product');
+  redirect('/gallery');
+}
+
+export async function logoutAction() {
+  (await cookies()).delete(getSessionCookieName());
+
+  redirect('/login');
 }

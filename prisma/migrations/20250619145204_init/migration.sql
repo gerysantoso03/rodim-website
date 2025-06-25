@@ -16,7 +16,7 @@ CREATE TABLE "users" (
 CREATE TABLE "products" (
     "id" SERIAL NOT NULL,
     "code" VARCHAR(128) NOT NULL,
-    "description" TEXT NOT NULL,
+    "description" TEXT,
     "image_url" TEXT,
     "thickness" TEXT,
     "gloss" TEXT,
@@ -35,7 +35,7 @@ CREATE TABLE "products" (
 CREATE TABLE "categories" (
     "id" SERIAL NOT NULL,
     "code" VARCHAR(128) NOT NULL,
-    "description" VARCHAR(512) NOT NULL,
+    "description" VARCHAR(512),
     "created_at" TIMESTAMPTZ(6) DEFAULT CURRENT_TIMESTAMP,
     "created_by" INTEGER,
     "updated_at" TIMESTAMPTZ(6) DEFAULT CURRENT_TIMESTAMP,
