@@ -5,7 +5,7 @@ import Banner from '@/shared/components/banner/Banner';
 
 export default function Home() {
   return (
-    <div className="bg-black min-h-screen p-[16px] max-w-[144rem] mx-auto flex flex-col gap-[1.6rem]">
+    <div className="p-[16px] max-w-[144rem] mx-auto flex flex-col gap-[1.6rem]">
       <Banner image={''} bannerFor="home" />
 
       <section>
