@@ -26,13 +26,10 @@ const CardExclusive = ({
 
       <div className="flex flex-col gap-[.5rem] absolute bottom-0 left-0 right-0 px-[2.5rem] pb-[2.5rem]">
         <div className="flex gap-[.8rem] items-center">
-          <Image 
-            src={icon}
-            alt={title}
-            width={0}
-            height={0}
-          />
-          <span className="text-[1.6rem] font-[700] lg:text-[2.4rem]">{title}</span>
+          <Image src={icon} alt={title} width={0} height={0} />
+          <span className="text-[1.6rem] font-[700] lg:text-[2.4rem]">
+            {title}
+          </span>
         </div>
 
         <span className="text-[4rem] font-[700] lg:text-[5.6rem]">

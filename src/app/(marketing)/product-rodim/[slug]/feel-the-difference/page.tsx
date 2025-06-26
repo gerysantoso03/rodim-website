@@ -1,22 +1,22 @@
-"use client"
-import { useEffect } from "react";
-import Banner from "@/shared/components/banner/Banner";
-import ElegantIcon from "../../../../../assets/icons/elegant.png"
-import ElegantImage from "../../../../../assets/images/feel-the-difference/elegant.jpg"
-import DurabilityIcon from "../../../../../assets/icons/durability.png"
-import DurabilityImage from "../../../../../assets/images/feel-the-difference/durability.jpg"
+'use client';
+import { useEffect } from 'react';
+import Banner from '@/shared/components/banner/Banner';
+import ElegantIcon from '../../../../../assets/icons/elegant.png';
+import ElegantImage from '../../../../../assets/images/feel-the-difference/elegant.jpg';
+import DurabilityIcon from '../../../../../assets/icons/durability.png';
+import DurabilityImage from '../../../../../assets/images/feel-the-difference/durability.jpg';
 
-import AdhesionIcon from "../../../../../assets/icons/adhesion.png"
-import AdhesionImage from "../../../../../assets/images/feel-the-difference/adhesion.jpg"
+import AdhesionIcon from '../../../../../assets/icons/adhesion.png';
+import AdhesionImage from '../../../../../assets/images/feel-the-difference/adhesion.jpg';
 
-import WarrantyIcon from "../../../../../assets/icons/certificate.png"
-import WarrantyImage from "../../../../../assets/images/feel-the-difference/warranty.jpg"
+import WarrantyIcon from '../../../../../assets/icons/certificate.png';
+import WarrantyImage from '../../../../../assets/images/feel-the-difference/warranty.jpg';
 
-import PabrikBASF2 from "../../../../../assets/images/banners/pabrik-basf-2.jpg"
-import GlobalIcon from "../../../../../assets/icons/global.png"
+import PabrikBASF2 from '../../../../../assets/images/banners/pabrik-basf-2.jpg';
+import GlobalIcon from '../../../../../assets/icons/global.png';
 
-import CardFeelTheDifference from "@/shared/components/card-feel-the-difference/CardFeelTheDifference";
-import Image from "next/image";
+import CardFeelTheDifference from '@/shared/components/card-feel-the-difference/CardFeelTheDifference';
+import Image from 'next/image';
 
 type Props = {
   params: { slug: string };
@@ -27,14 +27,14 @@ const Page = ({ params }: Props) => {
   // if (!product) return '';
 
   useEffect(() => {
-    console.log('params = ', params)
-  }, [])
+    console.log('params = ', params);
+  }, []);
 
   return (
-    <div className='p-[16px] max-w-[144rem] mx-auto flex flex-col gap-[1.6rem]'>
+    <div className="p-[16px] max-w-[144rem] mx-auto flex flex-col gap-[1.6rem]">
       <section className="w-full h-[52rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]">
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
-  
+
         <Image
           src={PabrikBASF2}
           alt="hero image"
@@ -43,7 +43,7 @@ const Page = ({ params }: Props) => {
           className="w-full h-full absolute z-[1] object-cover"
           priority
         />
-  
+
         <div className="flex flex-col gap-[12px] absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] pb-[24px]">
           <div className="flex flex-col">
             <div className="text-[40px] font-[700] lg:text-[7.2rem]">
@@ -69,7 +69,7 @@ const Page = ({ params }: Props) => {
       </section>
 
       <section className="flex flex-col gap-[1.6rem]">
-        <CardFeelTheDifference 
+        <CardFeelTheDifference
           image={ElegantImage}
           icon={ElegantIcon}
           title="Tampil Elegan, Tetap Terlindungi"
@@ -79,7 +79,7 @@ const Page = ({ params }: Props) => {
         />
 
         <div className="flex flex-col lg:flex-row gap-[1.6rem]">
-          <CardFeelTheDifference 
+          <CardFeelTheDifference
             image={DurabilityImage}
             icon={DurabilityIcon}
             title="Daya Tahan"
@@ -88,7 +88,7 @@ const Page = ({ params }: Props) => {
             isWide={false}
           />
 
-          <CardFeelTheDifference 
+          <CardFeelTheDifference
             image={AdhesionImage}
             icon={AdhesionIcon}
             title="Perekat"
@@ -98,7 +98,7 @@ const Page = ({ params }: Props) => {
           />
         </div>
 
-        <CardFeelTheDifference 
+        <CardFeelTheDifference
           image={WarrantyImage}
           icon={WarrantyIcon}
           title="Garansi"
@@ -108,7 +108,7 @@ const Page = ({ params }: Props) => {
         />
       </section>
     </div>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

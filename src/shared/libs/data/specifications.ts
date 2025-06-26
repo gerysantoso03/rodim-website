@@ -58,7 +58,8 @@ export const specifications: Specifications[] = [
   {
     title: 'Self-healing',
     performance: '≤ 5S',
-    testingMethods: '10 scrapes of a 200g/cm² loadbearing thin copper brush Can be repaired with 70℃hot water or hot-blast air',
+    testingMethods:
+      '10 scrapes of a 200g/cm² loadbearing thin copper brush Can be repaired with 70℃hot water or hot-blast air',
   },
   {
     title: 'Yellowing resistance and durability',
@@ -68,16 +69,18 @@ export const specifications: Specifications[] = [
   {
     title: 'Acid and alkali resistance',
     performance: 'Normal',
-    testingMethods: 'Soak in HCl (pH 2-3) and NaOH (pH13-14) solution for 30 minutes',
+    testingMethods:
+      'Soak in HCl (pH 2-3) and NaOH (pH13-14) solution for 30 minutes',
   },
   {
     title: 'Rain spot resistance',
     performance: 'Traceless',
-    testingMethods: 'Affix the product to a painted board and expose on a rooftop for 15 days then wash with water',
+    testingMethods:
+      'Affix the product to a painted board and expose on a rooftop for 15 days then wash with water',
   },
   {
     title: 'Warranty',
     performance: '10 years after installation',
     testingMethods: '',
-  }
+  },
 ];
