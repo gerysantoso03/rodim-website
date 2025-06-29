@@ -1,0 +1,3 @@
+{
+  "ignoreCommand": "if [ \"$VERCEL_GIT_BRANCH\" != \"development\" ]; then echo 'Skip build on $VERCEL_GIT_BRANCH'; exit 1; fi"
+}

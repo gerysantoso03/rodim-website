@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-const AuthLayout = () => {
+const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="grid min-h-screen w-full grid-cols-none grid-rows-[auto_1fr] bg-utility-gray-50 xl:grid-rows-none xl:grid-cols-2">
       <div className="w-full h-full relative overflow-hidden">
@@ -24,7 +24,7 @@ const AuthLayout = () => {
           </p>
         </div>
       </div>
-      <div className="bg-white"></div>
+      <div className="w-full grid place-items-center bg-white">{children}</div>
     </main>
   );
 };
