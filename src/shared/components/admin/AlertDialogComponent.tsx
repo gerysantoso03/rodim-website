@@ -20,7 +20,8 @@ type AlertDialogProps = {
   description?: string;
   itemName?: string;
   onConfirm: () => void | Promise<void>;
-  triggerLabel?: React.ReactNode; // default: trash icon
+  triggerLabel?: React.ReactNode;
+  type?: 'warning' | ''; // NEW
 };
 
 export default function AlertDialogComponent({
@@ -37,13 +38,18 @@ export default function AlertDialogComponent({
       <Trash2 size={16} />
     </Button>
   ),
+  type = '',
 }: AlertDialogProps) {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>{triggerLabel}</AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle className="text-red-600 text-[16px]/[20px]">
+          <AlertDialogTitle
+            className={`text-[16px]/[20px] ${
+              type === 'warning' ? 'text-red-600' : 'text-gray-900'
+            }`}
+          >
             {title}
           </AlertDialogTitle>
           <AlertDialogDescription className="text-[12px]/[16px]">
@@ -55,10 +61,14 @@ export default function AlertDialogComponent({
             Cancel
           </AlertDialogCancel>
           <AlertDialogAction
-            className="bg-red-500 hover:bg-red-600 text-white text-lg"
+            className={`text-white text-lg ${
+              type === 'warning'
+                ? 'bg-red-500 hover:bg-red-600'
+                : 'bg-black hover:bg-gray-900'
+            }`}
             onClick={onConfirm}
           >
-            {itemName ? `Delete ${itemName}` : `Delete`}
+            {itemName ? `${itemName}` : `Confirm`}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>

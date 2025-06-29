@@ -5,7 +5,12 @@ import {
   getSessionCookieName,
 } from '@/shared/utils/session/session';
 
-const protectedRoutes = ['/auth', '/product', '/gallery', '/unauthorized'];
+const protectedRoutes = [
+  '/auth',
+  '/product',
+  '/gallery-admin',
+  '/unauthorized',
+];
 const publicRoutes = ['/login'];
 
 function isProtectedPath(pathname: string) {
@@ -55,7 +60,7 @@ export const config = {
   matcher: [
     '/login',
     '/product/:path*',
-    '/gallery/:path*',
+    '/gallery-admin/:path*',
     '/unauthorized/:path*',
   ],
 };

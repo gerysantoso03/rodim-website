@@ -12,7 +12,7 @@ import { logoutAction } from '@/features/auth/actions/action';
 const navItems = [
   {
     name: 'Gallery',
-    href: '/gallery',
+    href: '/gallery-admin',
     icon: <LucideImage size={16} />,
   },
   {

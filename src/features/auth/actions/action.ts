@@ -41,7 +41,7 @@ export async function loginAction(formData: FormData) {
     ...getSessionCookieOptions(),
   });
 
-  redirect('/gallery');
+  redirect('/gallery-admin');
 }
 
 export async function logoutAction() {

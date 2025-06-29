@@ -77,6 +77,9 @@ export async function createGalleryFolder(data: {
 }) {
   return await prisma.gallery_folders.create({
     data,
+    select: {
+      id: true,
+    },
   });
 }
 
@@ -88,21 +91,27 @@ export async function createGalleryImage(data: {
 }) {
   return await prisma.gallery_images.create({
     data,
+    select: {
+      id: true,
+    },
   });
 }
 
-export async function editGalleryFolder(
-  id: number,
-  data: Partial<{
-    title: string;
-    cover_image: string;
-    is_visible: boolean;
-    updated_by: number;
-  }>
-) {
+export async function editGalleryFolder(data: {
+  id: number;
+  title: string;
+  cover_image?: string;
+  is_visible: boolean;
+  updated_by: number;
+}) {
+  const { id, ...updateData } = data;
+
   return await prisma.gallery_folders.update({
-    where: { id: id, status: 1 },
-    data,
+    where: { id },
+    data: updateData,
+    select: {
+      id: true,
+    },
   });
 }
 
@@ -144,13 +153,14 @@ export async function deleteGalleryImage(id: number, userId: number) {
 
 export async function changeGalleryFolderVisibility(
   id: number,
-  is_visible: boolean
+  is_visible: boolean,
+  update_by: number
 ) {
   return await prisma.gallery_folders.update({
     where: { id: id, status: 1 },
     data: {
       is_visible: !is_visible,
-      updated_by: 1,
+      updated_by: update_by,
       updated_at: new Date(),
     },
   });
@@ -158,13 +168,14 @@ export async function changeGalleryFolderVisibility(
 
 export async function changeGalleryImageVisibility(
   id: number,
-  is_visible: boolean
+  is_visible: boolean,
+  update_by: number
 ) {
   return await prisma.gallery_images.update({
     where: { id: id, status: 1 },
     data: {
       is_visible: !is_visible,
-      updated_by: 1,
+      updated_by: update_by,
       updated_at: new Date(),
     },
   });

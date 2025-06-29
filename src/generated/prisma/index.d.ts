@@ -24,6 +24,11 @@ export type users = $Result.DefaultSelection<Prisma.$usersPayload>
  */
 export type products = $Result.DefaultSelection<Prisma.$productsPayload>
 /**
+ * Model spec_categories
+ * 
+ */
+export type spec_categories = $Result.DefaultSelection<Prisma.$spec_categoriesPayload>
+/**
  * Model categories
  * 
  */
@@ -193,6 +198,16 @@ export class PrismaClient<
     * ```
     */
   get products(): Prisma.productsDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.spec_categories`: Exposes CRUD operations for the **spec_categories** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Spec_categories
+    * const spec_categories = await prisma.spec_categories.findMany()
+    * ```
+    */
+  get spec_categories(): Prisma.spec_categoriesDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.categories`: Exposes CRUD operations for the **categories** model.
@@ -685,6 +700,7 @@ export namespace Prisma {
   export const ModelName: {
     users: 'users',
     products: 'products',
+    spec_categories: 'spec_categories',
     categories: 'categories',
     product_categories: 'product_categories',
     variable_configs: 'variable_configs',
@@ -708,7 +724,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "users" | "products" | "categories" | "product_categories" | "variable_configs" | "gallery_folders" | "gallery_images"
+      modelProps: "users" | "products" | "spec_categories" | "categories" | "product_categories" | "variable_configs" | "gallery_folders" | "gallery_images"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -857,6 +873,80 @@ export namespace Prisma {
           count: {
             args: Prisma.productsCountArgs<ExtArgs>
             result: $Utils.Optional<ProductsCountAggregateOutputType> | number
+          }
+        }
+      }
+      spec_categories: {
+        payload: Prisma.$spec_categoriesPayload<ExtArgs>
+        fields: Prisma.spec_categoriesFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.spec_categoriesFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$spec_categoriesPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.spec_categoriesFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$spec_categoriesPayload>
+          }
+          findFirst: {
+            args: Prisma.spec_categoriesFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$spec_categoriesPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.spec_categoriesFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$spec_categoriesPayload>
+          }
+          findMany: {
+            args: Prisma.spec_categoriesFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$spec_categoriesPayload>[]
+          }
+          create: {
+            args: Prisma.spec_categoriesCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$spec_categoriesPayload>
+          }
+          createMany: {
+            args: Prisma.spec_categoriesCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.spec_categoriesCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$spec_categoriesPayload>[]
+          }
+          delete: {
+            args: Prisma.spec_categoriesDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$spec_categoriesPayload>
+          }
+          update: {
+            args: Prisma.spec_categoriesUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$spec_categoriesPayload>
+          }
+          deleteMany: {
+            args: Prisma.spec_categoriesDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.spec_categoriesUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.spec_categoriesUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$spec_categoriesPayload>[]
+          }
+          upsert: {
+            args: Prisma.spec_categoriesUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$spec_categoriesPayload>
+          }
+          aggregate: {
+            args: Prisma.Spec_categoriesAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateSpec_categories>
+          }
+          groupBy: {
+            args: Prisma.spec_categoriesGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Spec_categoriesGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.spec_categoriesCountArgs<ExtArgs>
+            result: $Utils.Optional<Spec_categoriesCountAggregateOutputType> | number
           }
         }
       }
@@ -1316,6 +1406,7 @@ export namespace Prisma {
   export type GlobalOmitConfig = {
     users?: usersOmit
     products?: productsOmit
+    spec_categories?: spec_categoriesOmit
     categories?: categoriesOmit
     product_categories?: product_categoriesOmit
     variable_configs?: variable_configsOmit
@@ -1438,6 +1529,37 @@ export namespace Prisma {
    */
   export type ProductsCountOutputTypeCountProduct_categoriesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: product_categoriesWhereInput
+  }
+
+
+  /**
+   * Count Type Spec_categoriesCountOutputType
+   */
+
+  export type Spec_categoriesCountOutputType = {
+    categories: number
+  }
+
+  export type Spec_categoriesCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    categories?: boolean | Spec_categoriesCountOutputTypeCountCategoriesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * Spec_categoriesCountOutputType without action
+   */
+  export type Spec_categoriesCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Spec_categoriesCountOutputType
+     */
+    select?: Spec_categoriesCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * Spec_categoriesCountOutputType without action
+   */
+  export type Spec_categoriesCountOutputTypeCountCategoriesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: categoriesWhereInput
   }
 
 
@@ -3808,6 +3930,1178 @@ export namespace Prisma {
 
 
   /**
+   * Model spec_categories
+   */
+
+  export type AggregateSpec_categories = {
+    _count: Spec_categoriesCountAggregateOutputType | null
+    _avg: Spec_categoriesAvgAggregateOutputType | null
+    _sum: Spec_categoriesSumAggregateOutputType | null
+    _min: Spec_categoriesMinAggregateOutputType | null
+    _max: Spec_categoriesMaxAggregateOutputType | null
+  }
+
+  export type Spec_categoriesAvgAggregateOutputType = {
+    id: number | null
+    order: number | null
+    created_by: number | null
+    updated_by: number | null
+    status: number | null
+  }
+
+  export type Spec_categoriesSumAggregateOutputType = {
+    id: number | null
+    order: number | null
+    created_by: number | null
+    updated_by: number | null
+    status: number | null
+  }
+
+  export type Spec_categoriesMinAggregateOutputType = {
+    id: number | null
+    code: string | null
+    description: string | null
+    order: number | null
+    created_at: Date | null
+    created_by: number | null
+    updated_at: Date | null
+    updated_by: number | null
+    status: number | null
+  }
+
+  export type Spec_categoriesMaxAggregateOutputType = {
+    id: number | null
+    code: string | null
+    description: string | null
+    order: number | null
+    created_at: Date | null
+    created_by: number | null
+    updated_at: Date | null
+    updated_by: number | null
+    status: number | null
+  }
+
+  export type Spec_categoriesCountAggregateOutputType = {
+    id: number
+    code: number
+    description: number
+    order: number
+    created_at: number
+    created_by: number
+    updated_at: number
+    updated_by: number
+    status: number
+    _all: number
+  }
+
+
+  export type Spec_categoriesAvgAggregateInputType = {
+    id?: true
+    order?: true
+    created_by?: true
+    updated_by?: true
+    status?: true
+  }
+
+  export type Spec_categoriesSumAggregateInputType = {
+    id?: true
+    order?: true
+    created_by?: true
+    updated_by?: true
+    status?: true
+  }
+
+  export type Spec_categoriesMinAggregateInputType = {
+    id?: true
+    code?: true
+    description?: true
+    order?: true
+    created_at?: true
+    created_by?: true
+    updated_at?: true
+    updated_by?: true
+    status?: true
+  }
+
+  export type Spec_categoriesMaxAggregateInputType = {
+    id?: true
+    code?: true
+    description?: true
+    order?: true
+    created_at?: true
+    created_by?: true
+    updated_at?: true
+    updated_by?: true
+    status?: true
+  }
+
+  export type Spec_categoriesCountAggregateInputType = {
+    id?: true
+    code?: true
+    description?: true
+    order?: true
+    created_at?: true
+    created_by?: true
+    updated_at?: true
+    updated_by?: true
+    status?: true
+    _all?: true
+  }
+
+  export type Spec_categoriesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which spec_categories to aggregate.
+     */
+    where?: spec_categoriesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of spec_categories to fetch.
+     */
+    orderBy?: spec_categoriesOrderByWithRelationInput | spec_categoriesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: spec_categoriesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` spec_categories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` spec_categories.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned spec_categories
+    **/
+    _count?: true | Spec_categoriesCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Spec_categoriesAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Spec_categoriesSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Spec_categoriesMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Spec_categoriesMaxAggregateInputType
+  }
+
+  export type GetSpec_categoriesAggregateType<T extends Spec_categoriesAggregateArgs> = {
+        [P in keyof T & keyof AggregateSpec_categories]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateSpec_categories[P]>
+      : GetScalarType<T[P], AggregateSpec_categories[P]>
+  }
+
+
+
+
+  export type spec_categoriesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: spec_categoriesWhereInput
+    orderBy?: spec_categoriesOrderByWithAggregationInput | spec_categoriesOrderByWithAggregationInput[]
+    by: Spec_categoriesScalarFieldEnum[] | Spec_categoriesScalarFieldEnum
+    having?: spec_categoriesScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Spec_categoriesCountAggregateInputType | true
+    _avg?: Spec_categoriesAvgAggregateInputType
+    _sum?: Spec_categoriesSumAggregateInputType
+    _min?: Spec_categoriesMinAggregateInputType
+    _max?: Spec_categoriesMaxAggregateInputType
+  }
+
+  export type Spec_categoriesGroupByOutputType = {
+    id: number
+    code: string
+    description: string | null
+    order: number | null
+    created_at: Date | null
+    created_by: number | null
+    updated_at: Date | null
+    updated_by: number | null
+    status: number | null
+    _count: Spec_categoriesCountAggregateOutputType | null
+    _avg: Spec_categoriesAvgAggregateOutputType | null
+    _sum: Spec_categoriesSumAggregateOutputType | null
+    _min: Spec_categoriesMinAggregateOutputType | null
+    _max: Spec_categoriesMaxAggregateOutputType | null
+  }
+
+  type GetSpec_categoriesGroupByPayload<T extends spec_categoriesGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Spec_categoriesGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Spec_categoriesGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Spec_categoriesGroupByOutputType[P]>
+            : GetScalarType<T[P], Spec_categoriesGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type spec_categoriesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    code?: boolean
+    description?: boolean
+    order?: boolean
+    created_at?: boolean
+    created_by?: boolean
+    updated_at?: boolean
+    updated_by?: boolean
+    status?: boolean
+    categories?: boolean | spec_categories$categoriesArgs<ExtArgs>
+    _count?: boolean | Spec_categoriesCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["spec_categories"]>
+
+  export type spec_categoriesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    code?: boolean
+    description?: boolean
+    order?: boolean
+    created_at?: boolean
+    created_by?: boolean
+    updated_at?: boolean
+    updated_by?: boolean
+    status?: boolean
+  }, ExtArgs["result"]["spec_categories"]>
+
+  export type spec_categoriesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    code?: boolean
+    description?: boolean
+    order?: boolean
+    created_at?: boolean
+    created_by?: boolean
+    updated_at?: boolean
+    updated_by?: boolean
+    status?: boolean
+  }, ExtArgs["result"]["spec_categories"]>
+
+  export type spec_categoriesSelectScalar = {
+    id?: boolean
+    code?: boolean
+    description?: boolean
+    order?: boolean
+    created_at?: boolean
+    created_by?: boolean
+    updated_at?: boolean
+    updated_by?: boolean
+    status?: boolean
+  }
+
+  export type spec_categoriesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "code" | "description" | "order" | "created_at" | "created_by" | "updated_at" | "updated_by" | "status", ExtArgs["result"]["spec_categories"]>
+  export type spec_categoriesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    categories?: boolean | spec_categories$categoriesArgs<ExtArgs>
+    _count?: boolean | Spec_categoriesCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type spec_categoriesIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type spec_categoriesIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $spec_categoriesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "spec_categories"
+    objects: {
+      categories: Prisma.$categoriesPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      code: string
+      description: string | null
+      order: number | null
+      created_at: Date | null
+      created_by: number | null
+      updated_at: Date | null
+      updated_by: number | null
+      status: number | null
+    }, ExtArgs["result"]["spec_categories"]>
+    composites: {}
+  }
+
+  type spec_categoriesGetPayload<S extends boolean | null | undefined | spec_categoriesDefaultArgs> = $Result.GetResult<Prisma.$spec_categoriesPayload, S>
+
+  type spec_categoriesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<spec_categoriesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Spec_categoriesCountAggregateInputType | true
+    }
+
+  export interface spec_categoriesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['spec_categories'], meta: { name: 'spec_categories' } }
+    /**
+     * Find zero or one Spec_categories that matches the filter.
+     * @param {spec_categoriesFindUniqueArgs} args - Arguments to find a Spec_categories
+     * @example
+     * // Get one Spec_categories
+     * const spec_categories = await prisma.spec_categories.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends spec_categoriesFindUniqueArgs>(args: SelectSubset<T, spec_categoriesFindUniqueArgs<ExtArgs>>): Prisma__spec_categoriesClient<$Result.GetResult<Prisma.$spec_categoriesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Spec_categories that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {spec_categoriesFindUniqueOrThrowArgs} args - Arguments to find a Spec_categories
+     * @example
+     * // Get one Spec_categories
+     * const spec_categories = await prisma.spec_categories.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends spec_categoriesFindUniqueOrThrowArgs>(args: SelectSubset<T, spec_categoriesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__spec_categoriesClient<$Result.GetResult<Prisma.$spec_categoriesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Spec_categories that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {spec_categoriesFindFirstArgs} args - Arguments to find a Spec_categories
+     * @example
+     * // Get one Spec_categories
+     * const spec_categories = await prisma.spec_categories.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends spec_categoriesFindFirstArgs>(args?: SelectSubset<T, spec_categoriesFindFirstArgs<ExtArgs>>): Prisma__spec_categoriesClient<$Result.GetResult<Prisma.$spec_categoriesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Spec_categories that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {spec_categoriesFindFirstOrThrowArgs} args - Arguments to find a Spec_categories
+     * @example
+     * // Get one Spec_categories
+     * const spec_categories = await prisma.spec_categories.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends spec_categoriesFindFirstOrThrowArgs>(args?: SelectSubset<T, spec_categoriesFindFirstOrThrowArgs<ExtArgs>>): Prisma__spec_categoriesClient<$Result.GetResult<Prisma.$spec_categoriesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Spec_categories that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {spec_categoriesFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Spec_categories
+     * const spec_categories = await prisma.spec_categories.findMany()
+     * 
+     * // Get first 10 Spec_categories
+     * const spec_categories = await prisma.spec_categories.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const spec_categoriesWithIdOnly = await prisma.spec_categories.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends spec_categoriesFindManyArgs>(args?: SelectSubset<T, spec_categoriesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$spec_categoriesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Spec_categories.
+     * @param {spec_categoriesCreateArgs} args - Arguments to create a Spec_categories.
+     * @example
+     * // Create one Spec_categories
+     * const Spec_categories = await prisma.spec_categories.create({
+     *   data: {
+     *     // ... data to create a Spec_categories
+     *   }
+     * })
+     * 
+     */
+    create<T extends spec_categoriesCreateArgs>(args: SelectSubset<T, spec_categoriesCreateArgs<ExtArgs>>): Prisma__spec_categoriesClient<$Result.GetResult<Prisma.$spec_categoriesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Spec_categories.
+     * @param {spec_categoriesCreateManyArgs} args - Arguments to create many Spec_categories.
+     * @example
+     * // Create many Spec_categories
+     * const spec_categories = await prisma.spec_categories.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends spec_categoriesCreateManyArgs>(args?: SelectSubset<T, spec_categoriesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Spec_categories and returns the data saved in the database.
+     * @param {spec_categoriesCreateManyAndReturnArgs} args - Arguments to create many Spec_categories.
+     * @example
+     * // Create many Spec_categories
+     * const spec_categories = await prisma.spec_categories.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Spec_categories and only return the `id`
+     * const spec_categoriesWithIdOnly = await prisma.spec_categories.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends spec_categoriesCreateManyAndReturnArgs>(args?: SelectSubset<T, spec_categoriesCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$spec_categoriesPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Spec_categories.
+     * @param {spec_categoriesDeleteArgs} args - Arguments to delete one Spec_categories.
+     * @example
+     * // Delete one Spec_categories
+     * const Spec_categories = await prisma.spec_categories.delete({
+     *   where: {
+     *     // ... filter to delete one Spec_categories
+     *   }
+     * })
+     * 
+     */
+    delete<T extends spec_categoriesDeleteArgs>(args: SelectSubset<T, spec_categoriesDeleteArgs<ExtArgs>>): Prisma__spec_categoriesClient<$Result.GetResult<Prisma.$spec_categoriesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Spec_categories.
+     * @param {spec_categoriesUpdateArgs} args - Arguments to update one Spec_categories.
+     * @example
+     * // Update one Spec_categories
+     * const spec_categories = await prisma.spec_categories.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends spec_categoriesUpdateArgs>(args: SelectSubset<T, spec_categoriesUpdateArgs<ExtArgs>>): Prisma__spec_categoriesClient<$Result.GetResult<Prisma.$spec_categoriesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Spec_categories.
+     * @param {spec_categoriesDeleteManyArgs} args - Arguments to filter Spec_categories to delete.
+     * @example
+     * // Delete a few Spec_categories
+     * const { count } = await prisma.spec_categories.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends spec_categoriesDeleteManyArgs>(args?: SelectSubset<T, spec_categoriesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Spec_categories.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {spec_categoriesUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Spec_categories
+     * const spec_categories = await prisma.spec_categories.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends spec_categoriesUpdateManyArgs>(args: SelectSubset<T, spec_categoriesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Spec_categories and returns the data updated in the database.
+     * @param {spec_categoriesUpdateManyAndReturnArgs} args - Arguments to update many Spec_categories.
+     * @example
+     * // Update many Spec_categories
+     * const spec_categories = await prisma.spec_categories.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Spec_categories and only return the `id`
+     * const spec_categoriesWithIdOnly = await prisma.spec_categories.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends spec_categoriesUpdateManyAndReturnArgs>(args: SelectSubset<T, spec_categoriesUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$spec_categoriesPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Spec_categories.
+     * @param {spec_categoriesUpsertArgs} args - Arguments to update or create a Spec_categories.
+     * @example
+     * // Update or create a Spec_categories
+     * const spec_categories = await prisma.spec_categories.upsert({
+     *   create: {
+     *     // ... data to create a Spec_categories
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Spec_categories we want to update
+     *   }
+     * })
+     */
+    upsert<T extends spec_categoriesUpsertArgs>(args: SelectSubset<T, spec_categoriesUpsertArgs<ExtArgs>>): Prisma__spec_categoriesClient<$Result.GetResult<Prisma.$spec_categoriesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Spec_categories.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {spec_categoriesCountArgs} args - Arguments to filter Spec_categories to count.
+     * @example
+     * // Count the number of Spec_categories
+     * const count = await prisma.spec_categories.count({
+     *   where: {
+     *     // ... the filter for the Spec_categories we want to count
+     *   }
+     * })
+    **/
+    count<T extends spec_categoriesCountArgs>(
+      args?: Subset<T, spec_categoriesCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Spec_categoriesCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Spec_categories.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Spec_categoriesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Spec_categoriesAggregateArgs>(args: Subset<T, Spec_categoriesAggregateArgs>): Prisma.PrismaPromise<GetSpec_categoriesAggregateType<T>>
+
+    /**
+     * Group by Spec_categories.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {spec_categoriesGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends spec_categoriesGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: spec_categoriesGroupByArgs['orderBy'] }
+        : { orderBy?: spec_categoriesGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, spec_categoriesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetSpec_categoriesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the spec_categories model
+   */
+  readonly fields: spec_categoriesFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for spec_categories.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__spec_categoriesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    categories<T extends spec_categories$categoriesArgs<ExtArgs> = {}>(args?: Subset<T, spec_categories$categoriesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$categoriesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the spec_categories model
+   */
+  interface spec_categoriesFieldRefs {
+    readonly id: FieldRef<"spec_categories", 'Int'>
+    readonly code: FieldRef<"spec_categories", 'String'>
+    readonly description: FieldRef<"spec_categories", 'String'>
+    readonly order: FieldRef<"spec_categories", 'Int'>
+    readonly created_at: FieldRef<"spec_categories", 'DateTime'>
+    readonly created_by: FieldRef<"spec_categories", 'Int'>
+    readonly updated_at: FieldRef<"spec_categories", 'DateTime'>
+    readonly updated_by: FieldRef<"spec_categories", 'Int'>
+    readonly status: FieldRef<"spec_categories", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * spec_categories findUnique
+   */
+  export type spec_categoriesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the spec_categories
+     */
+    select?: spec_categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the spec_categories
+     */
+    omit?: spec_categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: spec_categoriesInclude<ExtArgs> | null
+    /**
+     * Filter, which spec_categories to fetch.
+     */
+    where: spec_categoriesWhereUniqueInput
+  }
+
+  /**
+   * spec_categories findUniqueOrThrow
+   */
+  export type spec_categoriesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the spec_categories
+     */
+    select?: spec_categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the spec_categories
+     */
+    omit?: spec_categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: spec_categoriesInclude<ExtArgs> | null
+    /**
+     * Filter, which spec_categories to fetch.
+     */
+    where: spec_categoriesWhereUniqueInput
+  }
+
+  /**
+   * spec_categories findFirst
+   */
+  export type spec_categoriesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the spec_categories
+     */
+    select?: spec_categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the spec_categories
+     */
+    omit?: spec_categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: spec_categoriesInclude<ExtArgs> | null
+    /**
+     * Filter, which spec_categories to fetch.
+     */
+    where?: spec_categoriesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of spec_categories to fetch.
+     */
+    orderBy?: spec_categoriesOrderByWithRelationInput | spec_categoriesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for spec_categories.
+     */
+    cursor?: spec_categoriesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` spec_categories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` spec_categories.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of spec_categories.
+     */
+    distinct?: Spec_categoriesScalarFieldEnum | Spec_categoriesScalarFieldEnum[]
+  }
+
+  /**
+   * spec_categories findFirstOrThrow
+   */
+  export type spec_categoriesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the spec_categories
+     */
+    select?: spec_categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the spec_categories
+     */
+    omit?: spec_categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: spec_categoriesInclude<ExtArgs> | null
+    /**
+     * Filter, which spec_categories to fetch.
+     */
+    where?: spec_categoriesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of spec_categories to fetch.
+     */
+    orderBy?: spec_categoriesOrderByWithRelationInput | spec_categoriesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for spec_categories.
+     */
+    cursor?: spec_categoriesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` spec_categories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` spec_categories.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of spec_categories.
+     */
+    distinct?: Spec_categoriesScalarFieldEnum | Spec_categoriesScalarFieldEnum[]
+  }
+
+  /**
+   * spec_categories findMany
+   */
+  export type spec_categoriesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the spec_categories
+     */
+    select?: spec_categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the spec_categories
+     */
+    omit?: spec_categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: spec_categoriesInclude<ExtArgs> | null
+    /**
+     * Filter, which spec_categories to fetch.
+     */
+    where?: spec_categoriesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of spec_categories to fetch.
+     */
+    orderBy?: spec_categoriesOrderByWithRelationInput | spec_categoriesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing spec_categories.
+     */
+    cursor?: spec_categoriesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` spec_categories from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` spec_categories.
+     */
+    skip?: number
+    distinct?: Spec_categoriesScalarFieldEnum | Spec_categoriesScalarFieldEnum[]
+  }
+
+  /**
+   * spec_categories create
+   */
+  export type spec_categoriesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the spec_categories
+     */
+    select?: spec_categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the spec_categories
+     */
+    omit?: spec_categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: spec_categoriesInclude<ExtArgs> | null
+    /**
+     * The data needed to create a spec_categories.
+     */
+    data: XOR<spec_categoriesCreateInput, spec_categoriesUncheckedCreateInput>
+  }
+
+  /**
+   * spec_categories createMany
+   */
+  export type spec_categoriesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many spec_categories.
+     */
+    data: spec_categoriesCreateManyInput | spec_categoriesCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * spec_categories createManyAndReturn
+   */
+  export type spec_categoriesCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the spec_categories
+     */
+    select?: spec_categoriesSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the spec_categories
+     */
+    omit?: spec_categoriesOmit<ExtArgs> | null
+    /**
+     * The data used to create many spec_categories.
+     */
+    data: spec_categoriesCreateManyInput | spec_categoriesCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * spec_categories update
+   */
+  export type spec_categoriesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the spec_categories
+     */
+    select?: spec_categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the spec_categories
+     */
+    omit?: spec_categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: spec_categoriesInclude<ExtArgs> | null
+    /**
+     * The data needed to update a spec_categories.
+     */
+    data: XOR<spec_categoriesUpdateInput, spec_categoriesUncheckedUpdateInput>
+    /**
+     * Choose, which spec_categories to update.
+     */
+    where: spec_categoriesWhereUniqueInput
+  }
+
+  /**
+   * spec_categories updateMany
+   */
+  export type spec_categoriesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update spec_categories.
+     */
+    data: XOR<spec_categoriesUpdateManyMutationInput, spec_categoriesUncheckedUpdateManyInput>
+    /**
+     * Filter which spec_categories to update
+     */
+    where?: spec_categoriesWhereInput
+    /**
+     * Limit how many spec_categories to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * spec_categories updateManyAndReturn
+   */
+  export type spec_categoriesUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the spec_categories
+     */
+    select?: spec_categoriesSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the spec_categories
+     */
+    omit?: spec_categoriesOmit<ExtArgs> | null
+    /**
+     * The data used to update spec_categories.
+     */
+    data: XOR<spec_categoriesUpdateManyMutationInput, spec_categoriesUncheckedUpdateManyInput>
+    /**
+     * Filter which spec_categories to update
+     */
+    where?: spec_categoriesWhereInput
+    /**
+     * Limit how many spec_categories to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * spec_categories upsert
+   */
+  export type spec_categoriesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the spec_categories
+     */
+    select?: spec_categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the spec_categories
+     */
+    omit?: spec_categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: spec_categoriesInclude<ExtArgs> | null
+    /**
+     * The filter to search for the spec_categories to update in case it exists.
+     */
+    where: spec_categoriesWhereUniqueInput
+    /**
+     * In case the spec_categories found by the `where` argument doesn't exist, create a new spec_categories with this data.
+     */
+    create: XOR<spec_categoriesCreateInput, spec_categoriesUncheckedCreateInput>
+    /**
+     * In case the spec_categories was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<spec_categoriesUpdateInput, spec_categoriesUncheckedUpdateInput>
+  }
+
+  /**
+   * spec_categories delete
+   */
+  export type spec_categoriesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the spec_categories
+     */
+    select?: spec_categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the spec_categories
+     */
+    omit?: spec_categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: spec_categoriesInclude<ExtArgs> | null
+    /**
+     * Filter which spec_categories to delete.
+     */
+    where: spec_categoriesWhereUniqueInput
+  }
+
+  /**
+   * spec_categories deleteMany
+   */
+  export type spec_categoriesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which spec_categories to delete
+     */
+    where?: spec_categoriesWhereInput
+    /**
+     * Limit how many spec_categories to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * spec_categories.categories
+   */
+  export type spec_categories$categoriesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the categories
+     */
+    select?: categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the categories
+     */
+    omit?: categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: categoriesInclude<ExtArgs> | null
+    where?: categoriesWhereInput
+    orderBy?: categoriesOrderByWithRelationInput | categoriesOrderByWithRelationInput[]
+    cursor?: categoriesWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CategoriesScalarFieldEnum | CategoriesScalarFieldEnum[]
+  }
+
+  /**
+   * spec_categories without action
+   */
+  export type spec_categoriesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the spec_categories
+     */
+    select?: spec_categoriesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the spec_categories
+     */
+    omit?: spec_categoriesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: spec_categoriesInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Model categories
    */
 
@@ -3821,6 +5115,7 @@ export namespace Prisma {
 
   export type CategoriesAvgAggregateOutputType = {
     id: number | null
+    spec_category_id: number | null
     created_by: number | null
     updated_by: number | null
     status: number | null
@@ -3828,6 +5123,7 @@ export namespace Prisma {
 
   export type CategoriesSumAggregateOutputType = {
     id: number | null
+    spec_category_id: number | null
     created_by: number | null
     updated_by: number | null
     status: number | null
@@ -3835,6 +5131,7 @@ export namespace Prisma {
 
   export type CategoriesMinAggregateOutputType = {
     id: number | null
+    spec_category_id: number | null
     code: string | null
     description: string | null
     created_at: Date | null
@@ -3846,6 +5143,7 @@ export namespace Prisma {
 
   export type CategoriesMaxAggregateOutputType = {
     id: number | null
+    spec_category_id: number | null
     code: string | null
     description: string | null
     created_at: Date | null
@@ -3857,6 +5155,7 @@ export namespace Prisma {
 
   export type CategoriesCountAggregateOutputType = {
     id: number
+    spec_category_id: number
     code: number
     description: number
     created_at: number
@@ -3870,6 +5169,7 @@ export namespace Prisma {
 
   export type CategoriesAvgAggregateInputType = {
     id?: true
+    spec_category_id?: true
     created_by?: true
     updated_by?: true
     status?: true
@@ -3877,6 +5177,7 @@ export namespace Prisma {
 
   export type CategoriesSumAggregateInputType = {
     id?: true
+    spec_category_id?: true
     created_by?: true
     updated_by?: true
     status?: true
@@ -3884,6 +5185,7 @@ export namespace Prisma {
 
   export type CategoriesMinAggregateInputType = {
     id?: true
+    spec_category_id?: true
     code?: true
     description?: true
     created_at?: true
@@ -3895,6 +5197,7 @@ export namespace Prisma {
 
   export type CategoriesMaxAggregateInputType = {
     id?: true
+    spec_category_id?: true
     code?: true
     description?: true
     created_at?: true
@@ -3906,6 +5209,7 @@ export namespace Prisma {
 
   export type CategoriesCountAggregateInputType = {
     id?: true
+    spec_category_id?: true
     code?: true
     description?: true
     created_at?: true
@@ -4004,6 +5308,7 @@ export namespace Prisma {
 
   export type CategoriesGroupByOutputType = {
     id: number
+    spec_category_id: number
     code: string
     description: string | null
     created_at: Date | null
@@ -4034,6 +5339,7 @@ export namespace Prisma {
 
   export type categoriesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    spec_category_id?: boolean
     code?: boolean
     description?: boolean
     created_at?: boolean
@@ -4042,11 +5348,13 @@ export namespace Prisma {
     updated_by?: boolean
     status?: boolean
     product_categories?: boolean | categories$product_categoriesArgs<ExtArgs>
+    spec_category?: boolean | spec_categoriesDefaultArgs<ExtArgs>
     _count?: boolean | CategoriesCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["categories"]>
 
   export type categoriesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    spec_category_id?: boolean
     code?: boolean
     description?: boolean
     created_at?: boolean
@@ -4054,10 +5362,12 @@ export namespace Prisma {
     updated_at?: boolean
     updated_by?: boolean
     status?: boolean
+    spec_category?: boolean | spec_categoriesDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["categories"]>
 
   export type categoriesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    spec_category_id?: boolean
     code?: boolean
     description?: boolean
     created_at?: boolean
@@ -4065,10 +5375,12 @@ export namespace Prisma {
     updated_at?: boolean
     updated_by?: boolean
     status?: boolean
+    spec_category?: boolean | spec_categoriesDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["categories"]>
 
   export type categoriesSelectScalar = {
     id?: boolean
+    spec_category_id?: boolean
     code?: boolean
     description?: boolean
     created_at?: boolean
@@ -4078,21 +5390,28 @@ export namespace Prisma {
     status?: boolean
   }
 
-  export type categoriesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "code" | "description" | "created_at" | "created_by" | "updated_at" | "updated_by" | "status", ExtArgs["result"]["categories"]>
+  export type categoriesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "spec_category_id" | "code" | "description" | "created_at" | "created_by" | "updated_at" | "updated_by" | "status", ExtArgs["result"]["categories"]>
   export type categoriesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     product_categories?: boolean | categories$product_categoriesArgs<ExtArgs>
+    spec_category?: boolean | spec_categoriesDefaultArgs<ExtArgs>
     _count?: boolean | CategoriesCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type categoriesIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
-  export type categoriesIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type categoriesIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    spec_category?: boolean | spec_categoriesDefaultArgs<ExtArgs>
+  }
+  export type categoriesIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    spec_category?: boolean | spec_categoriesDefaultArgs<ExtArgs>
+  }
 
   export type $categoriesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "categories"
     objects: {
       product_categories: Prisma.$product_categoriesPayload<ExtArgs>[]
+      spec_category: Prisma.$spec_categoriesPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
+      spec_category_id: number
       code: string
       description: string | null
       created_at: Date | null
@@ -4495,6 +5814,7 @@ export namespace Prisma {
   export interface Prisma__categoriesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     product_categories<T extends categories$product_categoriesArgs<ExtArgs> = {}>(args?: Subset<T, categories$product_categoriesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$product_categoriesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    spec_category<T extends spec_categoriesDefaultArgs<ExtArgs> = {}>(args?: Subset<T, spec_categoriesDefaultArgs<ExtArgs>>): Prisma__spec_categoriesClient<$Result.GetResult<Prisma.$spec_categoriesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4525,6 +5845,7 @@ export namespace Prisma {
    */
   interface categoriesFieldRefs {
     readonly id: FieldRef<"categories", 'Int'>
+    readonly spec_category_id: FieldRef<"categories", 'Int'>
     readonly code: FieldRef<"categories", 'String'>
     readonly description: FieldRef<"categories", 'String'>
     readonly created_at: FieldRef<"categories", 'DateTime'>
@@ -4781,6 +6102,10 @@ export namespace Prisma {
      */
     data: categoriesCreateManyInput | categoriesCreateManyInput[]
     skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: categoriesIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -4851,6 +6176,10 @@ export namespace Prisma {
      * Limit how many categories to update.
      */
     limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: categoriesIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -9628,8 +10957,24 @@ export namespace Prisma {
   export type ProductsScalarFieldEnum = (typeof ProductsScalarFieldEnum)[keyof typeof ProductsScalarFieldEnum]
 
 
+  export const Spec_categoriesScalarFieldEnum: {
+    id: 'id',
+    code: 'code',
+    description: 'description',
+    order: 'order',
+    created_at: 'created_at',
+    created_by: 'created_by',
+    updated_at: 'updated_at',
+    updated_by: 'updated_by',
+    status: 'status'
+  };
+
+  export type Spec_categoriesScalarFieldEnum = (typeof Spec_categoriesScalarFieldEnum)[keyof typeof Spec_categoriesScalarFieldEnum]
+
+
   export const CategoriesScalarFieldEnum: {
     id: 'id',
+    spec_category_id: 'spec_category_id',
     code: 'code',
     description: 'description',
     created_at: 'created_at',
@@ -9965,11 +11310,89 @@ export namespace Prisma {
     status?: IntNullableWithAggregatesFilter<"products"> | number | null
   }
 
+  export type spec_categoriesWhereInput = {
+    AND?: spec_categoriesWhereInput | spec_categoriesWhereInput[]
+    OR?: spec_categoriesWhereInput[]
+    NOT?: spec_categoriesWhereInput | spec_categoriesWhereInput[]
+    id?: IntFilter<"spec_categories"> | number
+    code?: StringFilter<"spec_categories"> | string
+    description?: StringNullableFilter<"spec_categories"> | string | null
+    order?: IntNullableFilter<"spec_categories"> | number | null
+    created_at?: DateTimeNullableFilter<"spec_categories"> | Date | string | null
+    created_by?: IntNullableFilter<"spec_categories"> | number | null
+    updated_at?: DateTimeNullableFilter<"spec_categories"> | Date | string | null
+    updated_by?: IntNullableFilter<"spec_categories"> | number | null
+    status?: IntNullableFilter<"spec_categories"> | number | null
+    categories?: CategoriesListRelationFilter
+  }
+
+  export type spec_categoriesOrderByWithRelationInput = {
+    id?: SortOrder
+    code?: SortOrder
+    description?: SortOrderInput | SortOrder
+    order?: SortOrderInput | SortOrder
+    created_at?: SortOrderInput | SortOrder
+    created_by?: SortOrderInput | SortOrder
+    updated_at?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
+    status?: SortOrderInput | SortOrder
+    categories?: categoriesOrderByRelationAggregateInput
+  }
+
+  export type spec_categoriesWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    code?: string
+    AND?: spec_categoriesWhereInput | spec_categoriesWhereInput[]
+    OR?: spec_categoriesWhereInput[]
+    NOT?: spec_categoriesWhereInput | spec_categoriesWhereInput[]
+    description?: StringNullableFilter<"spec_categories"> | string | null
+    order?: IntNullableFilter<"spec_categories"> | number | null
+    created_at?: DateTimeNullableFilter<"spec_categories"> | Date | string | null
+    created_by?: IntNullableFilter<"spec_categories"> | number | null
+    updated_at?: DateTimeNullableFilter<"spec_categories"> | Date | string | null
+    updated_by?: IntNullableFilter<"spec_categories"> | number | null
+    status?: IntNullableFilter<"spec_categories"> | number | null
+    categories?: CategoriesListRelationFilter
+  }, "id" | "code">
+
+  export type spec_categoriesOrderByWithAggregationInput = {
+    id?: SortOrder
+    code?: SortOrder
+    description?: SortOrderInput | SortOrder
+    order?: SortOrderInput | SortOrder
+    created_at?: SortOrderInput | SortOrder
+    created_by?: SortOrderInput | SortOrder
+    updated_at?: SortOrderInput | SortOrder
+    updated_by?: SortOrderInput | SortOrder
+    status?: SortOrderInput | SortOrder
+    _count?: spec_categoriesCountOrderByAggregateInput
+    _avg?: spec_categoriesAvgOrderByAggregateInput
+    _max?: spec_categoriesMaxOrderByAggregateInput
+    _min?: spec_categoriesMinOrderByAggregateInput
+    _sum?: spec_categoriesSumOrderByAggregateInput
+  }
+
+  export type spec_categoriesScalarWhereWithAggregatesInput = {
+    AND?: spec_categoriesScalarWhereWithAggregatesInput | spec_categoriesScalarWhereWithAggregatesInput[]
+    OR?: spec_categoriesScalarWhereWithAggregatesInput[]
+    NOT?: spec_categoriesScalarWhereWithAggregatesInput | spec_categoriesScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"spec_categories"> | number
+    code?: StringWithAggregatesFilter<"spec_categories"> | string
+    description?: StringNullableWithAggregatesFilter<"spec_categories"> | string | null
+    order?: IntNullableWithAggregatesFilter<"spec_categories"> | number | null
+    created_at?: DateTimeNullableWithAggregatesFilter<"spec_categories"> | Date | string | null
+    created_by?: IntNullableWithAggregatesFilter<"spec_categories"> | number | null
+    updated_at?: DateTimeNullableWithAggregatesFilter<"spec_categories"> | Date | string | null
+    updated_by?: IntNullableWithAggregatesFilter<"spec_categories"> | number | null
+    status?: IntNullableWithAggregatesFilter<"spec_categories"> | number | null
+  }
+
   export type categoriesWhereInput = {
     AND?: categoriesWhereInput | categoriesWhereInput[]
     OR?: categoriesWhereInput[]
     NOT?: categoriesWhereInput | categoriesWhereInput[]
     id?: IntFilter<"categories"> | number
+    spec_category_id?: IntFilter<"categories"> | number
     code?: StringFilter<"categories"> | string
     description?: StringNullableFilter<"categories"> | string | null
     created_at?: DateTimeNullableFilter<"categories"> | Date | string | null
@@ -9978,10 +11401,12 @@ export namespace Prisma {
     updated_by?: IntNullableFilter<"categories"> | number | null
     status?: IntNullableFilter<"categories"> | number | null
     product_categories?: Product_categoriesListRelationFilter
+    spec_category?: XOR<Spec_categoriesScalarRelationFilter, spec_categoriesWhereInput>
   }
 
   export type categoriesOrderByWithRelationInput = {
     id?: SortOrder
+    spec_category_id?: SortOrder
     code?: SortOrder
     description?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
@@ -9990,6 +11415,7 @@ export namespace Prisma {
     updated_by?: SortOrderInput | SortOrder
     status?: SortOrderInput | SortOrder
     product_categories?: product_categoriesOrderByRelationAggregateInput
+    spec_category?: spec_categoriesOrderByWithRelationInput
   }
 
   export type categoriesWhereUniqueInput = Prisma.AtLeast<{
@@ -9998,6 +11424,7 @@ export namespace Prisma {
     AND?: categoriesWhereInput | categoriesWhereInput[]
     OR?: categoriesWhereInput[]
     NOT?: categoriesWhereInput | categoriesWhereInput[]
+    spec_category_id?: IntFilter<"categories"> | number
     description?: StringNullableFilter<"categories"> | string | null
     created_at?: DateTimeNullableFilter<"categories"> | Date | string | null
     created_by?: IntNullableFilter<"categories"> | number | null
@@ -10005,10 +11432,12 @@ export namespace Prisma {
     updated_by?: IntNullableFilter<"categories"> | number | null
     status?: IntNullableFilter<"categories"> | number | null
     product_categories?: Product_categoriesListRelationFilter
+    spec_category?: XOR<Spec_categoriesScalarRelationFilter, spec_categoriesWhereInput>
   }, "id" | "code">
 
   export type categoriesOrderByWithAggregationInput = {
     id?: SortOrder
+    spec_category_id?: SortOrder
     code?: SortOrder
     description?: SortOrderInput | SortOrder
     created_at?: SortOrderInput | SortOrder
@@ -10028,6 +11457,7 @@ export namespace Prisma {
     OR?: categoriesScalarWhereWithAggregatesInput[]
     NOT?: categoriesScalarWhereWithAggregatesInput | categoriesScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"categories"> | number
+    spec_category_id?: IntWithAggregatesFilter<"categories"> | number
     code?: StringWithAggregatesFilter<"categories"> | string
     description?: StringNullableWithAggregatesFilter<"categories"> | string | null
     created_at?: DateTimeNullableWithAggregatesFilter<"categories"> | Date | string | null
@@ -10542,6 +11972,91 @@ export namespace Prisma {
     status?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
+  export type spec_categoriesCreateInput = {
+    code: string
+    description?: string | null
+    order?: number | null
+    created_at?: Date | string | null
+    created_by?: number | null
+    updated_at?: Date | string | null
+    updated_by?: number | null
+    status?: number | null
+    categories?: categoriesCreateNestedManyWithoutSpec_categoryInput
+  }
+
+  export type spec_categoriesUncheckedCreateInput = {
+    id?: number
+    code: string
+    description?: string | null
+    order?: number | null
+    created_at?: Date | string | null
+    created_by?: number | null
+    updated_at?: Date | string | null
+    updated_by?: number | null
+    status?: number | null
+    categories?: categoriesUncheckedCreateNestedManyWithoutSpec_categoryInput
+  }
+
+  export type spec_categoriesUpdateInput = {
+    code?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: NullableIntFieldUpdateOperationsInput | number | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    created_by?: NullableIntFieldUpdateOperationsInput | number | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableIntFieldUpdateOperationsInput | number | null
+    status?: NullableIntFieldUpdateOperationsInput | number | null
+    categories?: categoriesUpdateManyWithoutSpec_categoryNestedInput
+  }
+
+  export type spec_categoriesUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    code?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: NullableIntFieldUpdateOperationsInput | number | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    created_by?: NullableIntFieldUpdateOperationsInput | number | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableIntFieldUpdateOperationsInput | number | null
+    status?: NullableIntFieldUpdateOperationsInput | number | null
+    categories?: categoriesUncheckedUpdateManyWithoutSpec_categoryNestedInput
+  }
+
+  export type spec_categoriesCreateManyInput = {
+    id?: number
+    code: string
+    description?: string | null
+    order?: number | null
+    created_at?: Date | string | null
+    created_by?: number | null
+    updated_at?: Date | string | null
+    updated_by?: number | null
+    status?: number | null
+  }
+
+  export type spec_categoriesUpdateManyMutationInput = {
+    code?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: NullableIntFieldUpdateOperationsInput | number | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    created_by?: NullableIntFieldUpdateOperationsInput | number | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableIntFieldUpdateOperationsInput | number | null
+    status?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type spec_categoriesUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    code?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: NullableIntFieldUpdateOperationsInput | number | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    created_by?: NullableIntFieldUpdateOperationsInput | number | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableIntFieldUpdateOperationsInput | number | null
+    status?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
   export type categoriesCreateInput = {
     code: string
     description?: string | null
@@ -10551,10 +12066,12 @@ export namespace Prisma {
     updated_by?: number | null
     status?: number | null
     product_categories?: product_categoriesCreateNestedManyWithoutCategoriesInput
+    spec_category: spec_categoriesCreateNestedOneWithoutCategoriesInput
   }
 
   export type categoriesUncheckedCreateInput = {
     id?: number
+    spec_category_id: number
     code: string
     description?: string | null
     created_at?: Date | string | null
@@ -10574,10 +12091,12 @@ export namespace Prisma {
     updated_by?: NullableIntFieldUpdateOperationsInput | number | null
     status?: NullableIntFieldUpdateOperationsInput | number | null
     product_categories?: product_categoriesUpdateManyWithoutCategoriesNestedInput
+    spec_category?: spec_categoriesUpdateOneRequiredWithoutCategoriesNestedInput
   }
 
   export type categoriesUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
+    spec_category_id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -10590,6 +12109,7 @@ export namespace Prisma {
 
   export type categoriesCreateManyInput = {
     id?: number
+    spec_category_id: number
     code: string
     description?: string | null
     created_at?: Date | string | null
@@ -10611,6 +12131,7 @@ export namespace Prisma {
 
   export type categoriesUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
+    spec_category_id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -11231,8 +12752,76 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
+  export type CategoriesListRelationFilter = {
+    every?: categoriesWhereInput
+    some?: categoriesWhereInput
+    none?: categoriesWhereInput
+  }
+
+  export type categoriesOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type spec_categoriesCountOrderByAggregateInput = {
+    id?: SortOrder
+    code?: SortOrder
+    description?: SortOrder
+    order?: SortOrder
+    created_at?: SortOrder
+    created_by?: SortOrder
+    updated_at?: SortOrder
+    updated_by?: SortOrder
+    status?: SortOrder
+  }
+
+  export type spec_categoriesAvgOrderByAggregateInput = {
+    id?: SortOrder
+    order?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
+    status?: SortOrder
+  }
+
+  export type spec_categoriesMaxOrderByAggregateInput = {
+    id?: SortOrder
+    code?: SortOrder
+    description?: SortOrder
+    order?: SortOrder
+    created_at?: SortOrder
+    created_by?: SortOrder
+    updated_at?: SortOrder
+    updated_by?: SortOrder
+    status?: SortOrder
+  }
+
+  export type spec_categoriesMinOrderByAggregateInput = {
+    id?: SortOrder
+    code?: SortOrder
+    description?: SortOrder
+    order?: SortOrder
+    created_at?: SortOrder
+    created_by?: SortOrder
+    updated_at?: SortOrder
+    updated_by?: SortOrder
+    status?: SortOrder
+  }
+
+  export type spec_categoriesSumOrderByAggregateInput = {
+    id?: SortOrder
+    order?: SortOrder
+    created_by?: SortOrder
+    updated_by?: SortOrder
+    status?: SortOrder
+  }
+
+  export type Spec_categoriesScalarRelationFilter = {
+    is?: spec_categoriesWhereInput
+    isNot?: spec_categoriesWhereInput
+  }
+
   export type categoriesCountOrderByAggregateInput = {
     id?: SortOrder
+    spec_category_id?: SortOrder
     code?: SortOrder
     description?: SortOrder
     created_at?: SortOrder
@@ -11244,6 +12833,7 @@ export namespace Prisma {
 
   export type categoriesAvgOrderByAggregateInput = {
     id?: SortOrder
+    spec_category_id?: SortOrder
     created_by?: SortOrder
     updated_by?: SortOrder
     status?: SortOrder
@@ -11251,6 +12841,7 @@ export namespace Prisma {
 
   export type categoriesMaxOrderByAggregateInput = {
     id?: SortOrder
+    spec_category_id?: SortOrder
     code?: SortOrder
     description?: SortOrder
     created_at?: SortOrder
@@ -11262,6 +12853,7 @@ export namespace Prisma {
 
   export type categoriesMinOrderByAggregateInput = {
     id?: SortOrder
+    spec_category_id?: SortOrder
     code?: SortOrder
     description?: SortOrder
     created_at?: SortOrder
@@ -11273,6 +12865,7 @@ export namespace Prisma {
 
   export type categoriesSumOrderByAggregateInput = {
     id?: SortOrder
+    spec_category_id?: SortOrder
     created_by?: SortOrder
     updated_by?: SortOrder
     status?: SortOrder
@@ -11625,11 +13218,59 @@ export namespace Prisma {
     deleteMany?: product_categoriesScalarWhereInput | product_categoriesScalarWhereInput[]
   }
 
+  export type categoriesCreateNestedManyWithoutSpec_categoryInput = {
+    create?: XOR<categoriesCreateWithoutSpec_categoryInput, categoriesUncheckedCreateWithoutSpec_categoryInput> | categoriesCreateWithoutSpec_categoryInput[] | categoriesUncheckedCreateWithoutSpec_categoryInput[]
+    connectOrCreate?: categoriesCreateOrConnectWithoutSpec_categoryInput | categoriesCreateOrConnectWithoutSpec_categoryInput[]
+    createMany?: categoriesCreateManySpec_categoryInputEnvelope
+    connect?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+  }
+
+  export type categoriesUncheckedCreateNestedManyWithoutSpec_categoryInput = {
+    create?: XOR<categoriesCreateWithoutSpec_categoryInput, categoriesUncheckedCreateWithoutSpec_categoryInput> | categoriesCreateWithoutSpec_categoryInput[] | categoriesUncheckedCreateWithoutSpec_categoryInput[]
+    connectOrCreate?: categoriesCreateOrConnectWithoutSpec_categoryInput | categoriesCreateOrConnectWithoutSpec_categoryInput[]
+    createMany?: categoriesCreateManySpec_categoryInputEnvelope
+    connect?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+  }
+
+  export type categoriesUpdateManyWithoutSpec_categoryNestedInput = {
+    create?: XOR<categoriesCreateWithoutSpec_categoryInput, categoriesUncheckedCreateWithoutSpec_categoryInput> | categoriesCreateWithoutSpec_categoryInput[] | categoriesUncheckedCreateWithoutSpec_categoryInput[]
+    connectOrCreate?: categoriesCreateOrConnectWithoutSpec_categoryInput | categoriesCreateOrConnectWithoutSpec_categoryInput[]
+    upsert?: categoriesUpsertWithWhereUniqueWithoutSpec_categoryInput | categoriesUpsertWithWhereUniqueWithoutSpec_categoryInput[]
+    createMany?: categoriesCreateManySpec_categoryInputEnvelope
+    set?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    disconnect?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    delete?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    connect?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    update?: categoriesUpdateWithWhereUniqueWithoutSpec_categoryInput | categoriesUpdateWithWhereUniqueWithoutSpec_categoryInput[]
+    updateMany?: categoriesUpdateManyWithWhereWithoutSpec_categoryInput | categoriesUpdateManyWithWhereWithoutSpec_categoryInput[]
+    deleteMany?: categoriesScalarWhereInput | categoriesScalarWhereInput[]
+  }
+
+  export type categoriesUncheckedUpdateManyWithoutSpec_categoryNestedInput = {
+    create?: XOR<categoriesCreateWithoutSpec_categoryInput, categoriesUncheckedCreateWithoutSpec_categoryInput> | categoriesCreateWithoutSpec_categoryInput[] | categoriesUncheckedCreateWithoutSpec_categoryInput[]
+    connectOrCreate?: categoriesCreateOrConnectWithoutSpec_categoryInput | categoriesCreateOrConnectWithoutSpec_categoryInput[]
+    upsert?: categoriesUpsertWithWhereUniqueWithoutSpec_categoryInput | categoriesUpsertWithWhereUniqueWithoutSpec_categoryInput[]
+    createMany?: categoriesCreateManySpec_categoryInputEnvelope
+    set?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    disconnect?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    delete?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    connect?: categoriesWhereUniqueInput | categoriesWhereUniqueInput[]
+    update?: categoriesUpdateWithWhereUniqueWithoutSpec_categoryInput | categoriesUpdateWithWhereUniqueWithoutSpec_categoryInput[]
+    updateMany?: categoriesUpdateManyWithWhereWithoutSpec_categoryInput | categoriesUpdateManyWithWhereWithoutSpec_categoryInput[]
+    deleteMany?: categoriesScalarWhereInput | categoriesScalarWhereInput[]
+  }
+
   export type product_categoriesCreateNestedManyWithoutCategoriesInput = {
     create?: XOR<product_categoriesCreateWithoutCategoriesInput, product_categoriesUncheckedCreateWithoutCategoriesInput> | product_categoriesCreateWithoutCategoriesInput[] | product_categoriesUncheckedCreateWithoutCategoriesInput[]
     connectOrCreate?: product_categoriesCreateOrConnectWithoutCategoriesInput | product_categoriesCreateOrConnectWithoutCategoriesInput[]
     createMany?: product_categoriesCreateManyCategoriesInputEnvelope
     connect?: product_categoriesWhereUniqueInput | product_categoriesWhereUniqueInput[]
+  }
+
+  export type spec_categoriesCreateNestedOneWithoutCategoriesInput = {
+    create?: XOR<spec_categoriesCreateWithoutCategoriesInput, spec_categoriesUncheckedCreateWithoutCategoriesInput>
+    connectOrCreate?: spec_categoriesCreateOrConnectWithoutCategoriesInput
+    connect?: spec_categoriesWhereUniqueInput
   }
 
   export type product_categoriesUncheckedCreateNestedManyWithoutCategoriesInput = {
@@ -11651,6 +13292,14 @@ export namespace Prisma {
     update?: product_categoriesUpdateWithWhereUniqueWithoutCategoriesInput | product_categoriesUpdateWithWhereUniqueWithoutCategoriesInput[]
     updateMany?: product_categoriesUpdateManyWithWhereWithoutCategoriesInput | product_categoriesUpdateManyWithWhereWithoutCategoriesInput[]
     deleteMany?: product_categoriesScalarWhereInput | product_categoriesScalarWhereInput[]
+  }
+
+  export type spec_categoriesUpdateOneRequiredWithoutCategoriesNestedInput = {
+    create?: XOR<spec_categoriesCreateWithoutCategoriesInput, spec_categoriesUncheckedCreateWithoutCategoriesInput>
+    connectOrCreate?: spec_categoriesCreateOrConnectWithoutCategoriesInput
+    upsert?: spec_categoriesUpsertWithoutCategoriesInput
+    connect?: spec_categoriesWhereUniqueInput
+    update?: XOR<XOR<spec_categoriesUpdateToOneWithWhereWithoutCategoriesInput, spec_categoriesUpdateWithoutCategoriesInput>, spec_categoriesUncheckedUpdateWithoutCategoriesInput>
   }
 
   export type product_categoriesUncheckedUpdateManyWithoutCategoriesNestedInput = {
@@ -12020,6 +13669,70 @@ export namespace Prisma {
     status?: IntNullableFilter<"product_categories"> | number | null
   }
 
+  export type categoriesCreateWithoutSpec_categoryInput = {
+    code: string
+    description?: string | null
+    created_at?: Date | string | null
+    created_by?: number | null
+    updated_at?: Date | string | null
+    updated_by?: number | null
+    status?: number | null
+    product_categories?: product_categoriesCreateNestedManyWithoutCategoriesInput
+  }
+
+  export type categoriesUncheckedCreateWithoutSpec_categoryInput = {
+    id?: number
+    code: string
+    description?: string | null
+    created_at?: Date | string | null
+    created_by?: number | null
+    updated_at?: Date | string | null
+    updated_by?: number | null
+    status?: number | null
+    product_categories?: product_categoriesUncheckedCreateNestedManyWithoutCategoriesInput
+  }
+
+  export type categoriesCreateOrConnectWithoutSpec_categoryInput = {
+    where: categoriesWhereUniqueInput
+    create: XOR<categoriesCreateWithoutSpec_categoryInput, categoriesUncheckedCreateWithoutSpec_categoryInput>
+  }
+
+  export type categoriesCreateManySpec_categoryInputEnvelope = {
+    data: categoriesCreateManySpec_categoryInput | categoriesCreateManySpec_categoryInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type categoriesUpsertWithWhereUniqueWithoutSpec_categoryInput = {
+    where: categoriesWhereUniqueInput
+    update: XOR<categoriesUpdateWithoutSpec_categoryInput, categoriesUncheckedUpdateWithoutSpec_categoryInput>
+    create: XOR<categoriesCreateWithoutSpec_categoryInput, categoriesUncheckedCreateWithoutSpec_categoryInput>
+  }
+
+  export type categoriesUpdateWithWhereUniqueWithoutSpec_categoryInput = {
+    where: categoriesWhereUniqueInput
+    data: XOR<categoriesUpdateWithoutSpec_categoryInput, categoriesUncheckedUpdateWithoutSpec_categoryInput>
+  }
+
+  export type categoriesUpdateManyWithWhereWithoutSpec_categoryInput = {
+    where: categoriesScalarWhereInput
+    data: XOR<categoriesUpdateManyMutationInput, categoriesUncheckedUpdateManyWithoutSpec_categoryInput>
+  }
+
+  export type categoriesScalarWhereInput = {
+    AND?: categoriesScalarWhereInput | categoriesScalarWhereInput[]
+    OR?: categoriesScalarWhereInput[]
+    NOT?: categoriesScalarWhereInput | categoriesScalarWhereInput[]
+    id?: IntFilter<"categories"> | number
+    spec_category_id?: IntFilter<"categories"> | number
+    code?: StringFilter<"categories"> | string
+    description?: StringNullableFilter<"categories"> | string | null
+    created_at?: DateTimeNullableFilter<"categories"> | Date | string | null
+    created_by?: IntNullableFilter<"categories"> | number | null
+    updated_at?: DateTimeNullableFilter<"categories"> | Date | string | null
+    updated_by?: IntNullableFilter<"categories"> | number | null
+    status?: IntNullableFilter<"categories"> | number | null
+  }
+
   export type product_categoriesCreateWithoutCategoriesInput = {
     value_1?: string | null
     value_2?: string | null
@@ -12053,6 +13766,34 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type spec_categoriesCreateWithoutCategoriesInput = {
+    code: string
+    description?: string | null
+    order?: number | null
+    created_at?: Date | string | null
+    created_by?: number | null
+    updated_at?: Date | string | null
+    updated_by?: number | null
+    status?: number | null
+  }
+
+  export type spec_categoriesUncheckedCreateWithoutCategoriesInput = {
+    id?: number
+    code: string
+    description?: string | null
+    order?: number | null
+    created_at?: Date | string | null
+    created_by?: number | null
+    updated_at?: Date | string | null
+    updated_by?: number | null
+    status?: number | null
+  }
+
+  export type spec_categoriesCreateOrConnectWithoutCategoriesInput = {
+    where: spec_categoriesWhereUniqueInput
+    create: XOR<spec_categoriesCreateWithoutCategoriesInput, spec_categoriesUncheckedCreateWithoutCategoriesInput>
+  }
+
   export type product_categoriesUpsertWithWhereUniqueWithoutCategoriesInput = {
     where: product_categoriesWhereUniqueInput
     update: XOR<product_categoriesUpdateWithoutCategoriesInput, product_categoriesUncheckedUpdateWithoutCategoriesInput>
@@ -12067,6 +13808,40 @@ export namespace Prisma {
   export type product_categoriesUpdateManyWithWhereWithoutCategoriesInput = {
     where: product_categoriesScalarWhereInput
     data: XOR<product_categoriesUpdateManyMutationInput, product_categoriesUncheckedUpdateManyWithoutCategoriesInput>
+  }
+
+  export type spec_categoriesUpsertWithoutCategoriesInput = {
+    update: XOR<spec_categoriesUpdateWithoutCategoriesInput, spec_categoriesUncheckedUpdateWithoutCategoriesInput>
+    create: XOR<spec_categoriesCreateWithoutCategoriesInput, spec_categoriesUncheckedCreateWithoutCategoriesInput>
+    where?: spec_categoriesWhereInput
+  }
+
+  export type spec_categoriesUpdateToOneWithWhereWithoutCategoriesInput = {
+    where?: spec_categoriesWhereInput
+    data: XOR<spec_categoriesUpdateWithoutCategoriesInput, spec_categoriesUncheckedUpdateWithoutCategoriesInput>
+  }
+
+  export type spec_categoriesUpdateWithoutCategoriesInput = {
+    code?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: NullableIntFieldUpdateOperationsInput | number | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    created_by?: NullableIntFieldUpdateOperationsInput | number | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableIntFieldUpdateOperationsInput | number | null
+    status?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type spec_categoriesUncheckedUpdateWithoutCategoriesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    code?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    order?: NullableIntFieldUpdateOperationsInput | number | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    created_by?: NullableIntFieldUpdateOperationsInput | number | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableIntFieldUpdateOperationsInput | number | null
+    status?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type productsCreateWithoutProduct_categoriesInput = {
@@ -12113,10 +13888,12 @@ export namespace Prisma {
     updated_at?: Date | string | null
     updated_by?: number | null
     status?: number | null
+    spec_category: spec_categoriesCreateNestedOneWithoutCategoriesInput
   }
 
   export type categoriesUncheckedCreateWithoutProduct_categoriesInput = {
     id?: number
+    spec_category_id: number
     code: string
     description?: string | null
     created_at?: Date | string | null
@@ -12192,10 +13969,12 @@ export namespace Prisma {
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     updated_by?: NullableIntFieldUpdateOperationsInput | number | null
     status?: NullableIntFieldUpdateOperationsInput | number | null
+    spec_category?: spec_categoriesUpdateOneRequiredWithoutCategoriesNestedInput
   }
 
   export type categoriesUncheckedUpdateWithoutProduct_categoriesInput = {
     id?: IntFieldUpdateOperationsInput | number
+    spec_category_id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -12373,6 +14152,51 @@ export namespace Prisma {
     category_id?: IntFieldUpdateOperationsInput | number
     value_1?: NullableStringFieldUpdateOperationsInput | string | null
     value_2?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    created_by?: NullableIntFieldUpdateOperationsInput | number | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableIntFieldUpdateOperationsInput | number | null
+    status?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type categoriesCreateManySpec_categoryInput = {
+    id?: number
+    code: string
+    description?: string | null
+    created_at?: Date | string | null
+    created_by?: number | null
+    updated_at?: Date | string | null
+    updated_by?: number | null
+    status?: number | null
+  }
+
+  export type categoriesUpdateWithoutSpec_categoryInput = {
+    code?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    created_by?: NullableIntFieldUpdateOperationsInput | number | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableIntFieldUpdateOperationsInput | number | null
+    status?: NullableIntFieldUpdateOperationsInput | number | null
+    product_categories?: product_categoriesUpdateManyWithoutCategoriesNestedInput
+  }
+
+  export type categoriesUncheckedUpdateWithoutSpec_categoryInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    code?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    created_by?: NullableIntFieldUpdateOperationsInput | number | null
+    updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    updated_by?: NullableIntFieldUpdateOperationsInput | number | null
+    status?: NullableIntFieldUpdateOperationsInput | number | null
+    product_categories?: product_categoriesUncheckedUpdateManyWithoutCategoriesNestedInput
+  }
+
+  export type categoriesUncheckedUpdateManyWithoutSpec_categoryInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    code?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
     created_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     created_by?: NullableIntFieldUpdateOperationsInput | number | null
     updated_at?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
