@@ -42,7 +42,7 @@ const GalleryFolderCard = ({
       return '/image/placeholder-image.png';
     }
 
-    return `/uploads/gallery_folder/${gallery.cover_image}`;
+    return `/uploads/gallery_folder/${gallery.id}/${gallery.cover_image}`;
   });
 
   const createdDate = gallery.created_at
@@ -114,7 +114,7 @@ const GalleryFolderCard = ({
             </Button>
           </form>
 
-          <form
+          {/* <form
             onSubmit={(e) => handleSubmit(e, () => onChangeVisibility(gallery))}
             className="flex-2"
           >
@@ -130,23 +130,48 @@ const GalleryFolderCard = ({
                 <Eye className="text-gray-500" />
               )}
             </Button>
-          </form>
+          </form> */}
 
-          <form onSubmit={(e) => handleSubmit(e, () => onEdit(gallery))}>
-            <Button
-              type="submit"
-              variant="ghost"
-              size="icon"
-              className="h-14 w-14 border-1 border-[#E4E4E7]"
-            >
-              <Pencil className="text-gray-500" />
-            </Button>
-          </form>
+          <div className="flex-2">
+            <AlertDialogComponent
+              title="Change Visibility Folder?"
+              description="Are you sure you want to change visibility of this gallery folder? This action cannot be undone."
+              itemName="Submit"
+              onConfirm={() => onChangeVisibility(gallery)}
+              triggerLabel={
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="icon"
+                  className="h-14 w-14 border-1 border-[#E4E4E7]"
+                >
+                  {gallery.is_visible ? (
+                    <EyeOff className="text-gray-500" />
+                  ) : (
+                    <Eye className="text-gray-500" />
+                  )}
+                </Button>
+              }
+            />
+          </div>
+
+          {/* <form onSubmit={(e) => handleSubmit(e, () => onEdit(gallery))}> */}
+          <Button
+            type="submit"
+            variant="ghost"
+            size="icon"
+            onClick={() => onEdit(gallery)}
+            className="h-14 w-14 border-1 border-[#E4E4E7]"
+          >
+            <Pencil className="text-gray-500" />
+          </Button>
+          {/* </form> */}
 
           <AlertDialogComponent
             title="Delete Gallery Folder?"
             description="Are you sure you want to delete gallery folder? Deleted gallery folder cannot be restored."
-            itemName="Gallery"
+            itemName="Delete Gallery"
+            type="warning"
             onConfirm={() => onDelete(gallery)}
           />
         </div>

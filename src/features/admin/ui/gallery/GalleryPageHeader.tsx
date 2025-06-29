@@ -38,6 +38,7 @@ const GalleryPageHeader = () => {
 
       setOpenForm(false);
       setOpenSuccess(true);
+      window.location.reload();
     } catch (error) {
       console.error('Failed to create gallery folder', error);
       setOpenForm(false);

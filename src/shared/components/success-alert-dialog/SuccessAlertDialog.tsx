@@ -36,9 +36,11 @@ const SuccessAlertDialog = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[400px] text-center">
         <DialogHeader>
-          <DialogTitle className="text-green-600 text-lg">Success</DialogTitle>
+          <DialogTitle className="text-green-600 text-[16px]">
+            Success
+          </DialogTitle>
         </DialogHeader>
-        <p className="text-sm text-gray-700">{message}</p>
+        <p className="text-[12px] text-gray-700">{message}</p>
         <DialogFooter className="justify-center">
           <Button
             onClick={() => onOpenChange(false)}

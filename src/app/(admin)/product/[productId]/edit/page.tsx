@@ -2,6 +2,29 @@ import ProductForm from '@/features/admin/ui/product/ProductForm';
 import { getProductDetailByIdAction } from '@/features/admin/actions/product/action';
 import { ChevronLeft } from 'lucide-react';
 import Link from 'next/link';
+import { getAllSpecCategoriesAction } from '@/features/admin/actions/product/action';
+
+function mapProductToFormValues(product: any) {
+  return {
+    code: product.code,
+    description: product.description,
+    thickness: product.thickness,
+    gloss: product.gloss,
+    quv: product.quv,
+    warranty: product.warranty,
+    specs: Object.fromEntries(
+      (product.product_categories ?? [])
+        .filter((cat: any) => !!cat.categories?.code)
+        .map((cat: any) => [
+          cat.categories.code,
+          {
+            value_1: cat.value_1 || '',
+            value_2: cat.value_2 || '',
+          },
+        ])
+    ),
+  };
+}
 
 export default async function EditProductPage({
   params,
@@ -9,11 +32,16 @@ export default async function EditProductPage({
   params: { productId: string };
 }) {
   const productId = parseInt(params.productId, 10);
-  const product = await getProductDetailByIdAction(productId);
+  const product = await getProductDetailByIdAction(productId); // console.log(product);
 
   if (!product) {
     return <div>Product not found</div>;
   }
+
+  const specSectionsData = await getAllSpecCategoriesAction(); // console.log(specSections);
+  const specSections = specSectionsData ?? [];
+
+  const defaultValues = mapProductToFormValues(product); // console.log(defaultValues);
 
   return (
     <div className="flex flex-col gap-6 py-5">
@@ -37,15 +65,9 @@ export default async function EditProductPage({
         <span className="text-black font-semibold">Edit Product</span>
       </div>
       <ProductForm
-        mode="edit"
-        defaultValues={{
-          code: product.code,
-          description: product.description,
-          thickness: product.thickness,
-          gloss: product.gloss,
-          quv: product.quv,
-          warranty: product.warranty,
-        }}
+        mode="create"
+        defaultValues={defaultValues}
+        specSections={specSections}
       />
     </div>
   );

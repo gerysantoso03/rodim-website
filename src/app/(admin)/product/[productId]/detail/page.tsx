@@ -7,9 +7,11 @@ export default async function ProductDetailPage({
 }: {
   params: { productId: string };
 }) {
+  // console.log(params);
   const productId = parseInt(params.productId, 10);
 
   const result = await getAllProductDetailWithCategoriesByIdAction(productId);
+  console.log(result);
 
   if (!result) {
     throw new Error('Product not found');

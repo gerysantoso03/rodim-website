@@ -31,7 +31,7 @@ const ProductPage = ({ products }: { products: Product[] }) => {
   return (
     <div className="w-full mt-6">
       {isEmpty ? (
-        <div className="flex flex-col items-center justify-center h-[400px] gap-4">
+        <div className="flex flex-col items-center justify-center h-[400px] pt-70">
           <p className="text-black text-[14px]/[20px]">
             No data available in the product yet.
           </p>
@@ -43,7 +43,7 @@ const ProductPage = ({ products }: { products: Product[] }) => {
           </Button>
         </div>
       ) : (
-        <div className="bg-white rounded-xl overflow-auto border-2 border-gray-200">
+        <div className="bg-white rounded-xl overflow-auto border-2 border-gray-200 px-8 py-8">
           <Table>
             <TableHeader>
               <TableRow className="border-b-2 border-gray-200">
@@ -70,9 +70,10 @@ const ProductPage = ({ products }: { products: Product[] }) => {
                 </TableHead>
               </TableRow>
             </TableHeader>
-            <TableBody>
+            <TableBody className="border-b-2 border-gray-200">
               {products.map((product, index) => (
                 <TableRow
+                  className="border-b-2 border-gray-200"
                   onClick={() => router.push(`/product/${product.id}/detail`)}
                   key={index}
                 >

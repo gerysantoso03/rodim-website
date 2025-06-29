@@ -8,8 +8,9 @@ import type { GalleryFolderType } from '@/features/admin/ui/gallery/GalleryFolde
 import {
   deleteGalleryFolderAction,
   editGalleryFolderAction,
+  createGalleryFolderAction,
+  toggleGalleryFolderVisibilityAction,
 } from '@/features/admin/actions/gallery/action';
-import { toggleGalleryFolderVisibilityAction } from '@/features/admin/actions/gallery/action';
 import GalleryFolderForm from '@/features/admin/ui/gallery/GalleryFolderForm';
 import SuccessAlertDialog from '@/shared/components/success-alert-dialog/SuccessAlertDialog';
 import FailedAlertDialog from '@/shared/components/failed-alert-dialog/FailedAlertDialog';
@@ -36,12 +37,14 @@ const GalleryPageUI = ({ galleryFolders }: GalleryPageUIProps) => {
   const router = useRouter();
   const [editGallery, setEditGallery] = useState<GalleryFolder | null>(null);
   const [openForm, setOpenForm] = useState(false);
+  const [isCreateMode, setIsCreateMode] = useState(false);
   const [openSuccess, setOpenSuccess] = useState(false);
   const [openFailed, setOpenFailed] = useState(false);
 
   const handleEdit = async (gallery: GalleryFolder) => {
     setEditGallery(gallery);
-    router.refresh();
+    setIsCreateMode(false);
+    setOpenForm(true);
   };
 
   const handleDelete = async (gallery: GalleryFolder) => {
@@ -50,8 +53,7 @@ const GalleryPageUI = ({ galleryFolders }: GalleryPageUIProps) => {
   };
 
   const handleManageImages = (gallery: GalleryFolder) => {
-    console.log('Manage images:', gallery);
-    router.push(`/gallery/${gallery.id}/detail`);
+    router.push(`/gallery-admin/${gallery.id}/detail`);
   };
 
   const handleChangeVisibility = async (gallery: GalleryFolder) => {
@@ -62,7 +64,6 @@ const GalleryPageUI = ({ galleryFolders }: GalleryPageUIProps) => {
   const handleSubmit = async (values: GalleryFolderType, file?: File) => {
     try {
       if (!file) {
-        console.error('File is required');
         setOpenFailed(true);
         return;
       }
@@ -70,7 +71,6 @@ const GalleryPageUI = ({ galleryFolders }: GalleryPageUIProps) => {
       const maxSizeMB = 2;
       const maxSizeBytes = maxSizeMB * 1024 * 1024;
       if (file.size > maxSizeBytes) {
-        console.error(`File size exceeds ${maxSizeMB}MB`);
         alert(`Image size must be less than ${maxSizeMB}MB`);
         return;
       }
@@ -80,12 +80,19 @@ const GalleryPageUI = ({ galleryFolders }: GalleryPageUIProps) => {
       formData.append('is_visible', String(values.is_visible));
       formData.append('file', file);
 
-      await editGalleryFolderAction(formData);
+      if (isCreateMode) {
+        await createGalleryFolderAction(formData);
+      } else if (editGallery) {
+        formData.append('id', String(editGallery.id));
+        await editGalleryFolderAction(formData);
+      }
 
       setOpenForm(false);
+      setEditGallery(null);
       setOpenSuccess(true);
+      window.location.reload();
     } catch (error) {
-      console.error('Failed to create gallery folder', error);
+      console.error('Failed to save gallery folder', error);
       setOpenForm(false);
       setOpenFailed(true);
     }
@@ -94,40 +101,56 @@ const GalleryPageUI = ({ galleryFolders }: GalleryPageUIProps) => {
   return (
     <div className="pt-10">
       {galleryFolders.length === 0 ? (
-        <div className="text-center space-y-4">
-          <p className="text-sm text-gray-500">
+        <div className="text-center space-y-4 pt-70">
+          <p className="text-[14px]/[20px] text-gray-500">
             No data available in the gallery yet.
           </p>
-          <Button className="bg-black text-white hover:bg-gray-900 w-[151px] h-[40px] rounded-md text-[14px]/[20px]">
+          <Button
+            onClick={() => {
+              setEditGallery(null);
+              setIsCreateMode(true);
+              setOpenForm(true);
+            }}
+            className="bg-black text-white hover:bg-gray-900 w-[151px] h-[40px] rounded-md text-[14px]/[20px]"
+          >
             + New Gallery
           </Button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {galleryFolders.map((gallery) => (
-            <GalleryFolderCard
-              key={gallery.id}
-              gallery={gallery}
-              onEdit={handleEdit}
-              onDelete={handleDelete}
-              onManageImages={handleManageImages}
-              onChangeVisibility={handleChangeVisibility}
-            />
-          ))}
-        </div>
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {galleryFolders.map((gallery) => (
+              <GalleryFolderCard
+                key={gallery.id}
+                gallery={gallery}
+                onEdit={handleEdit}
+                onDelete={handleDelete}
+                onManageImages={handleManageImages}
+                onChangeVisibility={handleChangeVisibility}
+              />
+            ))}
+          </div>
+        </>
       )}
-      {editGallery && (
+
+      {(openForm || editGallery) && (
         <GalleryFolderForm
-          open={!!editGallery}
+          open={openForm}
           onOpenChange={(open) => {
+            setOpenForm(open);
             if (!open) setEditGallery(null);
           }}
-          mode="edit"
-          defaultValues={{
-            title: editGallery.title,
-            is_visible: editGallery.is_visible,
-            image_url: editGallery.cover_image || '',
-          }}
+          mode={isCreateMode ? 'create' : 'edit'}
+          defaultValues={
+            editGallery
+              ? {
+                  id: editGallery.id,
+                  title: editGallery.title,
+                  is_visible: editGallery.is_visible,
+                  image_url: editGallery.cover_image || '',
+                }
+              : undefined
+          }
           onSubmit={handleSubmit}
         />
       )}
@@ -136,14 +159,14 @@ const GalleryPageUI = ({ galleryFolders }: GalleryPageUIProps) => {
         autoCloseMs={5000}
         open={openSuccess}
         onOpenChange={setOpenSuccess}
-        message="Gallery Folder successfully updated!"
+        message={`Gallery Folder successfully ${isCreateMode ? 'created' : 'updated'}!`}
       />
 
       <FailedAlertDialog
         autoCloseMs={5000}
         open={openFailed}
         onOpenChange={setOpenFailed}
-        message="Failed to update gallery folder. Please try again."
+        message={`Failed to ${isCreateMode ? 'create' : 'update'} gallery folder. Please try again.`}
       />
     </div>
   );

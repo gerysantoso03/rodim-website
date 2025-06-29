@@ -20,6 +20,7 @@ type ProductCategory = {
 
 type ProductDetailUIProps = {
   product: {
+    id: number;
     code: string;
     description?: string;
     thickness?: string;
@@ -32,26 +33,21 @@ type ProductDetailUIProps = {
 };
 
 const ProductDetailUI = ({ product }: ProductDetailUIProps) => {
-  const [imgSrc, setImgSrc] = useState(() => {
-    if (!product.image_url) {
-      return '/image/placeholder-image.png';
-    }
+  const getImageUrl = () => {
+    if (!product.image_url) return '/image/placeholder-image.png';
+    if (product.image_url.startsWith('http')) return product.image_url;
+    if (product.image_url.startsWith('/')) return product.image_url;
+    return `/uploads/product_images/${product.id}/${product.image_url}`;
+  };
 
-    return `/uploads/gallery_folder/${product.image_url}`;
-  });
+  const [imgSrc, setImgSrc] = useState(getImageUrl);
 
   return (
     <div className="p-6 bg-white rounded-xl space-y-6">
       <div className="flex justify-between">
         <div className="flex gap-6">
           <Image
-            src={
-              imgSrc.startsWith('http')
-                ? imgSrc
-                : imgSrc.startsWith('/')
-                  ? imgSrc
-                  : `/${imgSrc}`
-            }
+            src={imgSrc}
             alt={product.code}
             width={380}
             height={280}

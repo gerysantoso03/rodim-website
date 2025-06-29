@@ -36,9 +36,9 @@ const FailedAlertDialog = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[400px] text-center">
         <DialogHeader>
-          <DialogTitle className="text-red-600 text-lg">Failed</DialogTitle>
+          <DialogTitle className="text-red-600 text-[16px]">Failed</DialogTitle>
         </DialogHeader>
-        <p className="text-sm text-gray-700">{message}</p>
+        <p className="text-[12px] text-gray-700">{message}</p>
         <DialogFooter className="justify-center">
           <Button
             onClick={() => onOpenChange(false)}

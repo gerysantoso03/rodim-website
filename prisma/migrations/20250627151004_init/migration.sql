@@ -32,8 +32,24 @@ CREATE TABLE "products" (
 );
 
 -- CreateTable
+CREATE TABLE "spec_categories" (
+    "id" SERIAL NOT NULL,
+    "code" VARCHAR(128) NOT NULL,
+    "description" VARCHAR(512),
+    "order" INTEGER,
+    "created_at" TIMESTAMPTZ(6) DEFAULT CURRENT_TIMESTAMP,
+    "created_by" INTEGER,
+    "updated_at" TIMESTAMPTZ(6) DEFAULT CURRENT_TIMESTAMP,
+    "updated_by" INTEGER,
+    "status" INTEGER DEFAULT 1,
+
+    CONSTRAINT "spec_categories_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "categories" (
     "id" SERIAL NOT NULL,
+    "spec_category_id" INTEGER NOT NULL,
     "code" VARCHAR(128) NOT NULL,
     "description" VARCHAR(512),
     "created_at" TIMESTAMPTZ(6) DEFAULT CURRENT_TIMESTAMP,
@@ -114,7 +130,13 @@ CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
 CREATE UNIQUE INDEX "products_code_key" ON "products"("code");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "spec_categories_code_key" ON "spec_categories"("code");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "categories_code_key" ON "categories"("code");
+
+-- AddForeignKey
+ALTER TABLE "categories" ADD CONSTRAINT "categories_spec_category_id_fkey" FOREIGN KEY ("spec_category_id") REFERENCES "spec_categories"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "product_categories" ADD CONSTRAINT "product_categories_product_id_fkey" FOREIGN KEY ("product_id") REFERENCES "products"("id") ON DELETE RESTRICT ON UPDATE CASCADE;

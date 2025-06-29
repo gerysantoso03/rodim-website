@@ -18,6 +18,7 @@ import { useState, useEffect } from 'react';
 import { truncateFileName } from '@/shared/helpers/helpers';
 
 export type GalleryFolderType = {
+  id?: number;
   title: string;
   is_visible: boolean;
   image_url: string;
@@ -45,13 +46,12 @@ export const GalleryFolderForm = ({
   const [imageSize, setImageSize] = useState<string | null>(null);
   const [confirmOpen, setConfirmOpen] = useState(false);
 
-  // 🌟 Tambahkan state validasi tombol
-  const isSubmitDisabled = !title.trim() || !imageName;
+  const isSubmitDisabled = !title.trim() || (mode === 'create' && !imageName);
 
   useEffect(() => {
     if (open) {
       setTitle(defaultValues?.title || '');
-      setIsVisible(defaultValues?.is_visible || true);
+      setIsVisible(defaultValues?.is_visible ?? true);
       setImageName(defaultValues?.image_url || null);
       setImageFile(undefined);
     }
@@ -60,14 +60,21 @@ export const GalleryFolderForm = ({
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
+      const sizeKB = file.size / 1024;
+      const sizeMB = sizeKB / 1024;
+
+      if (sizeMB > 5) {
+        alert('File size exceeds 5 MB. Please select a smaller file.');
+        return;
+      }
+
       setImageFile(file);
       setImageName(file.name);
 
-      const sizeKB = file.size / 1024;
       if (sizeKB < 1024) {
         setImageSize(`${sizeKB.toFixed(0)} KB`);
       } else {
-        setImageSize(`${(sizeKB / 1024).toFixed(2)} MB`);
+        setImageSize(`${sizeMB.toFixed(2)} MB`);
       }
     }
   };
@@ -75,9 +82,10 @@ export const GalleryFolderForm = ({
   const handleSubmit = () => {
     onSubmit(
       {
+        id: defaultValues?.id,
         title,
         is_visible,
-        image_url: imageName || '',
+        image_url: imageName ?? defaultValues?.image_url ?? '',
       },
       imageFile
     );
@@ -131,7 +139,7 @@ export const GalleryFolderForm = ({
 
             <div>
               <Label className="text-black text-[14px]/[20px] pb-2">
-                Thumbnail Image*
+                Thumbnail Image{mode === 'create' && '*'}
               </Label>
 
               {imageName ? (
