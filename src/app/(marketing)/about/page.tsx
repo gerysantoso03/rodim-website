@@ -5,7 +5,7 @@ import Image from 'next/image';
 import React from 'react';
 
 const AboutPage = () => {
-  const t = useTranslations("HomePage")
+  const t = useTranslations('HomePage');
 
   const verticalIntegrationCards = [
     {
@@ -120,8 +120,6 @@ const AboutPage = () => {
         'RODIM PPF dirancang dengan kemudahan dalam proses instalasi mengikuti lekukan kendaraan anda.',
     },
   ];
-
-
 
   return (
     <main className="about">
