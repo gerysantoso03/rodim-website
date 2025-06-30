@@ -25,7 +25,11 @@ const Footer = () => {
                 <span className="font-[700]">TEMPAT INSTALASI</span>
 
                 <div className="flex flex-col gap-[8px]">
-                  <Link href="https://www.google.com/maps/place/Monas,+Gambir,+Kecamatan+Gambir,+Kota+Jakarta+Pusat,+Daerah+Khusus+Ibukota+Jakarta/@-6.175403,106.824584,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f5d2db8c5617:0x4e446b7ac891d847!8m2!3d-6.1753917!4d106.8271533!16s%2Fg%2F11bw3wnng2?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D" target="_blank" className="w-fit">
+                  <Link
+                    href="https://www.google.com/maps/place/Monas,+Gambir,+Kecamatan+Gambir,+Kota+Jakarta+Pusat,+Daerah+Khusus+Ibukota+Jakarta/@-6.175403,106.824584,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f5d2db8c5617:0x4e446b7ac891d847!8m2!3d-6.1753917!4d106.8271533!16s%2Fg%2F11bw3wnng2?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    className="w-fit"
+                  >
                     <div className="flex gap-[8px] items-start">
                       <MapPin size={18} className="min-w-[1.8rem]" />
                       <p>
@@ -57,7 +61,7 @@ const Footer = () => {
                     </div>
                   </Link>
 
-                  <Link href="tel:+6282222222222" className="w-fit"> 
+                  <Link href="tel:+6282222222222" className="w-fit">
                     <div className="flex gap-[8px] items-center">
                       <Phone size={18} className="min-w-[1.8rem]" />
                       <p>+62 822-2222-2222</p>

@@ -16,31 +16,31 @@ export const retailers: Retailers[] = [
   {
     image: IconTiktok,
     title: 'Tiktok',
-    url: '#'
+    url: '#',
   },
-    {
+  {
     image: IconInstagram,
     title: 'Instagram',
-    url: '#'
+    url: '#',
   },
   {
     image: IconWhatsapp,
     title: 'Whatsapp',
-    url: '#'
+    url: '#',
   },
   {
     image: IconTokopedia,
     title: 'Tokopedia',
-    url: '#'
+    url: '#',
   },
   {
     image: IconShopee,
     title: 'Shopee',
-    url: '#'
+    url: '#',
   },
   {
     image: IconBliBli,
     title: 'Blibli',
-    url: '#'
-  }
+    url: '#',
+  },
 ];
