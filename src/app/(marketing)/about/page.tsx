@@ -1,9 +1,12 @@
 import Banner from '@/shared/components/banner/Banner';
 import { cn } from '@/shared/libs/shadcn/utils';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import React from 'react';
 
 const AboutPage = () => {
+  const t = useTranslations('HomePage');
+
   const verticalIntegrationCards = [
     {
       image: '/image/about/business-segment-materials.jpg',
@@ -130,7 +133,7 @@ const AboutPage = () => {
 
         <div className="absolute bottom-[5rem] md:bottom-[8rem] left-[4rem] md:left-[8rem] flex flex-col items-start z-[2]">
           <p className="font-normal text-[1.6rem] md:text-[2.4rem] tracking-[0.023rem] leading-[2.9rem] md:leading-[100%]">
-            Tentang BASF RODIM
+            Tentang BASF RODIM {t('title')}
           </p>
           <h1 className="font-bold leading-[100%] md:leading-[11rem] tracking-[-0.22rem] text-[4rem] md:text-[10.8rem] w-[60%] md:w-[80%]">
             Protection by World’s Best
