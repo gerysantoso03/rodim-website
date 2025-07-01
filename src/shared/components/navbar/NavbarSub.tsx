@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import Link from 'next/link';
 import Image from 'next/image';
@@ -56,7 +56,9 @@ const NavbarSub = () => {
   return (
     <div className="sticky top-0 z-[9999]" ref={stickyRef}>
       <div className={`text-white/80 relative`}>
-        <div className={`absolute inset-0 z-[1] ${isTop ? "backdrop-blur-2xl bg-white/12 border-b-1 border-white/20" : "bg-[#1F1F1F] border-b-1 border-transparent"} transition-all duration-300 ease-in-out`}></div>
+        <div
+          className={`absolute inset-0 z-[1] ${isTop ? 'backdrop-blur-2xl bg-white/12 border-b-1 border-white/20' : 'bg-[#1F1F1F] border-b-1 border-transparent'} transition-all duration-300 ease-in-out`}
+        ></div>
         <div className="w-full relative z-[2] max-w-[1440px] mx-auto min-h-[5.2rem] flex px-[16px] min-[1024px]:px-[40px] min-[1440px]:px-[120px] text-[14px]">
           <div className="text-[2rem] font-bold flex justify-between w-full flex-[1]">
             <div className="h-full flex items-center">
@@ -112,7 +114,7 @@ const NavbarSub = () => {
               overflow: 'hidden',
               transition: 'height 0.3s ease',
             }}
-            className={`absolute ${isTop ? "backdrop-blur-2xl bg-white/12" : "bg-[#1F1F1F]"} transition-all duration-300 ease-in-out z-10 w-full left-0 top-[100%] right-0 px-[1.6rem] lg:hidden`}
+            className={`absolute ${isTop ? 'backdrop-blur-2xl bg-white/12' : 'bg-[#1F1F1F]'} transition-all duration-300 ease-in-out z-10 w-full left-0 top-[100%] right-0 px-[1.6rem] lg:hidden`}
           >
             <div className="py-[1.2rem]">
               <Link href={`/product-rodim/${productId}`}>
@@ -147,7 +149,7 @@ const NavbarSub = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NavbarSub
+export default NavbarSub;

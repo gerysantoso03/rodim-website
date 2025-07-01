@@ -42,7 +42,6 @@ const VideoPlayer = () => {
     };
   }, []);
 
-
   return (
     <section className="w-full h-auto bg-black relative flex items-center justify-center rounded-[1.8rem] overflow-hidden">
       <video

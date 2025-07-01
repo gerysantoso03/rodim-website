@@ -55,35 +55,35 @@ const Navbar = () => {
 
               <div className="flex h-full items-center">
                 {products.map((product, i) => (
-                  <NavbarMenu 
+                  <NavbarMenu
                     key={product.id}
                     id={product.id}
                     title={product.title}
-                    firstChild={1 === (i + 1)}
-                    lastChild={products.length === (i + 1)}
+                    firstChild={1 === i + 1}
+                    lastChild={products.length === i + 1}
                     isProduct={true}
                   />
                 ))}
               </div>
 
               <div className="flex h-full items-center">
-                <NavbarMenu 
-                  id={"about"}
-                  title={"TENTANG BASF RODIM"}
+                <NavbarMenu
+                  id={'about'}
+                  title={'TENTANG BASF RODIM'}
                   firstChild={true}
                   lastChild={false}
                   isProduct={false}
                 />
-                <NavbarMenu 
-                  id={"gallery"}
-                  title={"GALERI"}
+                <NavbarMenu
+                  id={'gallery'}
+                  title={'GALERI'}
                   firstChild={false}
                   lastChild={false}
                   isProduct={false}
                 />
-                <NavbarMenu 
-                  id={"warranty"}
-                  title={"GARANSI"}
+                <NavbarMenu
+                  id={'warranty'}
+                  title={'GARANSI'}
                   firstChild={false}
                   lastChild={true}
                   isProduct={false}
@@ -93,13 +93,13 @@ const Navbar = () => {
           </div>
         </nav>
 
-        <NavbarSlide 
+        <NavbarSlide
           isOpenMenu={isOpenMenu}
           setIsOpenMenu={setIsOpenMenu}
           data={products}
         />
       </div>
-      
+
       <NavbarSub />
     </>
   );

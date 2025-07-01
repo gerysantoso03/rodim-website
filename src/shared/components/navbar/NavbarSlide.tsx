@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
@@ -13,7 +13,7 @@ type NavbarSlideProps = {
   data: Product[];
 };
 
-const NavbarSlide = ({ isOpenMenu, setIsOpenMenu, data } : NavbarSlideProps) => {
+const NavbarSlide = ({ isOpenMenu, setIsOpenMenu, data }: NavbarSlideProps) => {
   const pathname = usePathname();
 
   const segments = pathname.split('/');
@@ -104,7 +104,7 @@ const NavbarSlide = ({ isOpenMenu, setIsOpenMenu, data } : NavbarSlideProps) => 
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default NavbarSlide
+export default NavbarSlide;
