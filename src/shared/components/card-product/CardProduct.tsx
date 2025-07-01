@@ -37,7 +37,7 @@ const CardProduct = ({
           </div>
 
           <Link
-            href={productUrl}
+            href={`/product-rodim/${productUrl}`}
             target="_blank"
             className="px-[2.2rem] py-[1.2rem] text-[1.7rem] text-white bg-primary-blue rounded-full cursor-pointer"
           >

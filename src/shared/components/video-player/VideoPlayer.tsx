@@ -22,12 +22,17 @@ const VideoPlayer = () => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          video.play().catch((e) => console.error('Autoplay failed', e));
+          video.muted = true;
+          if (video.paused) {
+            video.play().catch((e) => console.error('Autoplay failed', e));
+          }
         } else {
-          video.pause();
+          if (!video.paused) {
+            video.pause();
+          }
         }
       },
-      { threshold: 0.6 } // main ketika 60% elemen terlihat
+      { threshold: 0.6 }
     );
 
     observer.observe(video);
@@ -36,6 +41,7 @@ const VideoPlayer = () => {
       observer.disconnect();
     };
   }, []);
+
 
   return (
     <section className="w-full h-auto bg-black relative flex items-center justify-center rounded-[1.8rem] overflow-hidden">
