@@ -4,6 +4,7 @@ import PopupLanguage from '@/shared/components/popup-language/PopupLanguage';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getLocale, getMessages } from 'next-intl/server';
 import React, { Suspense } from 'react';
+import Providers from './providers';
 
 const MarketingLayout = async ({
   children,
@@ -21,7 +22,7 @@ const MarketingLayout = async ({
           <PopupLanguage />
         </Suspense>
         <NextIntlClientProvider messages={messages}>
-          {children}
+          <Providers>{children}</Providers>
         </NextIntlClientProvider>
       </main>
       <Footer />
