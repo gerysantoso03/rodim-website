@@ -10,13 +10,13 @@ const ProductPage = async () => {
   }
 
   const products = result.map((g) => ({
-    id: g.id,
+    id: String(g.id),
     code: g.code,
-    description: g.description,
-    thickness: g.thickness,
-    gloss: g.gloss,
-    quv: g.quv,
-    warranty: g.warranty,
+    description: g.description || '',
+    thickness: g.thickness || '',
+    gloss: g.gloss || '',
+    quv: g.quv || '',
+    warranty: g.warranty || '',
   }));
 
   return (

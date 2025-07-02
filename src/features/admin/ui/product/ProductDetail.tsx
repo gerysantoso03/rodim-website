@@ -43,7 +43,7 @@ const ProductDetailUI = ({ product }: ProductDetailUIProps) => {
   const [imgSrc, setImgSrc] = useState(getImageUrl);
 
   return (
-    <div className="p-6 bg-white rounded-xl space-y-6">
+    <div className="bg-white rounded-xl space-y-6">
       <div className="flex justify-between">
         <div className="flex gap-6">
           <Image
@@ -51,7 +51,7 @@ const ProductDetailUI = ({ product }: ProductDetailUIProps) => {
             alt={product.code}
             width={380}
             height={280}
-            className="object-cover rounded-2xl"
+            className="object-cover rounded-[12px] max-w-[380px] max-h-[280px] border border-[#E4E4E7]"
             onError={() => setImgSrc('/image/placeholder-image.png')}
           />
           <div className="flex-col justify-center gap-3">
@@ -59,26 +59,28 @@ const ProductDetailUI = ({ product }: ProductDetailUIProps) => {
             <p className="text-muted-foreground">
               {product.description || '-'}
             </p>
-            <div className="grid grid-cols-2 gap-4 mt-4">
+            <div className="grid grid-cols-2 gap-8 mt-4">
               <div className="border border-[#E4E4E7] rounded-md w-[285px] h-[90px] flex flex-col px-6 justify-center">
-                <p className="text-base text-gray-500">Thickness</p>
-                <p className="font-semibold text-black">
+                <p className="text-xl text-gray-600">Thickness</p>
+                <p className="text-3xl font-semibold text-black">
                   {product.thickness || '-'}
                 </p>
               </div>
               <div className="border border-[#E4E4E7] rounded-md w-[285px] h-[90px] flex flex-col px-6 justify-center">
-                <p className="text-base text-gray-500">Gloss (60°)</p>
-                <p className="font-semibold text-black">
+                <p className="text-xl text-gray-600">Gloss (60°)</p>
+                <p className="text-3xl font-semibold text-black">
                   {product.gloss || '-'}
                 </p>
               </div>
               <div className="border border-[#E4E4E7] rounded-md w-[285px] h-[90px] flex flex-col px-6 justify-center">
-                <p className="text-base text-gray-500">QUV</p>
-                <p className="font-semibold text-black">{product.quv || '-'}</p>
+                <p className="text-xl text-gray-600">QUV</p>
+                <p className="text-3xl font-semibold text-black">
+                  {product.quv || '-'}
+                </p>
               </div>
               <div className="border border-[#E4E4E7] rounded-md w-[285px] h-[90px] flex flex-col px-6 justify-center">
-                <p className="text-base text-gray-500">Warranty</p>
-                <p className="font-semibold text-black">
+                <p className="text-xl text-gray-600">Warranty</p>
+                <p className="text-3xl font-semibold text-black">
                   {product.warranty || '-'}
                 </p>
               </div>
@@ -87,7 +89,7 @@ const ProductDetailUI = ({ product }: ProductDetailUIProps) => {
         </div>
       </div>
 
-      <div className="shadow border-[#E4E4E7] gap-3 px-6 py-6 rounded-2xl">
+      <div className="border-1 border-[#E4E4E7] gap-3 px-6 py-6 rounded-2xl">
         <h3 className="text-4xl font-semibold text-black pb-4">
           Specifications
         </h3>
