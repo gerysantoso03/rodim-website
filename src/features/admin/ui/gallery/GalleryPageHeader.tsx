@@ -21,7 +21,7 @@ const GalleryPageHeader = () => {
         return;
       }
 
-      const maxSizeMB = 2;
+      const maxSizeMB = 5;
       const maxSizeBytes = maxSizeMB * 1024 * 1024;
       if (file.size > maxSizeBytes) {
         console.error(`File size exceeds ${maxSizeMB}MB`);
@@ -38,7 +38,7 @@ const GalleryPageHeader = () => {
 
       setOpenForm(false);
       setOpenSuccess(true);
-      window.location.reload();
+      // window.location.reload();
     } catch (error) {
       console.error('Failed to create gallery folder', error);
       setOpenForm(false);

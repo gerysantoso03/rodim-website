@@ -5,20 +5,20 @@ import ProductDetailUI from '@/features/admin/ui/product/ProductDetail';
 export default async function ProductDetailPage({
   params,
 }: {
-  params: { productId: string };
+  params: Promise<{ productId: string }>;
 }) {
-  // console.log(params);
-  const productId = parseInt(params.productId, 10);
+  const { productId } = await params;
 
-  const result = await getAllProductDetailWithCategoriesByIdAction(productId);
-  console.log(result);
+  const result = await getAllProductDetailWithCategoriesByIdAction(
+    Number(productId)
+  );
 
   if (!result) {
     throw new Error('Product not found');
   }
 
   return (
-    <div className="flex flex-col gap-6 py-5">
+    <div className="flex flex-col gap-6">
       <ProductDetailHeader productId={productId} />
       <ProductDetailUI product={result} />
     </div>
