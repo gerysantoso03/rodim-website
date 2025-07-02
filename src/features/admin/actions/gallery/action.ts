@@ -180,7 +180,6 @@ export async function createGalleryImageAction(formData: FormData) {
 
 export async function editGalleryFolderAction(formData: FormData) {
   try {
-    // console.log(formData);
     const id = parseInt(formData.get('id') as string, 10);
     const title = formData.get('title') as string;
     const is_visible = formData.get('is_visible') === 'true';
