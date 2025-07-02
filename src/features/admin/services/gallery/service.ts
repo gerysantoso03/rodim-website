@@ -100,7 +100,7 @@ export async function createGalleryImage(data: {
 export async function editGalleryFolder(data: {
   id: number;
   title: string;
-  cover_image?: string;
+  // cover_image?: string;
   is_visible: boolean;
   updated_by: number;
 }) {
