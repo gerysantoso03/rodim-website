@@ -41,7 +41,6 @@ export async function getAllProductDetailWithCategoriesByIdAction(id: number) {
 
 export async function getProductDetailByIdAction(id: number) {
   try {
-    // console.log(id);
     return await getProductDetailById(id);
   } catch (error) {
     return { success: false, message: 'Failed to get product detail', error };
@@ -74,7 +73,7 @@ export async function createProductAction(formData: FormData) {
     const user = await getAuthUser();
     const created_by = user.id;
 
-    // console.log(formData);
+    console.log(formData);
     const specs: Record<string, { value_1?: string; value_2?: string }> = {};
     for (const [key, value] of formData.entries()) {
       if (key.startsWith('specs.') && typeof value === 'string') {
@@ -169,7 +168,7 @@ export async function editProductAction(formData: FormData) {
       await fs.mkdir(uploadDir, { recursive: true });
       await fs.writeFile(filePath, buffer);
 
-      image_url = `${fileName}`;
+      image_url = `/uploads/product_images/${existingProduct.id}/${fileName}`;
     }
 
     const specs: Record<string, { value_1?: string; value_2?: string }> = {};

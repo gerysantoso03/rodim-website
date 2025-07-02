@@ -26,7 +26,6 @@ type ProductFormProps = {
     gloss: string;
     quv: string;
     warranty: string;
-    image_url: string;
     specs?: Record<string, { value_1?: string; value_2?: string }>;
   };
   specSections: {
@@ -44,7 +43,6 @@ export default function ProductForm({
   specSections,
 }: ProductFormProps) {
   const router = useRouter();
-  // console.log(defaultValues);
 
   const [form, setForm] = useState({
     id: defaultValues?.id || '',
@@ -54,17 +52,12 @@ export default function ProductForm({
     gloss: defaultValues?.gloss || '',
     quv: defaultValues?.quv || '',
     warranty: defaultValues?.warranty || '',
-    image_url: defaultValues?.image_url || '',
     specs: defaultValues?.specs || {},
   });
 
   const [imageFile, setImageFile] = useState<File | null>(null);
-  const [imageSize, setImageSize] = useState<string | null>(null);
   const [showSuccessDialog, setShowSuccessDialog] = useState(false);
   const [showFailedDialog, setShowFailedDialog] = useState(false);
-  const [defaultImageName, setDefaultImageName] = useState(
-    defaultValues?.image_url || null
-  ); // console.log(defaultImageName);
 
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -97,26 +90,18 @@ export default function ProductForm({
 
     return mode === 'create'
       ? requiredFieldsFilled && imageFile !== null
-      : requiredFieldsFilled &&
-          (imageFile !== null || defaultImageName !== null);
+      : requiredFieldsFilled;
   };
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      const sizeKB = file.size / 1024;
       const sizeMB = file.size / (1024 * 1024);
       if (sizeMB > 5) {
         alert('File size exceeds 5MB. Please select a smaller file.');
         return;
       }
       setImageFile(file);
-
-      if (sizeKB < 1024) {
-        setImageSize(`${sizeKB.toFixed(0)} KB`);
-      } else {
-        setImageSize(`${sizeMB.toFixed(2)} MB`);
-      }
     }
   };
 
@@ -152,7 +137,7 @@ export default function ProductForm({
     formData.append('warranty', form.warranty);
     if (imageFile) formData.append('image', imageFile);
     if (mode === 'edit') {
-      formData.append('id', parseInt(form.id, 10)); // 👈 kirim id produk
+      formData.append('id', String(form.id)); // 👈 kirim id produk
     }
 
     for (const [code, values] of Object.entries(form.specs)) {
@@ -196,11 +181,10 @@ export default function ProductForm({
         </div>
 
         <Label className="text-black text-[14px]/[20px]">Product Image*</Label>
-        {imageFile || defaultImageName ? (
-          <div className="flex items-center justify-between border-1 border-[#E4E4E7] rounded-md px-4 py-3">
+        {imageFile ? (
+          <div className="flex items-center justify-between border rounded-md px-4 py-3">
             <span className="truncate text-[14px]/[20px] text-[#09090B]">
-              {imageFile?.name || defaultImageName}{' '}
-              {imageSize && `(${imageSize})`}
+              {imageFile.name}
             </span>
             <div className="flex gap-2">
               <label htmlFor="upload-image" className="cursor-pointer">
@@ -230,10 +214,7 @@ export default function ProductForm({
                 type="button"
                 variant="outline"
                 className="border-red-500 text-red-500 text-[14px]/[20px]"
-                onClick={() => {
-                  setImageFile(null);
-                  setDefaultImageName(null); // reset nama lama jika dihapus
-                }}
+                onClick={() => setImageFile(null)}
               >
                 <Trash2 />
               </Button>
@@ -242,7 +223,7 @@ export default function ProductForm({
         ) : (
           <label
             htmlFor="upload-image"
-            className="flex items-center gap-2 text-base border-1 border-[#E4E4E7] rounded-md w-full h-14 px-4 py-2 cursor-pointer text-gray-500"
+            className="flex items-center gap-2 text-base border rounded-md w-full h-14 px-4 py-2 cursor-pointer text-gray-500"
           >
             <ImagePlus className="w-4 h-4" />
             Upload Thumbnail image

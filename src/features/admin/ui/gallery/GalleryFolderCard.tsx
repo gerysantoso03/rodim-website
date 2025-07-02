@@ -170,7 +170,7 @@ const GalleryFolderCard = ({
           <AlertDialogComponent
             title="Delete Gallery Folder?"
             description="Are you sure you want to delete gallery folder? Deleted gallery folder cannot be restored."
-            itemName="Delete"
+            itemName="Delete Gallery"
             type="warning"
             onConfirm={() => onDelete(gallery)}
           />

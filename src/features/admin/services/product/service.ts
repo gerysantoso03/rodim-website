@@ -125,7 +125,7 @@ export async function createProduct(data: CreateProductInput) {
       category_code,
       { value_1 = '', value_2 = '' },
     ] of Object.entries(specs)) {
-      // console.log(category_code);
+      console.log(category_code);
       const category = await prisma.categories.findFirst({
         where: { status: 1, code: category_code },
       });
@@ -169,7 +169,7 @@ export async function editProduct(id: number, data: EditProductInput) {
       gloss,
       quv,
       warranty,
-      ...(image_url ? { image_url } : {}), // hanya masukkan jika ada
+      image_url,
       updated_by,
     },
   });

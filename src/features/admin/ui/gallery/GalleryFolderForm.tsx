@@ -137,75 +137,70 @@ export const GalleryFolderForm = ({
               />
             </div>
 
-            {mode === 'create' && (
-              <div>
-                <Label className="text-black text-[14px]/[20px] pb-2">
-                  Thumbnail Image*
-                </Label>
+            <div>
+              <Label className="text-black text-[14px]/[20px] pb-2">
+                Thumbnail Image{mode === 'create' && '*'}
+              </Label>
 
-                {imageName ? (
-                  <div className="flex items-center justify-between border-gray-400 rounded-md p-3">
-                    <span className="truncate text-gray-500 text-[14px]/[20px]">
-                      {truncateFileName(imageName)}{' '}
-                      {imageSize && `(${imageSize})`}
-                    </span>
-                    <div className="flex gap-2">
-                      <label
-                        htmlFor="upload-image"
-                        className="flex items-center"
-                      >
-                        <Input
-                          id="upload-image"
-                          type="file"
-                          accept="image/*"
-                          className="hidden"
-                          onChange={handleImageChange}
-                        />
-                        <Button
-                          variant="outline"
-                          className="bg-white text-black border-gray-400 rounded-md text-[14px]/[20px]"
-                        >
-                          <label
-                            htmlFor="upload-image"
-                            className="flex items-center"
-                          >
-                            <span className="flex items-center gap-1">
-                              <Upload className="w-4 h-4" />
-                              Re-Upload Img
-                            </span>
-                          </label>
-                        </Button>
-                      </label>
+              {imageName ? (
+                <div className="flex items-center justify-between border-gray-400 rounded-md p-3">
+                  <span className="truncate text-gray-500 text-[14px]/[20px]">
+                    {truncateFileName(imageName)}{' '}
+                    {imageSize && `(${imageSize})`}
+                  </span>
+                  <div className="flex gap-2">
+                    <label htmlFor="upload-image" className="flex items-center">
+                      <Input
+                        id="upload-image"
+                        type="file"
+                        accept="image/*"
+                        className="hidden"
+                        onChange={handleImageChange}
+                      />
                       <Button
                         variant="outline"
-                        className="border-red-500 text-red-500 text-[14px]/[20px]"
-                        onClick={() => {
-                          setImageName(null);
-                          setImageFile(undefined);
-                        }}
+                        className="bg-white text-black border-gray-400 rounded-md text-[14px]/[20px]"
                       >
-                        <Trash2 className="w-4 h-4" /> Delete Img
+                        <label
+                          htmlFor="upload-image"
+                          className="flex items-center"
+                        >
+                          <span className="flex items-center gap-1">
+                            <Upload className="w-4 h-4" />
+                            Re-Upload Img
+                          </span>
+                        </label>
                       </Button>
-                    </div>
+                    </label>
+                    <Button
+                      variant="outline"
+                      className="border-red-500 text-red-500 text-[14px]/[20px]"
+                      onClick={() => {
+                        setImageName(null);
+                        setImageFile(undefined);
+                      }}
+                    >
+                      <Trash2 className="w-4 h-4" /> Delete Img
+                    </Button>
                   </div>
-                ) : (
-                  <label
-                    htmlFor="upload-image"
-                    className="flex items-center gap-2 border text-[14px]/[20px] border-gray-200 rounded-md w-full h-14 px-4 py-2 cursor-pointer text-gray-500"
-                  >
-                    <ImagePlus className="w-4 h-4" />
-                    Upload Thumbnail image
-                    <input
-                      id="upload-image"
-                      type="file"
-                      accept="image/*"
-                      className="hidden"
-                      onChange={handleImageChange}
-                    />
-                  </label>
-                )}
-              </div>
-            )}
+                </div>
+              ) : (
+                <label
+                  htmlFor="upload-image"
+                  className="flex items-center gap-2 border text-[14px]/[20px] border-gray-200 rounded-md w-full h-14 px-4 py-2 cursor-pointer text-gray-500"
+                >
+                  <ImagePlus className="w-4 h-4" />
+                  Upload Thumbnail image
+                  <input
+                    id="upload-image"
+                    type="file"
+                    accept="image/*"
+                    className="hidden"
+                    onChange={handleImageChange}
+                  />
+                </label>
+              )}
+            </div>
 
             <div className="flex items-center gap-2">
               <Switch
@@ -230,6 +225,7 @@ export const GalleryFolderForm = ({
                 Cancel
               </Button>
               <Button
+                // 🌟 Highlight perubahan tombol: disable + styling
                 className={`w-[160px] text-[14px]/[20px] ${
                   isSubmitDisabled
                     ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
@@ -249,6 +245,7 @@ export const GalleryFolderForm = ({
         </DialogContent>
       </Dialog>
 
+      {/* Confirmation Dialog */}
       <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>
         <DialogContent className="sm:max-w-[400px]">
           <DialogHeader>

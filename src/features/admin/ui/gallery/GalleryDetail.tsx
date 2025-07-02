@@ -16,20 +16,20 @@ import FailedAlertDialog from '@/shared/components/failed-alert-dialog/FailedAle
 
 export type ImageType = {
   id: number;
-  name: string;
   url: string;
+  name: string;
   is_visible: boolean;
 };
 
 export default function GalleryDetail({
   title,
   total,
-  images = [],
+  images,
   galleryId,
 }: {
   title: string;
   total: number;
-  images?: ImageType[];
+  images: ImageType[];
   galleryId: number;
 }) {
   const [showModal, setShowModal] = useState(false);
@@ -42,16 +42,19 @@ export default function GalleryDetail({
     setShowModal(true);
   };
 
-  const handleImageSubmit = async (data: { file: File; visible: boolean }) => {
+  const handleImageSubmit = async (data: {
+    file: File;
+    is_visible: boolean;
+  }) => {
     const formData = new FormData();
     formData.append('file', data.file);
-    formData.append('is_visible', String(data.visible));
+    formData.append('is_visible', String(data.is_visible));
     formData.append('gallery_id', String(galleryId));
 
     const result = await createGalleryImageAction(formData);
     if (result.success) {
       setOpenSuccess(true);
-      // setTimeout(() => window.location.reload(), 3000);
+      setTimeout(() => window.location.reload(), 3000);
     } else {
       setOpenFailed(true);
     }
@@ -61,7 +64,7 @@ export default function GalleryDetail({
     const result = await deleteGalleryImageAction(imageId);
     if (result.success) {
       setOpenSuccess(true);
-      // setTimeout(() => window.location.reload(), 3000);
+      setTimeout(() => window.location.reload(), 3000);
     } else {
       setOpenFailed(true);
     }
@@ -71,13 +74,14 @@ export default function GalleryDetail({
     imageId: number,
     isVisible: boolean
   ) => {
+    console.log('asdsad');
     const result = await toggleGalleryImageVisibilityAction(
       imageId,
       !isVisible
     );
     if (result.success) {
       setOpenSuccess(true);
-      // setTimeout(() => window.location.reload(), 3000);
+      setTimeout(() => window.location.reload(), 3000);
     } else {
       setOpenFailed(true);
     }
@@ -145,7 +149,7 @@ export default function GalleryDetail({
       <SuccessAlertDialog
         open={openSuccess}
         onOpenChange={setOpenSuccess}
-        autoCloseMs={300000}
+        autoCloseMs={3000}
         message="Operation successful!"
       />
 

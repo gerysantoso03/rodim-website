@@ -5,28 +5,16 @@ import { getGalleryFolderWithImagesAction } from '@/features/admin/actions/galle
 export default async function GalleryDetailPage({
   params,
 }: {
-  params: Promise<{ galleryId: string }>;
+  params: { galleryId: string };
 }) {
-  const { galleryId } = await params;
+  const galleryId = Number(params.galleryId);
+  const result = await getGalleryFolderWithImagesAction(galleryId);
 
-  if (!galleryId) {
-    return <div className="text-red-500">Gallery ID not provided</div>;
+  if (!result.success) {
+    return <div className="text-red-500">{result.message}</div>;
   }
 
-  const numericGalleryId = Number(galleryId);
-
-  const result = await getGalleryFolderWithImagesAction(numericGalleryId);
-
-  if (!result.success || !result.data) {
-    return (
-      <div className="text-red-500">
-        {result.message ?? 'Failed to load gallery'}
-      </div>
-    );
-  }
-
-  const title = result.data.title ?? '-';
-  const images = result.data.images ?? [];
+  const { title, images } = result.data;
 
   return (
     <div className="space-y-6">
@@ -35,7 +23,7 @@ export default async function GalleryDetailPage({
         title={title}
         total={images.length}
         images={images}
-        galleryId={numericGalleryId}
+        galleryId={galleryId}
       />
     </div>
   );

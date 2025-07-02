@@ -63,39 +63,34 @@ const GalleryPageUI = ({ galleryFolders }: GalleryPageUIProps) => {
 
   const handleSubmit = async (values: GalleryFolderType, file?: File) => {
     try {
+      if (!file) {
+        setOpenFailed(true);
+        return;
+      }
+
+      const maxSizeMB = 2;
+      const maxSizeBytes = maxSizeMB * 1024 * 1024;
+      if (file.size > maxSizeBytes) {
+        alert(`Image size must be less than ${maxSizeMB}MB`);
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append('title', values.title);
+      formData.append('is_visible', String(values.is_visible));
+      formData.append('file', file);
+
       if (isCreateMode) {
-        if (!file) {
-          setOpenFailed(true);
-          return;
-        }
-
-        const maxSizeMB = 5;
-        const maxSizeBytes = maxSizeMB * 1024 * 1024;
-        if (file.size > maxSizeBytes) {
-          alert(`Image size must be less than ${maxSizeMB}MB`);
-          return;
-        }
-
-        const formData = new FormData();
-        formData.append('title', values.title);
-        formData.append('is_visible', String(values.is_visible));
-        formData.append('file', file);
-
         await createGalleryFolderAction(formData);
       } else if (editGallery) {
-        // Hanya kirim title dan is_visible saat edit
-        const formData = new FormData();
         formData.append('id', String(editGallery.id));
-        formData.append('title', values.title);
-        formData.append('is_visible', String(values.is_visible));
-
         await editGalleryFolderAction(formData);
       }
 
       setOpenForm(false);
       setEditGallery(null);
       setOpenSuccess(true);
-      // window.location.reload();
+      window.location.reload();
     } catch (error) {
       console.error('Failed to save gallery folder', error);
       setOpenForm(false);

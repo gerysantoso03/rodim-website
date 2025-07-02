@@ -11,26 +11,31 @@ const ProductDetailHeader = ({ productId }: { productId: number }) => {
   const router = useRouter();
 
   return (
-    <div className="flex flex-col gap-6 py-5">
-      <div className="border-b-2 border-gray-200">
-        <h1 className="text-[#09090B] font-semibold text-[24px]/[32px]">
+    <div className="w-full px-6 pt-6 pb-4 border-b border-gray-200">
+      {/* Baris bawah: Judul dan deskripsi */}
+      <div className="mt-4">
+        <h1 className="text-[#09090B] font-semibold text-[24px]/[32px]]">
           Product Detail
         </h1>
-        <p className="text-[14px]/[20px] text-[#71717A] mt-1 mb-4">
+        <p className="text-[14px]/[20px] text-[#71717A] mt-1">
           Create and manage your product collections
         </p>
       </div>
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2 mb-2">
+        <div className="flex items-center gap-2">
           <Link
             href="/product"
             className="rounded-lg border border-gray-200 p-1.5 hover:bg-gray-100 inline-flex"
           >
-            <ChevronLeft className="w-8 h-8 text-black" />
+            <ChevronLeft className="w-5 h-5 text-black" />
           </Link>
-          <span className="text-gray-400">Product</span>
-          <span className="text-black">/</span>
-          <span className="text-black font-semibold">Product Detail</span>
+          <span className="text-[14px]/[20px] text-muted-foreground">
+            Product
+          </span>
+          <span className="text-[14px]/[20px] text-muted-foreground">/</span>
+          <span className="text-[14px]/[20px] font-medium text-black">
+            Product Detail
+          </span>
         </div>
 
         <div className="flex space-x-2">
@@ -43,7 +48,6 @@ const ProductDetailHeader = ({ productId }: { productId: number }) => {
             </Button>
           </Link>
           <AlertDialogComponent
-            type="warning"
             title="Delete Product?"
             triggerLabel={
               <Button
@@ -54,7 +58,7 @@ const ProductDetailHeader = ({ productId }: { productId: number }) => {
               </Button>
             }
             description="Are you sure you want to delete product? Deleted product cannot be restored."
-            itemName="Delete"
+            itemName="Product"
             onConfirm={async () => {
               await deleteProductAction(Number(productId));
               router.push('/product');

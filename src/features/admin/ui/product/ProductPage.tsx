@@ -17,11 +17,11 @@ import { deleteProductAction } from '@/features/admin/actions/product/action';
 type Product = {
   id: string;
   code: string;
-  description?: string;
-  thickness?: string;
-  gloss?: string;
-  quv?: string;
-  warranty?: string;
+  description: string;
+  thickness: string;
+  gloss: string;
+  quv: string;
+  warranty: string;
 };
 
 const ProductPage = ({ products }: { products: Product[] }) => {
@@ -74,9 +74,7 @@ const ProductPage = ({ products }: { products: Product[] }) => {
               {products.map((product, index) => (
                 <TableRow
                   className="border-b-2 border-gray-200"
-                  onDoubleClick={() =>
-                    router.push(`/product/${product.id}/detail`)
-                  }
+                  onClick={() => router.push(`/product/${product.id}/detail`)}
                   key={index}
                 >
                   <TableCell className="px-8 py-8 text-[14px]/[20px] text-[#09090B]">
@@ -102,10 +100,9 @@ const ProductPage = ({ products }: { products: Product[] }) => {
                     className="px-8 py-8 text-center space-x-2"
                   >
                     <AlertDialogComponent
-                      type="warning"
                       title="Delete Product?"
                       description="Are you sure you want to delete product? Deleted product cannot be restored."
-                      itemName="Delete"
+                      itemName="Product"
                       onConfirm={async () => {
                         await deleteProductAction(Number(product.id));
                         router.refresh();

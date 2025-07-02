@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { Badge } from '@/shared/components/shadcn/ui/badge';
 import { Button } from '@/shared/components/shadcn/ui/button';
-import { Eye, EyeOff } from 'lucide-react';
+import { Pencil, Trash2, Eye, EyeOff } from 'lucide-react';
 import AlertDialogComponent from '@/shared/components/admin/AlertDialogComponent';
 
 type ImageType = {
@@ -77,22 +77,22 @@ export default function GalleryImageCard({
             />
 
             <AlertDialogComponent
-              title="Delete Gallery Image?"
-              description="Are you sure you want to delete gallery image? Deleted gallery image cannot be restored."
-              itemName="Delete"
+              title="Delete Gallery Folder?"
+              description="Are you sure you want to delete gallery folder? Deleted gallery folder cannot be restored."
+              itemName="Delete Gallery"
               type="warning"
               onConfirm={() => onDelete?.(image.id)}
             />
           </div>
 
-          {/* <Button
+          <Button
             variant="outline"
             size="icon"
             className="h-14 w-14 rounded-md border border-[#E4E4E7] bg-white hover:bg-gray-100"
             onClick={() => onEdit?.(image)}
           >
             <Pencil className="w-14 h-14 text-gray-700" />
-          </Button> */}
+          </Button>
         </div>
       </div>
     </div>

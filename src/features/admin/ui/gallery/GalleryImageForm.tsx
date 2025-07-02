@@ -13,7 +13,7 @@ import { Label } from '@/shared/components/shadcn/ui/label';
 import { Button } from '@/shared/components/shadcn/ui/button';
 import { Switch } from '@/shared/components/shadcn/ui/switch';
 import { Upload, Trash2, X } from 'lucide-react';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { truncateFileName } from '@/shared/helpers/helpers';
 
 export default function GalleryImageForm({
@@ -28,7 +28,6 @@ export default function GalleryImageForm({
   const [file, setFile] = useState<File | null>(null);
   const [fileSize, setFileSize] = useState<string | null>(null);
   const [visible, setVisible] = useState(true);
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   const formatBytes = (bytes: number) =>
     bytes < 1024
@@ -118,15 +117,11 @@ export default function GalleryImageForm({
                       type="file"
                       accept="image/*"
                       className="hidden"
-                      ref={fileInputRef}
                       onChange={handleFileChange}
                     />
                     <Button
                       variant="ghost"
                       size="icon"
-                      onClick={() => {
-                        fileInputRef.current?.click();
-                      }}
                       className="border-1 border-[#E4E4E7] w-14 h-14"
                     >
                       <Upload className="w-4 h-4 text-muted-foreground" />

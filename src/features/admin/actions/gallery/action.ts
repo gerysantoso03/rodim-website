@@ -126,7 +126,6 @@ export async function createGalleryImageAction(formData: FormData) {
     const file = formData.get('file') as File;
     const is_visible = formData.get('is_visible') === 'true';
     const gallery_folder_id = Number(formData.get('gallery_id'));
-    // console.log(is_visible);
 
     if (!file || file.size === 0 || !gallery_folder_id) {
       return {
@@ -180,11 +179,10 @@ export async function createGalleryImageAction(formData: FormData) {
 
 export async function editGalleryFolderAction(formData: FormData) {
   try {
-    // console.log(formData);
     const id = parseInt(formData.get('id') as string, 10);
     const title = formData.get('title') as string;
     const is_visible = formData.get('is_visible') === 'true';
-    // const file = formData.get('file') as File | null;
+    const file = formData.get('file') as File | null;
 
     const existingFolder = await getGalleryFolderDetailById(id);
     if (!existingFolder) {
@@ -193,52 +191,52 @@ export async function editGalleryFolderAction(formData: FormData) {
 
     const user = await getAuthUser();
     const updated_by = user.id;
-    // let newFileName: string | undefined = undefined;
+    let newFileName: string | undefined = undefined;
 
-    // if (file && file.size > 0) {
-    //   const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
-    //   if (!allowedTypes.includes(file.type)) {
-    //     return { success: false, message: 'Invalid file type' };
-    //   }
+    if (file && file.size > 0) {
+      const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+      if (!allowedTypes.includes(file.type)) {
+        return { success: false, message: 'Invalid file type' };
+      }
 
-    //   const extension = path.extname(file.name);
-    //   newFileName = `${generateSecureRandomString()}${extension}`;
+      const extension = path.extname(file.name);
+      newFileName = `${generateSecureRandomString()}${extension}`;
 
-    //   const bytes = await file.arrayBuffer();
-    //   const buffer = Buffer.from(bytes);
+      const bytes = await file.arrayBuffer();
+      const buffer = Buffer.from(bytes);
 
-    //   const uploadDir = path.join(
-    //     process.cwd(),
-    //     'public',
-    //     'uploads',
-    //     'gallery_folder',
-    //     `${id}`
-    //   );
-    //   const newFilePath = path.join(uploadDir, newFileName);
+      const uploadDir = path.join(
+        process.cwd(),
+        'public',
+        'uploads',
+        'gallery_folder',
+        `${id}`
+      );
+      const newFilePath = path.join(uploadDir, newFileName);
 
-    //   try {
-    //     await fs.mkdir(uploadDir, { recursive: true });
-    //     await fs.writeFile(newFilePath, buffer);
+      try {
+        await fs.mkdir(uploadDir, { recursive: true });
+        await fs.writeFile(newFilePath, buffer);
 
-    //     // Hapus file lama jika cover_image lama berbeda dan ada
-    //     if (
-    //       existingFolder.cover_image &&
-    //       existingFolder.cover_image !== newFileName
-    //     ) {
-    //       const oldFilePath = path.join(uploadDir, existingFolder.cover_image);
-    //       await fs
-    //         .unlink(oldFilePath)
-    //         .catch((err) => console.warn('Failed to delete old image:', err));
-    //     }
-    //   } catch (err) {
-    //     console.error('Failed to upload file:', err);
-    //     return {
-    //       success: false,
-    //       message: 'Failed to upload image file',
-    //       error: err,
-    //     };
-    //   }
-    // }
+        // Hapus file lama jika cover_image lama berbeda dan ada
+        if (
+          existingFolder.cover_image &&
+          existingFolder.cover_image !== newFileName
+        ) {
+          const oldFilePath = path.join(uploadDir, existingFolder.cover_image);
+          await fs
+            .unlink(oldFilePath)
+            .catch((err) => console.warn('Failed to delete old image:', err));
+        }
+      } catch (err) {
+        console.error('Failed to upload file:', err);
+        return {
+          success: false,
+          message: 'Failed to upload image file',
+          error: err,
+        };
+      }
+    }
 
     const updatePayload: any = {
       id,
@@ -247,9 +245,9 @@ export async function editGalleryFolderAction(formData: FormData) {
       updated_by,
     };
 
-    // if (newFileName) {
-    //   updatePayload.cover_image = newFileName;
-    // }
+    if (newFileName) {
+      updatePayload.cover_image = newFileName;
+    }
 
     const result = await editGalleryFolder(updatePayload);
 
