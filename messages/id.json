@@ -1,6 +1,104 @@
 {
+  "Navbar": {
+    "about": "Tentang BASF RODIM",
+    "gallery": "Galeri",
+    "warranty": "Garansi",
+    "Product" : {
+      "introduction": "Pengenalan",
+      "specification": "Spesifikasi Teknis"
+    }
+  },
+   "Footer": {
+    "installation": "Tempat Instalasi",
+    "operational": "Jam Operasional",
+    "monday": "Senin",
+    "friday": "Jumat",
+    "saturday": "Sabtu",
+    "sunday": "Minggu: Tutup",
+    "contact": "Hubungi Kami"
+  },
+   "ProductRodimPage": {
+    "FeelDifference": {
+      "discoverLabel": "Selengkapnya",
+      "closeLabel": "Tutup Detail",
+      "title1": "Tampil elegan, tetap terlindungi",
+      "desc1": "PPF kami dirancang untuk memberikan perlindungan menyeluruh sekaligus mempertahankan estetika kendaraan dalam jangka panjang, dengan pilihan finishing glossy atau matte.",
+      "title2": "Daya Tahan",
+      "subtitle2": "Ingin perlindungan yang tahan lama? RODIM PPF adalah jawabannya.",
+      "desc2": "RODIM PPF dirancang untuk memberikan ketahanan yang lebih unggul dibandingkan PPF lainnya. Dengan layanan garansi yang kami berikan, kami yakin bahwa produk kami mampu memberikan perlindungan optimal terhadap risiko jalanan dan kondisi cuaca yang berubah setiap hari.",
+      "title3": "Perekat",
+      "subtitle3": "Daya rekat unggul dari BASF, melekat sempurna tanpa risiko merusak cat.",
+      "desc3": "Teknologi perekat RODIM PPF merupakan inovasi material dari BASF. Dengan pemahaman mendalam dan keahlian dalam cat otomotif kami menjamin perlindungan menyeluruh tanpa khawatir merusak cat kendaraan Anda.",
+      "title4": "Garansi",
+      "subtitle4": "Dengan pengalaman lebih dari 150 tahun, anda mendapat garansi terpercaya dari BASF",
+      "desc4": "RODIM adalah brand yang dimiliki oleh BASF—perusahaan kimia global dengan pengalaman lebih dari 150 tahun, memberikan perlindungan yang tahan lama dan terbukti efektif. Kami menjamin tidak ada retak, residu lem, atau menguning. Memastikan kendaraan anda selalu tampil seperti baru. Jika ada kendala pada produk PPF, kami akan menggantinya secara gratis. Percayakan perlindungan jangka panjang yang terpercaya dari RODIM PPF."
+    }
+  },
   "HomePage": {
-    "title": "Halo dunia!",
-    "about": "Menuju ke halaman tentang"
+    "homeIntroduction": "RODIM adalah brand dari BASF, pemimpin global material TPU, cat otomotif OEM dan refinish. Dari produksi TPU hingga manufaktur dan inovasi PPF yang canggih, RODIM memberikan solusi lengkap dan sangat memahami cara melindungi cat mobil pabrik.",
+    "buttonLabel": "Selengkapnya"
+  },
+  "AboutPage": {
+    "aboutTitle1": "Tentang BASF RODIM",
+    "aboutDesc1": "RODIM adalah brand dari BASF selama lebih dari 40 tahun, dengan komitmen terhadap kualitas dan inovasi serta dukungan teknologi dan pengalaman BASF yang lebih dari 150 tahun. Kami hadir untuk meningkatkan standar di industri PPF. RODIM PPF dirancang untuk memenuhi ekspektasi dengan memberikan perlindungan yang dapat diandalkan, performa yang tangguh dan ketahanan jangka panjang bagi pemilik kendaraan.",
+    "aboutTitle2": "BASF adalah perusahaan kimia terbesar di dunia yang berasal dari Jerman, dengan inovasi dan kemajuan teknologi yang terus berkembang. BASF memegang posisi sebagai produsen Thermoplastic Polyurethane (TPU) terbesar di dunia.",
+    "aboutDesc2": "Dari butiran TPU hingga produk PPF, BASF menciptakan keunggulan kompetitif melalui riset dan inovasi, serta keahlian dalam produksi, pemasaran, penjualan, dan layanan teknis.",
+    "aboutDesc3": "Dengan fokus pada riset dan pengembangan teknologi material, BASF menjadi pemimpin global sebagai produsen terbesar lapisan film TPU yang menjadi komponen utama PPF. RODIM® PPF hadir sebagai hasil dari keahlian BASF dalam teknologi material.",
+    "aboutDesc4": "Sejak tahun 2006, Refinish Excellence Indonesia adalah agen tunggal pemegang merek Glasurit di Indonesia. Dengan pengalaman panjang di industri ini, kami memiliki keahlian dan inovasi dalam perlindungan cat otomotif, dengan tenaga ahli kami yang dilatih oleh BASF global trainer. Pemahaman kami yang mendalam tentang perlindungan cat otomotif memastikan kami selalu memberikan solusi terbaik.",
+    "aboutDesc5": "Sebagai perusahaan kimia terbesar di dunia, BASF memiliki keunggulan mutlak dalam pengembangan PPF. Dari proses produksi TPU hingga perlindungan cat, integrasi vertikal yang lengkap memungkinkan BASF untuk memanfaatkan daya inovatif dan kontrol kualitasnya di seluruh rantai bisnis. Jaringan global grup ini juga menawarkan solusi yang paling tepat dan layanan purnajual yang komprehensif bagi mitra dan pelanggan.",
+    "aboutDesc6": "Dengan penelitian dan pengembangan yang unggul dalam teknologi material, BASF adalah pemimpin dunia dalam aplikasi lapisan film tipis berteknologi tinggi.",
+    "aboutDesc7": "PPF RODIM merupakan hasil keahlian BASF dalam teknologi material dan lapisan permukaan.",
+    "paintProtectionTitle": "Paint Protection Film Otomotif",
+    "paintProtectionInfo1": "Setiap pemasangan dilakukan dengan ketelitian tinggi oleh para profesional untuk menghasilkan detil yang sempurna.",
+    "paintProtectionInfo2": "Lebih dari sekadar perlindungan, RODIM PPF menawarkan ketahanan yang luar biasa dalam jangka panjang dari berbagai tantangan.",
+    "paintProtectionInfo3": "RODIM PPF dirancang dengan kemudahan dalam proses instalasi mengikuti lekukan kendaraan anda.",
+    "innovation1": "Manufaktur TPU terintegrasi milik BASF mulai beroperasi pada tahun 2024 dan telah memenuhi standar strategi pembangunan berkelanjutan.",
+    "innovation2": "Merek RODIM mewarisi standar Jerman yang ketat untuk kualitas dan keandalan.",
+    "innovation3": "Lapisan film tipis berteknologi tinggi saat ini digunakan di berbagai bidang seperti dirgantara, konstruksi, bionik, energi baru, dan lainnya. ",
+    "innovation4": "Bahan baku TPU diproduksi dari pabrik BASF di Jerman, memastikan kualitas yang istimewa dan ketersediaan yang konsisten.",
+    "innovation5": "Diproduksi di lini produksi pelapis film berstandar kelas dunia, melalui 10 prosedur dan 20 tes deteksi, RODIM PPF memberikan perlindungan bodi kendaraan yang canggih.",
+    "innovation6": "RODIM PPF memenuhi kebutuhan individu pemilik kendaraan.",
+    "innovation7": "Jaringan penjualan yang terpercaya memberikan rasa tenang dan kenyamanan."
+  },
+  "FAQPage": {
+    "faqQuestion1": "Mengapa memilih RODIM® TPU PPF?",
+    "faqAnswer1": "Kualitas TPU sangat menentukan performa dan daya tahan dari paint protection film (PPF). RODIM PPF adalah TPU premium BASF, manufaktur TPU terbesar di dunia yang telah diakui. Seluruh proses produksinya, mulai dari bahan baku hingga menjadi film, dapat dilacak secara menyeluruh.",
+    "faqAnswer2": "RODIM TPU PPF menghadirkan performa unggul dalam hal ketebalan, daya tahan terhadap noda, kilau, perlindungan dari kotoran, goresan, kemampuan self-healing, serta ketahanan terhadap menguning dan penuaan. Produk ini efektif melindungi cat OEM kendaraan dari hujan asam, residu serangga, getah pohon, dan berbagai kontaminan lainnya—membantu kendaraan Anda tetap tampil seperti baru lebih lama.",
+    "faqQuestion2": "Apakah saya bisa menggunakan produk pencuci mobil setelah menggunakan RODIM TPU PPF?",
+    "faqAnswer3": "Bisa. Setelah dua minggu, kendaraan dapat dicuci seperti biasa menggunakan car shampoo dengan pH netral atau produk pembersih mobil yang aman. Hindari penggunaan <solve>solvent-based cleaner</solve> karena dapat merusak permukaan film.",
+    "faqQuestion3": "Apakah saya bisa mencuci mobil dengan high-pressure washer setelah menggunakan RODIM TPU PPF?",
+    "faqAnswer4": "Bisa. Namun hindari menyemprot langsung ke bagian tepi film dengan tekanan tinggi.",
+    "faqQuestion4": "Apakah saya bisa menggunakan automatic car wash setelah menggunakan RODIM TPU PPF?",
+    "faqAnswer5": "Disarankan mencuci secara manual. Jika memilih <automatic>automatic car wash</automatic>, gunakan sistem <touchless>touchless system</touchless>, hindari mesin cuci mobil yang menggunakan sikat karena dapat menyebabkan tepi film terangkat.",
+    "faqQuestion5": "Apakah cat OEM kendaraan akan rusak saat RODIM TPU PPF dilepas?",
+    "faqAnswer6": "Kemungkinan rusaknya cat OEM saat film dilepas sangat kecil. Namun, pelepasan sebaiknya dilakukan oleh teknisi bersertifikat <rodim>RODIM</rodim> untuk meminimalisir risiko.",
+    "faqQuestion6": "Apa itu self-healing?",
+    "faqAnswer7": "<rodim>RODIM TPU PPF</rodim> memiliki lapisan atas transparan berbahan <poly>thermoplastic polyurethane</poly> dengan kemampuan <selfhealing>self-healing</selfhealing>. Goresan ringan dapat hilang saat terkena panas seperti sinar matahari atau hembusan udara hangat.",
+    "faqAnswer8": "Namun kemampuan ini ada batasnya. Jika goresan terlalu dalam dan menembus lapisan self-healing, maka kemungkinan besar tidak akan pulih sepenuhnya. Meskipun demikian, fungsi perlindungannya terhadap cat OEM tetap berjalan dengan baik.",
+    "faqQuestion7": "Apa saja perbedaan antar model RODIM TPU PPF?",
+    "faqAnswer9": "<rodim1>RODIM R1.</rodim1> Dilengkapi fitur self-healing dan perlindungan tinggi terhadap kotoran. Cocok bagi pengguna yang menginginkan proteksi harian dengan nilai ekonomis yang baik.",
+    "faqAnswer10": "<rodim2>RODIM R2 Matte.</rodim2> Memberikan proteksi dan ketebalan yang setara dengan RODIM R2, namun dengan permukaan satin low-gloss yang memberikan tampilan mewah dan berkelas.",
+    "faqAnswer11": "<rodim3>RODIM R2 PRO.</rodim3> Menghadirkan seluruh keunggulan dari RODIM R2, dengan tambahan ketahanan terhadap bahan pembersih kimia seperti carburetor wash, menjadikannya pilihan unggul untuk perlindungan anti-korosi.",
+    "faqAnswer12": "<rodim4>RODIM R3 PRO.</rodim4> Merupakan pengembangan dari RODIM R2 PRO dengan ketebalan yang lebih tinggi. Ini adalah produk kelas lebih tinggi dari lini RODIM R2 PRO, menawarkan perlindungan dan performa maksimal.",
+    "faqAnswer13": "<rodim5>RODIM R4 PRO.</rodim5> Merupakan varian tertinggi dari lini RODIM PPF, dengan ketebalan maksimal, kemampuan self-healing yang ditingkatkan, serta ketahanan luar biasa terhadap bahan kimia tertentu dan goresan. Dirancang untuk penggunaan yang menuntut performa tinggi, RODIM R4 PRO memberikan daya tahan optimal dan tampilan akhir yang tahan lama—solusi terbaik untuk perlindungan cat kendaraan Anda."
+  },
+  "CareInstructionPage": {
+    "care1": "Jangan mencuci atau memoles kendaraan dalam waktu satu minggu setelah pemasangan film. Garansi akan dianggap tidak berlaku jika ketentuan ini tidak dipatuhi.",
+    "care2": "Hindari paparan langsung sinar matahari selama minggu pertama setelah pemasangan, karena penguapan kelembapan yang terlalu cepat dapat menyebabkan munculnya gelembung pada permukaan film.",
+    "care3": "Pemeriksaan lanjutan di bengkel pemasangan wajib dilakukan dalam waktu satu minggu setelah aplikasi film.",
+    "care4": "Setelah melewati minggu pertama, kendaraan sudah dapat dicuci. Pencucian rutin diperlukan untuk menjaga kondisi film selama masa garansi. Keausan ringan pada permukaan dan penurunan kilau secara bertahap dianggap normal. Noda air, garis bekas air, dan gelombang halus tidak termasuk dalam cakupan garansi.",
+    "care5": "Disarankan untuk mencuci kendaraan setiap satu hingga dua minggu sekali. Jika kendaraan terlihat jelas kotor atau berdebu, sebaiknya dibersihkan di hari yang sama untuk mencegah kotoran menembus lapisan film dan mengurangi kejernihan tampilannya.",
+    "care6": "Kotoran burung dan sisa serangga sebaiknya segera dibersihkan dari permukaan film.",
+    "care7": "Untuk kendaraan yang digunakan dalam acara khusus, seperti mobil pernikahan, jangan menempelkan suction cup langsung ke permukaan film. Pita dekoratif dan petasan dapat menyebabkan noda. Jika ada residu yang mengenai film, bersihkan dalam waktu 12 jam untuk mencegah perubahan warna permanen.",
+    "care8": "Gunakan hanya spons lembut yang tidak abrasif dan bebas partikel mineral saat membersihkan. Hindari penggunaan alat gosok keras atau tekanan berlebih yang dapat menggores atau mengikis permukaan film. Jangan gunakan bahan kimia yang bersifat asam kuat, alkali, atau korosif. Setelah dibersihkan, bilas secara menyeluruh dengan air bersih dan keringkan menggunakan kain lembut yang bersih untuk mencegah terbentuknya noda air.",
+    "care9": "Perawatan menyeluruh pada film disarankan setiap enam bulan sekali. Pemolesan pada permukaan film tidak dianjurkan.",
+    "care10": "Cuci manual sangat dianjurkan. Hindari penggunaan mesin cuci otomatis atau semprotan air bertekanan tinggi pada bagian tepi film, karena dapat menyebabkan film terangkat atau kemasukan air."
+  },
+  "WarrantyPage": {
+    "warrantyTitle": "Deskripsi Layanan Garansi Produk",
+    "warrantyDesc1": "Sebagai merek dari BASF, perusahaan kimia terbesar di dunia yang berdiri sejak pada tahun 1865, RODIM PPF berdiri di atas fondasi keunggulan global dan komitmen jangka panjang. Solusi perlindungan kami dibentuk oleh lebih dari 150 tahun inovasi, keahlian, dan kepemimpinan industri.",
+    "warrantyDesc2": "Kami memastikan tidak akan ada retakan, gelembung, residu lem yang merusak cat, dan ppf menguning, dengan produk yang tetap jernih seperti baru sepanjang periode garansi. Jika terjadi masalah, kami menawarkan penggantian gratis selama periode garansi. Setiap produk dijamin dengan garansi yang dapat dipercaya.",
+    "warrantyDesc3": "Pastikan anda mendapatkan garansi dari perusahaan kelas dunia",
+    "buttonLabel": "Lihat produk"
   }
 }

@@ -14,18 +14,16 @@ const MarketingLayout = async ({
   const locale = await getLocale();
 
   return (
-    <>
+    <NextIntlClientProvider messages={messages}>
       <Navbar />
       <main>
         <Suspense fallback={<h1>loading</h1>}>
           <PopupLanguage />
         </Suspense>
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
+        {children}
       </main>
       <Footer />
-    </>
+    </NextIntlClientProvider>
   );
 };
 

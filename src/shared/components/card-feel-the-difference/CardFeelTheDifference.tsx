@@ -8,6 +8,8 @@ type CardFeelTheDifferenceProps = {
   title: string;
   subtitle: string;
   detail: string;
+  discoverLabel?: string;
+  closeLabel?: string;
   isWide: boolean;
 };
 
@@ -18,6 +20,8 @@ const CardFeelTheDifference = ({
   subtitle,
   detail,
   isWide,
+  discoverLabel,
+  closeLabel,
 }: CardFeelTheDifferenceProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -41,7 +45,7 @@ const CardFeelTheDifference = ({
               className="rotate-180"
             />
 
-            <span>Tutup detail</span>
+            <span>{closeLabel}</span>
           </div>
 
           <div className="flex gap-[1.2rem] lg:gap-[2rem] lg:flex-[1] items-start">
@@ -85,12 +89,10 @@ const CardFeelTheDifference = ({
           <div
             className="px-[2.2rem] py-[1.2rem] text-[1.7rem] text-white bg-primary-blue rounded-full cursor-pointer flex gap-[.8rem]"
             onClick={() => {
-              console.log('hallo');
-              console.log(isOpen);
               setIsOpen(!isOpen);
             }}
           >
-            <span>Selengkapnya</span>
+            <span>{discoverLabel}</span>
 
             <Image src={ArrowIcon} alt="" width={0} height={0} />
           </div>

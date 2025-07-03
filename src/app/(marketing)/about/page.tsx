@@ -5,7 +5,7 @@ import Image from 'next/image';
 import React from 'react';
 
 const AboutPage = () => {
-  const t = useTranslations('HomePage');
+  const t = useTranslations('AboutPage');
 
   const verticalIntegrationCards = [
     {
@@ -49,15 +49,13 @@ const AboutPage = () => {
   const innovationCardsGroup1 = [
     {
       title: 'Manufacturing Bases Worldwide',
-      description:
-        'Manufaktur TPU terintegrasi milik BASF telah memenuhi standar strategi pembangunan berkelanjutan.',
+      description: t('innovation1'),
       image: '/image/about/manufacturing bases worldwide.PNG',
       alt: 'Manufacturing Bases Worldwide',
     },
     {
       title: 'Quality Control at The Source',
-      description:
-        'Bahan baku TPU diproduksi dari pabrik BASF di Jerman, memastikan kualitas yang istimewa dan ketersediaan yang konsisten.',
+      description: t('innovation4'),
       image: '/image/about/quality-control-at-the-source.jpg',
       alt: 'Quality Control At The Source',
     },
@@ -66,21 +64,19 @@ const AboutPage = () => {
   const innovationCardsGroup2 = [
     {
       title: 'High Quality German DNA',
-      description:
-        'Merek RODIM mewarisi standar Jerman yang ketat untuk kualitas dan keandalan.',
+      description: t('innovation2'),
       image: '/image/about/high quality german dna.png',
       alt: 'High Quality German DNA',
     },
     {
       title: 'One-stop service',
-      description:
-        'Jaringan penjualan yang terpercaya memberikan rasa tenang dan kenyamanan.',
+      description: t('innovation7'),
       image: '/image/about/one stop service.png',
       alt: 'One Stop Service',
     },
     {
       title: 'Custom-made',
-      description: 'RODIM PPF memenuhi kebutuhan individu pemilik kendaraan.',
+      description: t('innovation6'),
       image: '/image/about/custom made.jpg',
       alt: 'Custom Made',
     },
@@ -89,15 +85,13 @@ const AboutPage = () => {
   const innovationCardsGroup3 = [
     {
       title: 'First choice of Hi-tech Industries',
-      description:
-        'Lapisan film tipis berteknologi tinggi saat ini digunakan di berbagai bidang seperti dirgantara, konstruksi, bionik, energi baru dan lainnya.',
+      description: t('innovation2'),
       image: '/image/about/first-choice-of-high-tech-industries.png',
       alt: 'First Choice of High Tech Industries',
     },
     {
       title: 'Advanced Craft',
-      description:
-        'Diproduksi di lini produksi pelapis film berstandar kelas dunia, melalui 10 prosedur dan 20 tes deteksi, RODIM PPF memberikan perlindungan bodi kendaraan yang canggih.',
+      description: t('innovation5'),
       image: '/image/about/Advanced Craft baru.JPG',
       alt: 'Advance Craft',
     },
@@ -106,18 +100,15 @@ const AboutPage = () => {
   const paintProtectionItems = [
     {
       title: 'Expert Installation Services',
-      description:
-        'Setiap pemasangan dilakukan dengan ketelitian tinggi oleh para profesional untuk menghasilkan detil yang sempurna.',
+      description: t('paintProtectionInfo1'),
     },
     {
       title: 'Durable Protection Film',
-      description:
-        'Lebih dari sekadar perlindungan, RODIM PPF menawarkan ketahanan yang luar biasa dalam jangka panjang dari berbagai tantangan.',
+      description: t('paintProtectionInfo2'),
     },
     {
       title: 'Custom Fit Solutions',
-      description:
-        'RODIM PPF dirancang dengan kemudahan dalam proses instalasi mengikuti lekukan kendaraan anda.',
+      description: t('paintProtectionInfo3'),
     },
   ];
 
@@ -133,7 +124,7 @@ const AboutPage = () => {
 
         <div className="absolute bottom-[5rem] md:bottom-[8rem] left-[4rem] md:left-[8rem] flex flex-col items-start z-[2]">
           <p className="font-normal text-[1.6rem] md:text-[2.4rem] tracking-[0.023rem] leading-[2.9rem] md:leading-[100%]">
-            Tentang BASF RODIM {t('title')}
+            {t('aboutTitle1')}
           </p>
           <h1 className="font-bold leading-[100%] md:leading-[11rem] tracking-[-0.22rem] text-[4rem] md:text-[10.8rem] w-[60%] md:w-[80%]">
             Protection by World’s Best
@@ -147,13 +138,7 @@ const AboutPage = () => {
         className="section-wrapper md:h-[68rem] flex items-center justify-center"
       >
         <p className="text-center text-[2.4rem] md:text-[3.2rem] font-normal leading-[4rem] tracking-[0.02rem] px-[2rem] md:px-[4rem] py-[6rem] md:py-0">
-          RODIM adalah brand dari BASF selama lebih dari 40 tahun, dengan
-          komitmen terhadap kualitas dan inovasi serta dukungan teknologi dan
-          pengalaman BASF yang lebih dari 150 tahun. Kami hadir untuk
-          meningkatkan standar di industri PPF. RODIM PPF dirancang untuk
-          memenuhi ekspektasi dengan memberikan perlindungan yang dapat
-          diandalkan, performa yang tangguh dan ketahanan jangka panjang bagi
-          pemilik kendaraan.
+          {t('aboutDesc1')}
         </p>
       </section>
 
@@ -165,11 +150,8 @@ const AboutPage = () => {
           <h1 className="font-bold mb-4 md:mb-0 leading-[100%] md:leading-[8rem] text-[4rem] md:text-[8rem] tracking-[-0.1rem] md:w-[80%] lg:w-[100%]">
             BASF – The Global Leader in TPU
           </h1>
-          <p className="font-normal text-[1.6rem] md:text-[2.1rem] leading-[100%] md:leading-[2.9rem] tracking-[0.023rem] w-[90%] lg:w-[100%] ">
-            BASF adalah perusahaan kimia terbesar di dunia yang berasal dari
-            Jerman, dengan inovasi dan kemajuan teknologi yang terus berkembang.
-            BASF memegang posisi sebagai produsen Thermoplastic Polyurethane
-            (TPU) terbesar di dunia.
+          <p className="font-normal text-[1.6rem] md:text-[2.1rem] leading-[100%] md:leading-[2.9rem] tracking-[0.023rem] w-[90%]">
+            {t('aboutTitle2')}
           </p>
         </div>
       </section>
@@ -181,15 +163,10 @@ const AboutPage = () => {
       >
         <div className="text-center flex flex-col justify-center gap-20 px-[2rem] md:px-[12rem] py-[6rem] md:py-0">
           <p className="text-[2.4rem] md:text-[3.2rem] font-normal leading-[4rem] tracking-[0.02rem]">
-            Dari butiran TPU hingga produk PPF, BASF menciptakan keunggulan
-            kompetitif melalui riset dan inovasi, serta keahlian dalam produksi,
-            pemasaran, penjualan dan layanan teknis.
+            {t('aboutDesc2')}
           </p>
           <p className="text-[2.4rem] md:text-[3.2rem] font-normal leading-[4rem] tracking-[0.02rem]">
-            Dengan fokus pada riset dan pengembangan teknologi material, BASF
-            menjadi pemimpin global sebagai produsen terbesar lapisan film TPU
-            yang menjadi komponen utama PPF. RODIM® PPF hadir sebagai hasil
-            dari keahlian BASF dalam teknologi material.
+            {t('aboutDesc3')}
           </p>
         </div>
       </section>
@@ -210,7 +187,7 @@ const AboutPage = () => {
           {/* Paint Protection List */}
           <div className="flex-1 flex flex-col">
             <h4 className="font-bold text-[4rem] leading-[5.2rem] md:text-[4.4rem] mb-10">
-              Paint Protection Film Otomotif
+              {t('paintProtectionTitle')}
             </h4>
             {/* Paint Protection Items Wrapper */}
             <div className="flex flex-col justify-center gap-[5rem]">
@@ -253,12 +230,7 @@ const AboutPage = () => {
             Refinish Excellence Indonesia
           </h1>
           <p className="text-[1.6rem] md:text-[1.8rem] font-normal md:leading-[2.8rem]">
-            Sejak tahun 2006, Refinish Excellence Indonesia adalah agen tunggal
-            pemegang merek Glasurit di Indonesia. Dengan pengalaman panjang di
-            industri ini, kami memiliki keahlian dan inovasi dalam perlindungan
-            cat otomotif, dengan tenaga ahli kami yang dilatih oleh BASF global
-            trainer. Pemahaman kami yang mendalam tentang perlindungan cat
-            otomotif memastikan kami selalu memberikan solusi terbaik.
+            {t('aboutDesc4')}
           </p>
         </div>
       </section>
@@ -271,13 +243,7 @@ const AboutPage = () => {
             Vertical Integration
           </h1>
           <p className="text-[1.6rem] md:text-[1.8rem] leading-[2.8rem] font-normal text-left">
-            Sebagai perusahaan kimia terbesar di dunia, BASF memiliki keunggulan
-            mutlak dalam pengembangan PPF. Dari proses produksi TPU hingga
-            perlindungan cat, integrasi vertikal yang lengkap memungkinkan BASF
-            untuk memanfaatkan daya inovatif dan kontrol kualitasnya di seluruh
-            rantai bisnis. Jaringan global grup ini juga menawarkan solusi yang
-            paling tepat dan layanan purnajual yang komprehensif bagi mitra dan
-            pelanggan.
+            {t('aboutDesc5')}
           </p>
           {/* Vertical Integration Cards Wrapper */}
           <div className="grid [grid-template-columns:repeat(auto-fit,minmax(35rem,1fr))] gap-8 mt-[6rem]">
@@ -415,13 +381,10 @@ const AboutPage = () => {
       >
         <div className="text-center flex flex-col justify-center gap-20 px-[2rem] md:px-[12rem] py-[6rem] md:py-0">
           <h1 className="text-[3.2rem] md:text-[4.8rem] font-normal md:leading-[6rem]">
-            Dengan penelitian dan pengembangan yang unggul dalam teknologi
-            material, BASF adalah pemimpin dunia dalam aplikasi lapisan film
-            tipis berteknologi tinggi.
+            {t('aboutDesc6')}
           </h1>
           <h1 className="text-[3.2rem] md:text-[4.8rem] font-normal md:leading-[6rem]">
-            PPF RODIM merupakan hasil keahlian BASF dalam teknologi material dan
-            lapisan permukaan.
+            {t('aboutDesc7')}
           </h1>
         </div>
       </section>

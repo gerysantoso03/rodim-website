@@ -9,6 +9,7 @@ import GitCompareIcon from '../../../assets/icons/git-compare.svg';
 import WrenchIcon from '../../../assets/icons/wrench.svg';
 import { ChevronDown, X, AlignJustify } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -25,6 +26,8 @@ const Navbar = () => {
   const subPage = segments[3] || ''; // bisa 'feel-the-difference', 'specification', atau kosong untuk pengenalan
 
   const isActive = (check: string) => subPage === check;
+
+  const t = useTranslations('Navbar');
 
   useEffect(() => {
     console.log('path = ', segments[1]);
@@ -47,7 +50,6 @@ const Navbar = () => {
               type="button"
               className="w-[38px] h-[38px] min-[1440px]:hidden flex justify-center items-center border border-white rounded-[8px] cursor-pointer"
               onClick={() => {
-                console.log('hallo');
                 setIsOpenMenu(!isOpenMenu);
               }}
             >
@@ -133,7 +135,7 @@ const Navbar = () => {
                   href="/about"
                   className={`h-full flex items-center transition-all duration-300 ease-in-out ${pathname === '/about' ? 'font-bold border-b-2 border-white/80' : 'border-b-2 border-transparent'}`}
                 >
-                  TENTANG BASF RODIM
+                  {t('about')}
                 </Link>
                 <div className="h-[20px] border-r border-white/80 absolute right-0" />
               </div>
@@ -143,7 +145,7 @@ const Navbar = () => {
                   href="/"
                   className={`h-full flex items-center transition-all duration-300 ease-in-out ${pathname === '/' ? 'font-bold border-b-2 border-white/80' : 'border-b-2 border-transparent'}`}
                 >
-                  GALERI
+                  {t('gallery')}
                 </Link>
                 <div className="h-[20px] border-r border-white/80 absolute right-0" />
               </div>
@@ -153,7 +155,7 @@ const Navbar = () => {
                   href="/warranty"
                   className={`h-full flex items-center transition-all duration-300 ease-in-out ${pathname === '/warranty' ? 'font-bold border-b-2 border-white/80' : 'border-b-2 border-transparent'}`}
                 >
-                  GARANSI
+                  {t('warranty')}
                 </Link>
                 <div className="h-[20px] absolute right-0" />
               </div>
@@ -188,7 +190,7 @@ const Navbar = () => {
                     className={`h-full flex items-center gap-[.4rem] font-bold ${subPage === '' ? 'text-white border-b-[.2rem] border-white' : 'border-b-[.2rem] border-transparent'}`}
                   >
                     <Image src={CarIcon} alt="" width={0} height={0} />
-                    <span>Pengenalan</span>
+                    <span>{t('Product.introduction')}</span>
                   </div>
                 </Link>
 
@@ -206,7 +208,7 @@ const Navbar = () => {
                     className={`h-full flex items-center gap-[.4rem] font-bold ${isActive('specification') ? 'text-white border-b-[.2rem] border-white' : 'border-b-[.2rem] border-transparent'}`}
                   >
                     <Image src={WrenchIcon} alt="" width={0} height={0} />
-                    <span>Spesifikasi Teknis</span>
+                    <span>{t('Product.specification')}</span>
                   </div>
                 </Link>
               </div>

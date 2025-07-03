@@ -8,11 +8,17 @@ import { cn } from '@/shared/libs/shadcn/utils';
 
 type CardProductProps = {
   image: StaticImageData | string;
+  bannerInformation?: string;
   bannerFor: string;
   classname?: string;
 };
 
-const Banner = ({ image, bannerFor, classname }: CardProductProps) => {
+const Banner = ({
+  image,
+  bannerInformation,
+  bannerFor,
+  classname,
+}: CardProductProps) => {
   const imageSwitcher = () => {
     switch (bannerFor) {
       case 'home':
@@ -57,12 +63,7 @@ const Banner = ({ image, bannerFor, classname }: CardProductProps) => {
           <h1 className="text-[40px] font-[700] lg:text-[7.2rem]">
             RODIM {'-'} Protection by World{"'"}s Best
           </h1>
-          <p className="text-[1.4rem] lg:text-[2.1rem]">
-            RODIM PPF adalah brand dari BASF, pemimpin global material TPU, cat
-            otomotif OEM dan refinish. Dari produksi TPU hingga inovasi PPF yang
-            canggih, RODIM PPF memberikan solusi lengkap dan sangat memahami
-            cara melindungi cat mobil.
-          </p>
+          <p className="text-[1.4rem] lg:text-[2.1rem]">{bannerInformation}</p>
         </div>
       )}
     </section>

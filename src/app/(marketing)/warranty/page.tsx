@@ -1,10 +1,12 @@
 import Banner from '@/shared/components/banner/Banner';
 import { ArrowRight } from 'lucide-react';
-import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import React from 'react';
 
 const WarrantyPage = () => {
+  const t = useTranslations('WarrantyPage');
+
   const warrantyProductsGroup1 = [
     {
       name: 'Rodim R4 Pro',
@@ -39,7 +41,7 @@ const WarrantyPage = () => {
           <Banner image={''} bannerFor="warranty" />
           <div className="absolute bottom-[4rem] left-[2rem] md:left-[4rem] z-[2]">
             <h1 className="font-bold leading-[100%] md:leading-[8rem] text-[4rem] md:text-[8rem] md:w-[70%]">
-              Deskripsi Layanan Garansi Produk
+              {t('warrantyTitle')}
             </h1>
           </div>
         </div>
@@ -51,10 +53,7 @@ const WarrantyPage = () => {
         className="section-wrapper md:h-[68rem] flex items-center justify-center"
       >
         <p className="text-center text-[3rem] md:text-[4rem] font-normal tracking-[0.02rem] md:px-[4rem] py-[6rem] md:py-0">
-          Sebagai merek dari BASF, perusahaan kimia terbesar di dunia yang
-          berdiri sejak tahun 1865, RODIM PPF berdiri di atas fondasi keunggulan
-          global dan komitmen jangka panjang. Solusi perlindungan kami dibentuk
-          oleh lebih dari 150 tahun inovasi, keahlian dan kepemimpinan industri.
+          {t('warrantyDesc1')}
         </p>
       </section>
 
@@ -63,14 +62,10 @@ const WarrantyPage = () => {
         <div className="bg-[var(--secondary-black)] rounded-[1.8rem] p-[4rem_2rem] md:p-[12rem]">
           {/* Warranty Products Title */}
           <p className="font-normal text-[2.4rem] leading-[2.8rem] mb-20">
-            Kami memastikan tidak akan ada retakan, gelembung, residu lem yang
-            merusak cat dan ppf menguning, dengan produk yang tetap jernih
-            seperti baru sepanjang periode garansi. Jika terjadi masalah pada
-            produk PPF, kami menawarkan penggantian gratis selama periode
-            garansi. Setiap produk dijamin dengan garansi yang dapat dipercaya.
+            {t('warrantyDesc2')}
           </p>
           <h1 className="font-bold text-[4.6rem] md:leading-[100%] mb-20">
-            Pastikan anda mendapatkan garansi dari perusahaan kelas dunia
+            {t('warrantyDesc3')}
           </h1>
 
           {/* Warranty Products Group 1 */}
@@ -86,7 +81,7 @@ const WarrantyPage = () => {
                   className="text-primary-blue text-[1.4rem] flex items-center gap-2 mt-4"
                   href=""
                 >
-                  Lihat produk{' '}
+                  {t('buttonLabel')}
                   <span>
                     {' '}
                     <ArrowRight size={18} />
@@ -109,7 +104,7 @@ const WarrantyPage = () => {
                   className="text-primary-blue text-[1.4rem] flex items-center gap-2 mt-4"
                   href=""
                 >
-                  Lihat produk{' '}
+                  {t('buttonLabel')}
                   <span>
                     {' '}
                     <ArrowRight size={18} />

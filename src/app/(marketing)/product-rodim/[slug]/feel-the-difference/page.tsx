@@ -17,6 +17,7 @@ import GlobalIcon from '../../../../../assets/icons/global.png';
 
 import CardFeelTheDifference from '@/shared/components/card-feel-the-difference/CardFeelTheDifference';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 type Props = {
   params: { slug: string };
@@ -29,6 +30,8 @@ const Page = ({ params }: Props) => {
   useEffect(() => {
     console.log('params = ', params);
   }, []);
+
+  const t = useTranslations('ProductRodimPage');
 
   return (
     <div className="p-[16px] max-w-[144rem] mx-auto flex flex-col gap-[1.6rem]">
@@ -72,9 +75,11 @@ const Page = ({ params }: Props) => {
         <CardFeelTheDifference
           image={ElegantImage}
           icon={ElegantIcon}
-          title="Tampil Elegan, Tetap Terlindungi"
+          title={t('FeelDifference.title1')}
           subtitle=""
-          detail="PPF kami dirancang untuk memberikan perlindungan menyeluruh sekaligus mempertahankan estetika kendaraan dalam jangka panjang, dengan pilihan finishing glossy atau matte."
+          detail={t('FeelDifference.desc1')}
+          discoverLabel={t('FeelDifference.discoverLabel')}
+          closeLabel={t('FeelDifference.closeLabel')}
           isWide={true}
         />
 
@@ -82,18 +87,22 @@ const Page = ({ params }: Props) => {
           <CardFeelTheDifference
             image={DurabilityImage}
             icon={DurabilityIcon}
-            title="Daya Tahan"
-            subtitle="Ingin perlindungan yang tahan lama? RODIM PPF adalah jawabannya."
-            detail="RODIM PPF dirancang untuk memberikan ketahanan yang lebih unggul dibandingkan PPF lainnya. Dengan layanan garansi yang kami berikan, kami memastikan bahwa produk kami mampu memberikan perlindungan optimal terhadap risiko jalanan dan kondisi cuaca yang berubah setiap hari."
+            title={t('FeelDifference.title2')}
+            subtitle={t('FeelDifference.subtitle2')}
+            detail={t('FeelDifference.desc2')}
+            discoverLabel={t('FeelDifference.discoverLabel')}
+            closeLabel={t('FeelDifference.closeLabel')}
             isWide={false}
           />
 
           <CardFeelTheDifference
             image={AdhesionImage}
             icon={AdhesionIcon}
-            title="Perekat"
-            subtitle="Daya rekat unggul dari BASF, melekat sempurna tanpa risiko merusak cat."
-            detail="Teknologi perekat RODIM PPF merupakan bagian dari inovasi material BASF. Dengan pemahaman mendalam dan keahlian dalam cat otomotif kami menjamin perlindungan menyeluruh tanpa khawatir merusak cat kendaraan Anda."
+            title={t('FeelDifference.title3')}
+            subtitle={t('FeelDifference.subtitle3')}
+            detail={t('FeelDifference.desc3')}
+            discoverLabel={t('FeelDifference.discoverLabel')}
+            closeLabel={t('FeelDifference.closeLabel')}
             isWide={false}
           />
         </div>
@@ -101,9 +110,11 @@ const Page = ({ params }: Props) => {
         <CardFeelTheDifference
           image={WarrantyImage}
           icon={WarrantyIcon}
-          title="Garansi"
-          subtitle="Dengan pengalaman lebih dari 150 tahun, anda mendapatkan garansi dari merek terpercaya di dunia."
-          detail="RODIM adalah brand yang dimiliki oleh BASF—perusahaan kimia global dengan pengalaman lebih dari 150 tahun, memberikan perlindungan yang tahan lama dan terbukti efektif. Kami menjamin tidak ada retak, residu lem, atau menguning. Memastikan kendaraan anda selalu tampil seperti baru. Jika ada kendala pada produk PPF, kami akan menggantinya secara gratis. Percayakan perlindungan jangka panjang yang terpercaya dari RODIM PPF."
+          title={t('FeelDifference.title4')}
+          subtitle={t('FeelDifference.subtitle4')}
+          detail={t('FeelDifference.desc4')}
+          discoverLabel={t('FeelDifference.discoverLabel')}
+          closeLabel={t('FeelDifference.closeLabel')}
           isWide={true}
         />
       </section>

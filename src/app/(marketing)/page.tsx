@@ -10,9 +10,11 @@ export default function Home() {
 
   return (
     <div className="p-[16px] max-w-[144rem] mx-auto flex flex-col gap-[1.6rem]">
-      <Banner image={''} bannerFor="home" />
-
-      {/* <h1>{t('title')}</h1> */}
+      <Banner
+        image={''}
+        bannerFor="home"
+        bannerInformation={t('homeIntroduction')}
+      />
 
       <section>
         <VideoPlayer />
@@ -33,6 +35,7 @@ export default function Home() {
                 title={product.title}
                 subtitle={product.subtitle}
                 productUrl={product.productUrl}
+                buttonLabel={t('buttonLabel')}
               />
             </div>
           );
