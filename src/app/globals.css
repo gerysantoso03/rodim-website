@@ -192,3 +192,11 @@
     background-blend-mode: normal;
   }
 }
+
+.swiper {
+  overflow: visible !important;
+}
+
+.swiper-wrapper {
+  transition-timing-function: linear !important;
+}

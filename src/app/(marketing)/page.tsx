@@ -10,11 +10,14 @@ export default function Home() {
 
   return (
     <div className="p-[16px] max-w-[144rem] mx-auto flex flex-col gap-[1.6rem]">
-      <Banner
-        image={''}
-        bannerFor="home"
-        bannerInformation={t('homeIntroduction')}
-      />
+      <Banner image={''} bannerFor="home">
+        <h1 className="text-[40px] font-[700] lg:text-[7.2rem]">
+          RODIM {'-'} Protection by World{"'"}s Best
+        </h1>
+        <p className="text-[1.4rem] lg:text-[2.1rem]">
+          {t('homeIntroduction')}
+        </p>
+      </Banner>
 
       <section>
         <VideoPlayer />

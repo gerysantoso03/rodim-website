@@ -142,8 +142,8 @@ const Navbar = () => {
 
               <div className="h-full relative px-[12px] flex items-center">
                 <Link
-                  href="/"
-                  className={`h-full flex items-center transition-all duration-300 ease-in-out ${pathname === '/' ? 'font-bold border-b-2 border-white/80' : 'border-b-2 border-transparent'}`}
+                  href="/gallery"
+                  className={`h-full flex items-center transition-all duration-300 ease-in-out ${pathname === '/gallery' ? 'font-bold border-b-2 border-white/80' : 'border-b-2 border-transparent'}`}
                 >
                   {t('gallery')}
                 </Link>
