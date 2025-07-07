@@ -19,12 +19,12 @@ const InfiniteScrollSlider = ({
   return (
     <Swiper
       modules={[Autoplay, FreeMode]}
-      slidesPerView="auto"
       spaceBetween={20}
+      slidesPerView="auto"
       loop={true}
       freeMode={true}
       autoplay={{
-        delay: 0,
+        delay: -1,
         disableOnInteraction: false,
         reverseDirection: reverseDirection,
       }}
@@ -35,7 +35,7 @@ const InfiniteScrollSlider = ({
       {[...imageList, ...imageList].map((src, index) => (
         <SwiperSlide
           key={index}
-          className="!w-fit overflow-hidden rounded-[8px] mx-[20px]"
+          className="!w-fit overflow-hidden rounded-[8px]"
         >
           <div className="w-[53rem] h-[39rem]">
             <Image

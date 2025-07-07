@@ -10,6 +10,7 @@ import WrenchIcon from '../../../assets/icons/wrench.svg';
 import { ChevronDown, X, AlignJustify } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
+import { getAllProductsAction } from '@/features/admin/actions/product/action';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -18,6 +19,7 @@ const Navbar = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState('0px');
+  const navLinkList = [];
 
   // Pisah path menjadi array: ['', 'product', '1', 'specification']
   const segments = pathname.split('/');
@@ -40,6 +42,32 @@ const Navbar = () => {
       }
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    const getProductLink = async () => {
+      const productLink = await getAllProductsAction();
+
+      const desiredOrder = [
+        'RODIM R1',
+        'RODIM R2 Matte',
+        'RODIM R2 PRO',
+        'RODIM R3 PRO',
+        'RODIM R4 PRO',
+      ];
+
+      const sortedProductLink = productLink.sort((a, b) => {
+        const indexA = desiredOrder.findIndex(
+          (code) => code.toLowerCase() === a.code.toLowerCase()
+        );
+        const indexB = desiredOrder.findIndex(
+          (code) => code.toLowerCase() === b.code.toLowerCase()
+        );
+        return indexA - indexB;
+      });
+    };
+
+    getProductLink();
+  }, []);
 
   return (
     <div className="flex flex-col">

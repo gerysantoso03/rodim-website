@@ -1,16 +1,21 @@
-import GalleryAlbum from '@/features/marketing/gallery/ui/GalleryAlbum';
-import GalleryDetailHeader from '@/features/marketing/gallery/ui/GalleryDetailHeader';
-import React from 'react';
+import { getAllGalleryImageAction } from '@/features/admin/actions/gallery/action';
+import GalleryDetailPageUI from '@/features/marketing/gallery/ui/GalleryDetailPageUI';
+import { redirect } from 'next/navigation';
 
-const GalleryDetailPage = () => {
-  return (
-    <main className="section-wrapper w-full min-h-screen">
-      <section className="w-full h-full flex flex-col gap-[56px] py-[100px] sm:gap-[40px] sm:px-[64px] lg:gap-[30px] lg:px-[120px]">
-        <GalleryDetailHeader />
-        <GalleryAlbum />
-      </section>
-    </main>
-  );
+const GalleryDetailPage = async ({
+  params,
+}: {
+  params: Promise<{ album: string }>;
+}) => {
+  const { album } = await params;
+  const galleryImageData = await getAllGalleryImageAction(parseInt(album));
+
+  if (!galleryImageData) {
+    redirect('/');
+    return null;
+  }
+
+  return <GalleryDetailPageUI data={galleryImageData} />;
 };
 
 export default GalleryDetailPage;
