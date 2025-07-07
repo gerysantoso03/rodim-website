@@ -106,8 +106,8 @@ export default function ProductForm({
     if (file) {
       const sizeKB = file.size / 1024;
       const sizeMB = file.size / (1024 * 1024);
-      if (sizeMB > 5) {
-        alert('File size exceeds 5MB. Please select a smaller file.');
+      if (sizeMB > 10) {
+        alert('File size exceeds 10MB. Please select a smaller file.');
         return;
       }
       setImageFile(file);

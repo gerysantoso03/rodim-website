@@ -63,8 +63,8 @@ export const GalleryFolderForm = ({
       const sizeKB = file.size / 1024;
       const sizeMB = sizeKB / 1024;
 
-      if (sizeMB > 5) {
-        alert('File size exceeds 5 MB. Please select a smaller file.');
+      if (sizeMB > 10) {
+        alert('File size exceeds 10 MB. Please select a smaller file.');
         return;
       }
 

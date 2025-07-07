@@ -42,8 +42,8 @@ export default function GalleryImageForm({
     if (!selected) return;
 
     const sizeMB = selected.size / (1024 * 1024);
-    if (sizeMB > 5) {
-      alert('File size exceeds 5MB. Please select a smaller file.');
+    if (sizeMB > 10) {
+      alert('File size exceeds 10MB. Please select a smaller file.');
       return;
     }
 
