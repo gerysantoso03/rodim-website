@@ -2738,6 +2738,7 @@ export namespace Prisma {
   export type ProductsMinAggregateOutputType = {
     id: number | null
     code: string | null
+    slug: string | null
     description: string | null
     image_url: string | null
     thickness: string | null
@@ -2754,6 +2755,7 @@ export namespace Prisma {
   export type ProductsMaxAggregateOutputType = {
     id: number | null
     code: string | null
+    slug: string | null
     description: string | null
     image_url: string | null
     thickness: string | null
@@ -2770,6 +2772,7 @@ export namespace Prisma {
   export type ProductsCountAggregateOutputType = {
     id: number
     code: number
+    slug: number
     description: number
     image_url: number
     thickness: number
@@ -2802,6 +2805,7 @@ export namespace Prisma {
   export type ProductsMinAggregateInputType = {
     id?: true
     code?: true
+    slug?: true
     description?: true
     image_url?: true
     thickness?: true
@@ -2818,6 +2822,7 @@ export namespace Prisma {
   export type ProductsMaxAggregateInputType = {
     id?: true
     code?: true
+    slug?: true
     description?: true
     image_url?: true
     thickness?: true
@@ -2834,6 +2839,7 @@ export namespace Prisma {
   export type ProductsCountAggregateInputType = {
     id?: true
     code?: true
+    slug?: true
     description?: true
     image_url?: true
     thickness?: true
@@ -2937,6 +2943,7 @@ export namespace Prisma {
   export type ProductsGroupByOutputType = {
     id: number
     code: string
+    slug: string | null
     description: string | null
     image_url: string | null
     thickness: string | null
@@ -2972,6 +2979,7 @@ export namespace Prisma {
   export type productsSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     code?: boolean
+    slug?: boolean
     description?: boolean
     image_url?: boolean
     thickness?: boolean
@@ -2990,6 +2998,7 @@ export namespace Prisma {
   export type productsSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     code?: boolean
+    slug?: boolean
     description?: boolean
     image_url?: boolean
     thickness?: boolean
@@ -3006,6 +3015,7 @@ export namespace Prisma {
   export type productsSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     code?: boolean
+    slug?: boolean
     description?: boolean
     image_url?: boolean
     thickness?: boolean
@@ -3022,6 +3032,7 @@ export namespace Prisma {
   export type productsSelectScalar = {
     id?: boolean
     code?: boolean
+    slug?: boolean
     description?: boolean
     image_url?: boolean
     thickness?: boolean
@@ -3035,7 +3046,7 @@ export namespace Prisma {
     status?: boolean
   }
 
-  export type productsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "code" | "description" | "image_url" | "thickness" | "gloss" | "quv" | "warranty" | "created_at" | "created_by" | "updated_at" | "updated_by" | "status", ExtArgs["result"]["products"]>
+  export type productsOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "code" | "slug" | "description" | "image_url" | "thickness" | "gloss" | "quv" | "warranty" | "created_at" | "created_by" | "updated_at" | "updated_by" | "status", ExtArgs["result"]["products"]>
   export type productsInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     product_categories?: boolean | products$product_categoriesArgs<ExtArgs>
     _count?: boolean | ProductsCountOutputTypeDefaultArgs<ExtArgs>
@@ -3051,6 +3062,7 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       code: string
+      slug: string | null
       description: string | null
       image_url: string | null
       thickness: string | null
@@ -3488,6 +3500,7 @@ export namespace Prisma {
   interface productsFieldRefs {
     readonly id: FieldRef<"products", 'Int'>
     readonly code: FieldRef<"products", 'String'>
+    readonly slug: FieldRef<"products", 'String'>
     readonly description: FieldRef<"products", 'String'>
     readonly image_url: FieldRef<"products", 'String'>
     readonly thickness: FieldRef<"products", 'String'>
@@ -10941,6 +10954,7 @@ export namespace Prisma {
   export const ProductsScalarFieldEnum: {
     id: 'id',
     code: 'code',
+    slug: 'slug',
     description: 'description',
     image_url: 'image_url',
     thickness: 'thickness',
@@ -11219,6 +11233,7 @@ export namespace Prisma {
     NOT?: productsWhereInput | productsWhereInput[]
     id?: IntFilter<"products"> | number
     code?: StringFilter<"products"> | string
+    slug?: StringNullableFilter<"products"> | string | null
     description?: StringNullableFilter<"products"> | string | null
     image_url?: StringNullableFilter<"products"> | string | null
     thickness?: StringNullableFilter<"products"> | string | null
@@ -11236,6 +11251,7 @@ export namespace Prisma {
   export type productsOrderByWithRelationInput = {
     id?: SortOrder
     code?: SortOrder
+    slug?: SortOrderInput | SortOrder
     description?: SortOrderInput | SortOrder
     image_url?: SortOrderInput | SortOrder
     thickness?: SortOrderInput | SortOrder
@@ -11256,6 +11272,7 @@ export namespace Prisma {
     AND?: productsWhereInput | productsWhereInput[]
     OR?: productsWhereInput[]
     NOT?: productsWhereInput | productsWhereInput[]
+    slug?: StringNullableFilter<"products"> | string | null
     description?: StringNullableFilter<"products"> | string | null
     image_url?: StringNullableFilter<"products"> | string | null
     thickness?: StringNullableFilter<"products"> | string | null
@@ -11273,6 +11290,7 @@ export namespace Prisma {
   export type productsOrderByWithAggregationInput = {
     id?: SortOrder
     code?: SortOrder
+    slug?: SortOrderInput | SortOrder
     description?: SortOrderInput | SortOrder
     image_url?: SortOrderInput | SortOrder
     thickness?: SortOrderInput | SortOrder
@@ -11297,6 +11315,7 @@ export namespace Prisma {
     NOT?: productsScalarWhereWithAggregatesInput | productsScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"products"> | number
     code?: StringWithAggregatesFilter<"products"> | string
+    slug?: StringNullableWithAggregatesFilter<"products"> | string | null
     description?: StringNullableWithAggregatesFilter<"products"> | string | null
     image_url?: StringNullableWithAggregatesFilter<"products"> | string | null
     thickness?: StringNullableWithAggregatesFilter<"products"> | string | null
@@ -11861,6 +11880,7 @@ export namespace Prisma {
 
   export type productsCreateInput = {
     code: string
+    slug?: string | null
     description?: string | null
     image_url?: string | null
     thickness?: string | null
@@ -11878,6 +11898,7 @@ export namespace Prisma {
   export type productsUncheckedCreateInput = {
     id?: number
     code: string
+    slug?: string | null
     description?: string | null
     image_url?: string | null
     thickness?: string | null
@@ -11894,6 +11915,7 @@ export namespace Prisma {
 
   export type productsUpdateInput = {
     code?: StringFieldUpdateOperationsInput | string
+    slug?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     thickness?: NullableStringFieldUpdateOperationsInput | string | null
@@ -11911,6 +11933,7 @@ export namespace Prisma {
   export type productsUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
+    slug?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     thickness?: NullableStringFieldUpdateOperationsInput | string | null
@@ -11928,6 +11951,7 @@ export namespace Prisma {
   export type productsCreateManyInput = {
     id?: number
     code: string
+    slug?: string | null
     description?: string | null
     image_url?: string | null
     thickness?: string | null
@@ -11943,6 +11967,7 @@ export namespace Prisma {
 
   export type productsUpdateManyMutationInput = {
     code?: StringFieldUpdateOperationsInput | string
+    slug?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     thickness?: NullableStringFieldUpdateOperationsInput | string | null
@@ -11959,6 +11984,7 @@ export namespace Prisma {
   export type productsUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
+    slug?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     thickness?: NullableStringFieldUpdateOperationsInput | string | null
@@ -12675,6 +12701,7 @@ export namespace Prisma {
   export type productsCountOrderByAggregateInput = {
     id?: SortOrder
     code?: SortOrder
+    slug?: SortOrder
     description?: SortOrder
     image_url?: SortOrder
     thickness?: SortOrder
@@ -12698,6 +12725,7 @@ export namespace Prisma {
   export type productsMaxOrderByAggregateInput = {
     id?: SortOrder
     code?: SortOrder
+    slug?: SortOrder
     description?: SortOrder
     image_url?: SortOrder
     thickness?: SortOrder
@@ -12714,6 +12742,7 @@ export namespace Prisma {
   export type productsMinOrderByAggregateInput = {
     id?: SortOrder
     code?: SortOrder
+    slug?: SortOrder
     description?: SortOrder
     image_url?: SortOrder
     thickness?: SortOrder
@@ -13846,6 +13875,7 @@ export namespace Prisma {
 
   export type productsCreateWithoutProduct_categoriesInput = {
     code: string
+    slug?: string | null
     description?: string | null
     image_url?: string | null
     thickness?: string | null
@@ -13862,6 +13892,7 @@ export namespace Prisma {
   export type productsUncheckedCreateWithoutProduct_categoriesInput = {
     id?: number
     code: string
+    slug?: string | null
     description?: string | null
     image_url?: string | null
     thickness?: string | null
@@ -13921,6 +13952,7 @@ export namespace Prisma {
 
   export type productsUpdateWithoutProduct_categoriesInput = {
     code?: StringFieldUpdateOperationsInput | string
+    slug?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     thickness?: NullableStringFieldUpdateOperationsInput | string | null
@@ -13937,6 +13969,7 @@ export namespace Prisma {
   export type productsUncheckedUpdateWithoutProduct_categoriesInput = {
     id?: IntFieldUpdateOperationsInput | number
     code?: StringFieldUpdateOperationsInput | string
+    slug?: NullableStringFieldUpdateOperationsInput | string | null
     description?: NullableStringFieldUpdateOperationsInput | string | null
     image_url?: NullableStringFieldUpdateOperationsInput | string | null
     thickness?: NullableStringFieldUpdateOperationsInput | string | null

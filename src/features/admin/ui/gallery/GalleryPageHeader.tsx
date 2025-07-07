@@ -21,7 +21,7 @@ const GalleryPageHeader = () => {
         return;
       }
 
-      const maxSizeMB = 5;
+      const maxSizeMB = 10;
       const maxSizeBytes = maxSizeMB * 1024 * 1024;
       if (file.size > maxSizeBytes) {
         console.error(`File size exceeds ${maxSizeMB}MB`);

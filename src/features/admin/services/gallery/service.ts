@@ -75,8 +75,22 @@ export async function createGalleryFolder(data: {
   is_visible: boolean;
   created_by: number;
 }) {
+  const { title, cover_image, is_visible, created_by } = data;
+
+  const slug = title
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-');
+
   return await prisma.gallery_folders.create({
-    data,
+    data: {
+      title,
+      slug,
+      cover_image,
+      is_visible,
+      created_by,
+    },
     select: {
       id: true,
     },

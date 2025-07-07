@@ -105,10 +105,17 @@ export async function createProduct(data: CreateProductInput) {
     specs,
   } = data;
 
+  const slug = code
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-');
+
   // Step 1: Simpan ke tabel `products`
   const product = await prisma.products.create({
     data: {
       code,
+      slug,
       description,
       thickness,
       gloss,
