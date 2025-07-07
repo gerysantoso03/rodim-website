@@ -16,7 +16,6 @@ interface GalleryPageUIProps {
 const GalleryPageUI = ({ galleryCardData }: GalleryPageUIProps) => {
   const t = useTranslations('GalleryPage');
 
-
   return (
     <div className="w-full h-full min-h-screen">
       <header className="section-wrapper relative">
@@ -53,7 +52,7 @@ const GalleryPageUI = ({ galleryCardData }: GalleryPageUIProps) => {
           </div>
           <div className="w-full min-h-[800px]">
             <div className="w-full space-y-[20px] overflow-hidden">
-              <InfiniteScrollSlider imageList={imageTopList} reverseDirection/>
+              <InfiniteScrollSlider imageList={imageTopList} reverseDirection />
               <InfiniteScrollSlider imageList={imageBottomList} />
             </div>
           </div>

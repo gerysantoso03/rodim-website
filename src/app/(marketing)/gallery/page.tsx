@@ -9,9 +9,9 @@ const GalleryPage = async () => {
     throw new Error(result.message || 'Failed to get gallery folders');
   }
 
-  const galleryData = result.filter(data => data.is_visible);
+  const galleryData = result.filter((data) => data.is_visible);
 
-  return <GalleryPageUI galleryCardData={galleryData ?? []}/>
+  return <GalleryPageUI galleryCardData={galleryData ?? []} />;
 };
 
 export default GalleryPage;
