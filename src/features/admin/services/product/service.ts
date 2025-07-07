@@ -86,6 +86,25 @@ export async function getProductDetailById(id: number) {
   });
 }
 
+export async function getProductDetailBySlug(slug: string) {
+  return await prisma.products.findFirst({
+    where: { slug: slug, status: 1 },
+    include: {
+      product_categories: {
+        where: { status: 1 },
+        include: {
+          categories: {
+            select: {
+              code: true,
+              description: true,
+            },
+          },
+        },
+      },
+    },
+  });
+}
+
 export async function getProductDetailByCode(code: string) {
   return await prisma.products.findUnique({
     where: { code: code, status: 1 },

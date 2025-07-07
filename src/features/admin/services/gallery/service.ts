@@ -57,6 +57,22 @@ export async function getAllGalleryImageByGalleryFolderId(
   });
 }
 
+export async function getAllGalleryImageByGalleryFolderSlug(slug: string) {
+  return await prisma.gallery_images.findMany({
+    orderBy: { created_at: 'desc' },
+    where: {
+      gallery_folder: {
+        slug: slug,
+        status: 1,
+      },
+      status: 1,
+    },
+    include: {
+      gallery_folder: true,
+    },
+  });
+}
+
 export async function getGalleryFolderDetailById(id: number) {
   return await prisma.gallery_folders.findFirst({
     where: { id: id, status: 1 },
