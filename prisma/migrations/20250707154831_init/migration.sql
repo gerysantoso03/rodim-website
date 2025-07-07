@@ -16,6 +16,7 @@ CREATE TABLE "users" (
 CREATE TABLE "products" (
     "id" SERIAL NOT NULL,
     "code" VARCHAR(128) NOT NULL,
+    "slug" VARCHAR(512),
     "description" TEXT,
     "image_url" TEXT,
     "thickness" TEXT,

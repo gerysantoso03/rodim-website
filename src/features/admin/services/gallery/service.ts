@@ -57,6 +57,22 @@ export async function getAllGalleryImageByGalleryFolderId(
   });
 }
 
+export async function getAllGalleryImageByGalleryFolderSlug(slug: string) {
+  return await prisma.gallery_images.findMany({
+    orderBy: { created_at: 'desc' },
+    where: {
+      gallery_folder: {
+        slug: slug,
+        status: 1,
+      },
+      status: 1,
+    },
+    include: {
+      gallery_folder: true,
+    },
+  });
+}
+
 export async function getGalleryFolderDetailById(id: number) {
   return await prisma.gallery_folders.findFirst({
     where: { id: id, status: 1 },
@@ -75,8 +91,22 @@ export async function createGalleryFolder(data: {
   is_visible: boolean;
   created_by: number;
 }) {
+  const { title, cover_image, is_visible, created_by } = data;
+
+  const slug = title
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, '')
+    .replace(/\s+/g, '-');
+
   return await prisma.gallery_folders.create({
-    data,
+    data: {
+      title,
+      slug,
+      cover_image,
+      is_visible,
+      created_by,
+    },
     select: {
       id: true,
     },
