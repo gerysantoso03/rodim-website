@@ -68,6 +68,14 @@ export async function getAllGalleryImageAction(id: number) {
   }
 }
 
+export async function getAllGalleryImageBySlugAction(slug: string) {
+  try {
+    return await getAllGalleryImageByGalleryFolderSlug(slug);
+  } catch (error) {
+    return { success: false, message: 'Failed to get gallery images', error };
+  }
+}
+
 export async function createGalleryFolderAction(formData: FormData) {
   try {
     const title = formData.get('title') as string;

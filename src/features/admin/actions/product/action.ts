@@ -9,6 +9,7 @@ import {
   createProduct,
   getProductDetailByCode,
   editProduct,
+  getProductDetailBySlug,
 } from '@/features/admin/services/product/service';
 import fs from 'fs/promises';
 import path from 'path';
@@ -41,8 +42,15 @@ export async function getAllProductDetailWithCategoriesByIdAction(id: number) {
 
 export async function getProductDetailByIdAction(id: number) {
   try {
-    // console.log(id);
     return await getProductDetailById(id);
+  } catch (error) {
+    return { success: false, message: 'Failed to get product detail', error };
+  }
+}
+
+export async function getProductDetailBySlugAction(slug: string) {
+  try {
+    return await getProductDetailBySlug(slug);
   } catch (error) {
     return { success: false, message: 'Failed to get product detail', error };
   }
