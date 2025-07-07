@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { LogOut, Image as LucideImage, Car } from 'lucide-react';
 import Image from 'next/image';
 import { logoutAction } from '@/features/auth/actions/action';
+import { Toaster } from 'react-hot-toast';
 // import { getSessionCookieName } from '@/shared/utils/session/session';
 // import { redirect } from 'next/navigation';
 
@@ -84,8 +85,12 @@ export default function AdminLayout({
       </aside>
 
       {/* Main content */}
-      <section className="w-full h-screen overflow-y-auto bg-white px-8 py-6">
-        {children}
+      <section className="relative w-full h-screen overflow-hidden bg-white px-8 py-6">
+        <div className="overflow-y-auto">{children}</div>
+        <Toaster
+          position="bottom-center"
+          containerStyle={{ position: 'absolute' }}
+        />
       </section>
     </main>
   );

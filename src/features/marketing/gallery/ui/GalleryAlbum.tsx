@@ -5,20 +5,13 @@ import Image from 'next/image';
 import GalleryModal from './GalleryModal';
 import { Button } from '@/shared/components/button';
 
-const GalleryAlbum = () => {
+interface GalleryAlbumProps{
+  imageList: string[]
+}
+
+const GalleryAlbum = ({imageList = []}:GalleryAlbumProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const imageList = [
-    '/image/gallery/temp.jpg',
-    '/image/about/01.png',
-    '/image/about/02.png',
-    '/image/gallery/temp.jpg',
-    '/image/about/01.png',
-    '/image/about/02.png',
-    '/image/gallery/temp.jpg',
-    '/image/about/01.png',
-    '/image/about/02.png',
-  ];
 
   const handleClickImage = (i: number) => {
     setIsModalOpen(true);
