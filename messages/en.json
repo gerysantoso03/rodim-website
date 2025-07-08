@@ -1,6 +1,111 @@
 {
+  "Navbar": {
+    "about": "About BASF RODIM",
+    "gallery": "Gallery",
+    "warranty": "Warranty",
+    "Product": {
+      "introduction": "Introduction",
+      "specification": "Technical Specification"
+    }
+  },
+  "Footer": {
+    "installation": "Installation Place",
+    "operational": "Operational Hours",
+    "monday": "Monday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday: Closed",
+    "contact": "Contact Us"
+  },
+  "ProductRodimPage": {
+    "FeelDifference": {
+      "discoverLabel": "Discover More",
+      "closeLabel": "Close Detail",
+      "title1": "When beauty meets protection",
+      "desc1": "Beyond protection, our PPF  offers long-lasting beauty with a guaranteed high-quality glossy or matte finish, outperforming standard PPFs.",
+      "title2": "Durability",
+      "subtitle2": "Looking for a long lasting PPF? RODIM PPF is your solution.",
+      "desc2": "RODIM PPF is designed to offer superior longevity compared to other PPFs. With the warranty duration we proudly offer, we ensure the durability of our products to provide optimal protection against daily road hazards and all weather conditions.",
+      "title3": "Glue",
+      "subtitle3": "Superior adhesive quality from BASF that will not damage the paint.",
+      "desc3": "RODIM PPF adhesive technology is part of BASF’s material innovation. Backed by deep understanding and expertise in automotive paint. We ensure maximum protection without any concerns about damaging your paint.",
+      "title4": "Warranty",
+      "subtitle4": "With over 150 years of experience, you get a warranty from a trusted brand recognized worldwide.",
+      "desc4": "RODIM PPF, a brand of BASF—the world’s largest chemical company with over 150 years of experience, providing durable and proven protection. We guarantee no cracking, blistering, glue residue, or yellowing, ensuring a like-new appearance. If issues arise on PPF products, we provide a free replacement. Trust RODIM PPF for reliable, long-lasting protection."
+    }
+  },
   "HomePage": {
-    "title": "Hello world!",
-    "about": "Go to the about page"
+    "homeIntroduction": "RODIM PPF is a brand of BASF, a global leader in TPU materials, automotive OEM and refinish paint. From TPU production to advanced PPF innovation, RODIM delivers complete solutions and truly understands how to protect factory car paint.",
+    "buttonLabel": "Discover More"
+  },
+  "AboutPage": {
+    "aboutTitle1": "About BASF RODIM",
+    "aboutDesc1": "RODIM has been a part of the BASF family for over 40 years, reflecting a long-standing commitment to quality and innovation. Powered by cutting-edge technology and over 150 years of BASF experience, we strive to elevate the standards of the PPF industry. RODIM PPF is developed to exceed expectations—offering reliable protection, strong performance, and long-lasting durability that vehicle owners can depend on.",
+    "aboutTitle2": "BASF is the world’s largest chemical company, originating from Germany and renowned for its continuous innovation and technological advancements. It is also the largest global manufacturer of Thermoplastic Polyurethane (TPU).",
+    "aboutDesc2": "From TPU beads to PPF products, BASF creates a competitive advantage through research and innovation, production, marketing and sales, and technical service.",
+    "aboutDesc3": "With its powerful research and development in material technology, BASF leads the world as a manufacturer of TPU films. RODIM® PPF is the result of BASF's expertise in material technology.",
+    "aboutDesc4": "Since 2006, Refinish Excellence Indonesia has been the exclusive distributor of Glasurit automotive coatings in Indonesia. With extensive experience in this industry, we bring unparalleled expertise and innovation in automotive paint protection, supported by our specialists trained by BASF global trainers. Our deep understanding of paint protection ensures we always provide the best solution.",
+    "aboutDesc5": "As a world-leading chemical company, BASF has an absolute advantage in the development of automotive paint protection film. From TPU production to coatings protection, complete vertical integration allows BASF to utilize its innovative power and quality control throughout the value chain. The group's global network also offers partners and customers the most tailored solution and comprehensive after sales service.",
+    "aboutDesc6": "With its powerful research and development in material technology, BASF leads the world in hi-tech thin film applications.",
+    "aboutDesc7": "RODIM PPF is the result of BASF’s expertise in material and surface technology.",
+    "paintProtectionTitle": "Automotive Paint Protection Film",
+    "paintProtectionInfo1": "Installed with precision by experienced professionals to deliver flawless detail.",
+    "paintProtectionInfo2": "More than just protection, RODIM PPF offers exceptional long-term durability against all kinds of challenges.",
+    "paintProtectionInfo3": "RODIM PPF is designed to perfectly fit your vehicle’s unique contours and characteristics.",
+    "innovation1": "BASF TPU integrated manufacturing base meets the requirements of sustainable development strategy.",
+    "innovation2": "The RODIM brand inherits Germany's exacting standards for quality and reliability.",
+    "innovation3": "Hi-tech thin film is now being used in aerospace, construction, bionics, new energy and more.",
+    "innovation4": "BASF’s German facility produces the TPU raw materials, providing exceptional quality and a consistent supply.",
+    "innovation5": "Produced in a world-class original film coating production line with 10 procedures and 20 detecting tests, RODIM® PPF offers advanced car body protection.",
+    "innovation6": "RODIM PPF meets car owners' individual needs.",
+    "innovation7": "A well-established service network offers a peace of mind."
+  },
+  "FAQPage": {
+    "faqQuestion1": "Why choose RODIM® TPU PPF?",
+    "faqAnswer1": "The quality of TPU directly affects the performance and durability of paint protection film. RODIM PPF is a premium TPU from BASF, the world’s largest and most recognized TPU manufacturer. Every step of the production chain from raw materials to finished films are fully traceable.",
+    "faqAnswer2": "RODIM TPU PPF offers industry-leading performance in thickness, stain resistance, gloss, dirt resistance, scratch resistance, self-healing, and resistance to yellowing and aging. It effectively protects OEM paint from acid rain, insect residue, tree sap, and other contaminants, keeping your vehicle looking new longer.",
+    "faqQuestion2": "Can I use car wash products after installing RODIM TPU PPF?",
+    "faqAnswer3": "Yes. After two weeks, you can wash your vehicle regularly using pH-neutral car shampoos or other safe automotive cleaning products. Avoid <solve>solvent-based cleaner</solve>, as they may damage the film’s surface.",
+    "faqQuestion3": "Can I use a high-pressure washer after installing RODIM TPU PPF?",
+    "faqAnswer4": "Yes, but avoid directly spraying the edges of the film with high-pressure water.",
+    "faqQuestion4": "Can I use an automatic car wash after installing RODIM TPU PPF?",
+    "faqAnswer5": "Hand washing is recommended. If using an <automatic>automatic car wash</automatic>, choose a <touchless>touchless system</touchless>, avoid car wash machines with brushes, as they can cause the film’s edges to lift.",
+    "faqQuestion5": "Will removing RODIM TPU PPF damage the OEM paint?",
+    "faqAnswer6": "The chances of damaging OEM paint when removing RODIM PPF is very low. However, always have the film removed by a certified <rodim>RODIM</rodim> technician to minimize any risk.",
+    "faqQuestion6": "What is self-healing?",
+    "faqAnswer7": "<rodim>RODIM TPU PPF</rodim> features a special transparent <poly>thermoplastic polyurethane</poly> top coat with memory-based <selfhealing>self-healing</selfhealing> properties. Light scratches can disappear with exposure to heat, such as sunlight or warm air.",
+    "faqAnswer8": "Note that this function has limits. If a scratch is too deep and penetrates the self-healing layer, it may not fully recover. However, the film’s protective function on OEM paint will remain effective.",
+    "faqQuestion7": "What are the differences between RODIM TPU PPF models?",
+    "faqAnswer9": "<rodim1>RODIM R1</rodim1> Offers self-healing and strong dirt resistance. Ideal for those seeking everyday protection with great value.",
+    "faqAnswer10": "<rodim2>RODIM R2 Matte</rodim2> Same protection and thickness as RODIM R2 but with a satin low-gloss surface that delivers a refined high-end appearance.",
+    "faqAnswer11": "<rodim3>RODIM R2 Pro</rodim3> All features of RODIM R2 with added resistance to chemical cleaners like carburetor wash offering outstanding anti-corrosion protection.",
+    "faqAnswer12": "<rodim4>RODIM R3 Pro</rodim4> Built upon RODIM R2 PRO with even greater thickness. This is a higher-class product from the RODIM R2 PRO line. Offering maximum protection and performance.",
+    "faqAnswer13": "<rodim5>RODIM R4 Pro</rodim5> The top-tier RODIM PPF offers maximum thickness, enhanced self-healing, and superior resistance to certain chemicals and scratches. Built for extreme conditions, it offers the best durability and long-lasting finish for ultimate paint protection."
+  },
+  "CareInstructionPage": {
+    "care1": "Do not wash or wax the vehicle within one week after the film installation. The warranty will be voided if this guideline is not followed.",
+    "care2": "Avoid direct sunlight exposure during the first week after installation, as rapid moisture evaporation may cause bubbling.",
+    "care3": "A follow-up inspection at the installation shop is required within one week of application.",
+    "care4": "After the first week, the vehicle can be washed. Regular washing is necessary to maintain the film during the warranty period. Minor surface wear and loss of gloss are considered normal. Water spots, streaks, and ripples are not covered by the warranty.",
+    "care5": "It is recommended to wash the vehicle every one to two weeks. If the vehicle becomes noticeably dirty or dusty, clean it the same day to prevent contaminants from penetrating the film and dulling its finish.",
+    "care6": "Bird droppings and insect remains should be removed promptly from the film surface.",
+    "care7": "For vehicles used on special occasions, such as wedding cars, do not attach suction cups directly onto the film. Ribbons and firecrackers can cause staining. If any residue contacts the film, clean it within 12 hours to prevent permanent discoloration.",
+    "care8": "Use only soft, non-abrasive sponges free of mineral particles when cleaning. Avoid hard scrubbing tools or excessive force that could scratch or wear down the film. Do not use strong acids, alkalis, or corrosive chemicals. After cleaning, thoroughly rinse with clean water and dry with a soft, clean cloth to avoid water spots.",
+    "care9": "A deep maintenance treatment for the film is recommended every six months. Polishing the film surface is not advised.",
+    "care10": "Hand washing is strongly recommended. Avoid using automatic car washes or high-pressure water jets on the film edges, as this may cause lifting or water seepage."
+  },
+  "WarrantyPage": {
+    "warrantyTitle": "Product Warranty Service Description",
+    "warrantyDesc1": "As a brand of BASF, the world’s largest chemical company established in 1865, RODIM PPF is built on a legacy of global excellence and long-term commitment. Our protective solutions reflect over 150 years of innovation, expertise, and industry leadership.",
+    "warrantyDesc2": "We guarantee resistance to cracking, blistering, yellowing, and large adhesive residue that can damage the paint. RODIM PPF is designed to maintain its clarity and performance throughout the warranty period, with free replacement if any issues arise on PPF products. Each product is supported by a clearly defined and reliable warranty.",
+    "warrantyDesc3": "Make sure you get a warranty from a world-class company",
+    "buttonLabel": "See product"
+  },
+  "GalleryPage": {
+    "galleryTitle": "Gallery",
+    "galleryDesc1": "As a brand of BASF, the world’s largest chemical company established in 1865, RODIM PPF is built on a legacy of global excellence and long-term commitment. Our protective solutions reflect over 150 years of innovation, expertise, and industry leadership.",
+    "warrantyDesc2": "We guarantee resistance to cracking, blistering, yellowing, and large adhesive residue that can damage the paint. RODIM PPF is designed to maintain its clarity and performance throughout the warranty period, with free replacement if any issues arise on PPF products. Each product is supported by a clearly defined and reliable warranty.",
+    "warrantyDesc3": "Make sure you get a warranty from a world-class company",
+    "buttonLabel": "See product"
   }
 }

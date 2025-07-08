@@ -27,7 +27,7 @@ const Accordion = ({ title, content }: AccordionProps) => {
         />
       </div>
       {/* Accordion Content */}
-      <div className="border-b pb-10">
+      <div className="border-b pb-10 w-full">
         <h3 className="text-[2.8rem] font-semibold">{title}</h3>
         {/* Content Wrapper */}
         <div

@@ -1,20 +1,20 @@
-# Use a base Node.js image
-FROM node:18-alpine AS base
+# Set base image
+FROM node:18-alpine
 
-# Set the working directory inside the container
+# Set working dir
 WORKDIR /app
 
-# Copy all files (before npm install, because volume will replace this anyway)
-COPY . .
+# Copy only dependency files first
+COPY package*.json ./
 
-# Install deps inside the mounted volume (node_modules stays accessible)
+# Install deps with lock file
 RUN npm install
 
-# Build the Next.js application for production
-# RUN npm run build
+# Copy the rest of the application
+COPY . .
 
-# Expose the port Next.js runs on (default is 3000)
+# Expose port
 EXPOSE 3000
 
-# Command to start the Next.js application in production mode
+# Start app
 CMD ["npm", "run", "dev"]

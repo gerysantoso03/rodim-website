@@ -3,8 +3,11 @@ import Link from 'next/link';
 import LogoRodim from '../../../assets/logos/logo-rodim.svg';
 import { Phone, Mail, MapPin, Clock9 } from 'lucide-react';
 import { retailers } from '@/shared/libs/data/retailers';
+import { useTranslations } from 'next-intl';
 
 const Footer = () => {
+  const t = useTranslations('Footer');
+
   return (
     <footer className="bg-black text-white">
       <div className="py-[64px] flex flex-col gap-[20px] max-w-[1200px] mx-auto">
@@ -22,7 +25,9 @@ const Footer = () => {
           <div className="flex flex-col min-[1024px]:flex-row gap-[40px] min-[1024px]:gap-[120px]">
             <div className="flex flex-1 flex-col gap-[40px] min-[1440px]:max-w-[520px]">
               <div className="flex flex-col gap-[8px]">
-                <span className="font-[700]">TEMPAT INSTALASI</span>
+                <span className="font-[700] uppercase">
+                  {t('installation')}
+                </span>
 
                 <div className="flex flex-col gap-[8px]">
                   <Link
@@ -43,15 +48,15 @@ const Footer = () => {
                   <div className="flex gap-[8px] items-start">
                     <Clock9 size={18} className="min-w-[1.8rem]" />
                     <p>
-                      Senin - Jumat: 9.00 - 17.00 | Sabtu: 9.00-15.00 | Minggu:
-                      Tutup
+                      {t('monday')} - {t('friday')}: 9.00 - 17.00 |{' '}
+                      {t('saturday')}: 9.00-15.00 | {t('sunday')}
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="flex flex-col gap-[8px]">
-                <span className="font-[700]">HUBUNGI KAMI</span>
+                <span className="font-[700] uppercase">{t('contact')}</span>
 
                 <div className="flex flex-col gap-[8px]">
                   <Link href="mailto:info@basfrodim.id" className="w-fit">

@@ -10,9 +10,14 @@ export default function Home() {
 
   return (
     <div className="p-[16px] max-w-[144rem] mx-auto flex flex-col gap-[1.6rem]">
-      <Banner image={''} bannerFor="home" />
-
-      {/* <h1>{t('title')}</h1> */}
+      <Banner image={''} bannerFor="home">
+        <h1 className="text-[40px] font-[700] lg:text-[7.2rem]">
+          RODIM {'-'} Protection by World{"'"}s Best
+        </h1>
+        <p className="text-[1.4rem] lg:text-[2.1rem]">
+          {t('homeIntroduction')}
+        </p>
+      </Banner>
 
       <section>
         <VideoPlayer />
@@ -33,6 +38,7 @@ export default function Home() {
                 title={product.title}
                 subtitle={product.subtitle}
                 productUrl={product.id}
+                buttonLabel={t('buttonLabel')}
               />
             </div>
           );

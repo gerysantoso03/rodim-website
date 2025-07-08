@@ -6,12 +6,14 @@ import { getAllSpecCategoriesAction } from '@/features/admin/actions/product/act
 
 function mapProductToFormValues(product: any) {
   return {
+    id: product.id,
     code: product.code,
     description: product.description,
     thickness: product.thickness,
     gloss: product.gloss,
     quv: product.quv,
     warranty: product.warranty,
+    image_url: product.image_url,
     specs: Object.fromEntries(
       (product.product_categories ?? [])
         .filter((cat: any) => !!cat.categories?.code)
@@ -29,17 +31,24 @@ function mapProductToFormValues(product: any) {
 export default async function EditProductPage({
   params,
 }: {
-  params: { productId: string };
+  params: Promise<{ productId: string }>;
 }) {
-  const productId = parseInt(params.productId, 10);
-  const product = await getProductDetailByIdAction(productId); // console.log(product);
+  const { productId } = await params;
+
+  if (!productId) {
+    return <div className="text-red-500">Product ID not provided</div>;
+  }
+
+  const numericProductId = Number(productId);
+
+  const product = await getProductDetailByIdAction(numericProductId); // console.log(product);
 
   if (!product) {
     return <div>Product not found</div>;
   }
 
-  const specSectionsData = await getAllSpecCategoriesAction(); // console.log(specSections);
-  const specSections = specSectionsData ?? [];
+  const specSectionsData = await getAllSpecCategoriesAction();
+  const specSections = specSectionsData ?? []; // console.log(specSections);
 
   const defaultValues = mapProductToFormValues(product); // console.log(defaultValues);
 
@@ -65,7 +74,7 @@ export default async function EditProductPage({
         <span className="text-black font-semibold">Edit Product</span>
       </div>
       <ProductForm
-        mode="create"
+        mode="edit"
         defaultValues={defaultValues}
         specSections={specSections}
       />

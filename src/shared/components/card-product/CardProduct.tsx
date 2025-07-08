@@ -6,6 +6,7 @@ type CardProductProps = {
   title: string;
   subtitle: string;
   productUrl: string;
+  buttonLabel?: string;
 };
 
 const CardProduct = ({
@@ -13,6 +14,7 @@ const CardProduct = ({
   title,
   subtitle,
   productUrl,
+  buttonLabel,
 }: CardProductProps) => {
   return (
     <div className="w-full h-[40.8rem] lg:h-[62rem] relative overflow-hidden rounded-[18px] border-[.2rem] border-white/12">
@@ -41,7 +43,7 @@ const CardProduct = ({
             target="_blank"
             className="px-[2.2rem] py-[1.2rem] text-[1.7rem] text-white bg-primary-blue rounded-full cursor-pointer"
           >
-            Selengkapnya
+            {buttonLabel}
           </Link>
         </div>
       </div>
