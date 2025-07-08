@@ -1,6 +1,8 @@
-import { getAllGalleryImageAction } from '@/features/admin/actions/gallery/action';
+import {
+  getAllGalleryImageAction,
+  getAllGalleryImageBySlugAction,
+} from '@/features/admin/actions/gallery/action';
 import GalleryDetailPageUI from '@/features/marketing/gallery/ui/GalleryDetailPageUI';
-import { redirect } from 'next/navigation';
 
 const GalleryDetailPage = async ({
   params,
@@ -8,11 +10,12 @@ const GalleryDetailPage = async ({
   params: Promise<{ album: string }>;
 }) => {
   const { album } = await params;
-  const galleryImageData = await getAllGalleryImageAction(parseInt(album));
+  const galleryImageData = await getAllGalleryImageBySlugAction(album);
 
-  if (!galleryImageData) {
-    redirect('/');
-    return null;
+  if (!Array.isArray(galleryImageData)) {
+    throw new Error(
+      galleryImageData.message || 'Failed to get gallery folders'
+    );
   }
 
   return <GalleryDetailPageUI data={galleryImageData} />;

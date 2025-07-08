@@ -8,11 +8,12 @@ import { Button } from '@/shared/components/button';
 
 interface GalleryCardProps {
   id: number;
+  slug: string;
   title: string;
   img: string;
 }
 
-const GalleryCard = ({ id, title, img }: GalleryCardProps) => {
+const GalleryCard = ({ id, title, slug, img }: GalleryCardProps) => {
   const imageUrl =
     id && img
       ? `/uploads/gallery_folder/${id}/${img}`
@@ -25,7 +26,7 @@ const GalleryCard = ({ id, title, img }: GalleryCardProps) => {
           <h4 className="text-center text-white tracking-[-0.14px] leading-normal font-bold text-[36px] lg:leading-[52px] lg:text-[44px]">
             {title}
           </h4>
-          <Link href={`/gallery/${id}`}>
+          <Link href={`/gallery/${slug}`}>
             <Button>Lihat Galery</Button>
           </Link>
         </div>

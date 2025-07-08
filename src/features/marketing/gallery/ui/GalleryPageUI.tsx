@@ -37,6 +37,7 @@ const GalleryPageUI = ({ galleryCardData }: GalleryPageUIProps) => {
               galleryCardData.map((galleryData) => (
                 <GalleryCard
                   title={(galleryData.title as string) || ''}
+                  slug={(galleryData.slug as string) || ''}
                   img={galleryData.cover_image as string}
                   id={galleryData.id as number}
                   key={galleryData.id}
