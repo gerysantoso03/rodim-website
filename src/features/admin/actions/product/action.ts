@@ -5,6 +5,7 @@ import {
   getProductDetailById,
   deleteProduct,
   getAllProductDetailWithCategoriesById,
+  getAllProductDetailWithCategoriesBySlug,
   getAllSpecCategories,
   createProduct,
   getProductDetailByCode,
@@ -35,6 +36,16 @@ export async function getAllProductsAction() {
 export async function getAllProductDetailWithCategoriesByIdAction(id: number) {
   try {
     return await getAllProductDetailWithCategoriesById(id);
+  } catch (error) {
+    return { success: false, message: 'Failed to get product detail', error };
+  }
+}
+
+export async function getAllProductDetailWithCategoriesBySlugAction(
+  slug: string
+) {
+  try {
+    return await getAllProductDetailWithCategoriesBySlug(slug);
   } catch (error) {
     return { success: false, message: 'Failed to get product detail', error };
   }
