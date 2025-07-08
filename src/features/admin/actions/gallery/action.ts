@@ -14,6 +14,7 @@ import {
   changeGalleryFolderVisibility,
   changeGalleryImageVisibility,
   getAllGalleryFolderWithImagesById,
+  getAllGalleryImageByGalleryFolderSlug,
 } from '@/features/admin/services/gallery/service';
 import fs from 'fs/promises';
 import path from 'path';

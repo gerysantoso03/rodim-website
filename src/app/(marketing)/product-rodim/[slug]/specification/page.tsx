@@ -1,25 +1,23 @@
-'use client';
-import TableSpecification from '@/shared/components/table-specification/TableSpecification';
-import { specifications } from '@/shared/libs/data/specifications';
-import { useEffect } from 'react';
+import { getAllProductDetailWithCategoriesBySlugAction } from '@/features/admin/actions/product/action';
+import ProductSpecificationPageUI from '@/features/marketing/product/ui/ProductSpecificationPageUI';
+import { redirect } from 'next/navigation';
 
-type Props = {
-  params: { slug: string };
+interface ProductSpecificationPageProps {
+  params: Promise<{ slug: string }>;
+}
+
+const ProductSpecificationPage = async ({
+  params,
+}: ProductSpecificationPageProps) => {
+  const { slug } = await params;
+  const productSpecification =
+    await getAllProductDetailWithCategoriesBySlugAction(slug || '');
+
+  if (productSpecification?.hasOwnProperty('success')) {
+    redirect('/');
+  }
+
+  return <ProductSpecificationPageUI data={productSpecification} />;
 };
 
-const Page = ({ params }: Props) => {
-  // const product = products.find(p => p.productUrl.split('/').pop() === params.slug);
-  // if (!product) return '';
-
-  useEffect(() => {
-    console.log('params = ', params);
-  }, []);
-
-  return (
-    <div className="p-[16px] lg:px-[4rem] xl:px-[12rem] max-w-[144rem] mx-auto flex flex-col gap-[1.6rem]">
-      <TableSpecification data={specifications} />
-    </div>
-  );
-};
-
-export default Page;
+export default ProductSpecificationPage;

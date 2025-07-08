@@ -11,6 +11,8 @@ import { ChevronDown, X, AlignJustify } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { getAllProductsAction } from '@/features/admin/actions/product/action';
+import { desiredOrderProduct } from './const';
+import { cn } from '@/shared/libs/shadcn/utils';
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -19,20 +21,24 @@ const Navbar = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState('0px');
-  const navLinkList = [];
+  const newNavProductList = desiredOrderProduct.map((data, index) => ({
+    id: index,
+    title: data,
+    slug: '/',
+  }));
+  const [navProductList, setNavProductList] =
+    useState<any[]>(newNavProductList);
 
-  // Pisah path menjadi array: ['', 'product', '1', 'specification']
   const segments = pathname.split('/');
   const page = segments[1];
-  const productId = segments[2]; // '1'
-  const subPage = segments[3] || ''; // bisa 'feel-the-difference', 'specification', atau kosong untuk pengenalan
+  const productSlug = segments[2];
+  const subPage = segments[3] || '';
 
   const isActive = (check: string) => subPage === check;
 
   const t = useTranslations('Navbar');
 
   useEffect(() => {
-    console.log('path = ', segments[1]);
     if (dropdownRef.current) {
       if (isOpen) {
         const scrollHeight = dropdownRef.current.scrollHeight;
@@ -47,27 +53,39 @@ const Navbar = () => {
     const getProductLink = async () => {
       const productLink = await getAllProductsAction();
 
-      const desiredOrder = [
-        'RODIM R1',
-        'RODIM R2 Matte',
-        'RODIM R2 PRO',
-        'RODIM R3 PRO',
-        'RODIM R4 PRO',
-      ];
+      if (!Array.isArray(productLink)) {
+        return;
+      }
 
-      const sortedProductLink = productLink.sort((a, b) => {
-        const indexA = desiredOrder.findIndex(
+      const sortedProductLink = [...productLink].sort((a, b) => {
+        const indexA = desiredOrderProduct.findIndex(
           (code) => code.toLowerCase() === a.code.toLowerCase()
         );
-        const indexB = desiredOrder.findIndex(
+        const indexB = desiredOrderProduct.findIndex(
           (code) => code.toLowerCase() === b.code.toLowerCase()
         );
         return indexA - indexB;
       });
+
+      const newNavProductList = sortedProductLink.map((data) => ({
+        id: data.id,
+        title: data.code,
+        slug: `/product-rodim/${data.slug}`,
+      }));
+
+      setNavProductList(newNavProductList);
     };
 
     getProductLink();
   }, []);
+
+  const selectedData =
+    page && page === 'product-rodim'
+      ? navProductList.find((data) => data.slug.endsWith(productSlug)) || {
+          title: '',
+          slug: '',
+        }
+      : { title: '', slug: '' };
 
   return (
     <div className="flex flex-col">
@@ -85,15 +103,13 @@ const Navbar = () => {
             </button>
 
             <div className="flex-1 min-[1440px]:flex-none flex justify-center items-center">
-              <Link href="/">
-                <Image
-                  src={LogoRodim}
-                  alt="Logo Rodim"
-                  width={132}
-                  height={32}
-                  className="min-[1440px]:w-[90px] min-[1440px]:h-[22px]"
-                />
-              </Link>
+              <Image
+                src={LogoRodim}
+                alt="Logo Rodim"
+                width={132}
+                height={32}
+                className="min-[1440px]:w-[90px] min-[1440px]:h-[22px]"
+              />
             </div>
           </div>
 
@@ -106,16 +122,26 @@ const Navbar = () => {
             </Link>
 
             <div className="flex h-full items-center">
-              <div className="h-full relative pl-0 px-[12px] flex items-center">
-                <Link
-                  href="/rodim-r1"
-                  className={`h-full flex items-center transition-all duration-300 ease-in-out ${pathname === '/rodim-r1' ? 'font-bold border-b-2 border-white/80' : 'border-b-2 border-transparent'}`}
+              {navProductList.map(({ id, title, slug }, index) => (
+                <div
+                  className={cn(
+                    'h-full relative flex items-center',
+                    index == 0 ? 'pl-0 px-[12px]' : 'px-[12px]'
+                  )}
+                  key={id}
                 >
-                  RODIM R1
-                </Link>
-                <div className="h-[20px] border-r border-white/80 absolute right-0" />
-              </div>
-
+                  <Link
+                    href={slug}
+                    className={`h-full flex items-center transition-all duration-300 ease-in-out ${pathname === '/rodim-r1' ? 'font-bold border-b-2 border-white/80' : 'border-b-2 border-transparent'}`}
+                  >
+                    {title}
+                  </Link>
+                  {index != navProductList.length - 1 && (
+                    <div className="h-[20px] border-r border-white/80 absolute right-0" />
+                  )}
+                </div>
+              ))}
+              {/* 
               <div className="h-full relative px-[12px] flex items-center">
                 <Link
                   href="/rodim-r2-matte"
@@ -124,9 +150,9 @@ const Navbar = () => {
                   RODIM R2 MATTE
                 </Link>
                 <div className="h-[20px] border-r border-white/80 absolute right-0" />
-              </div>
+              </div> */}
 
-              <div className="h-full relative px-[12px] flex items-center">
+              {/* <div className="h-full relative px-[12px] flex items-center">
                 <Link
                   href="/rodim-r2-pro"
                   className={`h-full flex items-center transition-all duration-300 ease-in-out ${pathname === '/rodim-r2-pro' ? 'font-bold border-b-2 border-white/80' : 'border-b-2 border-transparent'}`}
@@ -154,7 +180,7 @@ const Navbar = () => {
                   RODIM R4 PRO
                 </Link>
                 <div className="h-[20px] absolute right-0" />
-              </div>
+              </div> */}
             </div>
 
             <div className="flex h-full items-center">
@@ -197,7 +223,7 @@ const Navbar = () => {
           <div className="w-full max-w-[1440px] mx-auto min-h-[5.2rem] flex px-[16px] min-[1024px]:px-[40px] min-[1440px]:px-[120px] text-[14px]">
             <div className="text-[2rem] font-bold flex justify-between w-full flex-[1]">
               <div className="h-full flex items-center">
-                <span>RODIM R2 PRO</span>
+                <span>{selectedData.title}</span>
               </div>
 
               <button
@@ -213,7 +239,7 @@ const Navbar = () => {
               </button>
 
               <div className="gap-[2.4rem] text-[1.4rem] hidden lg:flex">
-                <Link href="/product-rodim/1">
+                <Link href={`${selectedData.slug}`}>
                   <div
                     className={`h-full flex items-center gap-[.4rem] font-bold ${subPage === '' ? 'text-white border-b-[.2rem] border-white' : 'border-b-[.2rem] border-transparent'}`}
                   >
@@ -222,7 +248,7 @@ const Navbar = () => {
                   </div>
                 </Link>
 
-                <Link href="/product-rodim/1/feel-the-difference">
+                <Link href={`${selectedData.slug}/feel-the-difference`}>
                   <div
                     className={`h-full flex items-center gap-[.4rem] font-bold ${isActive('feel-the-difference') ? 'text-white border-b-[.2rem] border-white' : 'border-b-[.2rem] border-transparent'}`}
                   >
@@ -231,7 +257,7 @@ const Navbar = () => {
                   </div>
                 </Link>
 
-                <Link href="/product-rodim/1/specification">
+                <Link href={`${selectedData.slug}/specification`}>
                   <div
                     className={`h-full flex items-center gap-[.4rem] font-bold ${isActive('specification') ? 'text-white border-b-[.2rem] border-white' : 'border-b-[.2rem] border-transparent'}`}
                   >
@@ -291,7 +317,6 @@ const Navbar = () => {
 
             <button
               onClick={() => {
-                console.log('hallo 1');
                 setIsOpenMenu(!isOpenMenu);
               }}
             >
