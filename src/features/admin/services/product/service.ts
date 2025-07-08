@@ -278,3 +278,41 @@ export async function getAllProductDetailWithCategoriesById(id: number) {
     })),
   };
 }
+
+export async function getAllProductDetailWithCategoriesBySlug(slug: string) {
+  const product = await prisma.products.findFirst({
+    where: { slug: slug, status: 1 },
+    include: {
+      product_categories: {
+        where: { status: 1 },
+        include: {
+          categories: true,
+        },
+      },
+    },
+  });
+
+  if (!product) {
+    return null;
+  }
+
+  return {
+    id: product.id,
+    code: product.code,
+    description: product.description,
+    thickness: product.thickness,
+    gloss: product.gloss,
+    quv: product.quv,
+    warranty: product.warranty,
+    image_url: product.image_url,
+    created_at: product.created_at,
+    updated_at: product.updated_at,
+    status: product.status,
+    product_categories: product.product_categories.map((pc) => ({
+      categories_code: pc.categories.code,
+      categories_description: pc.categories.description,
+      value_1: pc.value_1,
+      value_2: pc.value_2,
+    })),
+  };
+}
