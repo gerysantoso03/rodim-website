@@ -1,42 +1,21 @@
 import Banner from '@/shared/components/banner/Banner';
+import WarrantyHeroImage from '../../../assets/images/warranties/basf-panasonic.jpg';
+import { products } from '@/shared/libs/data/products';
 import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import React from 'react';
+import SectionWrapper from '@/shared/components/section-wrapper/SectionWrapper';
+import Image from 'next/image';
+import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
 
 const WarrantyPage = () => {
   const t = useTranslations('WarrantyPage');
 
-  const warrantyProductsGroup1 = [
-    {
-      name: 'Rodim R4 Pro',
-      year: '10 tahun',
-    },
-    {
-      name: 'Rodim R3 Pro',
-      year: '10 tahun',
-    },
-    {
-      name: 'Rodim R2 Pro',
-      year: '10 tahun',
-    },
-  ];
-
-  const warrantyProductsGroup2 = [
-    {
-      name: 'Rodim R2 Matte',
-      year: '10 tahun',
-    },
-    {
-      name: 'Rodim R1',
-      year: '7 tahun',
-    },
-  ];
-
   return (
-    <main className="warranty">
+    <SectionWrapper>
       {/* Warranty Banner */}
-      <section className="section-wrapper" id="warrantyBanner">
+      {/* <section className="" id="warrantyBanner">
         <div className="relative">
           <Banner image={''} bannerFor="warranty" />
           <div className="absolute bottom-[4rem] left-[2rem] md:left-[4rem] z-[2]">
@@ -45,77 +24,94 @@ const WarrantyPage = () => {
             </h1>
           </div>
         </div>
+      </section> */}
+
+      <section className="w-full h-[48.8rem] lg:h-[54.8rem] relative overflow-hidden rounded-[18px] ">
+        <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
+
+        <Image
+          src={WarrantyHeroImage}
+          alt="hero image"
+          width={0}
+          height={0}
+          className={'w-full h-full absolute z-[1] object-cover'}
+          priority
+        />
+
+        <div className="flex flex-col gap-[12px] absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] lg:px-[5.4rem] pb-[24px] lg:pb-[5.4rem]">
+          <h1 className="text-[40px] font-[700] lg:text-[8rem] leading-[110%]">
+            Deskripsi Layanan
+            <br className="hidden xl:block" /> Garansi Produk
+          </h1>
+        </div>
       </section>
 
       {/* Warranty Info */}
       <section
         id="warrantyInfo"
-        className="section-wrapper md:h-[68rem] flex items-center justify-center"
+        className="border py-[18rem] lg:py-[24rem] px-[2rem] lg:px-[4.8rem] xl:px-[19.6rem] flex items-center justify-center"
       >
-        <p className="text-center text-[3rem] md:text-[4rem] font-normal tracking-[0.02rem] md:px-[4rem] py-[6rem] md:py-0">
+        <p className="text-center text-[3.2rem] lg:text-[4rem] font-normal tracking-[0.02rem] leading-[110%]">
           {t('warrantyDesc1')}
         </p>
       </section>
 
       {/* Warranty Products */}
-      <section className="section-wrapper" id="warrantyProducts">
-        <div className="bg-[var(--secondary-black)] rounded-[1.8rem] p-[4rem_2rem] md:p-[12rem]">
+      <section
+        className="border bg-[var(--secondary-black)] rounded-[1.8rem] px-[3.2rem] lg:px-[8rem] py-[6.4rem] lg:py-[12rem] xl:p-[18rem] flex flex-col gap-[6.4rem]"
+        id="warrantyProducts"
+      >
+        <div className="border flex flex-col gap-[4rem]">
           {/* Warranty Products Title */}
-          <p className="font-normal text-[2.4rem] leading-[2.8rem] mb-20">
+          <p className="font-normal text-[2.4rem] leading-[2.8rem] border">
             {t('warrantyDesc2')}
           </p>
-          <h1 className="font-bold text-[4.6rem] md:leading-[100%] mb-20">
+
+          <h1 className="font-bold text-[4.6rem] leading-[110%] border">
             {t('warrantyDesc3')}
           </h1>
+        </div>
 
+        <div className="">
           {/* Warranty Products Group 1 */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">
-            {warrantyProductsGroup1.map((card, idx) => (
-              <div
-                className="rounded-[1.8rem] bg-black/40 py-[2.2rem] px-[3rem] flex flex-col justify-start"
-                key={idx}
-              >
-                <p className="text-[2rem] font-bold">{card.name}</p>
-                <p className="text-[3rem] font-bold">{card.year}</p>
-                <Link
-                  className="text-primary-blue text-[1.4rem] flex items-center gap-2 mt-4"
-                  href=""
-                >
-                  {t('buttonLabel')}
-                  <span>
-                    {' '}
-                    <ArrowRight size={18} />
-                  </span>
-                </Link>
-              </div>
-            ))}
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-5 ">
+            {products.map((product, idx) => {
+              const isLastTwo = idx >= products.length - 2;
+              const spanClass = isLastTwo ? 'lg:col-span-3' : '';
 
-          {/* Warranty Products Group 2 */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {warrantyProductsGroup2.map((card, idx) => (
-              <div
-                className="rounded-[1.8rem] bg-black/40 py-[2.2rem] px-[3rem] flex flex-col justify-start"
-                key={idx}
-              >
-                <p className="text-[2rem] font-bold">{card.name}</p>
-                <p className="text-[3rem] font-bold">{card.year}</p>
-                <Link
-                  className="text-primary-blue text-[1.4rem] flex items-center gap-2 mt-4"
-                  href=""
+              return (
+                <div
+                  key={product.id}
+                  className={`col-span-[2] ${spanClass} bg-gradient-to-b from-[#575757] to-70% to-[131313] rounded-[1.8rem] p-[.1rem]`}
                 >
-                  {t('buttonLabel')}
-                  <span>
-                    {' '}
-                    <ArrowRight size={18} />
-                  </span>
-                </Link>
-              </div>
-            ))}
+                  <div className="bg-[#131313] py-[2.2rem] px-[3rem] flex flex-col justify-start gap-[1.6rem] lg:gap-[1.8rem] rounded-[1.8rem]">
+                    <div className="border">
+                      <p className="text-[2.2rem] font-bold">{product.title}</p>
+                      <p className="text-[4rem] font-bold">
+                        {product.warranty} tahun
+                      </p>
+                    </div>
+
+                    <Link
+                      className="text-[#2A97FF] text-[1.7rem] flex items-center gap-2 border"
+                      href={`/product-rodim/${product.id}`}
+                    >
+                      {t('buttonLabel')}
+                      <span>
+                        {' '}
+                        <ArrowRight size={17} />
+                      </span>
+                    </Link>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
-    </main>
+
+      <OfficeSlider />
+    </SectionWrapper>
   );
 };
 

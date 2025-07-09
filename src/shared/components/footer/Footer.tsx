@@ -1,23 +1,15 @@
 import Image from 'next/image';
-import LogoRodim from '../../../assets/logos/logo-rodim.svg';
-import IconMapPin from '../../../assets/icons/map-pin.svg';
-import IconTime from '../../../assets/icons/time.svg';
-import IconMail from '../../../assets/icons/mail.svg';
-import IconPhone from '../../../assets/icons/phone.svg';
-import IconTiktok from '../../../assets/icons/tiktok.svg';
-import IconInstagram from '../../../assets/icons/instagram.svg';
-import IconWhatsapp from '../../../assets/icons/whatsapp.svg';
-import IconTokopedia from '../../../assets/icons/tokopedia.png';
-import IconShopee from '../../../assets/icons/shopee.png';
-import IconBliBli from '../../../assets/icons/bli-bli.png';
 import Link from 'next/link';
+import LogoRodim from '../../../assets/logos/logo-rodim.svg';
+import { Phone, Mail, MapPin, Clock9 } from 'lucide-react';
+import { retailers } from '@/shared/libs/data/retailers';
 import { useTranslations } from 'next-intl';
 
 const Footer = () => {
   const t = useTranslations('Footer');
 
   return (
-    <div className="bg-black text-white">
+    <footer className="bg-black text-white">
       <div className="py-[64px] flex flex-col gap-[20px] max-w-[1200px] mx-auto">
         <div className="px-[40px] min-[1440px]:px-0 flex flex-col gap-[40px] min-[1024px]:gap-[102px] pb-[40px] min-[1024px]:pb-[100px] border-b border-b-white/12">
           <div className="flex justify-start min-[1024px]:justify-center">
@@ -38,17 +30,23 @@ const Footer = () => {
                 </span>
 
                 <div className="flex flex-col gap-[8px]">
-                  <div className="flex gap-[8px] items-start">
-                    <Image src={IconMapPin} alt="" width={18} height={20} />
-                    <p>
-                      RODIM Experience Center Jl. Siantar No.7, RT.4/RW.2,
-                      Cideng, Kecamatan Gambir, Kota Jakarta Pusat, Daerah
-                      Khusus Ibukota Jakarta 10150
-                    </p>
-                  </div>
+                  <Link
+                    href="https://www.google.com/maps/place/Monas,+Gambir,+Kecamatan+Gambir,+Kota+Jakarta+Pusat,+Daerah+Khusus+Ibukota+Jakarta/@-6.175403,106.824584,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f5d2db8c5617:0x4e446b7ac891d847!8m2!3d-6.1753917!4d106.8271533!16s%2Fg%2F11bw3wnng2?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
+                    target="_blank"
+                    className="w-fit"
+                  >
+                    <div className="flex gap-[8px] items-start">
+                      <MapPin size={18} className="min-w-[1.8rem]" />
+                      <p>
+                        RODIM Experience Center Jl. Siantar No.7, RT.4/RW.2,
+                        Cideng, Kecamatan Gambir, Kota Jakarta Pusat, Daerah
+                        Khusus Ibukota Jakarta 10150
+                      </p>
+                    </div>
+                  </Link>
 
                   <div className="flex gap-[8px] items-start">
-                    <Image src={IconTime} alt="" width={18} height={20} />
+                    <Clock9 size={18} className="min-w-[1.8rem]" />
                     <p>
                       {t('monday')} - {t('friday')}: 9.00 - 17.00 |{' '}
                       {t('saturday')}: 9.00-15.00 | {t('sunday')}
@@ -61,15 +59,19 @@ const Footer = () => {
                 <span className="font-[700] uppercase">{t('contact')}</span>
 
                 <div className="flex flex-col gap-[8px]">
-                  <div className="flex gap-[8px] items-start">
-                    <Image src={IconMail} alt="" width={18} height={20} />
-                    <p>info@basfrodim.id</p>
-                  </div>
+                  <Link href="mailto:info@basfrodim.id" className="w-fit">
+                    <div className="flex gap-[8px] items-center">
+                      <Mail size={18} className="min-w-[1.8rem]" />
+                      <p>info@basfrodim.id</p>
+                    </div>
+                  </Link>
 
-                  <div className="flex gap-[8px] items-start">
-                    <Image src={IconPhone} alt="" width={18} height={20} />
-                    <p>+62 822-2222-2222</p>
-                  </div>
+                  <Link href="tel:+6282213959045" className="w-fit">
+                    <div className="flex gap-[8px] items-center">
+                      <Phone size={18} className="min-w-[1.8rem]" />
+                      <p>+62 822-1395-9045</p>
+                    </div>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -92,30 +94,19 @@ const Footer = () => {
 
         <div className="flex flex-col gap-[24px] min-[1024px]:gap-[34px] items-center justify-center">
           <div className="flex gap-[20px]">
-            <div className="h-[17px] min-w-[17px] flex items-center justify-center">
-              <Image src={IconTiktok} alt="" />
-            </div>
-            <div className="h-[17px] min-w-[17px] flex items-center justify-center">
-              <Image src={IconInstagram} alt="" />
-            </div>
-            <div className="h-[17px] min-w-[17px] flex items-center justify-center">
-              <Image src={IconWhatsapp} alt="" />
-            </div>
-            <div className="h-[17px] min-w-[17px] flex items-center justify-center">
-              <Image src={IconTokopedia} alt="" />
-            </div>
-            <div className="h-[17px] min-w-[17px] flex items-center justify-center">
-              <Image src={IconShopee} alt="" />
-            </div>
-            <div className="h-[17px] min-w-[17px] flex items-center justify-center">
-              <Image src={IconBliBli} alt="" />
-            </div>
+            {retailers.map((retailer) => (
+              <Link href={retailer.url} key={retailer.title}>
+                <div className="h-[17px] min-w-[17px] flex items-center justify-center">
+                  <Image src={retailer.image} alt={retailer.title} />
+                </div>
+              </Link>
+            ))}
           </div>
 
           <span>©{new Date().getFullYear()} RODIM. All rights reserved</span>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 

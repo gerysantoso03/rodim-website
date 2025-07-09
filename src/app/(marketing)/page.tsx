@@ -37,7 +37,7 @@ export default function Home() {
                 image={product.image}
                 title={product.title}
                 subtitle={product.subtitle}
-                productUrl={product.productUrl}
+                productUrl={product.id}
                 buttonLabel={t('buttonLabel')}
               />
             </div>
