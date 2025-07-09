@@ -23,9 +23,9 @@ const NavbarMenu = ({
   const segments = pathname.split('/');
   const productId = segments[2];
 
-  const idHref = id.split('/')[2] || ''
+  const idHref = id.split('/')[2] || '';
 
-  console.log(productId, idHref, id)
+  console.log(productId, idHref, id);
 
   return (
     <div

@@ -57,7 +57,7 @@ const NavbarSlide = ({ isOpenMenu, setIsOpenMenu, data }: NavbarSlideProps) => {
               <div className="h-[.1rem] w-full bg-[#E5E7EB]" />
             </div>
             {data.map(({ id, title, slug }, index) => {
-              const idHref = slug.split('/')[2] || ''
+              const idHref = slug.split('/')[2] || '';
 
               return (
                 <Link href={`${slug}`} key={id}>
@@ -70,7 +70,7 @@ const NavbarSlide = ({ isOpenMenu, setIsOpenMenu, data }: NavbarSlideProps) => {
                     {title.toUpperCase()}
                   </div>
                 </Link>
-              )
+              );
             })}
           </div>
 

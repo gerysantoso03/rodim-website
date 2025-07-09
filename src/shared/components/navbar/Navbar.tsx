@@ -150,9 +150,7 @@ const Navbar = () => {
         />
       </div>
 
-      <NavbarSub 
-        title={selectedData.title}
-      />
+      <NavbarSub title={selectedData.title} />
     </>
   );
 };
