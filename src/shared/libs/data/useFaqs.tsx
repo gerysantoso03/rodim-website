@@ -8,7 +8,7 @@ type Faqs = {
 
 export function useFaqs(): Faqs[] {
   const t = useTranslations('FAQPage');
-  
+
   return [
     {
       title: t('faqQuestion1'),

@@ -11,7 +11,7 @@ import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
 
 const WarrantyPage = () => {
   const t = useTranslations('WarrantyPage');
-  
+
   return (
     <SectionWrapper>
       {/* Warranty Banner */}
@@ -28,7 +28,7 @@ const WarrantyPage = () => {
 
       <section className="w-full h-[48.8rem] lg:h-[54.8rem] relative overflow-hidden rounded-[18px] ">
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
-  
+
         <Image
           src={WarrantyHeroImage}
           alt="hero image"
@@ -37,10 +37,11 @@ const WarrantyPage = () => {
           className={'w-full h-full absolute z-[1] object-cover'}
           priority
         />
-  
+
         <div className="flex flex-col gap-[12px] absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] lg:px-[5.4rem] pb-[24px] lg:pb-[5.4rem]">
           <h1 className="text-[40px] font-[700] lg:text-[8rem] leading-[110%]">
-            Deskripsi Layanan<br className="hidden xl:block" /> Garansi Produk
+            Deskripsi Layanan
+            <br className="hidden xl:block" /> Garansi Produk
           </h1>
         </div>
       </section>
@@ -56,7 +57,10 @@ const WarrantyPage = () => {
       </section>
 
       {/* Warranty Products */}
-      <section className="border bg-[var(--secondary-black)] rounded-[1.8rem] px-[3.2rem] lg:px-[8rem] py-[6.4rem] lg:py-[12rem] xl:p-[18rem] flex flex-col gap-[6.4rem]" id="warrantyProducts">
+      <section
+        className="border bg-[var(--secondary-black)] rounded-[1.8rem] px-[3.2rem] lg:px-[8rem] py-[6.4rem] lg:py-[12rem] xl:p-[18rem] flex flex-col gap-[6.4rem]"
+        id="warrantyProducts"
+      >
         <div className="border flex flex-col gap-[4rem]">
           {/* Warranty Products Title */}
           <p className="font-normal text-[2.4rem] leading-[2.8rem] border">
@@ -76,13 +80,16 @@ const WarrantyPage = () => {
               const spanClass = isLastTwo ? 'lg:col-span-3' : '';
 
               return (
-                <div key={product.id} className={`col-span-[2] ${spanClass} bg-gradient-to-b from-[#575757] to-70% to-[131313] rounded-[1.8rem] p-[.1rem]`}>
-                  <div
-                    className="bg-[#131313] py-[2.2rem] px-[3rem] flex flex-col justify-start gap-[1.6rem] lg:gap-[1.8rem] rounded-[1.8rem]"
-                  >
+                <div
+                  key={product.id}
+                  className={`col-span-[2] ${spanClass} bg-gradient-to-b from-[#575757] to-70% to-[131313] rounded-[1.8rem] p-[.1rem]`}
+                >
+                  <div className="bg-[#131313] py-[2.2rem] px-[3rem] flex flex-col justify-start gap-[1.6rem] lg:gap-[1.8rem] rounded-[1.8rem]">
                     <div className="border">
                       <p className="text-[2.2rem] font-bold">{product.title}</p>
-                      <p className="text-[4rem] font-bold">{product.warranty} tahun</p>
+                      <p className="text-[4rem] font-bold">
+                        {product.warranty} tahun
+                      </p>
                     </div>
 
                     <Link
@@ -97,7 +104,7 @@ const WarrantyPage = () => {
                     </Link>
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
         </div>

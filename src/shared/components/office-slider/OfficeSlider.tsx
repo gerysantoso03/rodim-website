@@ -1,4 +1,4 @@
-import { InfiniteScrollSlider } from "../infinite-scroll-slider"
+import { InfiniteScrollSlider } from '../infinite-scroll-slider';
 import Top1 from '../../../assets/images/gallery/slider/top-1.jpg';
 import Top2 from '../../../assets/images/gallery/slider/top-2.jpg';
 import Top3 from '../../../assets/images/gallery/slider/top-3.jpg';
@@ -30,7 +30,7 @@ const OfficeSlider = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default OfficeSlider
+export default OfficeSlider;

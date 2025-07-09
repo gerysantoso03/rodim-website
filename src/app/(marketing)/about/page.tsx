@@ -101,7 +101,7 @@ const AboutPage = () => {
       alt: 'Anti-yellowing',
       label: 'Anti-yellowing',
     },
-  ]
+  ];
 
   const innovationCardsGroup1 = [
     {
@@ -191,7 +191,7 @@ const AboutPage = () => {
 
       <section className="w-full h-[52rem] lg:h-[72rem] relative overflow-hidden rounded-[18px]">
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
-  
+
         <Image
           src={AboutHeroImage1}
           alt="hero image"
@@ -200,13 +200,14 @@ const AboutPage = () => {
           className={'w-full h-full absolute z-[1] object-cover object-right'}
           priority
         />
-  
+
         <div className="flex flex-col absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] pb-[24px]">
           <span className="text-[1.6rem] lg:text-[2.4rem]">
             Tentang BASF RODIM
           </span>
           <h1 className="text-[40px] font-[700] lg:text-[10.8rem] leading-[110%]">
-            Protection by<br className="hidden lg:block" /> World{"'"}s Best
+            Protection by
+            <br className="hidden lg:block" /> World{"'"}s Best
           </h1>
         </div>
       </section>
@@ -237,7 +238,7 @@ const AboutPage = () => {
 
       <section className="w-full h-[60rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]">
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
-  
+
         <Image
           src={AboutHeroImage2}
           alt="hero image"
@@ -246,15 +247,19 @@ const AboutPage = () => {
           className={'w-full h-full absolute z-[1] object-cover object-bottom'}
           priority
         />
-  
-          <div className="flex flex-col gap-[12px] absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] lg:px-[4.6rem] pb-[24px] lg:pb-[4.6rem]">
-            <h1 className="text-[40px] font-[700] lg:text-[8rem] leading-[110%]">
-              BASF - The Global<br className="hidden lg:block xl:hidden" /> Leader in TPU
-            </h1>
-            <p className="text-[1.6rem] lg:text-[2.1rem]">
-              BASF adalah perusahaan kimia terbesar di dunia yang berasal dari Jerman, dengan inovasi dan kemajuan teknologi yang terus berkembang. BASF memegang posisi sebagai produsen Thermoplastic Polyurethane  (TPU) terbesar di dunia.
-            </p>
-          </div>
+
+        <div className="flex flex-col gap-[12px] absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] lg:px-[4.6rem] pb-[24px] lg:pb-[4.6rem]">
+          <h1 className="text-[40px] font-[700] lg:text-[8rem] leading-[110%]">
+            BASF - The Global
+            <br className="hidden lg:block xl:hidden" /> Leader in TPU
+          </h1>
+          <p className="text-[1.6rem] lg:text-[2.1rem]">
+            BASF adalah perusahaan kimia terbesar di dunia yang berasal dari
+            Jerman, dengan inovasi dan kemajuan teknologi yang terus berkembang.
+            BASF memegang posisi sebagai produsen Thermoplastic Polyurethane
+            (TPU) terbesar di dunia.
+          </p>
+        </div>
       </section>
 
       {/* About Info 2 */}
@@ -277,11 +282,16 @@ const AboutPage = () => {
         className="border py-[18rem] lg:py-[24rem] px-[2.4rem] lg:px-[4.8rem] xl:px-[19.6rem] flex flex-col items-center justify-center gap-[3.2rem]"
       >
         <p className="text-center text-[2.4rem] lg:text-[3.2rem] font-normal tracking-[0.02rem] leading-[110%]">
-          Dari butiran TPU hingga produk PPF, BASF menciptakan keunggulan kompetitif melalui riset dan inovasi, serta keahlian dalam produksi, pemasaran, penjualan dan layanan teknis.
+          Dari butiran TPU hingga produk PPF, BASF menciptakan keunggulan
+          kompetitif melalui riset dan inovasi, serta keahlian dalam produksi,
+          pemasaran, penjualan dan layanan teknis.
         </p>
 
         <p className="text-center text-[2.4rem] lg:text-[3.2rem] font-normal tracking-[0.02rem] leading-[110%]">
-          Dengan fokus pada riset dan pengembangan teknologi material, BASF menjadi pemimpin global sebagai produsen terbesar lapisan film TPU yang menjadi komponen utama PPF. RODIM® PPF hadir sebagai hasil dari keahlian BASF dalam teknologi material.
+          Dengan fokus pada riset dan pengembangan teknologi material, BASF
+          menjadi pemimpin global sebagai produsen terbesar lapisan film TPU
+          yang menjadi komponen utama PPF. RODIM® PPF hadir sebagai hasil dari
+          keahlian BASF dalam teknologi material.
         </p>
       </section>
 
@@ -297,7 +307,7 @@ const AboutPage = () => {
             height={585}
           />
         </div>
-        
+
         {/* Paint Protection List */}
         <div className="flex flex-col gap-[4rem] border">
           <h4 className="font-bold text-[4rem] leading-[5.2rem] lg:text-[4.4rem] border">
@@ -359,7 +369,12 @@ const AboutPage = () => {
         </h1>
 
         <p className="text-center text-[1.6rem] lg:text-[1.8rem] font-normal leading-[110%] lg:leading-[2.8rem]">
-          Sejak tahun 2006, Refinish Excellence Indonesia adalah agen tunggal pemegang merek Glasurit di Indonesia. Dengan pengalaman panjang di industri ini, kami memiliki keahlian dan inovasi dalam perlindungan cat otomotif, dengan tenaga ahli kami yang dilatih oleh BASF global trainer. Pemahaman kami yang mendalam tentang perlindungan cat otomotif memastikan kami selalu memberikan solusi terbaik.
+          Sejak tahun 2006, Refinish Excellence Indonesia adalah agen tunggal
+          pemegang merek Glasurit di Indonesia. Dengan pengalaman panjang di
+          industri ini, kami memiliki keahlian dan inovasi dalam perlindungan
+          cat otomotif, dengan tenaga ahli kami yang dilatih oleh BASF global
+          trainer. Pemahaman kami yang mendalam tentang perlindungan cat
+          otomotif memastikan kami selalu memberikan solusi terbaik.
         </p>
       </section>
 
@@ -375,14 +390,15 @@ const AboutPage = () => {
             {t('aboutDesc5')}
           </p>
         </div>
-        
+
         {/* Vertical Integration Cards Wrapper */}
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[1.6rem]">
           {verticalIntegrationCards.map((card, idx) => (
-            <div key={idx} className="bg-gradient-to-b from-[#575757] to-70% to-[#1f1f1f] p-[.2rem] rounded-[1.8rem]">
-              <div
-                className="flex flex-col rounded-[1.8rem] overflow-hidden"
-              >
+            <div
+              key={idx}
+              className="bg-gradient-to-b from-[#575757] to-70% to-[#1f1f1f] p-[.2rem] rounded-[1.8rem]"
+            >
+              <div className="flex flex-col rounded-[1.8rem] overflow-hidden">
                 <div className="w-full h-[33rem] lg:h-[36rem] relative">
                   <Image
                     src={card.image}
@@ -425,7 +441,9 @@ const AboutPage = () => {
                 className="flex flex-col rounded-[1.8rem] overflow-hidden"
               >
                 <div className="flex-[1] p-[2.8rem] bg-[var(--secondary-black)] flex flex-col gap-[.6rem] pb-[3.2rem] xl:pb-[9rem]">
-                  <p className="font-bold text-[2.6rem] leading-[110%]">{card.title}</p>
+                  <p className="font-bold text-[2.6rem] leading-[110%]">
+                    {card.title}
+                  </p>
                   <p className="font-normal text-[1.8rem] leading-[2.8rem] text-white/80">
                     {card.description}
                   </p>
@@ -446,15 +464,17 @@ const AboutPage = () => {
           {/* Group 2: Auto-fit Columns */}
           <div className="grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-3 gap-[1.6rem]">
             {innovationCardsGroup2.map((card, idx) => {
-              const lastCard = innovationCardsGroup2.length === (idx + 1)
-              
-              return(
+              const lastCard = innovationCardsGroup2.length === idx + 1;
+
+              return (
                 <div
                   key={idx}
-                  className={`flex flex-col rounded-[1.8rem] overflow-hidden ${lastCard ? 'lg:col-span-[4]' : "lg:col-span-[2]"} xl:col-auto`}
+                  className={`flex flex-col rounded-[1.8rem] overflow-hidden ${lastCard ? 'lg:col-span-[4]' : 'lg:col-span-[2]'} xl:col-auto`}
                 >
                   <div className="flex-[1] p-[2.8rem] bg-[var(--secondary-black)] flex flex-col gap-[.6rem] pb-[3.2rem] xl:pb-[9rem]">
-                    <p className="font-bold text-[2.6rem] leading-[110%]">{card.title}</p>
+                    <p className="font-bold text-[2.6rem] leading-[110%]">
+                      {card.title}
+                    </p>
                     <p className="font-normal text-[1.8rem] leading-[2.8rem] text-white/80">
                       {card.description}
                     </p>
@@ -469,8 +489,8 @@ const AboutPage = () => {
                     />
                   </div>
                 </div>
-              )}
-            )}
+              );
+            })}
           </div>
 
           {/* Group 3: Two Columns */}
@@ -481,7 +501,9 @@ const AboutPage = () => {
                 className="flex flex-col rounded-[1.8rem] overflow-hidden"
               >
                 <div className="flex-[1] p-[2.8rem] bg-[var(--secondary-black)] flex flex-col gap-[.6rem] pb-[3.2rem] xl:pb-[9rem]">
-                  <p className="font-bold text-[2.6rem] leading-[110%]">{card.title}</p>
+                  <p className="font-bold text-[2.6rem] leading-[110%]">
+                    {card.title}
+                  </p>
                   <p className="font-normal text-[1.8rem] leading-[2.8rem] text-white/80">
                     {card.description}
                   </p>
@@ -521,18 +543,24 @@ const AboutPage = () => {
         className="border py-[9rem] px-[2.4rem] lg:px-[10.4rem] xl:px-[16.4rem] flex flex-col items-center justify-center gap-[3.2rem] lg:gap-[5rem]"
       >
         <p className="text-center text-[3.2rem] font-bold lg:text-[4.8rem] tracking-[-0.08rem] leading-[110%]">
-          Dengan penelitian dan pengembangan yang unggul dalam teknologi material, BASF adalah pemimpin dunia dalam aplikasi lapisan film tipis berteknologi tinggi.
+          Dengan penelitian dan pengembangan yang unggul dalam teknologi
+          material, BASF adalah pemimpin dunia dalam aplikasi lapisan film tipis
+          berteknologi tinggi.
         </p>
 
         <p className="text-center text-[3.2rem] font-bold lg:text-[4.8rem] tracking-[-0.08rem] leading-[110%]">
-          PPF RODIM merupakan hasil keahlian BASF dalam teknologi material dan lapisan permukaan.
+          PPF RODIM merupakan hasil keahlian BASF dalam teknologi material dan
+          lapisan permukaan.
         </p>
       </section>
 
       {/* About Logo */}
       <section className="grid grid-cols-2 lg:grid-cols-5 border px-[.8rem] lg:px-[4.8rem] xl:px-[16.4rem] lg:pt-[9rem] pb-[14rem] lg:pb-[9rem]">
         {logos.map((item, idx) => (
-          <div key={idx} className={`flex flex-col items-center gap-[1.2rem] border mb-[4rem] lg:mb-[9rem]`}>
+          <div
+            key={idx}
+            className={`flex flex-col items-center gap-[1.2rem] border mb-[4rem] lg:mb-[9rem]`}
+          >
             <div className="relative w-[80px] h-[80px] aspect-square border">
               <Image
                 src={item.src}

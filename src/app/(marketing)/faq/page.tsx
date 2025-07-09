@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { Accordion } from '@/shared/components/accordion';
 import SectionWrapper from '@/shared/components/section-wrapper/SectionWrapper';
@@ -8,7 +8,7 @@ import Link from 'next/link';
 import React from 'react';
 
 const FAQPage = () => {
-const faqs = useFaqs();
+  const faqs = useFaqs();
 
   return (
     <SectionWrapper>
