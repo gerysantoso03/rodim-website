@@ -30,7 +30,7 @@ const CardFeelTheDifference = ({
       className={`relative w-full min-h-[40.8rem] lg:min-h-[48.8rem] xl:min-h-[58rem] overflow-hidden rounded-[18px] bg-white/12 px-[2rem] py-[4rem] flex flex-col gap-[4rem] lg:p-[4rem] ${isWide && 'xl:p-[6.4rem] lg:flex-row lg:items-center lg:gap-[6.4rem]'}`}
     >
       <div
-        className={`px-[2rem] py-[4rem] absolute inset-0 bg-[#1F1F1F] border z-10 ${isWide && 'items-center'} ${isOpen ? 'flex' : 'hidden'}`}
+        className={`px-[2rem] py-[4rem] absolute inset-0 bg-[#1F1F1F] z-10 ${isWide && 'items-center'} ${isOpen ? 'flex' : 'hidden'}`}
       >
         <div className="flex flex-col gap-[2.6rem]">
           <div

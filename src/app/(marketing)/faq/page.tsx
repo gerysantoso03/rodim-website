@@ -13,7 +13,7 @@ const FAQPage = () => {
   return (
     <SectionWrapper>
       <div className="flex flex-col gap-[4rem]">
-        <div className="flex flex-col gap-[2.4rem] border">
+        <div className="flex flex-col gap-[2.4rem]">
           {/* Navigation Link */}
           <Link className="text-[1.7rem] flex items-center gap-2" href="/">
             <span>

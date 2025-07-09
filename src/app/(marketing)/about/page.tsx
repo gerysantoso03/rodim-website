@@ -201,7 +201,7 @@ const AboutPage = () => {
           priority
         />
 
-        <div className="flex flex-col absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] pb-[24px]">
+        <div className="flex flex-col absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] lg:px-[4.6rem] pb-[24px] lg:pb-[4.6rem]">
           <span className="text-[1.6rem] lg:text-[2.4rem]">
             Tentang BASF RODIM
           </span>
@@ -215,7 +215,7 @@ const AboutPage = () => {
       {/* About Info 1 */}
       <section
         id="aboutInfo1"
-        className="border py-[18rem] lg:py-[24rem] px-[.8rem] lg:px-[4.8rem] xl:px-[3.6rem] flex items-center justify-center"
+        className="py-[18rem] lg:py-[24rem] px-[.8rem] lg:px-[4.8rem] xl:px-[3.6rem] flex items-center justify-center"
       >
         <p className="text-center text-[2.4rem] lg:text-[3.2rem] font-normal tracking-[0.02rem] leading-[110%]">
           {t('aboutDesc1')}
@@ -279,7 +279,7 @@ const AboutPage = () => {
 
       <section
         id="aboutInfo1"
-        className="border py-[18rem] lg:py-[24rem] px-[2.4rem] lg:px-[4.8rem] xl:px-[19.6rem] flex flex-col items-center justify-center gap-[3.2rem]"
+        className="py-[18rem] lg:py-[24rem] px-[2.4rem] lg:px-[4.8rem] xl:px-[19.6rem] flex flex-col items-center justify-center gap-[3.2rem]"
       >
         <p className="text-center text-[2.4rem] lg:text-[3.2rem] font-normal tracking-[0.02rem] leading-[110%]">
           Dari butiran TPU hingga produk PPF, BASF menciptakan keunggulan
@@ -309,17 +309,17 @@ const AboutPage = () => {
         </div>
 
         {/* Paint Protection List */}
-        <div className="flex flex-col gap-[4rem] border">
-          <h4 className="font-bold text-[4rem] leading-[5.2rem] lg:text-[4.4rem] border">
+        <div className="flex flex-col gap-[4rem]">
+          <h4 className="font-bold text-[4rem] leading-[5.2rem] lg:text-[4.4rem]">
             {t('paintProtectionTitle')}
           </h4>
 
           {/* Paint Protection Items Wrapper */}
-          <div className="flex flex-col gap-[4rem] border">
+          <div className="flex flex-col gap-[4rem]">
             {paintProtectionItems.map((item, idx) => (
               <div key={idx} className="flex items-start gap-[1.6rem]">
                 {/* Check Circle Icon */}
-                <div className="border">
+                <div className="">
                   <Image
                     src="/image/about/check-circle-2.png"
                     alt="Check Circle"
@@ -330,7 +330,7 @@ const AboutPage = () => {
                 </div>
 
                 {/* Paint Protection Desc */}
-                <div className="flex flex-col gap-[1rem] border">
+                <div className="flex flex-col gap-[1rem]">
                   <h4 className="font-bold text-[2.4rem] lg:text-[3.2rem] leading-[110%]">
                     {item.title}
                   </h4>
@@ -362,7 +362,7 @@ const AboutPage = () => {
 
       <section
         id="aboutInfo1"
-        className="border py-[16rem] lg:py-[24rem] px-[2.4rem] lg:px-[10.4rem] xl:px-[25.4rem] flex flex-col items-center justify-center gap-[2.4rem]"
+        className="py-[16rem] lg:py-[24rem] px-[2.4rem] lg:px-[10.4rem] xl:px-[25.4rem] flex flex-col items-center justify-center gap-[2.4rem]"
       >
         <h1 className="text-center text-[4rem] lg:text-[7.2rem] font-bold leading-[110%]">
           Refinish Excellence Indonesia
@@ -379,7 +379,7 @@ const AboutPage = () => {
       </section>
 
       {/* Vertical Integration Section */}
-      <section className="bg-[var(--secondary-black)] rounded-[1.8rem] px-[3.2rem] py-[6.4rem] lg:p-[12rem] border flex flex-col gap-[4rem] lg:gap-[8rem]">
+      <section className="bg-[var(--secondary-black)] rounded-[1.8rem] px-[3.2rem] py-[6.4rem] lg:p-[12rem] flex flex-col gap-[4rem] lg:gap-[8rem]">
         <div className="flex flex-col gap-[2rem] lg:gap-[2.4rem]">
           {/* Vertical Integration Title */}
           <h1 className="font-bold text-[4rem] lg:text-[7.2rem] tracking-[-0.12rem]">
@@ -426,7 +426,7 @@ const AboutPage = () => {
       </section>
 
       {/* Innovation Leadership Section */}
-      <section className="border px-[2.4rem] lg:px-[10.4rem] py-[18rem] flex flex-col gap-[6.4rem]">
+      <section className="px-[2.4rem] lg:px-[10.4rem] py-[18rem] flex flex-col gap-[6.4rem]">
         {/* Innovation Leadership Title */}
         <h1 className="font-bold text-[4rem] lg:text-[7.2rem] leading-[110%]">
           Innovation Leadership
@@ -540,7 +540,7 @@ const AboutPage = () => {
 
       <section
         id="aboutInfo1"
-        className="border py-[9rem] px-[2.4rem] lg:px-[10.4rem] xl:px-[16.4rem] flex flex-col items-center justify-center gap-[3.2rem] lg:gap-[5rem]"
+        className="py-[9rem] px-[2.4rem] lg:px-[10.4rem] xl:px-[16.4rem] flex flex-col items-center justify-center gap-[3.2rem] lg:gap-[5rem]"
       >
         <p className="text-center text-[3.2rem] font-bold lg:text-[4.8rem] tracking-[-0.08rem] leading-[110%]">
           Dengan penelitian dan pengembangan yang unggul dalam teknologi
@@ -555,22 +555,22 @@ const AboutPage = () => {
       </section>
 
       {/* About Logo */}
-      <section className="grid grid-cols-2 lg:grid-cols-5 border px-[.8rem] lg:px-[4.8rem] xl:px-[16.4rem] lg:pt-[9rem] pb-[14rem] lg:pb-[9rem]">
+      <section className="grid grid-cols-2 lg:grid-cols-5 px-[.8rem] lg:px-[4.8rem] xl:px-[16.4rem] lg:pt-[9rem] pb-[14rem] lg:pb-[9rem]">
         {logos.map((item, idx) => (
           <div
             key={idx}
-            className={`flex flex-col items-center gap-[1.2rem] border mb-[4rem] lg:mb-[9rem]`}
+            className={`flex flex-col items-center gap-[1.2rem] mb-[4rem] lg:mb-[9rem]`}
           >
-            <div className="relative w-[80px] h-[80px] aspect-square border">
+            <div className="relative w-[80px] h-[80px] aspect-square">
               <Image
                 src={item.src}
                 alt={item.alt}
                 fill
-                className="object-contain border border-red-500"
+                className="object-contain"
               />
             </div>
 
-            <div className="w-full flex-1 flex items-start px-[1rem] justify-center border">
+            <div className="w-full flex-1 flex items-start px-[1rem] justify-center">
               <p className="text-center font-bold text-[2rem] lg:text-[2.2rem] leading-[110%]">
                 {item.label}
               </p>
