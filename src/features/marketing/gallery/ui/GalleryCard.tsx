@@ -11,9 +11,10 @@ interface GalleryCardProps {
   slug: string;
   title: string;
   img: string;
+  buttonLabel: string;
 }
 
-const GalleryCard = ({ id, title, slug, img }: GalleryCardProps) => {
+const GalleryCard = ({ id, title, slug, img, buttonLabel }: GalleryCardProps) => {
   const imageUrl =
     id && img
       ? `/uploads/gallery_folder/${id}/${img}`
@@ -27,7 +28,7 @@ const GalleryCard = ({ id, title, slug, img }: GalleryCardProps) => {
             {title}
           </h4>
           <Link href={`/gallery/${slug}`}>
-            <Button>Lihat Galery</Button>
+            <Button>{buttonLabel}</Button>
           </Link>
         </div>
         <div className="w-full bg-gradient-to-br from-white/12 to-transparent p-[2px] overflow-hidden rounded-[18px]">

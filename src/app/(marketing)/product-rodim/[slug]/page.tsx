@@ -1,8 +1,7 @@
-import {
-  getAllProductDetailWithCategoriesBySlugAction,
-  getProductDetailBySlugAction,
-} from '@/features/admin/actions/product/action';
+import { getAllProductDetailWithCategoriesBySlugAction } from '@/features/admin/actions/product/action';
 import ProductPageUI from '@/features/marketing/product/ui/ProductPageUI';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 import { redirect } from 'next/navigation';
 
 interface ProductPageProps {
@@ -18,7 +17,14 @@ const ProductPage = async ({ params }: ProductPageProps) => {
     redirect('/');
   }
 
-  return <ProductPageUI data={introductionProductData} />;
+  // Get server translations
+  const messages = await getMessages(); // comes from next-intl/server
+
+  return (
+    <NextIntlClientProvider messages={messages}>
+      <ProductPageUI data={introductionProductData} />
+    </NextIntlClientProvider>
+  );
 };
 
 export default ProductPage;

@@ -1,6 +1,5 @@
 'use client';
 import { useEffect } from 'react';
-import Banner from '@/shared/components/banner/Banner';
 import ElegantIcon from '../../../../../assets/icons/elegant.png';
 import ElegantImage from '../../../../../assets/images/feel-the-difference/elegant.jpg';
 import DurabilityIcon from '../../../../../assets/icons/durability.png';

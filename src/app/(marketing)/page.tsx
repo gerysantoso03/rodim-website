@@ -19,7 +19,11 @@ export default function Home() {
         </p>
       </Banner>
 
-      <section>
+      <section
+        data-aos="fade-left"
+        data-aos-offset="300"
+        data-aos-easing="ease-in-sine"
+      >
         <VideoPlayer />
       </section>
 

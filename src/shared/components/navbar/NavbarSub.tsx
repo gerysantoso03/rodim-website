@@ -11,9 +11,11 @@ import { useEffect, useRef, useState } from 'react';
 
 type NavbarSubProps = {
   title: string;
+  introduction: string;
+  specification: string;
 };
 
-const NavbarSub = ({ title }: NavbarSubProps) => {
+const NavbarSub = ({ title, introduction, specification }: NavbarSubProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [height, setHeight] = useState('0px');
   const [isTop, setIsTop] = useState(false);
@@ -87,7 +89,7 @@ const NavbarSub = ({ title }: NavbarSubProps) => {
                   className={`h-full flex items-center gap-[.4rem] font-bold hover:text-white transition-all duration-300 ease-in-out ${subPage === '' ? 'text-white border-b-[.2rem] border-white' : 'border-b-[.2rem] border-transparent'}`}
                 >
                   <Image src={CarIcon} alt="" width={0} height={0} />
-                  <span>Pengenalan</span>
+                  <span>{introduction}</span>
                 </div>
               </Link>
 
@@ -105,7 +107,7 @@ const NavbarSub = ({ title }: NavbarSubProps) => {
                   className={`h-full flex items-center gap-[.4rem] font-bold hover:text-white transition-all duration-300 ease-in-out ${isActive('specification') ? 'text-white border-b-[.2rem] border-white' : 'border-b-[.2rem] border-transparent'}`}
                 >
                   <Image src={WrenchIcon} alt="" width={0} height={0} />
-                  <span>Spesifikasi Teknis</span>
+                  <span>{specification}</span>
                 </div>
               </Link>
             </div>

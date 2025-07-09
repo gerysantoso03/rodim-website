@@ -14,7 +14,7 @@ const CardExclusive = ({
   subtitle,
 }: CardExclusiveProps) => {
   return (
-    <div className="w-full h-[40.8rem] lg:h-[48.8rem] xl:h-[58rem] relative overflow-hidden rounded-[18px] border-[.2rem] border-white/12">
+    <div className="w-full h-[40.8rem] lg:h-[48.8rem] xl:h-[58rem] relative overflow-hidden rounded-[18px] border-[.2rem] border-white/12" data-aos="zoom-out-down">
       <Image
         src={image}
         alt={title}

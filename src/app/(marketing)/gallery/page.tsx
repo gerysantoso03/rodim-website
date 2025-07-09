@@ -1,6 +1,8 @@
 import React from 'react';
 import GalleryPageUI from '@/features/marketing/gallery/ui/GalleryPageUI';
 import { getAllGalleryFolderAction } from '@/features/admin/actions/gallery/action';
+import { getMessages } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
 
 const GalleryPage = async () => {
   const result = await getAllGalleryFolderAction();
@@ -10,8 +12,15 @@ const GalleryPage = async () => {
   }
 
   const galleryData = result.filter((data) => data.is_visible);
+ // Get server translations
+  const messages = await getMessages(); // comes from next-intl/server
 
-  return <GalleryPageUI galleryCardData={galleryData ?? []} />;
+
+  return (
+    <NextIntlClientProvider messages={messages}>
+      <GalleryPageUI galleryCardData={galleryData ?? []} />
+    </NextIntlClientProvider>
+  );
 };
 
 export default GalleryPage;

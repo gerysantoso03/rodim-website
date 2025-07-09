@@ -13,13 +13,15 @@ import ThicknessIcon from '../../../../assets/icons/thickness.svg';
 import GlossIcon from '../../../../assets/icons/gloss.svg';
 import QuvIcon from '../../../../assets/icons/QUV.svg';
 import WarrantyIcon from '../../../../assets/icons/warranty.svg';
+import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
+import { useTranslations } from 'next-intl';
 
 interface ProductPageUIProps {
   data: any;
 }
 
 const ProductPageUI = ({ data }: ProductPageUIProps) => {
-  console.log({ data });
+  const t = useTranslations('ProductRodimPage')
 
   return (
     <div className="p-[16px] max-w-[144rem] mx-auto flex flex-col gap-[1.6rem]">
@@ -78,6 +80,8 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
           />
         </div>
       </section>
+
+      <OfficeSlider title={t('globalGallery')}/>
     </div>
   );
 };

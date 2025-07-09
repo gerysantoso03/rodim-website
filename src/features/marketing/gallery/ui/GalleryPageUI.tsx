@@ -1,19 +1,19 @@
 'use client';
 
 import React from 'react';
-import { useTranslations } from 'next-intl';
 
 import Banner from '@/shared/components/banner/Banner';
 import { InfiniteScrollSlider } from '@/shared/components/infinite-scroll-slider';
 import GalleryCard from './GalleryCard';
 import GalleryHeroImage from '../../../../assets/images/gallery/header.jpg';
 import { imageTopList, imageBottomList } from '../const/const';
+import { useTranslations } from 'use-intl';
 
 interface GalleryPageUIProps {
   galleryCardData: any[];
 }
 
-const GalleryPageUI = ({ galleryCardData }: GalleryPageUIProps) => {
+const GalleryPageUI = ({ galleryCardData}: GalleryPageUIProps) => {
   const t = useTranslations('GalleryPage');
 
   return (
@@ -41,6 +41,7 @@ const GalleryPageUI = ({ galleryCardData }: GalleryPageUIProps) => {
                   img={galleryData.cover_image as string}
                   id={galleryData.id as number}
                   key={galleryData.id}
+                  buttonLabel={t('buttonLabel')}
                 />
               ))}
           </div>
@@ -48,7 +49,7 @@ const GalleryPageUI = ({ galleryCardData }: GalleryPageUIProps) => {
         <section className="w-full relative overflow-hidden bg-[#1F1F1F] rounded-[18px] py-20">
           <div className="w-full py-28  px-10 lg:px-20">
             <h3 className="text-center text-white font-bold tracking-[-0.28px] text-[36px] sm:text-[40px] lg:text-[56px]">
-              Kunjungi Kami di <br /> RODIM Experience Center
+              {t('globalGallery')} <br /> RODIM Experience Center
             </h3>
           </div>
           <div className="w-full min-h-[800px]">

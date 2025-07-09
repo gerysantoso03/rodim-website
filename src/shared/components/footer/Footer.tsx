@@ -31,8 +31,9 @@ const Footer = () => {
 
                 <div className="flex flex-col gap-[8px]">
                   <Link
-                    href="https://www.google.com/maps/place/Monas,+Gambir,+Kecamatan+Gambir,+Kota+Jakarta+Pusat,+Daerah+Khusus+Ibukota+Jakarta/@-6.175403,106.824584,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f5d2db8c5617:0x4e446b7ac891d847!8m2!3d-6.1753917!4d106.8271533!16s%2Fg%2F11bw3wnng2?entry=ttu&g_ep=EgoyMDI1MDYyMy4yIKXMDSoASAFQAw%3D%3D"
+                    href="https://www.google.com/maps/place/RODIM+Experience+Center/@-6.1734057,106.8047831,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69f70032cb6bfd:0x80b33f30b3a138ed!8m2!3d-6.173411!4d106.807358!16s%2Fg%2F11x7d86_qt?entry=tts"
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="w-fit"
                   >
                     <div className="flex gap-[8px] items-start">

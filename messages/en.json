@@ -32,11 +32,13 @@
       "title4": "Warranty",
       "subtitle4": "With over 150 years of experience, you get a warranty from a trusted brand recognized worldwide.",
       "desc4": "RODIM PPF, a brand of BASF—the world’s largest chemical company with over 150 years of experience, providing durable and proven protection. We guarantee no cracking, blistering, glue residue, or yellowing, ensuring a like-new appearance. If issues arise on PPF products, we provide a free replacement. Trust RODIM PPF for reliable, long-lasting protection."
-    }
+    },
+    "globalGallery": "Feel our quality in"
   },
   "HomePage": {
     "homeIntroduction": "RODIM PPF is a brand of BASF, a global leader in TPU materials, automotive OEM and refinish paint. From TPU production to advanced PPF innovation, RODIM delivers complete solutions and truly understands how to protect factory car paint.",
-    "buttonLabel": "Discover More"
+    "buttonLabel": "Discover More",
+    "globalGallery": "Feel our quality in"
   },
   "AboutPage": {
     "aboutTitle1": "About BASF RODIM",
@@ -58,7 +60,8 @@
     "innovation4": "BASF’s German facility produces the TPU raw materials, providing exceptional quality and a consistent supply.",
     "innovation5": "Produced in a world-class original film coating production line with 10 procedures and 20 detecting tests, RODIM® PPF offers advanced car body protection.",
     "innovation6": "RODIM PPF meets car owners' individual needs.",
-    "innovation7": "A well-established service network offers a peace of mind."
+    "innovation7": "A well-established service network offers a peace of mind.",
+    "globalGallery": "Feel our quality in"
   },
   "FAQPage": {
     "faqQuestion1": "Why choose RODIM® TPU PPF?",
@@ -95,17 +98,17 @@
     "care10": "Hand washing is strongly recommended. Avoid using automatic car washes or high-pressure water jets on the film edges, as this may cause lifting or water seepage."
   },
   "WarrantyPage": {
-    "warrantyTitle": "Product Warranty Service Description",
+    "warrantyTitle": "Product Warranty <block></block> Service Description",
     "warrantyDesc1": "As a brand of BASF, the world’s largest chemical company established in 1865, RODIM PPF is built on a legacy of global excellence and long-term commitment. Our protective solutions reflect over 150 years of innovation, expertise, and industry leadership.",
     "warrantyDesc2": "We guarantee resistance to cracking, blistering, yellowing, and large adhesive residue that can damage the paint. RODIM PPF is designed to maintain its clarity and performance throughout the warranty period, with free replacement if any issues arise on PPF products. Each product is supported by a clearly defined and reliable warranty.",
     "warrantyDesc3": "Make sure you get a warranty from a world-class company",
-    "buttonLabel": "See product"
+    "buttonLabel": "See product",
+    "globalGallery": "Feel our quality in"
   },
   "GalleryPage": {
     "galleryTitle": "Gallery",
-    "galleryDesc1": "As a brand of BASF, the world’s largest chemical company established in 1865, RODIM PPF is built on a legacy of global excellence and long-term commitment. Our protective solutions reflect over 150 years of innovation, expertise, and industry leadership.",
-    "warrantyDesc2": "We guarantee resistance to cracking, blistering, yellowing, and large adhesive residue that can damage the paint. RODIM PPF is designed to maintain its clarity and performance throughout the warranty period, with free replacement if any issues arise on PPF products. Each product is supported by a clearly defined and reliable warranty.",
-    "warrantyDesc3": "Make sure you get a warranty from a world-class company",
-    "buttonLabel": "See product"
+    "buttonLabel": "See gallery",
+    "globalGallery": "Feel our quality in",
+    "galleryArrowLabel": "Back to main gallery"
   }
 }

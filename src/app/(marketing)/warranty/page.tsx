@@ -1,4 +1,3 @@
-import Banner from '@/shared/components/banner/Banner';
 import WarrantyHeroImage from '../../../assets/images/warranties/basf-panasonic.jpg';
 import { products } from '@/shared/libs/data/products';
 import { ArrowRight } from 'lucide-react';
@@ -40,14 +39,18 @@ const WarrantyPage = () => {
 
         <div className="flex flex-col gap-[12px] absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] lg:px-[4.6rem] pb-[24px] lg:pb-[4.6rem]">
           <h1 className="text-[40px] font-[700] lg:text-[8rem] leading-[110%]">
-            Deskripsi Layanan
-            <br className="hidden xl:block" /> Garansi Produk
+            {t.rich('warrantyTitle', {
+              block: () => <br className="hidden xl:block" />,
+            })}
           </h1>
         </div>
       </section>
 
       {/* Warranty Info */}
       <section
+        data-aos="zoom-right"
+        data-aos-easing="ease-in-cubic"
+        data-aos-duration="1000"
         id="warrantyInfo"
         className="py-[18rem] lg:py-[24rem] px-[2rem] lg:px-[4.8rem] xl:px-[19.6rem] flex items-center justify-center"
       >
@@ -61,7 +64,12 @@ const WarrantyPage = () => {
         className="bg-[var(--secondary-black)] rounded-[1.8rem] px-[3.2rem] lg:px-[8rem] py-[6.4rem] lg:py-[12rem] xl:p-[18rem] flex flex-col gap-[6.4rem]"
         id="warrantyProducts"
       >
-        <div className="flex flex-col gap-[4rem]">
+        <div
+          className="flex flex-col gap-[4rem]"
+          data-aos="zoom-left"
+          data-aos-easing="ease-in-cubic"
+          data-aos-duration="1000"
+        >
           {/* Warranty Products Title */}
           <p className="font-normal text-[2.4rem] leading-[2.8rem]">
             {t('warrantyDesc2')}
@@ -82,6 +90,7 @@ const WarrantyPage = () => {
               return (
                 <div
                   key={product.id}
+                  data-aos={isLastTwo ? 'zoom-in-left' : 'zoom-in-right'}
                   className={`col-span-[2] ${spanClass} bg-gradient-to-b from-[#575757] to-70% to-[131313] rounded-[1.8rem] p-[.1rem]`}
                 >
                   <div className="bg-[#131313] py-[2.2rem] px-[3rem] flex flex-col justify-start gap-[1.6rem] lg:gap-[1.8rem] rounded-[1.8rem]">
@@ -110,7 +119,7 @@ const WarrantyPage = () => {
         </div>
       </section>
 
-      <OfficeSlider />
+      <OfficeSlider title={t('globalGallery')} />
     </SectionWrapper>
   );
 };

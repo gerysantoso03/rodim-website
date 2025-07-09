@@ -1,6 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import ArrowIcon from '../../../assets/icons/arrow-right.svg';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 type CardFeelTheDifferenceProps = {
   image: StaticImageData | string;
@@ -27,6 +27,7 @@ const CardFeelTheDifference = ({
 
   return (
     <div
+      data-aos="fade-down-left"
       className={`relative w-full min-h-[40.8rem] lg:min-h-[48.8rem] xl:min-h-[58rem] overflow-hidden rounded-[18px] bg-white/12 px-[2rem] py-[4rem] flex flex-col gap-[4rem] lg:p-[4rem] ${isWide && 'xl:p-[6.4rem] lg:flex-row lg:items-center lg:gap-[6.4rem]'}`}
     >
       <div

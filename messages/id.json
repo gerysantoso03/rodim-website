@@ -3,12 +3,12 @@
     "about": "Tentang BASF RODIM",
     "gallery": "Galeri",
     "warranty": "Garansi",
-    "Product" : {
+    "Product": {
       "introduction": "Pengenalan",
       "specification": "Spesifikasi Teknis"
     }
   },
-   "Footer": {
+  "Footer": {
     "installation": "Tempat Instalasi",
     "operational": "Jam Operasional",
     "monday": "Senin",
@@ -17,7 +17,7 @@
     "sunday": "Minggu: Tutup",
     "contact": "Hubungi Kami"
   },
-   "ProductRodimPage": {
+  "ProductRodimPage": {
     "FeelDifference": {
       "discoverLabel": "Selengkapnya",
       "closeLabel": "Tutup Detail",
@@ -32,11 +32,13 @@
       "title4": "Garansi",
       "subtitle4": "Dengan pengalaman lebih dari 150 tahun, anda mendapat garansi terpercaya dari BASF",
       "desc4": "RODIM adalah brand yang dimiliki oleh BASF—perusahaan kimia global dengan pengalaman lebih dari 150 tahun, memberikan perlindungan yang tahan lama dan terbukti efektif. Kami menjamin tidak ada retak, residu lem, atau menguning. Memastikan kendaraan anda selalu tampil seperti baru. Jika ada kendala pada produk PPF, kami akan menggantinya secara gratis. Percayakan perlindungan jangka panjang yang terpercaya dari RODIM PPF."
-    }
+    },
+    "globalGallery": "Kunjungi Kami di"
   },
   "HomePage": {
     "homeIntroduction": "RODIM adalah brand dari BASF, pemimpin global material TPU, cat otomotif OEM dan refinish. Dari produksi TPU hingga manufaktur dan inovasi PPF yang canggih, RODIM memberikan solusi lengkap dan sangat memahami cara melindungi cat mobil pabrik.",
-    "buttonLabel": "Selengkapnya"
+    "buttonLabel": "Selengkapnya",
+    "globalGallery": "Kunjungi Kami di"
   },
   "AboutPage": {
     "aboutTitle1": "Tentang BASF RODIM",
@@ -58,7 +60,8 @@
     "innovation4": "Bahan baku TPU diproduksi dari pabrik BASF di Jerman, memastikan kualitas yang istimewa dan ketersediaan yang konsisten.",
     "innovation5": "Diproduksi di lini produksi pelapis film berstandar kelas dunia, melalui 10 prosedur dan 20 tes deteksi, RODIM PPF memberikan perlindungan bodi kendaraan yang canggih.",
     "innovation6": "RODIM PPF memenuhi kebutuhan individu pemilik kendaraan.",
-    "innovation7": "Jaringan penjualan yang terpercaya memberikan rasa tenang dan kenyamanan."
+    "innovation7": "Jaringan penjualan yang terpercaya memberikan rasa tenang dan kenyamanan.",
+    "globalGallery": "Kunjungi Kami di"
   },
   "FAQPage": {
     "faqQuestion1": "Mengapa memilih RODIM® TPU PPF?",
@@ -95,10 +98,17 @@
     "care10": "Cuci manual sangat dianjurkan. Hindari penggunaan mesin cuci otomatis atau semprotan air bertekanan tinggi pada bagian tepi film, karena dapat menyebabkan film terangkat atau kemasukan air."
   },
   "WarrantyPage": {
-    "warrantyTitle": "Deskripsi Layanan Garansi Produk",
+    "warrantyTitle": "Deskripsi Layanan <block></block> Garansi Produk",
     "warrantyDesc1": "Sebagai merek dari BASF, perusahaan kimia terbesar di dunia yang berdiri sejak pada tahun 1865, RODIM PPF berdiri di atas fondasi keunggulan global dan komitmen jangka panjang. Solusi perlindungan kami dibentuk oleh lebih dari 150 tahun inovasi, keahlian, dan kepemimpinan industri.",
     "warrantyDesc2": "Kami memastikan tidak akan ada retakan, gelembung, residu lem yang merusak cat, dan ppf menguning, dengan produk yang tetap jernih seperti baru sepanjang periode garansi. Jika terjadi masalah, kami menawarkan penggantian gratis selama periode garansi. Setiap produk dijamin dengan garansi yang dapat dipercaya.",
     "warrantyDesc3": "Pastikan anda mendapatkan garansi dari perusahaan kelas dunia",
-    "buttonLabel": "Lihat produk"
+    "buttonLabel": "Lihat produk",
+    "globalGallery": "Kunjungi Kami di"
+  },
+  "GalleryPage": {
+    "galleryTitle": "Galeri",
+    "buttonLabel": "Lihat galeri",
+    "globalGallery": "Kunjungi Kami di",
+    "galleryArrowLabel": "Kembali ke galeri utama"
   }
 }

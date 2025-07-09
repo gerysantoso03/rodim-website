@@ -12,8 +12,11 @@ import { AlignJustify } from 'lucide-react';
 import { products } from '@/shared/libs/data/products';
 import { getAllProductsAction } from '@/features/admin/actions/product/action';
 import { desiredOrderProduct } from './const';
+import { useTranslations } from 'use-intl';
 
 const Navbar = () => {
+  const t = useTranslations('Navbar')
+
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const newNavProductList = desiredOrderProduct.map((data, index) => ({
     id: index,
@@ -75,7 +78,6 @@ const Navbar = () => {
                 type="button"
                 className="w-[38px] h-[38px] min-[1440px]:hidden flex justify-center items-center border border-white rounded-[8px] cursor-pointer"
                 onClick={() => {
-                  console.log('hallo');
                   setIsOpenMenu(!isOpenMenu);
                 }}
               >
@@ -119,21 +121,21 @@ const Navbar = () => {
               <div className="flex h-full items-center">
                 <NavbarMenu
                   id={'about'}
-                  title={'TENTANG BASF RODIM'}
+                  title={t('about')}
                   firstChild={true}
                   lastChild={false}
                   isProduct={false}
                 />
                 <NavbarMenu
                   id={'gallery'}
-                  title={'GALERI'}
+                  title={t('gallery')}
                   firstChild={false}
                   lastChild={false}
                   isProduct={false}
                 />
                 <NavbarMenu
                   id={'warranty'}
-                  title={'GARANSI'}
+                  title={t('warranty')}
                   firstChild={false}
                   lastChild={true}
                   isProduct={false}
@@ -150,7 +152,7 @@ const Navbar = () => {
         />
       </div>
 
-      <NavbarSub title={selectedData.title} />
+      <NavbarSub title={selectedData.title} introduction={t('Product.introduction')} specification={t('Product.specification')} />
     </>
   );
 };

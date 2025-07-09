@@ -2,14 +2,18 @@ import React from 'react';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
-const GalleryDetailHeader = () => {
+interface GalleryDetailHeaderProps {
+  arrowLabel: string;
+}
+
+const GalleryDetailHeader = ({ arrowLabel }: GalleryDetailHeaderProps) => {
   return (
     <div className="flex flex-col gap-[24px]">
       <Link href="/gallery" className="w-fit">
         <div className="cursor-pointer flex items-center gap-[10px] text-white transition-all duration-200 hover:text-gray-400 w-fit">
           <ArrowLeft className="w-6 h-6" />
           <span className="tracking-[-0.37px] leading-[20px] text-[14px] sm:text-[16px] lg:text-[18px]">
-            Kembali ke galeri utama
+            {arrowLabel}
           </span>
         </div>
       </Link>

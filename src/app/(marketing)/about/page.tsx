@@ -1,5 +1,3 @@
-import Banner from '@/shared/components/banner/Banner';
-import { cn } from '@/shared/libs/shadcn/utils';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import AboutHeroImage1 from '../../../assets/images/abouts/about-banner.jpg';
@@ -214,6 +212,9 @@ const AboutPage = () => {
 
       {/* About Info 1 */}
       <section
+        data-aos="fade-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000"
         id="aboutInfo1"
         className="py-[18rem] lg:py-[24rem] px-[.8rem] lg:px-[4.8rem] xl:px-[3.6rem] flex items-center justify-center"
       >
@@ -236,7 +237,12 @@ const AboutPage = () => {
         </div>
       </section> */}
 
-      <section className="w-full h-[60rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]">
+      <section
+        className="w-full h-[60rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]"
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+        data-aos-delay="200"
+      >
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
         <Image
@@ -278,6 +284,9 @@ const AboutPage = () => {
       </section> */}
 
       <section
+        data-aos="fade-right"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000"
         id="aboutInfo1"
         className="py-[18rem] lg:py-[24rem] px-[2.4rem] lg:px-[4.8rem] xl:px-[19.6rem] flex flex-col items-center justify-center gap-[3.2rem]"
       >
@@ -298,7 +307,12 @@ const AboutPage = () => {
       {/* Paint Protection Film Otomotif Section */}
       <section className="bg-[#1f1f1f] rounded-[1.8rem] flex flex-col xl:flex-row gap-[4rem] lg:gap-[12rem] px-[3.2rem] py-[6.4rem] xl:py-[18rem] lg:p-[12rem]">
         {/* Paint Protection Image */}
-        <div className="bg-gradient-to-b from-[#575757] to-70% to-[#1f1f1f] p-[.2rem] h-[36rem] lg:h-[42rem] xl:h-[56.5rem] w-full xl:max-w-[48.7rem] rounded-[1.6rem] overflow-hidden">
+        <div
+          data-aos="fade-left"
+          data-aos-anchor-placement="top-left"
+          data-aos-delay="200"
+          className="bg-gradient-to-b from-[#575757] to-70% to-[#1f1f1f] p-[.2rem] h-[36rem] lg:h-[42rem] xl:h-[56.5rem] w-full xl:max-w-[48.7rem] rounded-[1.6rem] overflow-hidden"
+        >
           <Image
             src="/image/about/paint-protection-film.JPG"
             alt="Paint Protection Film"
@@ -315,7 +329,7 @@ const AboutPage = () => {
           </h4>
 
           {/* Paint Protection Items Wrapper */}
-          <div className="flex flex-col gap-[4rem]">
+          <div className="flex flex-col gap-[4rem]" data-aos="fade-up-left">
             {paintProtectionItems.map((item, idx) => (
               <div key={idx} className="flex items-start gap-[1.6rem]">
                 {/* Check Circle Icon */}
@@ -361,6 +375,9 @@ const AboutPage = () => {
       </section> */}
 
       <section
+        data-aos="fade-left"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000"
         id="aboutInfo1"
         className="py-[16rem] lg:py-[24rem] px-[2.4rem] lg:px-[10.4rem] xl:px-[25.4rem] flex flex-col items-center justify-center gap-[2.4rem]"
       >
@@ -380,7 +397,10 @@ const AboutPage = () => {
 
       {/* Vertical Integration Section */}
       <section className="bg-[var(--secondary-black)] rounded-[1.8rem] px-[3.2rem] py-[6.4rem] lg:p-[12rem] flex flex-col gap-[4rem] lg:gap-[8rem]">
-        <div className="flex flex-col gap-[2rem] lg:gap-[2.4rem]">
+        <div
+          className="flex flex-col gap-[2rem] lg:gap-[2.4rem]"
+          data-aos="fade-down-right"
+        >
           {/* Vertical Integration Title */}
           <h1 className="font-bold text-[4rem] lg:text-[7.2rem] tracking-[-0.12rem]">
             Vertical Integration
@@ -395,6 +415,7 @@ const AboutPage = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[1.6rem]">
           {verticalIntegrationCards.map((card, idx) => (
             <div
+              data-aos="fade-down-right"
               key={idx}
               className="bg-gradient-to-b from-[#575757] to-70% to-[#1f1f1f] p-[.2rem] rounded-[1.8rem]"
             >
@@ -437,6 +458,7 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1.6rem]">
             {innovationCardsGroup1.map((card, idx) => (
               <div
+                data-aos="zoom-in-up"
                 key={idx}
                 className="flex flex-col rounded-[1.8rem] overflow-hidden"
               >
@@ -468,6 +490,7 @@ const AboutPage = () => {
 
               return (
                 <div
+                  data-aos="zoom-in-down"
                   key={idx}
                   className={`flex flex-col rounded-[1.8rem] overflow-hidden ${lastCard ? 'lg:col-span-[4]' : 'lg:col-span-[2]'} xl:col-auto`}
                 >
@@ -497,6 +520,7 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1.6rem]">
             {innovationCardsGroup3.map((card, idx) => (
               <div
+                data-aos="zoom-in-left"
                 key={idx}
                 className="flex flex-col rounded-[1.8rem] overflow-hidden"
               >
@@ -539,6 +563,9 @@ const AboutPage = () => {
       </section> */}
 
       <section
+        data-aos="zoom-right"
+        data-aos-easing="ease-in-cubic"
+        data-aos-duration="1000"
         id="aboutInfo1"
         className="py-[9rem] px-[2.4rem] lg:px-[10.4rem] xl:px-[16.4rem] flex flex-col items-center justify-center gap-[3.2rem] lg:gap-[5rem]"
       >
@@ -558,6 +585,8 @@ const AboutPage = () => {
       <section className="grid grid-cols-2 lg:grid-cols-5 px-[.8rem] lg:px-[4.8rem] xl:px-[16.4rem] lg:pt-[9rem] pb-[14rem] lg:pb-[9rem]">
         {logos.map((item, idx) => (
           <div
+            data-aos="zoom-out-up"
+            data-aos-delay={idx * 100}
             key={idx}
             className={`flex flex-col items-center gap-[1.2rem] mb-[4rem] lg:mb-[9rem]`}
           >
@@ -579,7 +608,7 @@ const AboutPage = () => {
         ))}
       </section>
 
-      <OfficeSlider />
+      <OfficeSlider title={t('globalGallery')} />
     </SectionWrapper>
   );
 };

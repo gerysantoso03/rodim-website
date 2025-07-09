@@ -14,12 +14,16 @@ import Bottom5 from '../../../assets/images/gallery/slider/bottom-5.jpg';
 const imageTopList = [Top1, Top2, Top3, Top4, Top5];
 const imageBottomList = [Bottom1, Bottom2, Bottom3, Bottom4, Bottom5];
 
-const OfficeSlider = () => {
+interface OfficeSliderProps {
+  title: string;
+}
+
+const OfficeSlider = ({ title }: OfficeSliderProps) => {
   return (
     <section className="w-full relative overflow-hidden bg-[#1F1F1F] rounded-[18px]">
       <div className="w-full px-[2.6rem] pt-[12rem] pb-[11rem]">
         <h3 className="text-center text-white font-bold tracking-[-0.28px] text-[4rem] lg:text-[5.6rem] leading-[110%]">
-          Kunjungi Kami di <br /> RODIM Experience Center
+          {title} <br /> RODIM Experience Center
         </h3>
       </div>
 

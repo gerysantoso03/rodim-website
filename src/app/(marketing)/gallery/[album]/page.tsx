@@ -1,8 +1,9 @@
 import {
-  getAllGalleryImageAction,
   getAllGalleryImageBySlugAction,
 } from '@/features/admin/actions/gallery/action';
 import GalleryDetailPageUI from '@/features/marketing/gallery/ui/GalleryDetailPageUI';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
 
 const GalleryDetailPage = async ({
   params,
@@ -17,8 +18,13 @@ const GalleryDetailPage = async ({
       galleryImageData.message || 'Failed to get gallery folders'
     );
   }
+  const messages = await getMessages(); // comes from next-intl/server
 
-  return <GalleryDetailPageUI data={galleryImageData} />;
+  return (
+    <NextIntlClientProvider messages={messages}>
+      <GalleryDetailPageUI data={galleryImageData} />
+    </NextIntlClientProvider>
+  );
 };
 
 export default GalleryDetailPage;
