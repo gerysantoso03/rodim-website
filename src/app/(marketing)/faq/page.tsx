@@ -1,123 +1,41 @@
+"use client"
+
 import { Accordion } from '@/shared/components/accordion';
-import { useTranslations } from 'next-intl';
+import SectionWrapper from '@/shared/components/section-wrapper/SectionWrapper';
+import { useFaqs } from '@/shared/libs/data/useFaqs';
+import { ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 import React from 'react';
 
 const FAQPage = () => {
-  const t = useTranslations('FAQPage');
-
-  const faqInformations = [
-    {
-      title: t('faqQuestion1'),
-      content: (
-        <>
-          <p>{t('faqAnswer1')}</p>
-          <p>{t('faqAnswer2')}</p>
-        </>
-      ),
-    },
-    {
-      title: t('faqQuestion2'),
-      content: (
-        <p>
-          {t.rich('faqAnswer3', {
-            solve: (chunks) => <span className="font-bold">{chunks}</span>,
-          })}
-        </p>
-      ),
-    },
-    {
-      title: t('faqQuestion3'),
-      content: <p>{t('faqAnswer4')}</p>,
-    },
-    {
-      title: t('faqQuestion4'),
-      content: (
-        <p>
-          {t.rich('faqAnswer5', {
-            automatic: (chunks) => <span className="font-bold">{chunks}</span>,
-            touchless: (chunks) => <span className="font-bold">{chunks}</span>,
-          })}
-        </p>
-      ),
-    },
-    {
-      title: t('faqQuestion5'),
-      content: (
-        <p>
-          {t.rich('faqAnswer6', {
-            rodim: (chunks) => <span className="font-bold">{chunks}</span>,
-          })}
-        </p>
-      ),
-    },
-    {
-      title: t('faqQuestion6'),
-      content: (
-        <>
-          <p>
-            {t.rich('faqAnswer7', {
-              rodim: (chunks) => <span className="font-bold">{chunks}</span>,
-              poly: (chunks) => <span className="font-bold">{chunks}</span>,
-              selfhealing: (chunks) => (
-                <span className="font-bold">{chunks}</span>
-              ),
-            })}
-          </p>
-          <p>{t('faqAnswer8')}</p>
-        </>
-      ),
-    },
-    {
-      title: t('faqQuestion7'),
-      content: (
-        <ul className="list-disc pl-6 flex flex-col gap-6">
-          <li>
-            {t.rich('faqAnswer9', {
-              rodim1: (chunks) => <span className="font-bold">{chunks}</span>,
-            })}
-          </li>
-          <li>
-            {t.rich('faqAnswer10', {
-              rodim2: (chunks) => <span className="font-bold">{chunks}</span>,
-            })}
-          </li>
-          <li>
-            {t.rich('faqAnswer11', {
-              rodim3: (chunks) => <span className="font-bold">{chunks}</span>,
-            })}
-          </li>
-          <li>
-            {t.rich('faqAnswer12', {
-              rodim4: (chunks) => <span className="font-bold">{chunks}</span>,
-            })}
-          </li>
-          <li>
-            {t.rich('faqAnswer13', {
-              rodim5: (chunks) => <span className="font-bold">{chunks}</span>,
-            })}
-          </li>
-        </ul>
-      ),
-    },
-  ];
+const faqs = useFaqs();
 
   return (
-    <main className="faq">
-      <section className="section-wrapper">
-        <div className="md:px-[10rem] md:py-[6rem]">
-          <h1 className="text-[4.6rem] font-bold leading-[100%] mt-10">
+    <SectionWrapper>
+      <div className="flex flex-col gap-[4rem]">
+        <div className="flex flex-col gap-[2.4rem] border">
+          {/* Navigation Link */}
+          <Link className="text-[1.7rem] flex items-center gap-2" href="/">
+            <span>
+              {' '}
+              <ArrowLeft size={17} />
+            </span>
+            Kembali{' '}
+          </Link>
+
+          <h1 className="text-[4rem] lg:text-[4.6rem] font-bold leading-[100%]">
             Frequently Asked Questions
           </h1>
-
-          {/* FAQ Wrappers */}
-          <div className="flex flex-col gap-20 mt-20">
-            {faqInformations.map((faq, idx) => (
-              <Accordion key={idx} title={faq.title} content={faq.content} />
-            ))}
-          </div>
         </div>
-      </section>
-    </main>
+
+        {/* FAQ Wrappers */}
+        <div className="flex flex-col gap-[4rem]">
+          {faqs.map((faq, idx) => (
+            <Accordion key={idx} title={faq.title} content={faq.content} />
+          ))}
+        </div>
+      </div>
+    </SectionWrapper>
   );
 };
 export default FAQPage;

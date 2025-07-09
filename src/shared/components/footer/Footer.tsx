@@ -66,10 +66,10 @@ const Footer = () => {
                     </div>
                   </Link>
 
-                  <Link href="tel:+6282222222222" className="w-fit">
+                  <Link href="tel:+6282213959045" className="w-fit">
                     <div className="flex gap-[8px] items-center">
                       <Phone size={18} className="min-w-[1.8rem]" />
-                      <p>+62 822-2222-2222</p>
+                      <p>+62 822-1395-9045</p>
                     </div>
                   </Link>
                 </div>

@@ -21,7 +21,7 @@ const MarketingLayout = async ({
         <Suspense fallback={<h1>loading</h1>}>
           <PopupLanguage />
         </Suspense>
-        {children}
+        <Providers>{children}</Providers>
       </main>
       <Footer />
     </NextIntlClientProvider>
