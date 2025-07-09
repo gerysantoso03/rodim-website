@@ -12,9 +12,8 @@ const GalleryPage = async () => {
   }
 
   const galleryData = result.filter((data) => data.is_visible);
- // Get server translations
+  // Get server translations
   const messages = await getMessages(); // comes from next-intl/server
-
 
   return (
     <NextIntlClientProvider messages={messages}>

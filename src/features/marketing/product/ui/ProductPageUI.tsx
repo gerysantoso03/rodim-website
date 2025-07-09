@@ -21,7 +21,7 @@ interface ProductPageUIProps {
 }
 
 const ProductPageUI = ({ data }: ProductPageUIProps) => {
-  const t = useTranslations('ProductRodimPage')
+  const t = useTranslations('ProductRodimPage');
 
   return (
     <div className="p-[16px] max-w-[144rem] mx-auto flex flex-col gap-[1.6rem]">
@@ -81,7 +81,7 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
         </div>
       </section>
 
-      <OfficeSlider title={t('globalGallery')}/>
+      <OfficeSlider title={t('globalGallery')} />
     </div>
   );
 };

@@ -14,7 +14,13 @@ interface GalleryCardProps {
   buttonLabel: string;
 }
 
-const GalleryCard = ({ id, title, slug, img, buttonLabel }: GalleryCardProps) => {
+const GalleryCard = ({
+  id,
+  title,
+  slug,
+  img,
+  buttonLabel,
+}: GalleryCardProps) => {
   const imageUrl =
     id && img
       ? `/uploads/gallery_folder/${id}/${img}`

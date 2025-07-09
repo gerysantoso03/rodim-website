@@ -13,7 +13,7 @@ interface GalleryPageUIProps {
   galleryCardData: any[];
 }
 
-const GalleryPageUI = ({ galleryCardData}: GalleryPageUIProps) => {
+const GalleryPageUI = ({ galleryCardData }: GalleryPageUIProps) => {
   const t = useTranslations('GalleryPage');
 
   return (

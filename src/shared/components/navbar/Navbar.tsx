@@ -15,7 +15,7 @@ import { desiredOrderProduct } from './const';
 import { useTranslations } from 'use-intl';
 
 const Navbar = () => {
-  const t = useTranslations('Navbar')
+  const t = useTranslations('Navbar');
 
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const newNavProductList = desiredOrderProduct.map((data, index) => ({
@@ -152,7 +152,11 @@ const Navbar = () => {
         />
       </div>
 
-      <NavbarSub title={selectedData.title} introduction={t('Product.introduction')} specification={t('Product.specification')} />
+      <NavbarSub
+        title={selectedData.title}
+        introduction={t('Product.introduction')}
+        specification={t('Product.specification')}
+      />
     </>
   );
 };

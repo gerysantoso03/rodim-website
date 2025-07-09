@@ -17,7 +17,11 @@ const CardProduct = ({
   buttonLabel,
 }: CardProductProps) => {
   return (
-    <div className="w-full h-[40.8rem] lg:h-[62rem] relative overflow-hidden rounded-[18px] border-[.2rem] border-white/12" data-aos="fade-up" data-aos-delay="100">
+    <div
+      className="w-full h-[40.8rem] lg:h-[62rem] relative overflow-hidden rounded-[18px] border-[.2rem] border-white/12"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
       <div className="bg-black/40 absolute inset-0 z-[2]" />
 
       <Image

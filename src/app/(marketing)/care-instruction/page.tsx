@@ -9,7 +9,6 @@ const CareInstructionPage = () => {
     <SectionWrapper>
       <div className="flex flex-col gap-[4rem]">
         <div className="flex flex-col gap-[2.4rem]">
-
           <h1 className="text-[4rem] lg:text-[4.6rem] font-bold leading-[100%]">
             Paint Protection Film Care Instructions
           </h1>

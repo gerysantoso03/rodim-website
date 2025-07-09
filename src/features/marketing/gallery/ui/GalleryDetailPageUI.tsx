@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React from 'react';
 
@@ -20,7 +20,7 @@ const GalleryDetailPageUI = ({ data }: GalleryDetailPageUIProps) => {
   return (
     <main className="section-wrapper w-full min-h-screen">
       <section className="w-full h-full flex flex-col gap-[56px] py-[100px] sm:gap-[40px] sm:px-[64px] lg:gap-[30px] lg:px-[120px]">
-        <GalleryDetailHeader arrowLabel={t('galleryArrowLabel')}/>
+        <GalleryDetailHeader arrowLabel={t('galleryArrowLabel')} />
         <GalleryAlbum imageList={imageList} />
       </section>
     </main>

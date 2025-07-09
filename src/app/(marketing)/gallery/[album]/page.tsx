@@ -1,6 +1,4 @@
-import {
-  getAllGalleryImageBySlugAction,
-} from '@/features/admin/actions/gallery/action';
+import { getAllGalleryImageBySlugAction } from '@/features/admin/actions/gallery/action';
 import GalleryDetailPageUI from '@/features/marketing/gallery/ui/GalleryDetailPageUI';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
