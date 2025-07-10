@@ -152,7 +152,7 @@ export default function ProductForm({
     formData.append('warranty', form.warranty);
     if (imageFile) formData.append('image', imageFile);
     if (mode === 'edit') {
-      formData.append('id', `${form.id}`);// 👈 kirim id produk
+      formData.append('id', `${form.id}`); // 👈 kirim id produk
     }
 
     for (const [code, values] of Object.entries(form.specs)) {
