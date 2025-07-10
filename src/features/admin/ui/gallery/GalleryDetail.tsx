@@ -94,7 +94,7 @@ export default function GalleryDetail({
         open={showModal}
         onClose={() => setShowModal(false)}
         onSubmit={handleImageSubmit}
-        defaultData={editData} // for editing
+        // defaultData={editData} // for editing
       />
 
       <div className="mb-4 mt-10 flex items-center justify-between">
