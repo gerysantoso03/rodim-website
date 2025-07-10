@@ -36,7 +36,7 @@ const LoginForm = () => {
           setError(res.message ?? 'Unknown error');
           setPassword('');
         } else {
-          router.push(res.redirectTo);
+          router.push('/product');
         }
       });
     });

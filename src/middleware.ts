@@ -49,6 +49,7 @@ export function middleware(request: NextRequest) {
     response.cookies.set(getSessionCookieName(), sessionCookie?.value || '', {
       maxAge: 60 * 60,
       httpOnly: true,
+      sameSite: 'lax',
       path: '/',
       secure: process.env.NODE_ENV === 'production',
     });
