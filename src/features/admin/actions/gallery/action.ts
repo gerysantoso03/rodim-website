@@ -46,7 +46,7 @@ export async function getGalleryFolderWithImagesAction(id: number) {
         is_visible: folder.is_visible,
         images: folder.gallery_images.map((img) => ({
           id: img.id,
-          name: img.image_url.split('/').pop(),
+          name: img.image_url.split('/').pop() ?? '',
           url: img.image_url,
           is_visible: img.is_visible,
         })),
