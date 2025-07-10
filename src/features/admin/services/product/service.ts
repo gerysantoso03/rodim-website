@@ -52,12 +52,12 @@ export const getAllSpecCategories = async () => {
   });
 
   return specCategories.map((cat) => ({
-      title: cat.description ?? '', // pastikan bukan null
-      items: cat.categories.map((field) => ({
-        code: field.code,
-        label: field.description ?? '', // pastikan bukan null
-      })),
-    }));
+    title: cat.description ?? '', // pastikan bukan null
+    items: cat.categories.map((field) => ({
+      code: field.code,
+      label: field.description ?? '', // pastikan bukan null
+    })),
+  }));
 };
 
 export async function getAllProducts() {
