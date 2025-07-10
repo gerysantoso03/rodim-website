@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
     },
   },
   output: 'standalone',
+  images: {
+    domains: ['www.basfrodim.id'],
+  },
 };
  
 const withNextIntl = createNextIntlPlugin();
