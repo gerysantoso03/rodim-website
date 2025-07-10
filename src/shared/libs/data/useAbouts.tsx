@@ -7,39 +7,39 @@ type verticalIntegrationCards = {
   alt: string;
   title: string;
   description: string;
-}
+};
 
 type logos = {
   src: StaticImageData | string;
   alt: string;
   label: string;
-}
+};
 
 type innovationCardsGroup1 = {
   image: StaticImageData | string;
   alt: string;
   title: string;
   description: string;
-}
+};
 
 type innovationCardsGroup2 = {
   image: StaticImageData | string;
   alt: string;
   title: string;
   description: string;
-}
+};
 
 type innovationCardsGroup3 = {
   image: StaticImageData | string;
   alt: string;
   title: string;
   description: string;
-}
+};
 
 type paintProtectionItems = {
   title: string;
   description: string;
-}
+};
 
 type Abouts = {
   verticalIntegrationCards: verticalIntegrationCards[];
@@ -206,7 +206,7 @@ export function useAbouts(): Abouts[] {
           title: 'Custom Fit Solutions',
           description: t('paintProtectionInfo3'),
         },
-      ]
-    }
+      ],
+    },
   ];
 }

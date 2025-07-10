@@ -59,25 +59,25 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
             image={ThicknessImage}
             icon={ThicknessIcon}
             title="Thickness"
-            subtitle={`${data.thickness}`  || ''}
+            subtitle={`${data.thickness}` || ''}
           />
           <CardExclusive
             image={GlossImage}
             icon={GlossIcon}
             title="Gloss (60°)"
-            subtitle={`${data.gloss}`  || ''}
+            subtitle={`${data.gloss}` || ''}
           />
           <CardExclusive
             image={QuvImage}
             icon={QuvIcon}
             title="QUV"
-            subtitle={`${data.quv} ${t('hour')}`  || ''}
+            subtitle={`${data.quv} ${t('hour')}` || ''}
           />
           <CardExclusive
             image={WarrantImage}
             icon={WarrantyIcon}
             title="Warranty"
-            subtitle={`${data.warranty} ${t('year')}`  || ''}
+            subtitle={`${data.warranty} ${t('year')}` || ''}
           />
         </div>
       </section>

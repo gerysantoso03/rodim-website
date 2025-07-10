@@ -14,10 +14,12 @@ export default function Home() {
   return (
     <SectionWrapper>
       <section
-        className={'w-full h-[52rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]'}
+        className={
+          'w-full h-[52rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]'
+        }
       >
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
-  
+
         <Image
           src={HeroImage}
           alt="hero image"
@@ -28,7 +30,9 @@ export default function Home() {
         />
 
         <div
-          className={'flex flex-col gap-[12px] absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] lg:px-[4.6rem] pb-[24px] lg:pb-[4.6rem]'}
+          className={
+            'flex flex-col gap-[12px] absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] lg:px-[4.6rem] pb-[24px] lg:pb-[4.6rem]'
+          }
         >
           <h1 className="text-[40px] font-[700] lg:text-[7.2rem] leading-[110%] lg:leading-[80px]">
             RODIM {'-'} Protection by World{"'"}s Best

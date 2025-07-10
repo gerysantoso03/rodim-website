@@ -42,8 +42,8 @@ const Page = () => {
               A brand of BASF:
             </div>
             <div className="text-[40px] font-[700] lg:text-[7.2rem] flex flex-col lg:flex-row lg:gap-[1.8rem] items-start">
-              <div className='flex gap-[1.2rem]'>
-                <div className='h-[6rem] w-fit lg:h-[10.8rem] flex items-center justify-center'>
+              <div className="flex gap-[1.2rem]">
+                <div className="h-[6rem] w-fit lg:h-[10.8rem] flex items-center justify-center">
                   <Image
                     src={GlobalIcon}
                     alt=""
@@ -56,7 +56,7 @@ const Page = () => {
                 <span className="text-nowrap">The Global</span>
               </div>
 
-              <div className='text-nowrap'>Leader in TPU</div>
+              <div className="text-nowrap">Leader in TPU</div>
             </div>
           </div>
 

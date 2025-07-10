@@ -9,7 +9,7 @@ import { useAbouts } from '@/shared/libs/data/useAbouts';
 
 const AboutPage = () => {
   const t = useTranslations('AboutPage');
-  const abouts = useAbouts()
+  const abouts = useAbouts();
 
   return (
     <SectionWrapper>
@@ -272,7 +272,8 @@ const AboutPage = () => {
           {/* Group 2: Auto-fit Columns */}
           <div className="grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-3 gap-[1.6rem]">
             {abouts[0].innovationCardsGroup2.map((card, idx) => {
-              const lastCard = abouts[0].innovationCardsGroup2.length === idx + 1;
+              const lastCard =
+                abouts[0].innovationCardsGroup2.length === idx + 1;
 
               return (
                 <div

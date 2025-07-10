@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import WarrantyHeroImage from '../../../assets/images/warranties/basf-panasonic.jpg';
 import { products } from '@/shared/libs/data/products';
 import { ArrowRight } from 'lucide-react';
@@ -11,18 +11,18 @@ import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
 import { getAllProductsAction } from '@/features/admin/actions/product/action';
 
 const WarrantyPage = () => {
-  const [productRodim, setProductRodim] = useState<any>([])
+  const [productRodim, setProductRodim] = useState<any>([]);
   const t = useTranslations('WarrantyPage');
 
   useEffect(() => {
     const getProducts = async () => {
-      const product= await getAllProductsAction();
+      const product = await getAllProductsAction();
 
       if (!Array.isArray(product)) {
         return;
       }
 
-      setProductRodim(product)
+      setProductRodim(product);
     };
 
     getProducts();
