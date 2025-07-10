@@ -17,7 +17,7 @@ export function getSessionCookieOptions() {
     httpOnly: true,
     samesSite: 'lex',
     path: '/',
-    secure: process.env.NODE_ENV === 'production',
+    secure: false,
     maxAge: COOKIE_MAX_AGE,
   };
 }
