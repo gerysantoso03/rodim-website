@@ -13,7 +13,7 @@ export default async function ProductDetailPage({
     Number(productId)
   );
 
-   if (!result || 'success' in result) {
+  if (!result || 'success' in result) {
     throw new Error(result?.message ?? 'Product not found');
   }
 

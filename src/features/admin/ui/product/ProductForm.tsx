@@ -32,8 +32,8 @@ type ProductFormProps = {
   specSections: {
     title: string;
     items: {
-      code: string;
-      label: string;
+      code?: string;
+      label?: string;
     }[];
   }[];
 };

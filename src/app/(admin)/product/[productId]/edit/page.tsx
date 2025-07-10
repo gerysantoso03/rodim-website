@@ -48,10 +48,15 @@ export default async function EditProductPage({
   }
 
   const specSectionsData = await getAllSpecCategoriesAction();
+
+  if (!Array.isArray(specSectionsData)) {
+    return <div className="text-red-500">Failed to load spec sections</div>;
+  }
+
   const specSections = specSectionsData ?? []; // console.log(specSections);
 
   const defaultValues = mapProductToFormValues(product); // console.log(defaultValues);
-
+  
   return (
     <div className="flex flex-col gap-6 py-5">
       <div className="border-b-2 border-gray-200">

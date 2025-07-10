@@ -6,6 +6,10 @@ import { getAllSpecCategoriesAction } from '@/features/admin/actions/product/act
 export default async function CreateProductPage() {
   const specSections = await getAllSpecCategoriesAction(); // console.log(specSections);
 
+  if (!Array.isArray(specSections)) {
+    return <div className="text-red-500">Failed to load spec sections</div>;
+  }
+
   return (
     <div className="flex flex-col gap-6 py-5">
       <div className="border-b-2 border-gray-200">
