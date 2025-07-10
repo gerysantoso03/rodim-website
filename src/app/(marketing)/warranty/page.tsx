@@ -1,30 +1,35 @@
+'use client';
 import WarrantyHeroImage from '../../../assets/images/warranties/basf-panasonic.jpg';
 import { products } from '@/shared/libs/data/products';
 import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SectionWrapper from '@/shared/components/section-wrapper/SectionWrapper';
 import Image from 'next/image';
 import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
+import { getAllProductsAction } from '@/features/admin/actions/product/action';
 
 const WarrantyPage = () => {
+  const [productRodim, setProductRodim] = useState<any>([]);
   const t = useTranslations('WarrantyPage');
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const product = await getAllProductsAction();
+
+      if (!Array.isArray(product)) {
+        return;
+      }
+
+      setProductRodim(product);
+    };
+
+    getProducts();
+  }, []);
 
   return (
     <SectionWrapper>
-      {/* Warranty Banner */}
-      {/* <section className="" id="warrantyBanner">
-        <div className="relative">
-          <Banner image={''} bannerFor="warranty" />
-          <div className="absolute bottom-[4rem] left-[2rem] md:left-[4rem] z-[2]">
-            <h1 className="font-bold leading-[100%] md:leading-[8rem] text-[4rem] md:text-[8rem] md:w-[70%]">
-              {t('warrantyTitle')}
-            </h1>
-          </div>
-        </div>
-      </section> */}
-
       <section className="w-full h-[48.8rem] lg:h-[54.8rem] relative overflow-hidden rounded-[18px] ">
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
@@ -83,8 +88,8 @@ const WarrantyPage = () => {
         <div className="">
           {/* Warranty Products Group 1 */}
           <div className="grid grid-cols-1 md:grid-cols-6 gap-4 mb-5 ">
-            {products.map((product, idx) => {
-              const isLastTwo = idx >= products.length - 2;
+            {productRodim.map((product, idx) => {
+              const isLastTwo = idx >= productRodim.length - 2;
               const spanClass = isLastTwo ? 'lg:col-span-3' : '';
 
               return (
@@ -95,15 +100,15 @@ const WarrantyPage = () => {
                 >
                   <div className="bg-[#131313] py-[2.2rem] px-[3rem] flex flex-col justify-start gap-[1.6rem] lg:gap-[1.8rem] rounded-[1.8rem]">
                     <div className="">
-                      <p className="text-[2.2rem] font-bold">{product.title}</p>
+                      <p className="text-[2.2rem] font-bold">{product.code}</p>
                       <p className="text-[4rem] font-bold">
-                        {product.warranty} tahun
+                        {product.warranty} {t('year')}
                       </p>
                     </div>
 
                     <Link
                       className="text-[#2A97FF] text-[1.7rem] flex items-center gap-2"
-                      href={`/product-rodim/${product.id}`}
+                      href={`/product-rodim/${product.slug}`}
                     >
                       {t('buttonLabel')}
                       <span>
