@@ -36,13 +36,16 @@ export default function GalleryImageCard({
   return (
     <div className="border rounded-xl overflow-hidden shadow-md bg-white">
       <div className="relative">
-        <Image
+        <img
           src={imgSrc}
           alt={image.name}
           width={400}
           height={300}
           className="aspect-[4/3] object-cover w-full"
-          onError={() => setImgSrc('/image/placeholder-image.png')}
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = '/image/placeholder-image.png';
+          }}
         />
         <div className="absolute top-4 right-4 flex gap-2">
           <Badge className="h-9 text-[14px]/[20px] bg-black/80 text-white font-semibold px-3 sm:px-4 py-1.5 rounded-full">
