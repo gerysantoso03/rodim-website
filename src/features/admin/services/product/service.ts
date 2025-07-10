@@ -271,8 +271,8 @@ export async function getAllProductDetailWithCategoriesById(id: number) {
     // updated_at: product.updated_at?.toISOString() ?? '',
     status: product.status ?? 0,
     product_categories: product.product_categories.map((pc) => ({
-      categories_code: pc.categories.code ?? '',
-      categories_description: pc.categories.description ?? '',
+      categories_code: pc.categories?.code ?? '',
+      categories_description: pc.categories?.description ?? '',
       value_1: pc.value_1 ?? '',
       value_2: pc.value_2 ?? '',
     })),
