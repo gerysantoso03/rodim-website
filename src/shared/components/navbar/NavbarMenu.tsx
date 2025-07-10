@@ -25,8 +25,6 @@ const NavbarMenu = ({
 
   const idHref = id.split('/')[2] || '';
 
-  console.log(productId, idHref, id);
-
   return (
     <div
       className={`h-full relative ${lastChild && 'pr-0'} ${firstChild && 'pl-0'} px-[12px] flex items-center`}

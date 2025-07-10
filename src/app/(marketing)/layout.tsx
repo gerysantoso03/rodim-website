@@ -16,7 +16,7 @@ const MarketingLayout = async ({
   return (
     <NextIntlClientProvider messages={messages}>
       <Navbar />
-      <main>
+      <main className="overflow-hidden">
         <Suspense fallback={<h1>loading</h1>}>
           <PopupLanguage />
         </Suspense>

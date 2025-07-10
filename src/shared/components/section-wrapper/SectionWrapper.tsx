@@ -1,15 +1,10 @@
 'use client';
 import { usePathname } from 'next/navigation';
-import { useEffect } from 'react';
 
 const SectionWrapper = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
 
   const isSpecialPage = pathname === '/faq' || pathname === '/care-instruction';
-
-  useEffect(() => {
-    console.log(isSpecialPage);
-  }, []);
 
   return (
     <div className="py-[1.6rem]">

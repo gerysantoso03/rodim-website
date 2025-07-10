@@ -33,7 +33,9 @@
       "subtitle4": "Dengan pengalaman lebih dari 150 tahun, anda mendapat garansi terpercaya dari BASF",
       "desc4": "RODIM adalah brand yang dimiliki oleh BASF—perusahaan kimia global dengan pengalaman lebih dari 150 tahun, memberikan perlindungan yang tahan lama dan terbukti efektif. Kami menjamin tidak ada retak, residu lem, atau menguning. Memastikan kendaraan anda selalu tampil seperti baru. Jika ada kendala pada produk PPF, kami akan menggantinya secara gratis. Percayakan perlindungan jangka panjang yang terpercaya dari RODIM PPF."
     },
-    "globalGallery": "Kunjungi Kami di"
+    "globalGallery": "Kunjungi Kami di",
+    "hour": "Jam",
+    "year": "Tahun"
   },
   "HomePage": {
     "homeIntroduction": "RODIM adalah brand dari BASF, pemimpin global material TPU, cat otomotif OEM dan refinish. Dari produksi TPU hingga manufaktur dan inovasi PPF yang canggih, RODIM memberikan solusi lengkap dan sangat memahami cara melindungi cat mobil pabrik.",
@@ -103,7 +105,9 @@
     "warrantyDesc2": "Kami memastikan tidak akan ada retakan, gelembung, residu lem yang merusak cat, dan ppf menguning, dengan produk yang tetap jernih seperti baru sepanjang periode garansi. Jika terjadi masalah, kami menawarkan penggantian gratis selama periode garansi. Setiap produk dijamin dengan garansi yang dapat dipercaya.",
     "warrantyDesc3": "Pastikan anda mendapatkan garansi dari perusahaan kelas dunia",
     "buttonLabel": "Lihat produk",
-    "globalGallery": "Kunjungi Kami di"
+    "globalGallery": "Kunjungi Kami di",
+    "hour": "Jam",
+    "year": "Tahun"
   },
   "GalleryPage": {
     "galleryTitle": "Galeri",
