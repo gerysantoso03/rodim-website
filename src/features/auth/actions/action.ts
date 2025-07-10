@@ -13,7 +13,11 @@ import {
 } from '@/shared/utils/session/session';
 import { cookies } from 'next/headers';
 
-export async function loginAction(formData: FormData) {
+type LoginResult =
+  | { success: true; redirectTo: string; message: string }
+  | { success: false; message: string };
+
+export async function loginAction(formData: FormData): Promise<LoginResult> {
   const parsed = loginSchema.safeParse({
     email: formData.get('email'),
     password: formData.get('password'),
@@ -41,7 +45,11 @@ export async function loginAction(formData: FormData) {
     ...getSessionCookieOptions(),
   });
 
-  redirect('/gallery-admin');
+  return {
+    success: true,
+    redirectTo: '/gallery-admin',
+    message: 'Login successful',
+  };
 }
 
 export async function logoutAction() {

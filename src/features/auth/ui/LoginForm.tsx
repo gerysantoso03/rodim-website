@@ -33,11 +33,10 @@ const LoginForm = () => {
     startTransition(() => {
       loginAction(formData).then((res) => {
         if (!res.success) {
-          setError(res.message);
+          setError(res.message ?? 'Unknown error');
           setPassword('');
         } else {
-          console.log('Logged in');
-          router.push('/product');
+          router.push(res.redirectTo);
         }
       });
     });
