@@ -14,7 +14,7 @@ const GalleryDetailPageUI = ({ data }: GalleryDetailPageUIProps) => {
   const t = useTranslations('GalleryPage');
 
   const imageList = data.map(
-    (d) => `/uploads/gallery_images/${d.id}/${d.image_url}`
+    (d) => `http://www.basfrodim.id/uploads/product_images/${d.id}/${d.image_url}`
   );
 
   return (
