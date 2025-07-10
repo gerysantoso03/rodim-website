@@ -50,6 +50,7 @@ export function middleware(request: NextRequest) {
       maxAge: 60 * 60,
       httpOnly: true,
       path: '/',
+      secure: process.env.NODE_ENV === 'production',
     });
   }
 
