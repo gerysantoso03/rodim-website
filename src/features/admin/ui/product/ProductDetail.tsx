@@ -12,8 +12,8 @@ import {
 } from '@/shared/components/shadcn/ui/table';
 
 type ProductCategory = {
-  categories_code: string;
-  categories_description: string;
+  categories_code?: string;
+  categories_description?: string;
   value_1?: string;
   value_2?: string;
 };
@@ -28,6 +28,9 @@ type ProductDetailUIProps = {
     quv?: string;
     warranty?: string;
     image_url?: string;
+    // created_at?: string | Date;
+    // updated_at?: string | Date;
+    status?: number;
     product_categories: ProductCategory[];
   };
 };

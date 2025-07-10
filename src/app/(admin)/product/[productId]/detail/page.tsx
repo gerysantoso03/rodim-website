@@ -19,7 +19,7 @@ export default async function ProductDetailPage({
 
   return (
     <div className="flex flex-col gap-6">
-      <ProductDetailHeader productId={productId} />
+      <ProductDetailHeader productId={Number(productId)} />
       <ProductDetailUI product={result} />
     </div>
   );
