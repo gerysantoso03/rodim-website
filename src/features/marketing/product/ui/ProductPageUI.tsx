@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import CardExclusive from '@/shared/components/card-exclusive/CardExclusive';
 import Image from 'next/image';
 
@@ -15,6 +15,7 @@ import QuvIcon from '../../../../assets/icons/QUV.svg';
 import WarrantyIcon from '../../../../assets/icons/warranty.svg';
 import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
 import { useTranslations } from 'next-intl';
+import SectionWrapper from '@/shared/components/section-wrapper/SectionWrapper';
 
 interface ProductPageUIProps {
   data: any;
@@ -24,7 +25,7 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
   const t = useTranslations('ProductRodimPage');
 
   return (
-    <div className="p-[16px] max-w-[144rem] mx-auto flex flex-col gap-[1.6rem]">
+    <SectionWrapper>
       <section className="w-full h-[52rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]">
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
@@ -58,31 +59,31 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
             image={ThicknessImage}
             icon={ThicknessIcon}
             title="Thickness"
-            subtitle={data.thickness || ''}
+            subtitle={`${data.thickness}`  || ''}
           />
           <CardExclusive
             image={GlossImage}
             icon={GlossIcon}
             title="Gloss (60°)"
-            subtitle={data.gloss || ''}
+            subtitle={`${data.gloss}`  || ''}
           />
           <CardExclusive
             image={QuvImage}
             icon={QuvIcon}
             title="QUV"
-            subtitle={data.quv || ''}
+            subtitle={`${data.quv} ${t('hour')}`  || ''}
           />
           <CardExclusive
             image={WarrantImage}
             icon={WarrantyIcon}
             title="Warranty"
-            subtitle={data.warranty || ''}
+            subtitle={`${data.warranty} ${t('year')}`  || ''}
           />
         </div>
       </section>
 
       <OfficeSlider title={t('globalGallery')} />
-    </div>
+    </SectionWrapper>
   );
 };
 

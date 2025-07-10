@@ -17,23 +17,13 @@ import GlobalIcon from '../../../../../assets/icons/global.png';
 import CardFeelTheDifference from '@/shared/components/card-feel-the-difference/CardFeelTheDifference';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import SectionWrapper from '@/shared/components/section-wrapper/SectionWrapper';
 
-type Props = {
-  params: { slug: string };
-};
-
-const Page = ({ params }: Props) => {
-  // const product = products.find(p => p.productUrl.split('/').pop() === params.slug);
-  // if (!product) return '';
-
-  useEffect(() => {
-    console.log('params = ', params);
-  }, []);
-
+const Page = () => {
   const t = useTranslations('ProductRodimPage');
 
   return (
-    <div className="p-[16px] max-w-[144rem] mx-auto flex flex-col gap-[1.6rem]">
+    <SectionWrapper>
       <section className="w-full h-[52rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]">
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
@@ -46,21 +36,27 @@ const Page = ({ params }: Props) => {
           priority
         />
 
-        <div className="flex flex-col gap-[12px] absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] pb-[24px]">
+        <div className="flex flex-col gap-[12px] absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] lg:px-[4.6rem] pb-[24px] lg:pb-[4.6rem]">
           <div className="flex flex-col">
             <div className="text-[40px] font-[700] lg:text-[7.2rem]">
               A brand of BASF:
             </div>
-            <div className="text-[40px] font-[700] lg:text-[7.2rem] flex gap-[2rem] items-center">
-              <Image
-                src={GlobalIcon}
-                alt=""
-                width={58}
-                height={58}
-                className="aspect-square"
-              />
+            <div className="text-[40px] font-[700] lg:text-[7.2rem] flex flex-col lg:flex-row lg:gap-[1.8rem] items-start">
+              <div className='flex gap-[1.2rem]'>
+                <div className='h-[6rem] w-fit lg:h-[10.8rem] flex items-center justify-center'>
+                  <Image
+                    src={GlobalIcon}
+                    alt=""
+                    width={37}
+                    height={37}
+                    className="aspect-square lg:h-[6rem] lg:w-[6rem]"
+                  />
+                </div>
 
-              <span>The Global Leader in TPU</span>
+                <span className="text-nowrap">The Global</span>
+              </div>
+
+              <div className='text-nowrap'>Leader in TPU</div>
             </div>
           </div>
 
@@ -117,7 +113,7 @@ const Page = ({ params }: Props) => {
           isWide={true}
         />
       </section>
-    </div>
+    </SectionWrapper>
   );
 };
 

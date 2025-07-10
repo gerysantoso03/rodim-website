@@ -5,188 +5,15 @@ import AboutHeroImage2 from '../../../assets/images/abouts/pabrik-basf.jpg';
 import React from 'react';
 import SectionWrapper from '@/shared/components/section-wrapper/SectionWrapper';
 import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
+import { useAbouts } from '@/shared/libs/data/useAbouts';
 
 const AboutPage = () => {
   const t = useTranslations('AboutPage');
-
-  const verticalIntegrationCards = [
-    {
-      image: '/image/about/business-segment-materials.jpg',
-      alt: 'Business Segment Materials',
-      title: 'Materials',
-      description: 'Performace . Materials . Monomers',
-    },
-    {
-      image: '/image/about/business-segment-chemicals.jpg',
-      alt: 'Business Segment Chemicals',
-      title: 'Chemicals',
-      description: 'Petrochemicals . Intermediates',
-    },
-    {
-      image: '/image/about/business-segment-nutrition-care.jpg',
-      alt: 'Business Segment Nutrition Care',
-      title: 'Nutrition & Care',
-      description: 'Care Chemicals . Nutrition & Health',
-    },
-    {
-      image: '/image/about/surface-technologies.png',
-      alt: 'Surface Technologies',
-      title: 'Surface Technologies',
-      description: 'Catalysts . Coatings',
-    },
-    {
-      image: '/image/about/business-segment-industrial-solutions.jpg',
-      alt: 'Business Segment Industrial Solutions',
-      title: 'Industrial Solutions',
-      description: 'Dispensations & Resins . Performance',
-    },
-    {
-      image: '/image/about/agricultural_solutions.jpg',
-      alt: 'Agricultural Solutions',
-      title: 'Agricultural Solutions',
-      description: '', // Invisible description (same effect as placeholder)
-    },
-  ];
-
-  const logos = [
-    {
-      src: '/image/about/01.png',
-      alt: 'Protects From Flying Stones',
-      label: 'Protects from Flying Stones',
-    },
-    {
-      src: '/image/about/02.png',
-      alt: 'Anti Aging',
-      label: 'Anti Aging',
-    },
-    {
-      src: '/image/about/03.png',
-      alt: 'Stain and Rust Protection',
-      label: 'Stain and Rust Protection',
-    },
-    {
-      src: '/image/about/04.png',
-      alt: 'Glossy or Matte Finish',
-      label: 'Glossy or Matte Finish',
-    },
-    {
-      src: '/image/about/05.png',
-      alt: 'Resists Accidental Scratches',
-      label: 'Resists Accidental Scratches',
-    },
-    {
-      src: '/image/about/06.png',
-      alt: 'Easy to Clean',
-      label: 'Easy to Clean',
-    },
-    {
-      src: '/image/about/07.png',
-      alt: 'Self Healing',
-      label: 'Self Healing',
-    },
-    {
-      src: '/image/about/08.png',
-      alt: 'Hydroponic',
-      label: 'Hydroponic',
-    },
-    {
-      src: '/image/about/09.png',
-      alt: 'Anti-Corrosion',
-      label: 'Anti-Corrosion',
-    },
-    {
-      src: '/image/about/10.png',
-      alt: 'Anti-yellowing',
-      label: 'Anti-yellowing',
-    },
-  ];
-
-  const innovationCardsGroup1 = [
-    {
-      title: 'Manufacturing Bases Worldwide',
-      description: t('innovation1'),
-      image: '/image/about/manufacturing bases worldwide.PNG',
-      alt: 'Manufacturing Bases Worldwide',
-    },
-    {
-      title: 'Quality Control at The Source',
-      description: t('innovation4'),
-      image: '/image/about/quality-control-at-the-source.jpg',
-      alt: 'Quality Control At The Source',
-    },
-  ];
-
-  const innovationCardsGroup2 = [
-    {
-      title: 'High Quality German DNA',
-      description: t('innovation2'),
-      image: '/image/about/high quality german dna.png',
-      alt: 'High Quality German DNA',
-    },
-    {
-      title: 'One-stop service',
-      description: t('innovation7'),
-      image: '/image/about/one stop service.png',
-      alt: 'One Stop Service',
-    },
-    {
-      title: 'Custom-made',
-      description: t('innovation6'),
-      image: '/image/about/custom made.jpg',
-      alt: 'Custom Made',
-    },
-  ];
-
-  const innovationCardsGroup3 = [
-    {
-      title: 'First choice of Hi-tech Industries',
-      description: t('innovation2'),
-      image: '/image/about/first-choice-of-high-tech-industries.png',
-      alt: 'First Choice of High Tech Industries',
-    },
-    {
-      title: 'Advanced Craft',
-      description: t('innovation5'),
-      image: '/image/about/Advanced Craft baru.JPG',
-      alt: 'Advance Craft',
-    },
-  ];
-
-  const paintProtectionItems = [
-    {
-      title: 'Expert Installation Services',
-      description: t('paintProtectionInfo1'),
-    },
-    {
-      title: 'Durable Protection Film',
-      description: t('paintProtectionInfo2'),
-    },
-    {
-      title: 'Custom Fit Solutions',
-      description: t('paintProtectionInfo3'),
-    },
-  ];
+  const abouts = useAbouts()
 
   return (
     <SectionWrapper>
       {/* About Banner */}
-      {/* <section className="section-wrapper relative" id="aboutBanner1">
-        <Banner
-          image={''}
-          bannerFor="aboutHeroImage1"
-          classname="object-[100%_0]"
-        />
-
-        <div className="absolute bottom-[5rem] md:bottom-[8rem] left-[4rem] md:left-[8rem] flex flex-col items-start z-[2]">
-          <p className="font-normal text-[1.6rem] md:text-[2.4rem] tracking-[0.023rem] leading-[2.9rem] md:leading-[100%]">
-            {t('aboutTitle1')}
-          </p>
-          <h1 className="font-bold leading-[100%] md:leading-[11rem] tracking-[-0.22rem] text-[4rem] md:text-[10.8rem] w-[60%] md:w-[80%]">
-            Protection by World’s Best
-          </h1>
-        </div>
-      </section> */}
-
       <section className="w-full h-[52rem] lg:h-[72rem] relative overflow-hidden rounded-[18px]">
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
@@ -224,19 +51,6 @@ const AboutPage = () => {
       </section>
 
       {/* About Banner 2 */}
-      {/* <section className="section-wrapper relative" id="aboutBanner2">
-        <Banner image={''} bannerFor="aboutHeroImage2" />
-
-        <div className="absolute bottom-[5rem] md:bottom-[6rem] left-[4rem] md:left-[6rem] flex flex-col items-start justify-center z-[2]">
-          <h1 className="font-bold mb-4 md:mb-0 leading-[100%] md:leading-[8rem] text-[4rem] md:text-[8rem] tracking-[-0.1rem] md:w-[80%] lg:w-[100%]">
-            BASF – The Global Leader in TPU
-          </h1>
-          <p className="font-normal text-[1.6rem] md:text-[2.1rem] leading-[100%] md:leading-[2.9rem] tracking-[0.023rem] w-[90%]">
-            {t('aboutTitle2')}
-          </p>
-        </div>
-      </section> */}
-
       <section
         className="w-full h-[60rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]"
         data-aos="fade-up"
@@ -269,25 +83,11 @@ const AboutPage = () => {
       </section>
 
       {/* About Info 2 */}
-      {/* <section
-        id="aboutInfo2"
-        className="section-wrapper md:h-[68rem] flex items-center justify-center"
-      >
-        <div className="text-center flex flex-col justify-center gap-20 px-[2rem] md:px-[12rem] py-[6rem] md:py-0">
-          <p className="text-[2.4rem] md:text-[3.2rem] font-normal leading-[4rem] tracking-[0.02rem]">
-            {t('aboutDesc2')}
-          </p>
-          <p className="text-[2.4rem] md:text-[3.2rem] font-normal leading-[4rem] tracking-[0.02rem]">
-            {t('aboutDesc3')}
-          </p>
-        </div>
-      </section> */}
-
       <section
         data-aos="fade-right"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="1000"
-        id="aboutInfo1"
+        id="aboutInfo2"
         className="py-[18rem] lg:py-[24rem] px-[2.4rem] lg:px-[4.8rem] xl:px-[19.6rem] flex flex-col items-center justify-center gap-[3.2rem]"
       >
         <p className="text-center text-[2.4rem] lg:text-[3.2rem] font-normal tracking-[0.02rem] leading-[110%]">
@@ -330,7 +130,7 @@ const AboutPage = () => {
 
           {/* Paint Protection Items Wrapper */}
           <div className="flex flex-col gap-[4rem]" data-aos="fade-up-left">
-            {paintProtectionItems.map((item, idx) => (
+            {abouts[0].paintProtectionItems.map((item, idx) => (
               <div key={idx} className="flex items-start gap-[1.6rem]">
                 {/* Check Circle Icon */}
                 <div className="">
@@ -360,25 +160,11 @@ const AboutPage = () => {
       </section>
 
       {/* About Info 3 */}
-      {/* <section
-        id="aboutInfo3"
-        className="section-wrapper md:h-[68rem] flex items-center justify-center"
-      >
-        <div className="text-center flex flex-col justify-center gap-10 md:px-[16rem] lg:px-[24rem] py-[6rem] md:py-0">
-          <h1 className="text-[4rem] md:text-[7.2rem] leading-[100%] font-bold">
-            Refinish Excellence Indonesia
-          </h1>
-          <p className="text-[1.6rem] md:text-[1.8rem] font-normal md:leading-[2.8rem]">
-            {t('aboutDesc4')}
-          </p>
-        </div>
-      </section> */}
-
       <section
         data-aos="fade-left"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="1000"
-        id="aboutInfo1"
+        id="aboutInfo3"
         className="py-[16rem] lg:py-[24rem] px-[2.4rem] lg:px-[10.4rem] xl:px-[25.4rem] flex flex-col items-center justify-center gap-[2.4rem]"
       >
         <h1 className="text-center text-[4rem] lg:text-[7.2rem] font-bold leading-[110%]">
@@ -413,7 +199,7 @@ const AboutPage = () => {
 
         {/* Vertical Integration Cards Wrapper */}
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[1.6rem]">
-          {verticalIntegrationCards.map((card, idx) => (
+          {abouts[0].verticalIntegrationCards.map((card, idx) => (
             <div
               data-aos="fade-down-right"
               key={idx}
@@ -456,7 +242,7 @@ const AboutPage = () => {
         <div className="flex flex-col gap-[1.6rem]">
           {/* Group 1: Two Columns */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1.6rem]">
-            {innovationCardsGroup1.map((card, idx) => (
+            {abouts[0].innovationCardsGroup1.map((card, idx) => (
               <div
                 data-aos="zoom-in-up"
                 key={idx}
@@ -485,8 +271,8 @@ const AboutPage = () => {
 
           {/* Group 2: Auto-fit Columns */}
           <div className="grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-3 gap-[1.6rem]">
-            {innovationCardsGroup2.map((card, idx) => {
-              const lastCard = innovationCardsGroup2.length === idx + 1;
+            {abouts[0].innovationCardsGroup2.map((card, idx) => {
+              const lastCard = abouts[0].innovationCardsGroup2.length === idx + 1;
 
               return (
                 <div
@@ -518,7 +304,7 @@ const AboutPage = () => {
 
           {/* Group 3: Two Columns */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1.6rem]">
-            {innovationCardsGroup3.map((card, idx) => (
+            {abouts[0].innovationCardsGroup3.map((card, idx) => (
               <div
                 data-aos="zoom-in-left"
                 key={idx}
@@ -548,25 +334,11 @@ const AboutPage = () => {
       </section>
 
       {/* About Info 4 */}
-      {/* <section
-        id="aboutInfo4"
-        className="section-wrapper md:h-[60rem] flex items-center justify-center"
-      >
-        <div className="text-center flex flex-col justify-center gap-20 px-[2rem] md:px-[12rem] py-[6rem] md:py-0">
-          <h1 className="text-[3.2rem] md:text-[4.8rem] font-normal md:leading-[6rem]">
-            {t('aboutDesc6')}
-          </h1>
-          <h1 className="text-[3.2rem] md:text-[4.8rem] font-normal md:leading-[6rem]">
-            {t('aboutDesc7')}
-          </h1>
-        </div>
-      </section> */}
-
       <section
         data-aos="zoom-right"
         data-aos-easing="ease-in-cubic"
         data-aos-duration="1000"
-        id="aboutInfo1"
+        id="aboutInfo4"
         className="py-[9rem] px-[2.4rem] lg:px-[10.4rem] xl:px-[16.4rem] flex flex-col items-center justify-center gap-[3.2rem] lg:gap-[5rem]"
       >
         <p className="text-center text-[3.2rem] font-bold lg:text-[4.8rem] tracking-[-0.08rem] leading-[110%]">
@@ -583,7 +355,7 @@ const AboutPage = () => {
 
       {/* About Logo */}
       <section className="grid grid-cols-2 lg:grid-cols-5 px-[.8rem] lg:px-[4.8rem] xl:px-[16.4rem] lg:pt-[9rem] pb-[14rem] lg:pb-[9rem]">
-        {logos.map((item, idx) => (
+        {abouts[0].logos.map((item, idx) => (
           <div
             data-aos="zoom-out-up"
             data-aos-delay={idx * 100}
