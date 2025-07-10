@@ -3,7 +3,6 @@
 import React from 'react';
 
 import TableSpecification from '@/shared/components/table-specification/TableSpecification';
-import { specifications } from '@/shared/libs/data/specifications';
 
 interface ProductSpecificationPageUIProps {
   data: any;
