@@ -32,8 +32,8 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
         <Image
           src={`/uploads/product_images/${data.id}/${data.image_url}`}
           alt="hero image"
-          width={0}
-          height={0}
+          width={1394}
+          height={800}
           className="w-full h-full absolute z-[1] object-cover"
           priority
           onError={() => '/image/placeholder-image.png'}
