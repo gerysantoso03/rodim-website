@@ -207,7 +207,7 @@ export async function editProductAction(formData: FormData) {
       gloss,
       quv,
       warranty,
-      image_url,
+      image_url: image_url ?? '',
       updated_by,
       specs,
     });
