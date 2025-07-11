@@ -18,7 +18,8 @@ export function getSessionCookieOptions() {
     samesSite: 'lex',
     path: '/',
     maxAge: COOKIE_MAX_AGE,
-    secure: !(process.env.NODE_ENV === 'development' || !process.env.NODE_ENV),
+    // secure: !(process.env.NODE_ENV === 'development' || !process.env.NODE_ENV),
+    secure: false,
   };
 }
 
