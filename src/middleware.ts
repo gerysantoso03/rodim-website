@@ -6,7 +6,7 @@ import {
 } from '@/shared/utils/session/session';
 
 const protectedRoutes = ['/product', '/gallery-admin'];
-// const publicRoutes = ['/login'];
+const publicRoutes = ['/login'];
 
 function isProtectedPath(pathname: string) {
   if (pathname === '/') return true;
@@ -30,13 +30,13 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // if (publicRoutes.includes(pathname)) {
-  //   if (user) {
-  //     const response = NextResponse.redirect(new URL('/login', request.url));
-  //     response.cookies.delete(getSessionCookieName());
-  //     return response;
-  //   }
-  // }
+  if (publicRoutes.includes(pathname)) {
+    if (user) {
+      const response = NextResponse.redirect(new URL('/login', request.url));
+      response.cookies.delete(getSessionCookieName());
+      return response;
+    }
+  }
 
   const response = NextResponse.next();
 
