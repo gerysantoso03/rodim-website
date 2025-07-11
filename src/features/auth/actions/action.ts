@@ -12,6 +12,7 @@ import {
   getSessionCookieOptions,
 } from '@/shared/utils/session/session';
 import { cookies } from 'next/headers';
+import { revalidatePath } from 'next/cache';
 
 export async function loginAction(formData: FormData) {
   const parsed = loginSchema.safeParse({
@@ -41,11 +42,15 @@ export async function loginAction(formData: FormData) {
     ...getSessionCookieOptions(),
   });
 
+  revalidatePath('/', 'layout');
+
   redirect('/gallery-admin');
 }
 
 export async function logoutAction() {
   (await cookies()).delete(getSessionCookieName());
 
+  revalidatePath('/', 'layout');
+  
   redirect('/login');
 }

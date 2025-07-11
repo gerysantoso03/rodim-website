@@ -120,8 +120,8 @@ export async function createGalleryFolderAction(formData: FormData) {
     const buffer = Buffer.from(await file.arrayBuffer());
     await fs.writeFile(filePath, buffer);
 
-    revalidatePath('/layout');
-    
+    revalidatePath('/', 'layout');
+
     return { success: true, data: result };
   } catch (error) {
     console.error('Failed to create gallery folder', error);
@@ -179,7 +179,7 @@ export async function createGalleryImageAction(formData: FormData) {
     const buffer = Buffer.from(await file.arrayBuffer());
     await fs.writeFile(filePath, buffer);
 
-    revalidatePath('/layout');
+    revalidatePath('/', 'layout');
 
     return { success: true, data: { id: result.id, image_url: imageUrl } };
   } catch (error) {
@@ -266,7 +266,7 @@ export async function editGalleryFolderAction(formData: FormData) {
 
     const result = await editGalleryFolder(updatePayload);
 
-    revalidatePath('/layout');
+    revalidatePath('/', 'layout');
 
     return { success: true, data: result };
   } catch (error) {
@@ -295,7 +295,7 @@ export async function editGalleryImageAction(
     const user = await getAuthUser();
     const updated_by = user.id;
 
-    revalidatePath('/layout');
+    revalidatePath('/', 'layout');
 
     return await editGalleryImage(id, {
       ...data,
@@ -316,7 +316,7 @@ export async function deleteGalleryFolderAction(id: number) {
     const user = await getAuthUser();
     const updated_by = user.id;
 
-    revalidatePath('/layout');
+    revalidatePath('/', 'layout');
 
     return await deleteGalleryFolder(id, updated_by);
   } catch (error) {
@@ -339,7 +339,7 @@ export async function deleteGalleryImageAction(id: number) {
     const updated_by = user.id;
     const result = await deleteGalleryImage(id, updated_by);
 
-    revalidatePath('/layout');
+    revalidatePath('/', 'layout');
 
     return {
       success: true,
@@ -359,7 +359,7 @@ export async function toggleGalleryFolderVisibilityAction(
     const user = await getAuthUser();
     const updated_by = user.id;
 
-    revalidatePath('/layout');
+    revalidatePath('/', 'layout');
 
     return await changeGalleryFolderVisibility(id, is_visible, updated_by);
   } catch (error) {
@@ -384,7 +384,7 @@ export async function toggleGalleryImageVisibilityAction(
       updated_by
     );
 
-    revalidatePath('/layout');
+    revalidatePath('/', 'layout');
 
     return {
       success: true,

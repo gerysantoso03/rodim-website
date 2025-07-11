@@ -128,8 +128,8 @@ export async function createProductAction(formData: FormData) {
     await fs.mkdir(uploadDir, { recursive: true });
     await fs.writeFile(filePath, buffer);
 
-    revalidatePath('/layout');
-    
+    revalidatePath('/', 'layout');
+
     return {
       success: true,
       data: {
@@ -215,7 +215,7 @@ export async function editProductAction(formData: FormData) {
       specs,
     });
 
-    revalidatePath('/layout');
+    revalidatePath('/', 'layout');
 
     return {
       success: true,
@@ -244,8 +244,8 @@ export async function deleteProductAction(id: number) {
     const user = await getAuthUser();
     const updated_by = user.id;
 
-    revalidatePath('/layout');
-    
+    revalidatePath('/', 'layout');
+
     return await deleteProduct(id, updated_by);
   } catch (error) {
     return {
