@@ -51,6 +51,6 @@ export async function logoutAction() {
   (await cookies()).delete(getSessionCookieName());
 
   revalidatePath('/', 'layout');
-  
+
   redirect('/login');
 }
