@@ -15,14 +15,16 @@ const AboutPage = () => {
     <SectionWrapper>
       {/* About Banner */}
       <section className="w-full h-[52rem] lg:h-[72rem] relative overflow-hidden rounded-[18px]">
-        <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
+        <div className="bg-gradient-to-r from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
         <Image
           src={AboutHeroImage1}
           alt="hero image"
           width={0}
           height={0}
-          className={'w-full h-full absolute z-[1] object-cover object-right'}
+          className={
+            'w-full h-full absolute z-[1] object-cover object-[0_-45px]'
+          }
           priority
         />
 
