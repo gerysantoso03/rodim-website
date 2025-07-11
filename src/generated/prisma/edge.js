@@ -231,7 +231,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "D:\\Dev\\rodim baru\\rodim-website\\src\\generated\\prisma",
+      "value": "C:\\nextjs\\rodim-website\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -253,7 +253,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "D:\\Dev\\rodim baru\\rodim-website\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\nextjs\\rodim-website\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {

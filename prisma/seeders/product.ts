@@ -11,8 +11,8 @@ export async function seedProduct() {
       description: 'Brighter than other films at the same level',
       thickness: '≥ 7.0 mil',
       gloss: '≥ 93',
-      quv: '≥ 2400 jam',
-      warranty: '7 Tahun',
+      quv: '≥ 2400',
+      warranty: '7',
     },
     {
       code: 'RODIM R2 Matte',
@@ -20,8 +20,8 @@ export async function seedProduct() {
       description: 'Outstanding Matte Finish',
       thickness: '≥ 7.5 mil',
       gloss: '≥ 20±2',
-      quv: '≥ 2800 jam',
-      warranty: '10 Tahun',
+      quv: '≥ 2800',
+      warranty: '10',
     },
     {
       code: 'RODIM R2 PRO',
@@ -29,8 +29,8 @@ export async function seedProduct() {
       description: 'Professional-grade car body shield',
       thickness: '≥ 7.5 mil',
       gloss: '≥ 93',
-      quv: '≥ 2800 jam',
-      warranty: '10 Tahun',
+      quv: '≥ 2800',
+      warranty: '10',
     },
     {
       code: 'RODIM R3 PRO',
@@ -38,8 +38,8 @@ export async function seedProduct() {
       description: 'Highest quality, professional-grade paint finish protection',
       thickness: '≥ 8.5 mil',
       gloss: '≥ 93',
-      quv: '≥ 3200 jam',
-      warranty: '10 Tahun',
+      quv: '≥ 3200',
+      warranty: '10',
     },
     {
       code: 'RODIM R4 PRO',
@@ -47,8 +47,8 @@ export async function seedProduct() {
       description: 'Enjoy the ultimate protection',
       thickness: '≥ 9.5 mil',
       gloss: '≥ 93',
-      quv: '≥ 3200 jam',
-      warranty: '10 Tahun',
+      quv: '≥ 3200',
+      warranty: '10',
     },
   ];
 

@@ -12,8 +12,8 @@ import {
 } from '@/shared/components/shadcn/ui/table';
 
 type ProductCategory = {
-  categories_code: string;
-  categories_description: string;
+  categories_code?: string;
+  categories_description?: string;
   value_1?: string;
   value_2?: string;
 };
@@ -28,6 +28,9 @@ type ProductDetailUIProps = {
     quv?: string;
     warranty?: string;
     image_url?: string;
+    // created_at?: string | Date;
+    // updated_at?: string | Date;
+    status?: number;
     product_categories: ProductCategory[];
   };
 };
@@ -46,13 +49,16 @@ const ProductDetailUI = ({ product }: ProductDetailUIProps) => {
     <div className="bg-white rounded-xl space-y-6">
       <div className="flex justify-between">
         <div className="flex gap-6">
-          <Image
+          <img
             src={imgSrc}
             alt={product.code}
             width={380}
             height={280}
             className="object-cover rounded-[12px] max-w-[380px] max-h-[280px] border border-[#E4E4E7]"
-            onError={() => setImgSrc('/image/placeholder-image.png')}
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.src = '/image/placeholder-image.png';
+            }}
           />
           <div className="flex-col justify-center gap-3">
             <h2 className="text-black text-[30px] font-bold">{product.code}</h2>

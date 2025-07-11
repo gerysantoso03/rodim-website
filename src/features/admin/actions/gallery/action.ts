@@ -20,6 +20,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { generateSecureRandomString } from '@/shared/helpers/helpers';
 import { getAuthUser } from '@/shared/utils/session/session';
+import { revalidatePath } from 'next/cache';
 
 export async function getAllGalleryFolderAction() {
   try {
@@ -119,6 +120,8 @@ export async function createGalleryFolderAction(formData: FormData) {
     const buffer = Buffer.from(await file.arrayBuffer());
     await fs.writeFile(filePath, buffer);
 
+    revalidatePath('/', 'layout');
+
     return { success: true, data: result };
   } catch (error) {
     console.error('Failed to create gallery folder', error);
@@ -175,6 +178,8 @@ export async function createGalleryImageAction(formData: FormData) {
     await fs.mkdir(uploadDir, { recursive: true });
     const buffer = Buffer.from(await file.arrayBuffer());
     await fs.writeFile(filePath, buffer);
+
+    revalidatePath('/', 'layout');
 
     return { success: true, data: { id: result.id, image_url: imageUrl } };
   } catch (error) {
@@ -261,6 +266,8 @@ export async function editGalleryFolderAction(formData: FormData) {
 
     const result = await editGalleryFolder(updatePayload);
 
+    revalidatePath('/', 'layout');
+
     return { success: true, data: result };
   } catch (error) {
     console.error('Failed to edit gallery folder', error);
@@ -285,7 +292,11 @@ export async function editGalleryImageAction(
       return { success: false, message: 'Gallery Image not found' };
     }
 
-    const updated_by = 1;
+    const user = await getAuthUser();
+    const updated_by = user.id;
+
+    revalidatePath('/', 'layout');
+
     return await editGalleryImage(id, {
       ...data,
       updated_by,
@@ -304,6 +315,9 @@ export async function deleteGalleryFolderAction(id: number) {
 
     const user = await getAuthUser();
     const updated_by = user.id;
+
+    revalidatePath('/', 'layout');
+
     return await deleteGalleryFolder(id, updated_by);
   } catch (error) {
     return {
@@ -325,6 +339,8 @@ export async function deleteGalleryImageAction(id: number) {
     const updated_by = user.id;
     const result = await deleteGalleryImage(id, updated_by);
 
+    revalidatePath('/', 'layout');
+
     return {
       success: true,
       message: `Success to delete galleryy image`,
@@ -342,6 +358,9 @@ export async function toggleGalleryFolderVisibilityAction(
   try {
     const user = await getAuthUser();
     const updated_by = user.id;
+
+    revalidatePath('/', 'layout');
+
     return await changeGalleryFolderVisibility(id, is_visible, updated_by);
   } catch (error) {
     return {
@@ -364,6 +383,8 @@ export async function toggleGalleryImageVisibilityAction(
       !is_visible,
       updated_by
     );
+
+    revalidatePath('/', 'layout');
 
     return {
       success: true,

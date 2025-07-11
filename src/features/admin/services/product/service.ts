@@ -52,10 +52,10 @@ export const getAllSpecCategories = async () => {
   });
 
   return specCategories.map((cat) => ({
-    title: cat.description,
+    title: cat.description ?? '', // pastikan bukan null
     items: cat.categories.map((field) => ({
-      code: field.code, // e.g. 'WARRANTY'
-      label: field.description, // e.g. 'Warranty'
+      code: field.code,
+      label: field.description ?? '', // pastikan bukan null
     })),
   }));
 };
@@ -261,20 +261,20 @@ export async function getAllProductDetailWithCategoriesById(id: number) {
   return {
     id: product.id,
     code: product.code,
-    description: product.description,
-    thickness: product.thickness,
-    gloss: product.gloss,
-    quv: product.quv,
-    warranty: product.warranty,
-    image_url: product.image_url,
-    created_at: product.created_at,
-    updated_at: product.updated_at,
-    status: product.status,
+    description: product.description ?? '',
+    thickness: product.thickness ?? '',
+    gloss: product.gloss ?? '',
+    quv: product.quv ?? '',
+    warranty: product.warranty ?? '',
+    image_url: product.image_url ?? '',
+    // created_at: product.created_at?.toISOString() ?? '',
+    // updated_at: product.updated_at?.toISOString() ?? '',
+    status: product.status ?? 0,
     product_categories: product.product_categories.map((pc) => ({
-      categories_code: pc.categories.code,
-      categories_description: pc.categories.description,
-      value_1: pc.value_1,
-      value_2: pc.value_2,
+      categories_code: pc.categories?.code ?? '',
+      categories_description: pc.categories?.description ?? '',
+      value_1: pc.value_1 ?? '',
+      value_2: pc.value_2 ?? '',
     })),
   };
 }

@@ -48,6 +48,11 @@ export default async function EditProductPage({
   }
 
   const specSectionsData = await getAllSpecCategoriesAction();
+
+  if (!Array.isArray(specSectionsData)) {
+    return <div className="text-red-500">Failed to load spec sections</div>;
+  }
+
   const specSections = specSectionsData ?? []; // console.log(specSections);
 
   const defaultValues = mapProductToFormValues(product); // console.log(defaultValues);

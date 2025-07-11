@@ -31,12 +31,12 @@ export const retailers: Retailers[] = [
   {
     image: IconTokopedia,
     title: 'Tokopedia',
-    url: '#',
+    url: 'https://www.tokopedia.com/rodim-ppf-indonesia',
   },
   {
     image: IconShopee,
     title: 'Shopee',
-    url: '#',
+    url: 'https://shopee.co.id/rodim.ppf.indonesia',
   },
   {
     image: IconBliBli,

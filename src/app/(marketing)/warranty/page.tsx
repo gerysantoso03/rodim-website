@@ -1,6 +1,5 @@
 'use client';
 import WarrantyHeroImage from '../../../assets/images/warranties/basf-panasonic.jpg';
-import { products } from '@/shared/libs/data/products';
 import { ArrowRight } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -10,8 +9,15 @@ import Image from 'next/image';
 import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
 import { getAllProductsAction } from '@/features/admin/actions/product/action';
 
+type ProductProps = {
+  id: number;
+  code: string;
+  slug: string | null;
+  warranty?: string | null;
+};
+
 const WarrantyPage = () => {
-  const [productRodim, setProductRodim] = useState<any>([]);
+  const [productRodim, setProductRodim] = useState<ProductProps[]>([]);
   const t = useTranslations('WarrantyPage');
 
   useEffect(() => {

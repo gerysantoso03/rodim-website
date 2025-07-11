@@ -69,7 +69,7 @@ const GalleryFolderCard = ({
   return (
     <Card className="p-0 shadow-sm border-1 border-[#E4E4E7] rounded-lg overflow-hidden">
       <div className="relative w-full h-100 max-h-100 bg-gray-100">
-        <Image
+        <img
           src={
             imgSrc.startsWith('http')
               ? imgSrc
@@ -78,9 +78,11 @@ const GalleryFolderCard = ({
                 : `/${imgSrc}`
           }
           alt={gallery.title}
-          fill
-          className="object-cover"
-          onError={() => setImgSrc('/image/placeholder-image.png')}
+          className="object-cover w-full h-full"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = '/image/placeholder-image.png';
+          }}
         />
         <div className="absolute top-4 right-4 flex gap-2">
           <Badge className="h-9 text-[14px]/[20px] bg-white/80 text-black font-semibold px-3 sm:px-4 py-1.5 rounded-full">

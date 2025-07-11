@@ -38,9 +38,9 @@ export default function AdminLayout({
   const pathname = usePathname();
 
   return (
-    <main className="grid grid-cols-[250px_1fr] min-h-screen bg-gray-50">
+    <main className="grid grid-cols-[250px_1fr] h-screen overflow-hidden bg-gray-50">
       {/* Sidebar */}
-      <aside className="bg-[#FAFAFA] border-r border-[#E4E4E7] flex flex-col">
+      <aside className="bg-[#FAFAFA] border-r h-screen border-[#E4E4E7] flex flex-col">
         {/* Logo */}
         <div className="flex flex-col w-full max-w-[223px] pt-8 pl-8 pr-8 border-b">
           <Image
@@ -85,8 +85,8 @@ export default function AdminLayout({
       </aside>
 
       {/* Main content */}
-      <section className="relative w-full h-screen overflow-hidden bg-white px-8 py-6">
-        <div className="overflow-y-auto">{children}</div>
+      <section className="relative w-full bg-white px-8 py-6 overflow-auto">
+        <div>{children}</div>
         <Toaster
           position="bottom-center"
           containerStyle={{ position: 'absolute' }}

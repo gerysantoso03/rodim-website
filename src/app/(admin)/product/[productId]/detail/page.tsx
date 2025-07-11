@@ -13,13 +13,13 @@ export default async function ProductDetailPage({
     Number(productId)
   );
 
-  if (!result) {
-    throw new Error('Product not found');
+  if (!result || 'success' in result) {
+    throw new Error(result?.message ?? 'Product not found');
   }
 
   return (
     <div className="flex flex-col gap-6">
-      <ProductDetailHeader productId={productId} />
+      <ProductDetailHeader productId={Number(productId)} />
       <ProductDetailUI product={result} />
     </div>
   );

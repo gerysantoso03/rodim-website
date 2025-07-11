@@ -15,9 +15,11 @@ export function getSessionCookieName() {
 export function getSessionCookieOptions() {
   return {
     httpOnly: true,
+    samesSite: 'lex',
     path: '/',
-    secure: process.env.NODE_ENV === 'production',
     maxAge: COOKIE_MAX_AGE,
+    // secure: !(process.env.NODE_ENV === 'development' || !process.env.NODE_ENV),
+    secure: false,
   };
 }
 

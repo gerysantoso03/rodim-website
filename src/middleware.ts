@@ -5,12 +5,7 @@ import {
   getSessionCookieName,
 } from '@/shared/utils/session/session';
 
-const protectedRoutes = [
-  '/auth',
-  '/product',
-  '/gallery-admin',
-  '/unauthorized',
-];
+const protectedRoutes = ['/product', '/gallery-admin'];
 const publicRoutes = ['/login'];
 
 function isProtectedPath(pathname: string) {
@@ -30,7 +25,7 @@ export function middleware(request: NextRequest) {
   const user = sessionCookie ? parseSessionValue(sessionCookie.value) : null;
 
   if (isProtectedPath(pathname)) {
-    if (!user || !user.id || !user.email) {
+    if (!user) {
       return redirectToLogin(request);
     }
   }
@@ -45,22 +40,18 @@ export function middleware(request: NextRequest) {
 
   const response = NextResponse.next();
 
-  if (user) {
-    response.cookies.set(getSessionCookieName(), sessionCookie?.value || '', {
-      maxAge: 60 * 60,
-      httpOnly: true,
-      path: '/',
-    });
-  }
+  // if (user) {
+  //   response.cookies.set(getSessionCookieName(), sessionCookie?.value || '', {
+  //     maxAge: 60 * 60,
+  //     httpOnly: true,
+  //     path: '/',
+  //     secure: false,
+  //   });
+  // }
 
   return response;
 }
 
 export const config = {
-  matcher: [
-    '/login',
-    '/product/:path*',
-    '/gallery-admin/:path*',
-    '/unauthorized/:path*',
-  ],
+  matcher: ['/login', '/product/:path*', '/gallery-admin/:path*'],
 };

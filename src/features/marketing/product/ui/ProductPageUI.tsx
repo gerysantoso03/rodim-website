@@ -30,10 +30,10 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
         <Image
-          src={`/uploads/product_images/${data.id}/${data.image_url}`}
+          src={`http://www.basfrodim.id/uploads/product_images/${data.id}/${data.image_url}`}
           alt="hero image"
-          width={0}
-          height={0}
+          width={1394}
+          height={800}
           className="w-full h-full absolute z-[1] object-cover"
           priority
           onError={() => '/image/placeholder-image.png'}

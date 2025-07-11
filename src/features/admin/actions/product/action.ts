@@ -16,6 +16,7 @@ import fs from 'fs/promises';
 import path from 'path';
 import { generateSecureRandomString } from '@/shared/helpers/helpers';
 import { getAuthUser } from '@/shared/utils/session/session';
+import { revalidatePath } from 'next/cache';
 
 export async function getAllSpecCategoriesAction() {
   try {
@@ -127,6 +128,8 @@ export async function createProductAction(formData: FormData) {
     await fs.mkdir(uploadDir, { recursive: true });
     await fs.writeFile(filePath, buffer);
 
+    revalidatePath('/', 'layout');
+
     return {
       success: true,
       data: {
@@ -207,10 +210,12 @@ export async function editProductAction(formData: FormData) {
       gloss,
       quv,
       warranty,
-      image_url,
+      image_url: image_url ?? '',
       updated_by,
       specs,
     });
+
+    revalidatePath('/', 'layout');
 
     return {
       success: true,
@@ -238,6 +243,9 @@ export async function deleteProductAction(id: number) {
 
     const user = await getAuthUser();
     const updated_by = user.id;
+
+    revalidatePath('/', 'layout');
+
     return await deleteProduct(id, updated_by);
   } catch (error) {
     return {
