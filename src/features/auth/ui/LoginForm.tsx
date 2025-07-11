@@ -3,13 +3,11 @@
 import { Input } from '@/shared/components/shadcn/ui/input';
 import { Label } from '@/shared/components/shadcn/ui/label';
 import { Button } from '@/shared/components/shadcn/ui/button';
-import { useRouter } from 'next/navigation';
 import { Eye, EyeOff } from 'lucide-react';
 import { useState, useTransition } from 'react';
 import { loginAction } from '@/features/auth/actions/action';
 
 const LoginForm = () => {
-  const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -33,10 +31,8 @@ const LoginForm = () => {
     startTransition(() => {
       loginAction(formData).then((res) => {
         if (!res.success) {
-          setError(res.message ?? 'Unknown error');
+          setError(res.message);
           setPassword('');
-        } else {
-          router.push('/product');
         }
       });
     });

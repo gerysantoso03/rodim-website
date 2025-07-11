@@ -5,12 +5,7 @@ import {
   getSessionCookieName,
 } from '@/shared/utils/session/session';
 
-const protectedRoutes = [
-  '/auth',
-  '/product',
-  '/gallery-admin',
-  '/unauthorized',
-];
+const protectedRoutes = ['/product', '/gallery-admin'];
 const publicRoutes = ['/login'];
 
 function isProtectedPath(pathname: string) {
@@ -49,11 +44,7 @@ export function middleware(request: NextRequest) {
     response.cookies.set(getSessionCookieName(), sessionCookie?.value || '', {
       maxAge: 60 * 60,
       httpOnly: true,
-      sameSite: 'lax',
       path: '/',
-      secure: !(
-        process.env.NODE_ENV === 'development' || !process.env.NODE_ENV
-      ),
     });
   }
 
@@ -61,10 +52,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    '/login',
-    '/product/:path*',
-    '/gallery-admin/:path*',
-    '/unauthorized/:path*',
-  ],
+  matcher: ['/login', '/product/:path*', '/gallery-admin/:path*'],
 };

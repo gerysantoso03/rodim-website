@@ -11,23 +11,6 @@ const nextConfig: NextConfig = {
     },
   },
   output: 'standalone',
-  images: {
-    domains: ['www.basfrodim.id'],
-  },
-  async redirects() {
-    return [
-      {
-        source: '/login',
-        destination: '/gallery-admin',
-        permanent: true,
-      },
-      {
-        source: '/login',
-        destination: '/product',
-        permanent: true,
-      },
-    ];
-  },
 };
 
 const withNextIntl = createNextIntlPlugin();
