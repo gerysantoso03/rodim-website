@@ -7,12 +7,12 @@ import Image from 'next/image';
 import ThicknessImage from '../../../../assets/images/introductions/thickness.jpg';
 import GlossImage from '../../../../assets/images/introductions/gloss.jpg';
 import QuvImage from '../../../../assets/images/introductions/QUV.jpg';
-import WarrantImage from '../../../../assets/images/introductions/warranty.jpg';
+import WarrantyImage from '../../../../assets/images/introductions/warranty.jpg';
 
-import ThicknessIcon from '../../../../assets/icons/thickness.svg';
-import GlossIcon from '../../../../assets/icons/gloss.svg';
-import QuvIcon from '../../../../assets/icons/QUV.svg';
-import WarrantyIcon from '../../../../assets/icons/warranty.svg';
+import ThicknessIcon from '../../../../assets/icons/new/introduction/thickness.png';
+import GlossIcon from '../../../../assets/icons/new/introduction/gloss.png';
+import QuvIcon from '../../../../assets/icons/new/introduction/quv.png';
+import WarrantyIcon from '../../../../assets/icons/new/introduction/warranty.png';
 import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
 import { useTranslations } from 'next-intl';
 import SectionWrapper from '@/shared/components/section-wrapper/SectionWrapper';
@@ -74,7 +74,7 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
             subtitle={`${data.quv} ${t('hour')}` || ''}
           />
           <CardExclusive
-            image={WarrantImage}
+            image={WarrantyImage}
             icon={WarrantyIcon}
             title="Warranty"
             subtitle={`${data.warranty} ${t('year')}` || ''}
