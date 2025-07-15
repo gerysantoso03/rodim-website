@@ -76,9 +76,7 @@ const AboutPage = () => {
             BASF - The Global
             <br className="hidden lg:block xl:hidden" /> Leader in TPU
           </h1>
-          <p className="text-[1.6rem] lg:text-[2.1rem]">
-            {t('aboutTitle2')}
-          </p>
+          <p className="text-[1.6rem] lg:text-[2.1rem]">{t('aboutTitle2')}</p>
         </div>
       </section>
 

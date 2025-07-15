@@ -101,7 +101,7 @@ const WarrantyPage = () => {
                 <div
                   key={product.id}
                   data-aos="fade-up"
-                  data-aos-delay={isLastTwo ? 200: 150}
+                  data-aos-delay={isLastTwo ? 200 : 150}
                   className={`col-span-[2] ${spanClass} bg-gradient-to-b from-[#575757] to-70% to-[131313] rounded-[1.8rem] p-[.1rem]`}
                 >
                   <div className="bg-[#131313] py-[2.2rem] px-[3rem] flex flex-col justify-start gap-[1.6rem] lg:gap-[1.8rem] rounded-[1.8rem]">
