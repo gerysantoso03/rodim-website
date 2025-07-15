@@ -2,10 +2,10 @@ import { useTranslations } from 'next-intl';
 import { StaticImageData } from 'next/image';
 import { ReactNode } from 'react';
 
-import logo1 from "../../../assets/icons/new/about/anti corrosion web.png"
-import logo2 from "../../../assets/icons/new/about/anti yellowing web.png"
-import logo3 from "../../../assets/icons/new/about/self healing web.png"
-import logo4 from "../../../assets/icons/new/about/stain n rust protection web.png"
+import logo1 from '../../../assets/icons/new/about/anti corrosion web.png';
+import logo2 from '../../../assets/icons/new/about/anti yellowing web.png';
+import logo3 from '../../../assets/icons/new/about/self healing web.png';
+import logo4 from '../../../assets/icons/new/about/stain n rust protection web.png';
 
 type verticalIntegrationCards = {
   image: StaticImageData | string;

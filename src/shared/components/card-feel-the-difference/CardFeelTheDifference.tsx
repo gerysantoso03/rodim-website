@@ -52,12 +52,7 @@ const CardFeelTheDifference = ({
 
           <div className="flex gap-[1.2rem] lg:gap-[2rem] lg:flex-[1] items-start">
             <div className="relative w-[4.6rem] h-[4.6rem] lg:w-[6rem] lg:h-[6rem] aspect-square">
-              <Image
-                src={icon}
-                alt=""
-                fill
-                className="object-cover"
-              />
+              <Image src={icon} alt="" fill className="object-cover" />
             </div>
 
             <div className="flex flex-col items-start gap-[2.4rem]">
@@ -74,12 +69,7 @@ const CardFeelTheDifference = ({
 
       <div className="flex gap-[1.2rem] lg:gap-[2rem] lg:flex-[1] items-start">
         <div className="relative w-[4.6rem] h-[4.6rem] lg:w-[6rem] lg:h-[6rem] aspect-square">
-          <Image
-            src={icon}
-            alt=""
-            fill
-            className="object-cover"
-          />
+          <Image src={icon} alt="" fill className="object-cover" />
         </div>
 
         <div className="flex flex-col items-start gap-[2.4rem]">

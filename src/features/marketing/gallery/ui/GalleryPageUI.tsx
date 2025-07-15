@@ -29,7 +29,7 @@ const GalleryPageUI = ({ galleryCardData }: GalleryPageUIProps) => {
           </h1>
         </Banner>
       </header>
-      
+
       <main className="section-wrapper">
         <section className="w-full min-h-screen py-20 sm:px-8 lg:py-28 lg:px-14">
           <div className="w-full h-full grid grid-cols-1 gap-8 sm:grid-cols-2 lg:gap-12">

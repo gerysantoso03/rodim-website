@@ -5,7 +5,7 @@ import AboutHeroImage2 from '../../../assets/images/abouts/pabrik-basf.jpg';
 import React from 'react';
 import SectionWrapper from '@/shared/components/section-wrapper/SectionWrapper';
 import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
-import RefinishImage from "../../../assets/images/abouts/refinish.png"
+import RefinishImage from '../../../assets/images/abouts/refinish.png';
 import { useAbouts } from '@/shared/libs/data/useAbouts';
 
 const AboutPage = () => {
