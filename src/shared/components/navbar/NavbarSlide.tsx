@@ -46,6 +46,9 @@ const NavbarSlide = ({ isOpenMenu, setIsOpenMenu, data }: NavbarSlideProps) => {
           <Link href="/">
             <div
               className={`hover:bg-white/10 transition-all duration-300 ease-in-out w-full text-[1.4rem] min-h-[4.8rem] flex items-center px-[.8rem] rounded-[.8rem] ${pathname === '/' ? 'bg-white/10' : 'bg-transparent'}`}
+              onClick={() => {
+                setIsOpenMenu(!isOpenMenu);
+              }}
             >
               HOME
             </div>

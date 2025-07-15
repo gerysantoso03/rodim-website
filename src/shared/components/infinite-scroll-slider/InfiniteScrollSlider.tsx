@@ -28,20 +28,21 @@ const InfiniteScrollSlider = ({
         disableOnInteraction: false,
         reverseDirection: reverseDirection,
       }}
-      speed={5000}
+      speed={25000}
       allowTouchMove={false}
-      className="!overflow-visible"
+      className="!overflow-visible pointer-events-none"
     >
       {[...imageList, ...imageList].map((src, index) => (
         <SwiperSlide
           key={index}
           className="!w-fit overflow-hidden rounded-[8px]"
         >
-          <div className="w-[53rem] h-[39rem]">
+          <div className="w-[60rem] h-[39rem]">
             <Image
               src={src || '/placeholder.svg'}
               alt={`Gallery image ${index + 1}`}
               fill
+              className="object-cover"
             />
           </div>
         </SwiperSlide>
