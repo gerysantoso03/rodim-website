@@ -70,7 +70,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div>
+      <div className={`${page === 'product-rodim' ? "" : "sticky top-0"} z-[999]`}>
         <nav className="flex justify-center bg-[#1F1F1F] text-white/80">
           <div className="w-full max-w-[1440px] gap-[50px] flex justify-between px-[16px] min-[1024px]:px-[40px] min-[1440px]:px-[120px] items-center h-[72px] text-[14px]">
             <div className="flex flex-1 min-[1440px]:flex-none">

@@ -44,9 +44,8 @@ export default function Home() {
       </section>
 
       <section
-        data-aos="fade-left"
-        data-aos-offset="300"
-        data-aos-easing="ease-in-sine"
+        data-aos="fade-up"
+        data-aos-duration="1000"
       >
         <VideoPlayer />
       </section>

@@ -28,7 +28,7 @@ const InfiniteScrollSlider = ({
         disableOnInteraction: false,
         reverseDirection: reverseDirection,
       }}
-      speed={5000}
+      speed={25000}
       allowTouchMove={false}
       className="!overflow-visible pointer-events-none"
     >
@@ -42,6 +42,7 @@ const InfiniteScrollSlider = ({
               src={src || '/placeholder.svg'}
               alt={`Gallery image ${index + 1}`}
               fill
+              className="object-cover"
             />
           </div>
         </SwiperSlide>

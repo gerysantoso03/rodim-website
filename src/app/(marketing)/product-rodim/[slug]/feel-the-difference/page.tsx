@@ -1,14 +1,14 @@
 'use client';
 import { useEffect } from 'react';
-import ElegantIcon from '../../../../../assets/icons/elegant.png';
+import ElegantIcon from '../../../../../assets/icons/new/feel-the-difference/when-beauty.png';
 import ElegantImage from '../../../../../assets/images/feel-the-difference/elegant.jpg';
-import DurabilityIcon from '../../../../../assets/icons/durability.png';
+import DurabilityIcon from '../../../../../assets/icons/new/feel-the-difference/durability.png';
 import DurabilityImage from '../../../../../assets/images/feel-the-difference/durability.jpg';
 
-import AdhesionIcon from '../../../../../assets/icons/adhesion.png';
+import AdhesionIcon from '../../../../../assets/icons/new/feel-the-difference/adhesive.png';
 import AdhesionImage from '../../../../../assets/images/feel-the-difference/adhesion.jpg';
 
-import WarrantyIcon from '../../../../../assets/icons/certificate.png';
+import WarrantyIcon from '../../../../../assets/icons/new/feel-the-difference/warranty.png';
 import WarrantyImage from '../../../../../assets/images/feel-the-difference/warranty.jpg';
 
 import PabrikBASF2 from '../../../../../assets/images/banners/pabrik-basf-2.jpg';

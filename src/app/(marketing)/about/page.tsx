@@ -5,6 +5,7 @@ import AboutHeroImage2 from '../../../assets/images/abouts/pabrik-basf.jpg';
 import React from 'react';
 import SectionWrapper from '@/shared/components/section-wrapper/SectionWrapper';
 import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
+import RefinishImage from "../../../assets/images/abouts/refinish.png"
 import { useAbouts } from '@/shared/libs/data/useAbouts';
 
 const AboutPage = () => {
@@ -23,7 +24,7 @@ const AboutPage = () => {
           width={0}
           height={0}
           className={
-            'w-full h-full absolute z-[1] object-cover object-[0_-45px]'
+            'w-full h-full absolute z-[1] object-cover object-right lg:object-[0%_18%]'
           }
           priority
         />
@@ -161,8 +162,40 @@ const AboutPage = () => {
         </div>
       </section>
 
+      {/* Paint Protection Film Otomotif Section */}
+      <section className="bg-transparant rounded-[1.8rem] flex flex-col xl:flex-row gap-[4rem] lg:gap-[12rem] px-[3.2rem] py-[6.4rem] xl:py-[18rem] lg:p-[12rem]">
+        {/* Paint Protection Image */}
+        <div
+          data-aos="fade-left"
+          data-aos-anchor-placement="top-left"
+          data-aos-delay="200"
+          className="bg-gradient-to-b xl:flex-[1] from-[#575757] to-70% to-[#1f1f1f] p-[.2rem] h-[36rem] lg:h-[42rem] xl:h-[56.5rem] w-full xl:max-w-[48.7rem] rounded-[1.6rem] overflow-hidden"
+        >
+          <Image
+            src={RefinishImage}
+            alt="Refinish"
+            className="rounded-[1.6rem] w-full h-full object-cover object-top"
+            width={467}
+            height={585}
+          />
+        </div>
+
+        {/* Paint Protection List */}
+        <div className="flex xl:flex-[1] flex-col gap-[4rem]">
+          <h4 className="font-bold text-[4rem] leading-[5.2rem] lg:text-[4.4rem]">
+            Refinish Excellence Indonesia
+          </h4>
+
+          <div className="flex flex-col gap-[4rem]" data-aos="fade-up-left">
+            <p className="font-normal text-[1.8rem] text-white/80">
+              {t('refinish')}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* About Info 3 */}
-      <section
+      {/* <section
         data-aos="fade-left"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="1000"
@@ -181,7 +214,7 @@ const AboutPage = () => {
           trainer. Pemahaman kami yang mendalam tentang perlindungan cat
           otomotif memastikan kami selalu memberikan solusi terbaik.
         </p>
-      </section>
+      </section> */}
 
       {/* Vertical Integration Section */}
       <section className="bg-[var(--secondary-black)] rounded-[1.8rem] px-[3.2rem] py-[6.4rem] lg:p-[12rem] flex flex-col gap-[4rem] lg:gap-[8rem]">
