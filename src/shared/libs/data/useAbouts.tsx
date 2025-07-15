@@ -2,6 +2,11 @@ import { useTranslations } from 'next-intl';
 import { StaticImageData } from 'next/image';
 import { ReactNode } from 'react';
 
+import logo1 from '../../../assets/icons/new/about/anti corrosion web.png';
+import logo2 from '../../../assets/icons/new/about/anti yellowing web.png';
+import logo3 from '../../../assets/icons/new/about/self healing web.png';
+import logo4 from '../../../assets/icons/new/about/stain n rust protection web.png';
+
 type verticalIntegrationCards = {
   image: StaticImageData | string;
   alt: string;
@@ -105,7 +110,7 @@ export function useAbouts(): Abouts[] {
           label: 'Anti Aging',
         },
         {
-          src: '/image/about/03.png',
+          src: logo4,
           alt: 'Stain and Rust Protection',
           label: 'Stain and Rust Protection',
         },
@@ -125,7 +130,7 @@ export function useAbouts(): Abouts[] {
           label: 'Easy to Clean',
         },
         {
-          src: '/image/about/07.png',
+          src: logo3,
           alt: 'Self Healing',
           label: 'Self Healing',
         },
@@ -135,12 +140,12 @@ export function useAbouts(): Abouts[] {
           label: 'Hydroponic',
         },
         {
-          src: '/image/about/09.png',
+          src: logo1,
           alt: 'Anti-Corrosion',
           label: 'Anti-Corrosion',
         },
         {
-          src: '/image/about/10.png',
+          src: logo2,
           alt: 'Anti-yellowing',
           label: 'Anti-yellowing',
         },

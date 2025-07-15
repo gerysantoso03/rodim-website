@@ -27,7 +27,8 @@ const CardFeelTheDifference = ({
 
   return (
     <div
-      data-aos="fade-down-left"
+      data-aos="fade-up"
+      data-aos-duration="1000"
       className={`relative w-full min-h-[40.8rem] lg:min-h-[48.8rem] xl:min-h-[58rem] overflow-hidden rounded-[18px] bg-white/12 px-[2rem] py-[4rem] flex flex-col gap-[4rem] lg:p-[4rem] ${isWide && 'xl:p-[6.4rem] lg:flex-row lg:items-center lg:gap-[6.4rem]'}`}
     >
       <div
@@ -50,13 +51,9 @@ const CardFeelTheDifference = ({
           </div>
 
           <div className="flex gap-[1.2rem] lg:gap-[2rem] lg:flex-[1] items-start">
-            <Image
-              src={icon}
-              alt=""
-              width={0}
-              height={0}
-              className="min-w-[4.6rem] lg:min-w-[6rem]"
-            />
+            <div className="relative w-[4.6rem] h-[4.6rem] lg:w-[6rem] lg:h-[6rem] aspect-square">
+              <Image src={icon} alt="" fill className="object-cover" />
+            </div>
 
             <div className="flex flex-col items-start gap-[2.4rem]">
               <div className="flex flex-col gap-[.4rem]">
@@ -71,13 +68,9 @@ const CardFeelTheDifference = ({
       </div>
 
       <div className="flex gap-[1.2rem] lg:gap-[2rem] lg:flex-[1] items-start">
-        <Image
-          src={icon}
-          alt=""
-          width={0}
-          height={0}
-          className="min-w-[6rem]"
-        />
+        <div className="relative w-[4.6rem] h-[4.6rem] lg:w-[6rem] lg:h-[6rem] aspect-square">
+          <Image src={icon} alt="" fill className="object-cover" />
+        </div>
 
         <div className="flex flex-col items-start gap-[2.4rem]">
           <div className="flex flex-col gap-[.4rem]">

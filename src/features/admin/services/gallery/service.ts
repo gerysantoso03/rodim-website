@@ -154,7 +154,6 @@ export async function editGalleryFolder(data: {
   });
 }
 
-
 export async function editGalleryImage(
   id: number,
   data: Partial<{
