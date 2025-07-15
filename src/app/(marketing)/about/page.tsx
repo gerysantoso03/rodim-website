@@ -42,7 +42,7 @@ const AboutPage = () => {
 
       {/* About Info 1 */}
       <section
-        data-aos="fade-left"
+        data-aos="fade-up"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="1000"
         id="aboutInfo1"
@@ -58,7 +58,8 @@ const AboutPage = () => {
         className="w-full h-[60rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]"
         data-aos="fade-up"
         data-aos-anchor-placement="top-bottom"
-        data-aos-delay="200"
+        data-aos-easing="ease-out-cubic"
+        data-aos-duration="1000"
       >
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
@@ -87,7 +88,7 @@ const AboutPage = () => {
 
       {/* About Info 2 */}
       <section
-        data-aos="fade-right"
+        data-aos="fade-up"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="1000"
         id="aboutInfo2"
@@ -114,6 +115,7 @@ const AboutPage = () => {
           data-aos="fade-left"
           data-aos-anchor-placement="top-left"
           data-aos-delay="200"
+          data-aos-duration="1000"
           className="bg-gradient-to-b from-[#575757] to-70% to-[#1f1f1f] p-[.2rem] h-[36rem] lg:h-[42rem] xl:h-[56.5rem] w-full xl:max-w-[48.7rem] rounded-[1.6rem] overflow-hidden"
         >
           <Image
@@ -132,9 +134,14 @@ const AboutPage = () => {
           </h4>
 
           {/* Paint Protection Items Wrapper */}
-          <div className="flex flex-col gap-[4rem]" data-aos="fade-up-left">
+          <div className="flex flex-col gap-[4rem]">
             {abouts[0].paintProtectionItems.map((item, idx) => (
-              <div key={idx} className="flex items-start gap-[1.6rem]">
+              <div
+                key={idx}
+                className="flex items-start gap-[1.6rem]"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
                 {/* Check Circle Icon */}
                 <div className="">
                   <Image
@@ -169,6 +176,7 @@ const AboutPage = () => {
           data-aos="fade-left"
           data-aos-anchor-placement="top-left"
           data-aos-delay="200"
+          data-aos-duration="800"
           className="bg-gradient-to-b xl:flex-[1] from-[#575757] to-70% to-[#1f1f1f] p-[.2rem] h-[36rem] lg:h-[42rem] xl:h-[56.5rem] w-full xl:max-w-[48.7rem] rounded-[1.6rem] overflow-hidden"
         >
           <Image
@@ -182,11 +190,24 @@ const AboutPage = () => {
 
         {/* Paint Protection List */}
         <div className="flex xl:flex-[1] flex-col gap-[4rem]">
-          <h4 className="font-bold text-[4rem] leading-[5.2rem] lg:text-[4.4rem]">
-            Refinish Excellence Indonesia
-          </h4>
+          <div
+            data-aos="zoom-right"
+            data-aos-easing="ease-in-cubic"
+            data-aos-duration="800"
+            className="flex"
+          >
+            <h4 className="font-bold text-[4rem] leading-[5.2rem] lg:text-[4.4rem]">
+              Refinish Excellence Indonesia
+            </h4>
+          </div>
 
-          <div className="flex flex-col gap-[4rem]" data-aos="fade-up-left">
+          <div
+            className="flex flex-col gap-[4rem]"
+            data-aos="zoom-right"
+            data-aos-easing="ease-in-cubic"
+            data-aos-duration="800"
+            data-aos-delay="200"
+          >
             <p className="font-normal text-[1.8rem] text-white/80">
               {t('refinish')}
             </p>
@@ -194,49 +215,34 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* About Info 3 */}
-      {/* <section
-        data-aos="fade-left"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="1000"
-        id="aboutInfo3"
-        className="py-[16rem] lg:py-[24rem] px-[2.4rem] lg:px-[10.4rem] xl:px-[25.4rem] flex flex-col items-center justify-center gap-[2.4rem]"
-      >
-        <h1 className="text-center text-[4rem] lg:text-[7.2rem] font-bold leading-[110%]">
-          Refinish Excellence Indonesia
-        </h1>
-
-        <p className="text-center text-[1.6rem] lg:text-[1.8rem] font-normal leading-[110%] lg:leading-[2.8rem]">
-          Sejak tahun 2006, Refinish Excellence Indonesia adalah agen tunggal
-          pemegang merek Glasurit di Indonesia. Dengan pengalaman panjang di
-          industri ini, kami memiliki keahlian dan inovasi dalam perlindungan
-          cat otomotif, dengan tenaga ahli kami yang dilatih oleh BASF global
-          trainer. Pemahaman kami yang mendalam tentang perlindungan cat
-          otomotif memastikan kami selalu memberikan solusi terbaik.
-        </p>
-      </section> */}
-
       {/* Vertical Integration Section */}
       <section className="bg-[var(--secondary-black)] rounded-[1.8rem] px-[3.2rem] py-[6.4rem] lg:p-[12rem] flex flex-col gap-[4rem] lg:gap-[8rem]">
-        <div
-          className="flex flex-col gap-[2rem] lg:gap-[2.4rem]"
-          data-aos="fade-down-right"
-        >
+        <div className="flex flex-col gap-[2rem] lg:gap-[2.4rem]">
           {/* Vertical Integration Title */}
           <h1 className="font-bold text-[4rem] lg:text-[7.2rem] tracking-[-0.12rem]">
             Vertical Integration
           </h1>
 
-          <p className="text-[1.6rem] lg:text-[1.8rem] font-normal">
-            {t('aboutDesc5')}
-          </p>
+          <div
+            data-aos="fade-up"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000"
+            className="flex"
+          >
+            <p className="text-[1.6rem] lg:text-[1.8rem] font-normal">
+              {t('aboutDesc5')}
+            </p>
+          </div>
         </div>
 
         {/* Vertical Integration Cards Wrapper */}
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[1.6rem]">
           {abouts[0].verticalIntegrationCards.map((card, idx) => (
             <div
-              data-aos="fade-down-right"
+              data-aos="fade-up"
+              data-aos-delay={`${0 + idx * 100}`}
+              data-aos-duration="1000"
+              data-aos-easing="ease-out-cubic"
               key={idx}
               className="bg-gradient-to-b from-[#575757] to-70% to-[#1f1f1f] p-[.2rem] rounded-[1.8rem]"
             >
@@ -279,7 +285,9 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1.6rem]">
             {abouts[0].innovationCardsGroup1.map((card, idx) => (
               <div
-                data-aos="zoom-in-up"
+                data-aos="fade-up"
+                data-aos-delay={`${0 + idx * 100}`}
+                data-aos-duration="1000"
                 key={idx}
                 className="flex flex-col rounded-[1.8rem] overflow-hidden"
               >
@@ -312,7 +320,9 @@ const AboutPage = () => {
 
               return (
                 <div
-                  data-aos="zoom-in-down"
+                  data-aos="fade-up"
+                  data-aos-delay={`${0 + idx * 100}`}
+                  data-aos-duration="1000"
                   key={idx}
                   className={`flex flex-col rounded-[1.8rem] overflow-hidden ${lastCard ? 'lg:col-span-[4]' : 'lg:col-span-[2]'} xl:col-auto`}
                 >
@@ -342,7 +352,9 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1.6rem]">
             {abouts[0].innovationCardsGroup3.map((card, idx) => (
               <div
-                data-aos="zoom-in-left"
+                data-aos="fade-up"
+                data-aos-delay={`${0 + idx * 100}`}
+                data-aos-duration="1000"
                 key={idx}
                 className="flex flex-col rounded-[1.8rem] overflow-hidden"
               >

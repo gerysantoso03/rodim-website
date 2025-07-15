@@ -136,8 +136,8 @@ export function useAbouts(): Abouts[] {
         },
         {
           src: '/image/about/08.png',
-          alt: 'Hydroponic',
-          label: 'Hydroponic',
+          alt: 'Hydrophobic',
+          label: 'Hydrophobic',
         },
         {
           src: logo1,

@@ -32,7 +32,7 @@ export const products: Product[] = [
     image: RodimR2Matte,
     title: 'RODIM R2 MATTE',
     id: 'rodim-r2-matte',
-    subtitle: 'Outstanding Matte Finish',
+    subtitle: 'Outstanding matte finish',
     warranty: '10',
   },
   {

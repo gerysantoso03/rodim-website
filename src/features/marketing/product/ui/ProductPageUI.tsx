@@ -34,7 +34,7 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
           alt="hero image"
           width={1394}
           height={800}
-          className="w-full h-full absolute z-[1] object-cover"
+          className={`w-full h-full absolute z-[1] object-cover ${data.code.toUpperCase() == 'RODIM R2 MATTE' ? 'transform scale-[101%]' : ''}`}
           priority
           onError={() => '/image/placeholder-image.png'}
         />

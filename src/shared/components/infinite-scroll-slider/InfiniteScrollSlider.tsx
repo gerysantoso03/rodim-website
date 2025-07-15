@@ -43,6 +43,9 @@ const InfiniteScrollSlider = ({
               alt={`Gallery image ${index + 1}`}
               fill
               className="object-cover"
+              sizes="100%"
+              priority
+              quality={100}
             />
           </div>
         </SwiperSlide>

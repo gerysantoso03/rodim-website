@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
 import ArrowIcon from '../../../assets/icons/arrow-right.svg';
 import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 type CardFeelTheDifferenceProps = {
   image: StaticImageData | string;
@@ -31,41 +32,50 @@ const CardFeelTheDifference = ({
       data-aos-duration="1000"
       className={`relative w-full min-h-[40.8rem] lg:min-h-[48.8rem] xl:min-h-[58rem] overflow-hidden rounded-[18px] bg-white/12 px-[2rem] py-[4rem] flex flex-col gap-[4rem] lg:p-[4rem] ${isWide && 'xl:p-[6.4rem] lg:flex-row lg:items-center lg:gap-[6.4rem]'}`}
     >
-      <div
-        className={`px-[2rem] py-[4rem] absolute inset-0 bg-[#1F1F1F] z-10 ${isWide && 'items-center'} ${isOpen ? 'flex' : 'hidden'}`}
-      >
-        <div className="flex flex-col gap-[2.6rem]">
-          <div
-            className="flex gap-[.8rem] cursor-pointer"
-            onClick={() => setIsOpen(!isOpen)}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, ease: [0.43, 0.13, 0.23, 0.96] }}
+            className={`px-[2rem] py-[4rem] absolute inset-0 bg-[#1F1F1F] z-10 ${
+              isWide && 'items-center'
+            } flex`}
           >
-            <Image
-              src={ArrowIcon}
-              alt=""
-              width={0}
-              height={0}
-              className="rotate-180"
-            />
+            <div className="flex flex-col gap-[2.6rem]">
+              <div
+                className="flex gap-[.8rem] cursor-pointer"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                <Image
+                  src={ArrowIcon}
+                  alt=""
+                  width={0}
+                  height={0}
+                  className="rotate-180"
+                />
+                <span>{closeLabel}</span>
+              </div>
 
-            <span>{closeLabel}</span>
-          </div>
+              <div className="flex gap-[1.2rem] lg:gap-[2rem] lg:flex-[1] items-start">
+                <div className="relative w-[4.6rem] h-[4.6rem] lg:w-[6rem] lg:h-[6rem] aspect-square">
+                  <Image src={icon} alt="" fill className="object-cover" />
+                </div>
 
-          <div className="flex gap-[1.2rem] lg:gap-[2rem] lg:flex-[1] items-start">
-            <div className="relative w-[4.6rem] h-[4.6rem] lg:w-[6rem] lg:h-[6rem] aspect-square">
-              <Image src={icon} alt="" fill className="object-cover" />
-            </div>
-
-            <div className="flex flex-col items-start gap-[2.4rem]">
-              <div className="flex flex-col gap-[.4rem]">
-                <span className="text-[4rem] font-[700] lg:text-[4.4rem]">
-                  {title}
-                </span>
-                <p className="text-[1.8rem] font-[400]">{detail}</p>
+                <div className="flex flex-col items-start gap-[2.4rem]">
+                  <div className="flex flex-col gap-[.4rem]">
+                    <span className="text-[4rem] font-[700] lg:text-[4.4rem]">
+                      {title}
+                    </span>
+                    <p className="text-[1.8rem] font-[400]">{detail}</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <div className="flex gap-[1.2rem] lg:gap-[2rem] lg:flex-[1] items-start">
         <div className="relative w-[4.6rem] h-[4.6rem] lg:w-[6rem] lg:h-[6rem] aspect-square">
