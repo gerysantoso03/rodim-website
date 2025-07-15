@@ -59,9 +59,9 @@ const WarrantyPage = () => {
 
       {/* Warranty Info */}
       <section
-        data-aos="zoom-right"
-        data-aos-easing="ease-in-cubic"
-        data-aos-duration="1000"
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="300"
         id="warrantyInfo"
         className="py-[18rem] lg:py-[24rem] px-[2rem] lg:px-[4.8rem] xl:px-[19.6rem] flex items-center justify-center"
       >
@@ -77,9 +77,8 @@ const WarrantyPage = () => {
       >
         <div
           className="flex flex-col gap-[4rem]"
-          data-aos="zoom-left"
-          data-aos-easing="ease-in-cubic"
-          data-aos-duration="1000"
+          data-aos="fade-up"
+          data-aos-delay="100"
         >
           {/* Warranty Products Title */}
           <p className="font-normal text-[2.4rem] leading-[2.8rem]">
@@ -101,7 +100,8 @@ const WarrantyPage = () => {
               return (
                 <div
                   key={product.id}
-                  data-aos={isLastTwo ? 'zoom-in-left' : 'zoom-in-right'}
+                  data-aos="fade-up"
+                  data-aos-delay={isLastTwo ? 200: 150}
                   className={`col-span-[2] ${spanClass} bg-gradient-to-b from-[#575757] to-70% to-[131313] rounded-[1.8rem] p-[.1rem]`}
                 >
                   <div className="bg-[#131313] py-[2.2rem] px-[3rem] flex flex-col justify-start gap-[1.6rem] lg:gap-[1.8rem] rounded-[1.8rem]">

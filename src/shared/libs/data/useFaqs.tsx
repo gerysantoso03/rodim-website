@@ -77,27 +77,47 @@ export function useFaqs(): Faqs[] {
         <ul className="list-disc pl-6 flex flex-col gap-6">
           <li>
             {t.rich('faqAnswer9', {
-              rodim1: (chunks) => <span className="font-bold">{chunks}</span>,
+              rodim1: (chunks) => (
+                <>
+                  <span className="font-bold">{chunks}</span> <br />
+                </>
+              ),
             })}
           </li>
           <li>
             {t.rich('faqAnswer10', {
-              rodim2: (chunks) => <span className="font-bold">{chunks}</span>,
+              rodim2: (chunks) => (
+                <>
+                  <span className="font-bold">{chunks}</span> <br />
+                </>
+              ),
             })}
           </li>
           <li>
             {t.rich('faqAnswer11', {
-              rodim3: (chunks) => <span className="font-bold">{chunks}</span>,
+              rodim3: (chunks) => (
+                <>
+                  <span className="font-bold">{chunks}</span> <br />
+                </>
+              ),
             })}
           </li>
           <li>
             {t.rich('faqAnswer12', {
-              rodim4: (chunks) => <span className="font-bold">{chunks}</span>,
+              rodim4: (chunks) => (
+                <>
+                  <span className="font-bold">{chunks}</span> <br />
+                </>
+              ),
             })}
           </li>
           <li>
             {t.rich('faqAnswer13', {
-              rodim5: (chunks) => <span className="font-bold">{chunks}</span>,
+              rodim5: (chunks) => (
+                <>
+                  <span className="font-bold">{chunks}</span> <br />
+                </>
+              ),
             })}
           </li>
         </ul>

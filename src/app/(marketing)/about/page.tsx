@@ -31,7 +31,7 @@ const AboutPage = () => {
 
         <div className="flex flex-col absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] lg:px-[4.6rem] pb-[24px] lg:pb-[4.6rem]">
           <span className="text-[1.6rem] lg:text-[2.4rem]">
-            Tentang BASF RODIM
+            {t('aboutTitle1')}
           </span>
           <h1 className="text-[40px] font-[700] lg:text-[10.8rem] leading-[110%]">
             Protection by
@@ -43,8 +43,8 @@ const AboutPage = () => {
       {/* About Info 1 */}
       <section
         data-aos="fade-up"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="1000"
+        data-aos-offset="200"
+        data-aos-delay="300"
         id="aboutInfo1"
         className="py-[18rem] lg:py-[24rem] px-[.8rem] lg:px-[4.8rem] xl:px-[3.6rem] flex items-center justify-center"
       >
@@ -57,9 +57,8 @@ const AboutPage = () => {
       <section
         className="w-full h-[60rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]"
         data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="1000"
+        data-aos-anchor-offset="200"
+        data-aos-delay="300"
       >
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
@@ -78,10 +77,7 @@ const AboutPage = () => {
             <br className="hidden lg:block xl:hidden" /> Leader in TPU
           </h1>
           <p className="text-[1.6rem] lg:text-[2.1rem]">
-            BASF adalah perusahaan kimia terbesar di dunia yang berasal dari
-            Jerman, dengan inovasi dan kemajuan teknologi yang terus berkembang.
-            BASF memegang posisi sebagai produsen Thermoplastic Polyurethane
-            (TPU) terbesar di dunia.
+            {t('aboutTitle2')}
           </p>
         </div>
       </section>
@@ -95,16 +91,11 @@ const AboutPage = () => {
         className="py-[18rem] lg:py-[24rem] px-[2.4rem] lg:px-[4.8rem] xl:px-[19.6rem] flex flex-col items-center justify-center gap-[3.2rem]"
       >
         <p className="text-center text-[2.4rem] lg:text-[3.2rem] font-normal tracking-[0.02rem] leading-[110%]">
-          Dari butiran TPU hingga produk PPF, BASF menciptakan keunggulan
-          kompetitif melalui riset dan inovasi, serta keahlian dalam produksi,
-          pemasaran, penjualan dan layanan teknis.
+          {t('aboutDesc2')}
         </p>
 
         <p className="text-center text-[2.4rem] lg:text-[3.2rem] font-normal tracking-[0.02rem] leading-[110%]">
-          Dengan fokus pada riset dan pengembangan teknologi material, BASF
-          menjadi pemimpin global sebagai produsen terbesar lapisan film TPU
-          yang menjadi komponen utama PPF. RODIM® PPF hadir sebagai hasil dari
-          keahlian BASF dalam teknologi material.
+          {t('aboutDesc3')}
         </p>
       </section>
 
@@ -390,14 +381,11 @@ const AboutPage = () => {
         className="py-[9rem] px-[2.4rem] lg:px-[10.4rem] xl:px-[16.4rem] flex flex-col items-center justify-center gap-[3.2rem] lg:gap-[5rem]"
       >
         <p className="text-center text-[3.2rem] font-bold lg:text-[4.8rem] tracking-[-0.08rem] leading-[110%]">
-          Dengan penelitian dan pengembangan yang unggul dalam teknologi
-          material, BASF adalah pemimpin dunia dalam aplikasi lapisan film tipis
-          berteknologi tinggi.
+          {t('aboutDesc6')}
         </p>
 
         <p className="text-center text-[3.2rem] font-bold lg:text-[4.8rem] tracking-[-0.08rem] leading-[110%]">
-          PPF RODIM merupakan hasil keahlian BASF dalam teknologi material dan
-          lapisan permukaan.
+          {t('aboutDesc7')}
         </p>
       </section>
 
