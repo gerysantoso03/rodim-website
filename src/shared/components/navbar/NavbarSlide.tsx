@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import LogoRodim from '../../../assets/logos/logo.svg';
 import { X } from 'lucide-react';
+import { useTranslations } from 'use-intl';
 
 type ProductNav = {
   id: number;
@@ -19,6 +20,8 @@ type NavbarSlideProps = {
 };
 
 const NavbarSlide = ({ isOpenMenu, setIsOpenMenu, data }: NavbarSlideProps) => {
+  const t = useTranslations('Navbar');
+
   const pathname = usePathname();
 
   const segments = pathname.split('/');
@@ -89,7 +92,7 @@ const NavbarSlide = ({ isOpenMenu, setIsOpenMenu, data }: NavbarSlideProps) => {
                   setIsOpenMenu(!isOpenMenu);
                 }}
               >
-                TENTANG BASF RODIM
+                {t('about')}
               </div>
             </Link>
             <Link href="/gallery">
@@ -99,7 +102,7 @@ const NavbarSlide = ({ isOpenMenu, setIsOpenMenu, data }: NavbarSlideProps) => {
                   setIsOpenMenu(!isOpenMenu);
                 }}
               >
-                GALERI
+                {t('gallery')}
               </div>
             </Link>
             <Link href="/warranty">
@@ -109,7 +112,7 @@ const NavbarSlide = ({ isOpenMenu, setIsOpenMenu, data }: NavbarSlideProps) => {
                   setIsOpenMenu(!isOpenMenu);
                 }}
               >
-                GARANSI
+                {t('warranty')}
               </div>
             </Link>
           </div>

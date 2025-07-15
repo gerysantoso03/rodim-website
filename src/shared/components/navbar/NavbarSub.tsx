@@ -129,7 +129,7 @@ const NavbarSub = ({ title, introduction, specification }: NavbarSubProps) => {
                   onClick={() => setIsOpen((prev: boolean) => !prev)}
                 >
                   <Image src={CarIcon} alt="" width={0} height={0} />
-                  <span>Pengenalan</span>
+                  <span>{introduction}</span>
                 </div>
               </Link>
               <Link href={`/product-rodim/${productId}/feel-the-difference`}>
@@ -147,7 +147,7 @@ const NavbarSub = ({ title, introduction, specification }: NavbarSubProps) => {
                   onClick={() => setIsOpen((prev: boolean) => !prev)}
                 >
                   <Image src={WrenchIcon} alt="" width={0} height={0} />
-                  <span>Spesifikasi Teknis</span>
+                  <span>{specification}</span>
                 </div>
               </Link>
             </div>
