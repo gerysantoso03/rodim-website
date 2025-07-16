@@ -31,7 +31,7 @@ const AboutPage = () => {
 
         <div className="flex flex-col absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] lg:px-[4.6rem] pb-[24px] lg:pb-[4.6rem]">
           <span className="text-[1.6rem] lg:text-[2.4rem]">
-            Tentang BASF RODIM
+            {t('aboutTitle1')}
           </span>
           <h1 className="text-[40px] font-[700] lg:text-[10.8rem] leading-[110%]">
             Protection by
@@ -42,9 +42,9 @@ const AboutPage = () => {
 
       {/* About Info 1 */}
       <section
-        data-aos="fade-left"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="1000"
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-delay="300"
         id="aboutInfo1"
         className="py-[18rem] lg:py-[24rem] px-[.8rem] lg:px-[4.8rem] xl:px-[3.6rem] flex items-center justify-center"
       >
@@ -57,8 +57,8 @@ const AboutPage = () => {
       <section
         className="w-full h-[60rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]"
         data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom"
-        data-aos-delay="200"
+        data-aos-anchor-offset="200"
+        data-aos-delay="300"
       >
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
@@ -76,34 +76,24 @@ const AboutPage = () => {
             BASF - The Global
             <br className="hidden lg:block xl:hidden" /> Leader in TPU
           </h1>
-          <p className="text-[1.6rem] lg:text-[2.1rem]">
-            BASF adalah perusahaan kimia terbesar di dunia yang berasal dari
-            Jerman, dengan inovasi dan kemajuan teknologi yang terus berkembang.
-            BASF memegang posisi sebagai produsen Thermoplastic Polyurethane
-            (TPU) terbesar di dunia.
-          </p>
+          <p className="text-[1.6rem] lg:text-[2.1rem]">{t('aboutTitle2')}</p>
         </div>
       </section>
 
       {/* About Info 2 */}
       <section
-        data-aos="fade-right"
+        data-aos="fade-up"
         data-aos-easing="ease-out-cubic"
         data-aos-duration="1000"
         id="aboutInfo2"
         className="py-[18rem] lg:py-[24rem] px-[2.4rem] lg:px-[4.8rem] xl:px-[19.6rem] flex flex-col items-center justify-center gap-[3.2rem]"
       >
         <p className="text-center text-[2.4rem] lg:text-[3.2rem] font-normal tracking-[0.02rem] leading-[110%]">
-          Dari butiran TPU hingga produk PPF, BASF menciptakan keunggulan
-          kompetitif melalui riset dan inovasi, serta keahlian dalam produksi,
-          pemasaran, penjualan dan layanan teknis.
+          {t('aboutDesc2')}
         </p>
 
         <p className="text-center text-[2.4rem] lg:text-[3.2rem] font-normal tracking-[0.02rem] leading-[110%]">
-          Dengan fokus pada riset dan pengembangan teknologi material, BASF
-          menjadi pemimpin global sebagai produsen terbesar lapisan film TPU
-          yang menjadi komponen utama PPF. RODIM® PPF hadir sebagai hasil dari
-          keahlian BASF dalam teknologi material.
+          {t('aboutDesc3')}
         </p>
       </section>
 
@@ -114,6 +104,7 @@ const AboutPage = () => {
           data-aos="fade-left"
           data-aos-anchor-placement="top-left"
           data-aos-delay="200"
+          data-aos-duration="1000"
           className="bg-gradient-to-b from-[#575757] to-70% to-[#1f1f1f] p-[.2rem] h-[36rem] lg:h-[42rem] xl:h-[56.5rem] w-full xl:max-w-[48.7rem] rounded-[1.6rem] overflow-hidden"
         >
           <Image
@@ -132,9 +123,14 @@ const AboutPage = () => {
           </h4>
 
           {/* Paint Protection Items Wrapper */}
-          <div className="flex flex-col gap-[4rem]" data-aos="fade-up-left">
+          <div className="flex flex-col gap-[4rem]">
             {abouts[0].paintProtectionItems.map((item, idx) => (
-              <div key={idx} className="flex items-start gap-[1.6rem]">
+              <div
+                key={idx}
+                className="flex items-start gap-[1.6rem]"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
                 {/* Check Circle Icon */}
                 <div className="">
                   <Image
@@ -169,6 +165,7 @@ const AboutPage = () => {
           data-aos="fade-left"
           data-aos-anchor-placement="top-left"
           data-aos-delay="200"
+          data-aos-duration="800"
           className="bg-gradient-to-b xl:flex-[1] from-[#575757] to-70% to-[#1f1f1f] p-[.2rem] h-[36rem] lg:h-[42rem] xl:h-[56.5rem] w-full xl:max-w-[48.7rem] rounded-[1.6rem] overflow-hidden"
         >
           <Image
@@ -182,11 +179,24 @@ const AboutPage = () => {
 
         {/* Paint Protection List */}
         <div className="flex xl:flex-[1] flex-col gap-[4rem]">
-          <h4 className="font-bold text-[4rem] leading-[5.2rem] lg:text-[4.4rem]">
-            Refinish Excellence Indonesia
-          </h4>
+          <div
+            data-aos="zoom-right"
+            data-aos-easing="ease-in-cubic"
+            data-aos-duration="800"
+            className="flex"
+          >
+            <h4 className="font-bold text-[4rem] leading-[5.2rem] lg:text-[4.4rem]">
+              Refinish Excellence Indonesia
+            </h4>
+          </div>
 
-          <div className="flex flex-col gap-[4rem]" data-aos="fade-up-left">
+          <div
+            className="flex flex-col gap-[4rem]"
+            data-aos="zoom-right"
+            data-aos-easing="ease-in-cubic"
+            data-aos-duration="800"
+            data-aos-delay="200"
+          >
             <p className="font-normal text-[1.8rem] text-white/80">
               {t('refinish')}
             </p>
@@ -194,49 +204,34 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* About Info 3 */}
-      {/* <section
-        data-aos="fade-left"
-        data-aos-easing="ease-out-cubic"
-        data-aos-duration="1000"
-        id="aboutInfo3"
-        className="py-[16rem] lg:py-[24rem] px-[2.4rem] lg:px-[10.4rem] xl:px-[25.4rem] flex flex-col items-center justify-center gap-[2.4rem]"
-      >
-        <h1 className="text-center text-[4rem] lg:text-[7.2rem] font-bold leading-[110%]">
-          Refinish Excellence Indonesia
-        </h1>
-
-        <p className="text-center text-[1.6rem] lg:text-[1.8rem] font-normal leading-[110%] lg:leading-[2.8rem]">
-          Sejak tahun 2006, Refinish Excellence Indonesia adalah agen tunggal
-          pemegang merek Glasurit di Indonesia. Dengan pengalaman panjang di
-          industri ini, kami memiliki keahlian dan inovasi dalam perlindungan
-          cat otomotif, dengan tenaga ahli kami yang dilatih oleh BASF global
-          trainer. Pemahaman kami yang mendalam tentang perlindungan cat
-          otomotif memastikan kami selalu memberikan solusi terbaik.
-        </p>
-      </section> */}
-
       {/* Vertical Integration Section */}
       <section className="bg-[var(--secondary-black)] rounded-[1.8rem] px-[3.2rem] py-[6.4rem] lg:p-[12rem] flex flex-col gap-[4rem] lg:gap-[8rem]">
-        <div
-          className="flex flex-col gap-[2rem] lg:gap-[2.4rem]"
-          data-aos="fade-down-right"
-        >
+        <div className="flex flex-col gap-[2rem] lg:gap-[2.4rem]">
           {/* Vertical Integration Title */}
           <h1 className="font-bold text-[4rem] lg:text-[7.2rem] tracking-[-0.12rem]">
             Vertical Integration
           </h1>
 
-          <p className="text-[1.6rem] lg:text-[1.8rem] font-normal">
-            {t('aboutDesc5')}
-          </p>
+          <div
+            data-aos="fade-up"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="1000"
+            className="flex"
+          >
+            <p className="text-[1.6rem] lg:text-[1.8rem] font-normal">
+              {t('aboutDesc5')}
+            </p>
+          </div>
         </div>
 
         {/* Vertical Integration Cards Wrapper */}
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-[1.6rem]">
           {abouts[0].verticalIntegrationCards.map((card, idx) => (
             <div
-              data-aos="fade-down-right"
+              data-aos="fade-up"
+              data-aos-delay={`${0 + idx * 100}`}
+              data-aos-duration="1000"
+              data-aos-easing="ease-out-cubic"
               key={idx}
               className="bg-gradient-to-b from-[#575757] to-70% to-[#1f1f1f] p-[.2rem] rounded-[1.8rem]"
             >
@@ -279,7 +274,9 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1.6rem]">
             {abouts[0].innovationCardsGroup1.map((card, idx) => (
               <div
-                data-aos="zoom-in-up"
+                data-aos="fade-up"
+                data-aos-delay={`${0 + idx * 100}`}
+                data-aos-duration="1000"
                 key={idx}
                 className="flex flex-col rounded-[1.8rem] overflow-hidden"
               >
@@ -312,7 +309,9 @@ const AboutPage = () => {
 
               return (
                 <div
-                  data-aos="zoom-in-down"
+                  data-aos="fade-up"
+                  data-aos-delay={`${0 + idx * 100}`}
+                  data-aos-duration="1000"
                   key={idx}
                   className={`flex flex-col rounded-[1.8rem] overflow-hidden ${lastCard ? 'lg:col-span-[4]' : 'lg:col-span-[2]'} xl:col-auto`}
                 >
@@ -342,7 +341,9 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-[1.6rem]">
             {abouts[0].innovationCardsGroup3.map((card, idx) => (
               <div
-                data-aos="zoom-in-left"
+                data-aos="fade-up"
+                data-aos-delay={`${0 + idx * 100}`}
+                data-aos-duration="1000"
                 key={idx}
                 className="flex flex-col rounded-[1.8rem] overflow-hidden"
               >
@@ -378,14 +379,11 @@ const AboutPage = () => {
         className="py-[9rem] px-[2.4rem] lg:px-[10.4rem] xl:px-[16.4rem] flex flex-col items-center justify-center gap-[3.2rem] lg:gap-[5rem]"
       >
         <p className="text-center text-[3.2rem] font-bold lg:text-[4.8rem] tracking-[-0.08rem] leading-[110%]">
-          Dengan penelitian dan pengembangan yang unggul dalam teknologi
-          material, BASF adalah pemimpin dunia dalam aplikasi lapisan film tipis
-          berteknologi tinggi.
+          {t('aboutDesc6')}
         </p>
 
         <p className="text-center text-[3.2rem] font-bold lg:text-[4.8rem] tracking-[-0.08rem] leading-[110%]">
-          PPF RODIM merupakan hasil keahlian BASF dalam teknologi material dan
-          lapisan permukaan.
+          {t('aboutDesc7')}
         </p>
       </section>
 

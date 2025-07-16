@@ -34,8 +34,8 @@
       "desc4": "RODIM PPF, a brand of BASF—the world’s largest chemical company with over 150 years of experience, providing durable and proven protection. We guarantee no cracking, blistering, glue residue, or yellowing, ensuring a like-new appearance. If issues arise on PPF products, we provide a free replacement. Trust RODIM PPF for reliable, long-lasting protection."
     },
     "globalGallery": "Feel our quality in",
-    "hour": "Hour",
-    "year": "Year"
+    "hour": "Hours",
+    "year": "Years"
   },
   "HomePage": {
     "homeIntroduction": "RODIM PPF is a brand of BASF, a global leader in TPU materials, automotive OEM and refinish paint. From TPU production to advanced PPF innovation, RODIM delivers complete solutions and truly understands how to protect factory car paint.",
@@ -84,9 +84,9 @@
     "faqQuestion7": "What are the differences between RODIM TPU PPF models?",
     "faqAnswer9": "<rodim1>RODIM R1</rodim1> Offers self-healing and strong dirt resistance. Ideal for those seeking everyday protection with great value.",
     "faqAnswer10": "<rodim2>RODIM R2 Matte</rodim2> Same protection and thickness as RODIM R2 but with a satin low-gloss surface that delivers a refined high-end appearance.",
-    "faqAnswer11": "<rodim3>RODIM R2 Pro</rodim3> All features of RODIM R2 with added resistance to chemical cleaners like carburetor wash offering outstanding anti-corrosion protection.",
-    "faqAnswer12": "<rodim4>RODIM R3 Pro</rodim4> Built upon RODIM R2 PRO with even greater thickness. This is a higher-class product from the RODIM R2 PRO line. Offering maximum protection and performance.",
-    "faqAnswer13": "<rodim5>RODIM R4 Pro</rodim5> The top-tier RODIM PPF offers maximum thickness, enhanced self-healing, and superior resistance to certain chemicals and scratches. Built for extreme conditions, it offers the best durability and long-lasting finish for ultimate paint protection."
+    "faqAnswer11": "<rodim3>RODIM R2 PRO</rodim3> All features of RODIM R2 with added resistance to chemical cleaners like carburetor wash offering outstanding anti-corrosion protection.",
+    "faqAnswer12": "<rodim4>RODIM R3 PRO</rodim4> Built upon RODIM R2 PRO with even greater thickness. This is a higher-class product from the RODIM R2 PRO line. Offering maximum protection and performance.",
+    "faqAnswer13": "<rodim5>RODIM R4 PRO</rodim5> The top-tier RODIM PPF offers maximum thickness, enhanced self-healing, and superior resistance to certain chemicals and scratches. Built for extreme conditions, it offers the best durability and long-lasting finish for ultimate paint protection."
   },
   "CareInstructionPage": {
     "care1": "Do not wash or wax the vehicle within one week after the film installation. The warranty will be voided if this guideline is not followed.",
@@ -107,8 +107,8 @@
     "warrantyDesc3": "Make sure you get a warranty from a world-class company",
     "buttonLabel": "See product",
     "globalGallery": "Feel our quality in",
-    "hour": "Hour",
-    "year": "Year"
+    "hour": "Hours",
+    "year": "Years"
   },
   "GalleryPage": {
     "galleryTitle": "Gallery",

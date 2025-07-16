@@ -25,7 +25,7 @@ const GalleryModal = ({
   if (!isOpen) return null;
 
   return (
-    <div className="w-screen h-screen fixed inset-0 z-50 flex justify-center items-center">
+    <div className="w-screen h-screen fixed inset-0 z-[1000] flex justify-center items-center">
       <div
         className="absolute inset-0 bg-[rgba(0,0,0,0.1)] backdrop-blur-lg cursor-pointer"
         onClick={closeModal}
@@ -69,14 +69,11 @@ const GalleryModal = ({
                 key={index}
                 className="!flex items-center justify-center"
               >
-                <div className="relative w-full max-w-[90vw] max-h-[80vh] aspect-square mx-auto">
-                  <Image
+                <div className="relative w-fit mx-auto">
+                  <img
                     src={src || '/placeholder.svg'}
                     alt={`Gallery image ${index + 1}`}
-                    fill
-                    priority
-                    className="object-cover rounded-lg shadow-2xl"
-                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 70vw, 60vw"
+                    className="w-full object-contain"
                   />
                 </div>
               </SwiperSlide>
