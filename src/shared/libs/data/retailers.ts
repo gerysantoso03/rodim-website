@@ -37,10 +37,5 @@ export const retailers: Retailers[] = [
     image: IconShopee,
     title: 'Shopee',
     url: 'https://shopee.co.id/rodim.ppf.indonesia',
-  },
-  {
-    image: IconBliBli,
-    title: 'Blibli',
-    url: '#',
-  },
+  }
 ];
