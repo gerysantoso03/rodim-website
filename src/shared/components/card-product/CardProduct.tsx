@@ -29,7 +29,7 @@ const CardProduct = ({
         alt={title}
         width={0}
         height={0}
-        className="w-full h-full absolute z-[1] object-cover"
+        className="w-full h-full absolute z-[1] object-cover transform scale-[101%]"
         priority
       />
 

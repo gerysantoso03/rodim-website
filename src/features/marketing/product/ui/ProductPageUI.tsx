@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import CardExclusive from '@/shared/components/card-exclusive/CardExclusive';
 import Image from 'next/image';
 
@@ -12,7 +12,7 @@ import WarrantyImage from '../../../../assets/images/introductions/warranty.jpg'
 import ThicknessIcon from '../../../../assets/icons/new/introduction/thickness.png';
 import GlossIcon from '../../../../assets/icons/new/introduction/gloss.png';
 import QuvIcon from '../../../../assets/icons/new/introduction/quv.png';
-import WarrantyIcon from '../../../../assets/icons/new/introduction/warranty.png';
+import WarrantyIcon from '../../../../assets/icons/new/introduction/warranty-simple-spec.png';
 import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
 import { useTranslations } from 'next-intl';
 import SectionWrapper from '@/shared/components/section-wrapper/SectionWrapper';
