@@ -87,7 +87,7 @@ const NavbarSlide = ({ isOpenMenu, setIsOpenMenu, data }: NavbarSlideProps) => {
             </div>
             <Link href="/about">
               <div
-                className={`hover:bg-white/10 transition-all duration-300 ease-in-out w-full text-[1.4rem] min-h-[4.8rem] flex items-center px-[.8rem] rounded-[.8rem] ${pathname === '/about' ? 'bg-white/10' : 'bg-transparent'}`}
+                className={`hover:bg-white/10 uppercase transition-all duration-300 ease-in-out w-full text-[1.4rem] min-h-[4.8rem] flex items-center px-[.8rem] rounded-[.8rem] ${pathname === '/about' ? 'bg-white/10' : 'bg-transparent'}`}
                 onClick={() => {
                   setIsOpenMenu(!isOpenMenu);
                 }}
@@ -97,7 +97,7 @@ const NavbarSlide = ({ isOpenMenu, setIsOpenMenu, data }: NavbarSlideProps) => {
             </Link>
             <Link href="/gallery">
               <div
-                className={`hover:bg-white/10 transition-all duration-300 ease-in-out w-full text-[1.4rem] min-h-[4.8rem] flex items-center px-[.8rem] rounded-[.8rem] ${pathname === '/gallery' ? 'bg-white/10' : 'bg-transparent'}`}
+                className={`hover:bg-white/10 uppercase transition-all duration-300 ease-in-out w-full text-[1.4rem] min-h-[4.8rem] flex items-center px-[.8rem] rounded-[.8rem] ${pathname === '/gallery' ? 'bg-white/10' : 'bg-transparent'}`}
                 onClick={() => {
                   setIsOpenMenu(!isOpenMenu);
                 }}
@@ -107,7 +107,7 @@ const NavbarSlide = ({ isOpenMenu, setIsOpenMenu, data }: NavbarSlideProps) => {
             </Link>
             <Link href="/warranty">
               <div
-                className={`hover:bg-white/10 transition-all duration-300 ease-in-out w-full text-[1.4rem] min-h-[4.8rem] flex items-center px-[.8rem] rounded-[.8rem] ${pathname === '/warranty' ? 'bg-white/10' : 'bg-transparent'}`}
+                className={`hover:bg-white/10 uppercase transition-all duration-300 ease-in-out w-full text-[1.4rem] min-h-[4.8rem] flex items-center px-[.8rem] rounded-[.8rem] ${pathname === '/warranty' ? 'bg-white/10' : 'bg-transparent'}`}
                 onClick={() => {
                   setIsOpenMenu(!isOpenMenu);
                 }}

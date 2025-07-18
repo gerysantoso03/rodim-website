@@ -166,12 +166,12 @@ const AboutPage = () => {
           data-aos-anchor-placement="top-left"
           data-aos-delay="200"
           data-aos-duration="800"
-          className="bg-gradient-to-b xl:flex-[1] from-[#575757] to-70% to-[#1f1f1f] p-[.2rem] h-[36rem] lg:h-[42rem] xl:h-[56.5rem] w-full xl:max-w-[48.7rem] rounded-[1.6rem] overflow-hidden"
+          className="bg-gradient-to-b xl:flex-[1] from-[#575757] to-70% to-[#1f1f1f] p-[.2rem] h-auto w-full xl:max-w-[48.7rem] rounded-[1.6rem] overflow-hidden"
         >
           <Image
             src={RefinishImage}
             alt="Refinish"
-            className="rounded-[1.6rem] w-full h-full object-cover object-top"
+            className="rounded-[1.6rem] w-full h-full object-cover"
             width={467}
             height={585}
           />
