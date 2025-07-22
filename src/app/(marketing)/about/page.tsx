@@ -7,6 +7,7 @@ import SectionWrapper from '@/shared/components/section-wrapper/SectionWrapper';
 import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
 import RefinishImage from '../../../assets/images/abouts/refinish.png';
 import { useAbouts } from '@/shared/libs/data/useAbouts';
+import { cn } from '@/shared/libs/shadcn/utils';
 
 const AboutPage = () => {
   const t = useTranslations('AboutPage');
@@ -329,7 +330,10 @@ const AboutPage = () => {
                       src={card.image}
                       alt={card.alt}
                       fill
-                      className="object-cover lg:object-[0%_25%]"
+                      className={cn(
+                        'object-cover lg:object-[0%_25%]',
+                        idx == 0 && 'lg:object-[50%_50%]'
+                      )}
                     />
                   </div>
                 </div>

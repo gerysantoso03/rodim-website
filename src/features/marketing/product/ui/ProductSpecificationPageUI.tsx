@@ -11,11 +11,18 @@ interface ProductSpecificationPageUIProps {
 const ProductSpecificationPageUI = ({
   data,
 }: ProductSpecificationPageUIProps) => {
-  const specifications = data?.product_categories.map((specification: any) => ({
-    title: specification.categories_description || '',
-    performance: specification.value_1 || '',
-    testingMethods: specification.value_2 || '',
-  }));
+  const specifications = data?.product_categories
+    .filter(
+      (specification: any) =>
+        specification.categories_description &&
+        specification.value_1 &&
+        specification.value_2
+    )
+    .map((specification: any) => ({
+      title: specification.categories_description || '',
+      performance: specification.value_1 || '',
+      testingMethods: specification.value_2 || '',
+    }));
 
   return (
     <div className="p-[16px] lg:px-[4rem] xl:px-[12rem] max-w-[144rem] mx-auto flex flex-col gap-[1.6rem]">

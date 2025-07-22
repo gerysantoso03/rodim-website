@@ -152,24 +152,24 @@ export function useAbouts(): Abouts[] {
       ],
       innovationCardsGroup1: [
         {
-          title: 'Manufacturing Bases Worldwide',
+          title: 'Manufacturing bases worldwide',
           description: t('innovation1'),
           image: '/image/about/manufacturing bases worldwide.PNG',
-          alt: 'Manufacturing Bases Worldwide',
+          alt: 'Manufacturing bases worldwide',
         },
         {
-          title: 'Quality Control at The Source',
+          title: 'Quality control at the source',
           description: t('innovation4'),
           image: '/image/about/quality-control-at-the-source.jpg',
-          alt: 'Quality Control At The Source',
+          alt: 'Quality control at the source',
         },
       ],
       innovationCardsGroup2: [
         {
-          title: 'High Quality German DNA',
+          title: 'High quality German DNA',
           description: t('innovation2'),
           image: '/image/about/high quality german dna.png',
-          alt: 'High Quality German DNA',
+          alt: 'High quality German DNA',
         },
         {
           title: 'One-stop service',
@@ -186,16 +186,16 @@ export function useAbouts(): Abouts[] {
       ],
       innovationCardsGroup3: [
         {
-          title: 'First choice of Hi-tech Industries',
+          title: 'First choice of hi-tech industries',
           description: t('innovation2'),
           image: '/image/about/first-choice-of-high-tech-industries.png',
-          alt: 'First Choice of High Tech Industries',
+          alt: 'First choice of hi-tech industries',
         },
         {
-          title: 'Advanced Craft',
+          title: 'Advanced craft',
           description: t('innovation5'),
           image: '/image/about/Advanced Craft baru.JPG',
-          alt: 'Advance Craft',
+          alt: 'Advanced craft',
         },
       ],
       paintProtectionItems: [

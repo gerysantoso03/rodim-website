@@ -98,7 +98,7 @@ const NavbarSub = ({ title, introduction, specification }: NavbarSubProps) => {
                   className={`h-full flex items-center gap-[.4rem] font-bold hover:text-white transition-all duration-300 ease-in-out ${isActive('feel-the-difference') ? 'text-white border-b-[.2rem] border-white' : 'border-b-[.2rem] border-transparent'}`}
                 >
                   <Image src={GitCompareIcon} alt="" width={0} height={0} />
-                  <span>Feel the Difference with RODIM PPF</span>
+                  <span>Discover the Difference with RODIM PPF</span>
                 </div>
               </Link>
 
@@ -138,7 +138,7 @@ const NavbarSub = ({ title, introduction, specification }: NavbarSubProps) => {
                   onClick={() => setIsOpen((prev: boolean) => !prev)}
                 >
                   <Image src={GitCompareIcon} alt="" width={0} height={0} />
-                  <span>Feel the Difference with RODIM PPF</span>
+                  <span>Discover the Difference with RODIM PPF</span>
                 </div>
               </Link>
               <Link href={`/product-rodim/${productId}/specification`}>
