@@ -15,7 +15,7 @@ const GalleryDetailPageUI = ({ data }: GalleryDetailPageUIProps) => {
 
   const imageList = data.map(
     (d) =>
-      `http://www.basfrodim.id/uploads/gallery_images/${d.id}/${d.image_url}`
+      `https://www.basfrodim.id/uploads/gallery_images/${d.id}/${d.image_url}`
   );
 
   return (
