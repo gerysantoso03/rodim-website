@@ -16,12 +16,12 @@ export const retailers: Retailers[] = [
   {
     image: IconTiktok,
     title: 'Tiktok',
-    url: '#',
+    url: 'https://www.tiktok.com/@rodimppf.id ',
   },
   {
     image: IconInstagram,
     title: 'Instagram',
-    url: '#',
+    url: 'https://www.instagram.com/rodimppf.id',
   },
   {
     image: IconWhatsapp,
