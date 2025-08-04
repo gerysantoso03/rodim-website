@@ -26,7 +26,7 @@ export const retailers: Retailers[] = [
   {
     image: IconWhatsapp,
     title: 'Whatsapp',
-    url: '#',
+    url: 'https://wa.me/6282213959045',
   },
   {
     image: IconTokopedia,

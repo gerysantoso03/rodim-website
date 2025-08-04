@@ -96,7 +96,12 @@ const Footer = () => {
         <div className="flex flex-col gap-[24px] min-[1024px]:gap-[34px] items-center justify-center">
           <div className="flex gap-[20px]">
             {retailers.map((retailer) => (
-              <Link href={retailer.url} key={retailer.title}>
+              <Link
+                href={retailer.url}
+                key={retailer.title}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <div className="h-[17px] min-w-[17px] flex items-center justify-center">
                   <Image src={retailer.image} alt={retailer.title} />
                 </div>
