@@ -17,10 +17,15 @@ const GalleryDetailPageUI = ({ data }: GalleryDetailPageUIProps) => {
     (d) => `/uploads/gallery_images/${d.id}/${d.image_url}`
   );
 
+  const title = data.length > 0 ? data[0].gallery_folder.title : '';
+
   return (
     <main className="section-wrapper w-full min-h-screen">
       <section className="w-full h-full flex flex-col gap-[56px] py-[100px] sm:gap-[40px] sm:px-[64px] lg:gap-[30px] lg:px-[120px]">
-        <GalleryDetailHeader arrowLabel={t('galleryArrowLabel')} />
+        <GalleryDetailHeader
+          arrowLabel={t('galleryArrowLabel')}
+          title={title}
+        />
         <GalleryAlbum imageList={imageList} />
       </section>
     </main>

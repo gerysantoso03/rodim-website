@@ -4,9 +4,13 @@ import { ArrowLeft } from 'lucide-react';
 
 interface GalleryDetailHeaderProps {
   arrowLabel: string;
+  title: string;
 }
 
-const GalleryDetailHeader = ({ arrowLabel }: GalleryDetailHeaderProps) => {
+const GalleryDetailHeader = ({
+  arrowLabel,
+  title,
+}: GalleryDetailHeaderProps) => {
   return (
     <div className="flex flex-col gap-[24px]">
       <Link href="/gallery" className="w-fit">
@@ -18,7 +22,7 @@ const GalleryDetailHeader = ({ arrowLabel }: GalleryDetailHeaderProps) => {
         </div>
       </Link>
       <h1 className="text-white tracking-[-1.2px] font-bold text-[36px] sm:text-[40px] lg:text-[46px]">
-        RODIM Experience Center
+        {title}
       </h1>
     </div>
   );
