@@ -70,7 +70,7 @@ const GalleryModal = ({
                 className="!flex items-center justify-center"
               >
                 <div className="relative w-fit mx-auto">
-                  <Image
+                  <img
                     src={src || '/placeholder.svg'}
                     width={1000}
                     height={1000}
