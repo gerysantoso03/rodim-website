@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import GalleryAlbum from '@/features/marketing/gallery/ui/GalleryAlbum';
 import GalleryDetailHeader from '@/features/marketing/gallery/ui/GalleryDetailHeader';
@@ -13,8 +13,18 @@ interface GalleryDetailPageUIProps {
 const GalleryDetailPageUI = ({ data }: GalleryDetailPageUIProps) => {
   const t = useTranslations('GalleryPage');
 
-  const imageList = data.map(
-    (d) => `/uploads/gallery_images/${d.id}/${d.image_url}`
+  const [imageList, setImageList] = useState(() =>
+    data.map((d) => {
+      if (!d.image_url) {
+        return '/image/placeholder-image.png';
+      }
+
+      if (d.url?.startsWith('/') || d.url?.startsWith('http')) {
+        return d.url;
+      }
+
+      return `/uploads/gallery_images/${d.id}/${d.image_url}`;
+    })
   );
 
   const title = data.length > 0 ? data[0].gallery_folder.title : '';
