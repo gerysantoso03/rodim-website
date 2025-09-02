@@ -5,12 +5,14 @@ import React, { useState } from 'react';
 import GalleryAlbum from '@/features/marketing/gallery/ui/GalleryAlbum';
 import GalleryDetailHeader from '@/features/marketing/gallery/ui/GalleryDetailHeader';
 import { useTranslations } from 'next-intl';
+import { unstable_noStore as NoStore } from 'next/cache';
 
 interface GalleryDetailPageUIProps {
   data: any[];
 }
 
 const GalleryDetailPageUI = ({ data }: GalleryDetailPageUIProps) => {
+  NoStore();
   const t = useTranslations('GalleryPage');
 
   const [imageList, setImageList] = useState(() =>
