@@ -26,10 +26,11 @@ const GalleryAlbum = ({ imageList = [] }: GalleryAlbumProps) => {
           key={i}
           onClick={() => handleClickImage(i)}
         >
-          <img
+          <Image
             src={src}
+            fill
             alt={`Gallery Detail ${i}`}
-            className="object-cover object-center w-full h-full"
+            className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-[rgba(0,0,0,0)] group-hover:bg-[rgba(0,0,0,0.4)] transition-all duration-200 flex items-center justify-center">
             <Button
