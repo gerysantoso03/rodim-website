@@ -23,7 +23,7 @@ const GalleryCard = ({
 }: GalleryCardProps) => {
   const imageUrl =
     id && img
-      ? `/uploads/gallery_folder/${id}/${img}`
+      ? `https://basfrodim.id/uploads/gallery_folder/${id}/${img}`
       : '/image/placeholder-image.png';
 
   return (
