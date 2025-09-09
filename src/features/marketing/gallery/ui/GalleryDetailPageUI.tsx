@@ -1,26 +1,33 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 
 import GalleryAlbum from '@/features/marketing/gallery/ui/GalleryAlbum';
 import GalleryDetailHeader from '@/features/marketing/gallery/ui/GalleryDetailHeader';
 import { useTranslations } from 'next-intl';
+import { unstable_noStore as NoStore } from 'next/cache';
 
 interface GalleryDetailPageUIProps {
   data: any[];
 }
 
 const GalleryDetailPageUI = ({ data }: GalleryDetailPageUIProps) => {
+  NoStore();
   const t = useTranslations('GalleryPage');
 
   const imageList = data.map(
     (d) => `https://basfrodim.id/uploads/gallery_images/${d.id}/${d.image_url}`
   );
 
+  const title = data.length > 0 ? data[0].gallery_folder.title : '';
+
   return (
     <main className="section-wrapper w-full min-h-screen">
       <section className="w-full h-full flex flex-col gap-[56px] py-[100px] sm:gap-[40px] sm:px-[64px] lg:gap-[30px] lg:px-[120px]">
-        <GalleryDetailHeader arrowLabel={t('galleryArrowLabel')} />
+        <GalleryDetailHeader
+          arrowLabel={t('galleryArrowLabel')}
+          title={title}
+        />
         <GalleryAlbum imageList={imageList} />
       </section>
     </main>

@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -21,7 +21,7 @@ const GalleryCard = ({
   img,
   buttonLabel,
 }: GalleryCardProps) => {
-  const imageUrl =
+  const imgSrc =
     id && img
       ? `https://basfrodim.id/uploads/gallery_folder/${id}/${img}`
       : '/image/placeholder-image.png';
@@ -38,12 +38,17 @@ const GalleryCard = ({
           </Link>
         </div>
         <div className="w-full bg-gradient-to-br from-white/12 to-transparent p-[2px] overflow-hidden rounded-[18px]">
-          <div className="mt-auto relative w-full min-h-[29rem] rounded-[18px] overflow-hidden">
-            <Image
-              src={imageUrl}
+          <div className="mt-auto relative w-full rounded-[18px] overflow-hidden">
+            <img
+              src={
+                imgSrc.startsWith('http')
+                  ? imgSrc
+                  : imgSrc.startsWith('/')
+                    ? imgSrc
+                    : `/${imgSrc}`
+              }
               alt="folder image"
-              fill
-              className="object-cover object-center"
+              className="object-cover object-center w-full h-full min-h-[29rem]"
             />
           </div>
         </div>

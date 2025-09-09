@@ -7,12 +7,14 @@ import GalleryCard from './GalleryCard';
 import GalleryHeroImage from '../../../../assets/images/gallery/header.jpg';
 import { useTranslations } from 'use-intl';
 import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
+import { unstable_noStore as NoStore } from 'next/cache';
 
 interface GalleryPageUIProps {
   galleryCardData: any[];
 }
 
 const GalleryPageUI = ({ galleryCardData }: GalleryPageUIProps) => {
+  NoStore();
   const t = useTranslations('GalleryPage');
 
   return (
