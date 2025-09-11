@@ -41,7 +41,8 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
   };
 
   const normalizedCode = data.code?.toUpperCase() || '';
-  const imgSrc: StaticImageData | string = productImages[normalizedCode] || '/image/placeholder-image.png';
+  const imgSrc: StaticImageData | string =
+    productImages[normalizedCode] || '/image/placeholder-image.png';
 
   return (
     <SectionWrapper>
