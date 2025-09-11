@@ -28,7 +28,7 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
 
   const imgSrc =
     data.id && data.image_url
-      ? `http://www.basfrodim.id/uploads/product_images/${data.id}/${data.image_url}`
+      ? `https://basfrodim.id/uploads/product_images/${data.id}/${data.image_url}`
       : '/image/placeholder-image.png';
 
   return (
