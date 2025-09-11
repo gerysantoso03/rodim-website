@@ -54,7 +54,7 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
           width={1394}
           height={800}
           // fill
-          className={`absolute z-[1] object-cover ${data.code.toUpperCase() == 'RODIM R2 MATTE' ? 'transform scale-[101%]' : ''}`}
+          className={`w-full h-full absolute z-[1] object-cover ${data.code.toUpperCase() == 'RODIM R2 MATTE' ? 'transform scale-[101%]' : ''}`}
           // className={`object-cover absolute z-[1] ${data.code?.toUpperCase() === 'RODIM R2 MATTE' ? 'scale-[101%]' : ''}`}
         />
 
