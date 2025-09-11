@@ -32,7 +32,10 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
         <Image
-          src={`https://basfrodim.id/uploads/product_images/${data.id}/${encodeURIComponent(data.image_url)}`}
+          src={`https://basfrodim.id/uploads/product_images/${data.id}/${encodeURIComponent(data.image_url)}`.replace(
+            'www',
+            ''
+          )}
           alt="hero image"
           width={1394}
           height={800}
