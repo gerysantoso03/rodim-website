@@ -26,31 +26,19 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
   NoStore();
   const t = useTranslations('ProductRodimPage');
 
-  const imgSrc =
-    data.id && data.image_url
-      ? `https://basfrodim.id/uploads/product_images/${data.id}/${data.image_url}`
-      : 'https://basfrodim.id/image/placeholder-image.png';
-
   return (
     <SectionWrapper>
       <section className="w-full h-[52rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]">
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
-        <img
-          src={
-            imgSrc.startsWith('http')
-              ? imgSrc
-              : imgSrc.startsWith('/')
-                ? imgSrc
-                : `/${imgSrc}`
-          }
+        <Image
+          src={`https://basfrodim.id/uploads/product_images/${data.id}/${encodeURIComponent(data.image_url)}`}
           alt="hero image"
           width={1394}
           height={800}
           // fill
           className={`absolute z-[1] object-cover ${data.code.toUpperCase() == 'RODIM R2 MATTE' ? 'transform scale-[101%]' : ''}`}
           // className={`object-cover absolute z-[1] ${data.code?.toUpperCase() === 'RODIM R2 MATTE' ? 'scale-[101%]' : ''}`}
-          priority
         />
 
         <div className="flex flex-col gap-[12px] absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] pb-[24px]">
