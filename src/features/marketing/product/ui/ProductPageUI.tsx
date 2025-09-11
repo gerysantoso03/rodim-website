@@ -24,13 +24,24 @@ interface ProductPageUIProps {
 const ProductPageUI = ({ data }: ProductPageUIProps) => {
   const t = useTranslations('ProductRodimPage');
 
+  const imgSrc =
+    data.id && data.image_url
+      ? `https://basfrodim.id/uploads/product_images/${data.id}/${data.image_url}`
+      : '/image/placeholder-image.png';
+
   return (
     <SectionWrapper>
       <section className="w-full h-[52rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]">
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
         <Image
-          src={`https://basfrodim.id/uploads/product_images/${data.id}/${data.image_url}`}
+          src={
+            imgSrc.startsWith('http')
+              ? imgSrc
+              : imgSrc.startsWith('/')
+                ? imgSrc
+                : `/${imgSrc}`
+          }
           alt="hero image"
           width={1394}
           height={800}
