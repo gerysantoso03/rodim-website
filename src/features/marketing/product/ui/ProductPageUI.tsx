@@ -26,16 +26,21 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
   NoStore();
   const t = useTranslations('ProductRodimPage');
 
+  const rawUrl =
+  data.id && data.image_url
+    ? `https://basfrodim.id/uploads/product_images/${data.id}/${data.image_url}`
+    : 'https://basfrodim.id/image/placeholder-image.png';
+
+  // Force remove "www."
+  const imgSrc = rawUrl.replace('://www.', '://');
+
   return (
     <SectionWrapper>
       <section className="w-full h-[52rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]">
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
         <Image
-          src={`https://basfrodim.id/uploads/product_images/${data.id}/${encodeURIComponent(data.image_url)}`.replace(
-            'www',
-            ''
-          )}
+          src={imgSrc}
           alt="hero image"
           width={1394}
           height={800}
