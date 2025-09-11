@@ -36,7 +36,7 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
       <section className="w-full h-[52rem] lg:h-[80rem] relative overflow-hidden rounded-[18px]">
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
-        <Image
+        <img
           src={
             imgSrc.startsWith('http')
               ? imgSrc
