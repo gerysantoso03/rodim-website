@@ -12,7 +12,7 @@ const nextConfig: NextConfig = {
   },
   output: 'standalone',
   images: {
-    domains: ['basfrodim.id', 'www.basfrodim.id'],
+    domains: ['basfrodim.id'],
   },
 };
 
