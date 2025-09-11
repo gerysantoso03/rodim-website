@@ -14,6 +14,14 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['basfrodim.id', 'www.basfrodim.id'],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/uploads/:path*',
+        destination: 'https://basfrodim.id/uploads/:path*', // hapus www
+      },
+    ];
+  },
 };
 
 const withNextIntl = createNextIntlPlugin();
