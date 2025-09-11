@@ -3,12 +3,14 @@ import ProductPageUI from '@/features/marketing/product/ui/ProductPageUI';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { redirect } from 'next/navigation';
+import { unstable_noStore as NoStore } from 'next/cache';
 
 interface ProductPageProps {
   params: Promise<{ slug: string }>;
 }
 
 const ProductPage = async ({ params }: ProductPageProps) => {
+  NoStore();
   const { slug } = await params;
   const introductionProductData =
     await getAllProductDetailWithCategoriesBySlugAction(slug || '');
