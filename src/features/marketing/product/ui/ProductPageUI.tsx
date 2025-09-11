@@ -16,13 +16,20 @@ import WarrantyIcon from '../../../../assets/icons/new/introduction/warranty-sim
 import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
 import { useTranslations } from 'next-intl';
 import SectionWrapper from '@/shared/components/section-wrapper/SectionWrapper';
+import { unstable_noStore as NoStore } from 'next/cache';
 
 interface ProductPageUIProps {
   data: any;
 }
 
 const ProductPageUI = ({ data }: ProductPageUIProps) => {
+  NoStore();
   const t = useTranslations('ProductRodimPage');
+
+  const imgSrc =
+    data.id && data.image_url
+      ? `https://basfrodim.id/uploads/product_images/${data.id}/${data.image_url}`
+      : '/image/placeholder-image.png';
 
   return (
     <SectionWrapper>
@@ -30,13 +37,18 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
         <div className="bg-gradient-to-t from-black to-black/0 absolute inset-0 z-[2] to-70% opacity-80" />
 
         <Image
-          src={`https://basfrodim.id/uploads/product_images/${data.id}/${data.image_url}`}
+          src={
+            imgSrc.startsWith('http')
+              ? imgSrc
+              : imgSrc.startsWith('/')
+                ? imgSrc
+                : `/${imgSrc}`
+          }
           alt="hero image"
           width={1394}
           height={800}
           className={`w-full h-full absolute z-[1] object-cover ${data.code.toUpperCase() == 'RODIM R2 MATTE' ? 'transform scale-[101%]' : ''}`}
           priority
-          onError={() => '/image/placeholder-image.png'}
         />
 
         <div className="flex flex-col gap-[12px] absolute z-[3] bottom-0 left-0 right-0 w-full text-[#F5F5F7] px-[24px] pb-[24px]">
