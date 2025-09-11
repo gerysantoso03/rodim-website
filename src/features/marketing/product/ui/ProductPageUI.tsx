@@ -29,7 +29,7 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
   const imgSrc =
     data.id && data.image_url
       ? `https://basfrodim.id/uploads/product_images/${data.id}/${data.image_url}`
-      : '/image/placeholder-image.png';
+      : 'https://basfrodim.id/image/placeholder-image.png';
 
   return (
     <SectionWrapper>
@@ -45,9 +45,9 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
                 : `/${imgSrc}`
           }
           alt="hero image"
-          // width={1394}
-          // height={800}
-          fill
+          width={1394}
+          height={800}
+          // fill
           className={`w-full h-full absolute z-[1] object-cover ${data.code.toUpperCase() == 'RODIM R2 MATTE' ? 'transform scale-[101%]' : ''}`}
           priority
         />
