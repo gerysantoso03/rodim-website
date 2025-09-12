@@ -14,11 +14,11 @@ import GlossIcon from '../../../../assets/icons/new/introduction/gloss.png';
 import QuvIcon from '../../../../assets/icons/new/introduction/quv.png';
 import WarrantyIcon from '../../../../assets/icons/new/introduction/warranty-simple-spec.png';
 import OfficeSlider from '@/shared/components/office-slider/OfficeSlider';
-import R1 from '../../../../assets/images/products/R1.jpg';
-import R2Matte from '../../../../assets/images/products/R2-Matte.jpg';
-import R2Pro from '../../../../assets/images/products/R2-PRO.jpg';
-import R3Pro from '../../../../assets/images/products/R3-PRO.jpg';
-import R4Pro from '../../../../assets/images/products/R4-PRO.jpg';
+// import R1 from '../../../../assets/images/products/R1.jpg';
+// import R2Matte from '../../../../assets/images/products/R2-Matte.jpg';
+// import R2Pro from '../../../../assets/images/products/R2-PRO.jpg';
+// import R3Pro from '../../../../assets/images/products/R3-PRO.jpg';
+// import R4Pro from '../../../../assets/images/products/R4-PRO.jpg';
 import { useTranslations } from 'next-intl';
 import SectionWrapper from '@/shared/components/section-wrapper/SectionWrapper';
 import { unstable_noStore as NoStore } from 'next/cache';
@@ -32,17 +32,25 @@ const ProductPageUI = ({ data }: ProductPageUIProps) => {
   const t = useTranslations('ProductRodimPage');
 
   // Map product codes to images
-  const productImages: Record<string, StaticImageData> = {
-    'RODIM R1': R1,
-    'RODIM R2 MATTE': R2Matte,
-    'RODIM R2 PRO': R2Pro,
-    'RODIM R3 PRO': R3Pro,
-    'RODIM R4 PRO': R4Pro,
-  };
+  // const productImages: Record<string, StaticImageData> = {
+  //   'RODIM R1': R1,
+  //   'RODIM R2 MATTE': R2Matte,
+  //   'RODIM R2 PRO': R2Pro,
+  //   'RODIM R3 PRO': R3Pro,
+  //   'RODIM R4 PRO': R4Pro,
+  // };
 
-  const normalizedCode = data.code?.toUpperCase() || '';
-  const imgSrc: StaticImageData | string =
-    productImages[normalizedCode] || '/image/placeholder-image.png';
+  // const normalizedCode = data.code?.toUpperCase() || '';
+  // const imgSrc: StaticImageData | string =
+  //   productImages[normalizedCode] || '/image/placeholder-image.png';
+
+  const rawUrl =
+    data.id && data.image_url
+      ? `https://basfrodim.id/uploads/product_images/${data.id}/${data.image_url}`
+      : 'https://basfrodim.id/image/placeholder-image.png';
+
+  // Force remove "www."
+  const imgSrc = rawUrl.replace('://www.', '://');
 
   return (
     <SectionWrapper>
